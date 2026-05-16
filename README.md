@@ -1,43 +1,60 @@
-# Astro Starter Kit: Minimal
+# Aluguel de Betoneira
 
-```sh
-npm create astro@latest -- --template minimal
+Site estatico profissional para locacao de betoneiras, desenvolvido com Astro e Tailwind CSS. Otimizado para SEO Local e performance maxima.
+
+## Tecnologias
+
+- **Astro 4.15** — Framework estatico
+- **Tailwind CSS 3.4** — Estilizacao utilitaria
+- **TypeScript** — Tipagem estatica
+- **Schema.org** — SEO estruturado
+
+## Estrutura
+
+```
+src/
+  components/      — Componentes Astro reutilizaveis
+  content/         — Colecoes de blog e servicos (MD)
+  data/            — Central de dados (config.ts)
+  layouts/         — Layout base com SEO
+  pages/           — Rotas do site
+  styles/          — CSS global
+public/
+  favicon.*        — Favicon
+  robots.txt       — Diretrizes para robos
+  sitemap.xml      — Mapa do site
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Comandos
 
-## 🚀 Project Structure
+| Comando       | Descricao                     |
+|---------------|-------------------------------|
+| `npm install` | Instalar dependencias         |
+| `npm run dev` | Servidor local (localhost:4321) |
+| `npm run build` | Build de producao em `dist/`  |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Deploy
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. Execute `npm run build`
+2. Faca o deploy da pasta `dist/` em sua hospedagem (Vercel, Netlify, Cloudflare Pages, etc.)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Dados da Empresa
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Todas as informacoes centralizadas em `src/data/config.ts`:
+- Nome, endereco, telefone (NAP)
+- Coordenadas geograficas
+- Horario de funcionamento
+- Redes sociais
 
-Any static assets, like images, can be placed in the `public/` directory.
+## SEO Implementado
 
-## 🧞 Commands
+- Schema.org (LocalBusiness, Organization, WebSite, BreadcrumbList)
+- Open Graph e Twitter Cards
+- Meta tags de geo-localizacao
+- Sitemap.xml e robots.txt
+- Canonical URLs
+- Keywords estrategicas
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Projeto versionado localmente e pronto para conectar a um repositorio remoto no GitHub.
