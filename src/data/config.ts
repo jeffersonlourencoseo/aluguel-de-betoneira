@@ -18,24 +18,24 @@ export const SITE_CONFIG = {
   // NAP (Name, Address, Phone) — CRITICO para SEO Local
   nap: {
     name: 'Aluguel de Betoneira',
-    phone: '(11) 98765-4321',
-    phoneRaw: '5511987654321',
-    whatsapp: '5511987654321',
+    phone: '(21) 99775-1577',
+    phoneRaw: '5521997751577',
+    whatsapp: '5521997751577',
     email: 'contato@alugueldebetoneira.com.br',
     address: {
-      street: 'Av. Paulista, 1000',
-      neighborhood: 'Bela Vista',
-      city: 'Sao Paulo',
-      state: 'SP',
-      zip: '01310-100',
+      street: 'Av. Brasil, 11201',
+      neighborhood: 'Penha Circular',
+      city: 'Rio de Janeiro',
+      state: 'RJ',
+      zip: '21012-351',
       country: 'BR',
     },
   },
 
-  // Geo-coordenadas (Google Maps)
+  // Geo-coordenadas (Google Maps) — Penha Circular, Rio de Janeiro
   geo: {
-    latitude: '-23.5505',
-    longitude: '-46.6333',
+    latitude: '-22.8235',
+    longitude: '-43.2848',
   },
 
   // Horario de funcionamento
@@ -46,7 +46,7 @@ export const SITE_CONFIG = {
 
   // Redes sociais
   social: {
-    whatsapp: 'https://wa.me/5511987654321',
+    whatsapp: 'https://wa.me/5521997751577',
     instagram: 'https://instagram.com/alugueldebetoneira',
   },
 
@@ -54,7 +54,7 @@ export const SITE_CONFIG = {
   keywords:
     'aluguel de betoneira, locacao de betoneira, betoneira para construcao civil, alugar betoneira 120L, alugar betoneira 150L, alugar betoneira 200L, aluguel de betoneira preco, locacao de equipamentos construcao civil',
   priceRange: '$$',
-  areaServed: 'Regiao Metropolitana de Sao Paulo',
+  areaServed: 'Rio de Janeiro e Grande Rio',
 
   // Fundacao
   founded: '2014',
