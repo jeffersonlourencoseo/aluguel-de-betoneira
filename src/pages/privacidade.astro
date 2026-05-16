@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Política de Privacidade | Aluguel de Betoneira";
+const description = "Conheça nossa política de privacidade e como protegemos seus dados pessoais.";
+---
+
+<Layout title={title} description={description} canonical="/privacidade">
+  <Header currentPath="" />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-24 lg:py-32 bg-secondary">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-16 max-w-3xl">
+          Política de Privacidade
+        </h1>
+        <p class="text-lg text-gray-100 max-w-2xl">
+          Sua privacidade é importante para nós. Esta política descreve como coletamos, usamos e protegemos suas informações.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+        <div class="space-y-8 text-gray-600">
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">1. Informações que Coletamos</h2>
+            <p class="text-base">
+              Coletamos informações pessoais que você nos fornece diretamente ao preencher formulários de contato ou solicitar orçamentos. Isso pode incluir seu nome, número de telefone, endereço de e-mail e informações sobre sua obra.
+            </p>
+            <p class="text-base">
+              Também coletamos automaticamente informações sobre sua visita ao nosso site, como endereço IP, tipo de navegador, páginas visitadas e tempo de permanência.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">2. Como Usamos suas Informações</h2>
+            <p class="text-base">
+              Utilizamos suas informações para:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base">
+              <li>Responder suas solicitações de orçamento e contato</li>
+              <li>Processar e gerenciar suas locações de equipamentos</li>
+              <li>Enviar informações sobre nossos serviços e promoções</li>
+              <li>Melhorar a experiência do usuário em nosso site</li>
+              <li>Cumprir obrigações legais e regulatórias</li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">3. Proteção de Dados</h2>
+            <p class="text-base">
+              Implementamos medidas de segurança técnicas e organizacionais para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.
+            </p>
+            <p class="text-base">
+              Seus dados são armazenados em servidores seguros e apenas pessoal autorizado tem acesso a eles.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">4. Compartilhamento de Informações</h2>
+            <p class="text-base">
+              Não vendemos, alugamos ou comercializamos suas informações pessoais para terceiros. Podemos compartilhar dados apenas com:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base">
+              <li>Prestadores de serviços que nos auxiliam na operação</li>
+              <li>Autoridades quando exigido por lei</li>
+              <li>Parceiros de entrega para logística de equipamentos</li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">5. Seus Direitos</h2>
+            <p class="text-base">
+              Você tem o direito de:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base">
+              <li>Acessar suas informações pessoais</li>
+              <li>Solicitar correção de dados incompletos ou desatualizados</li>
+              <li>Solicitar a exclusão de seus dados</li>
+              <li>Retirar seu consentimento a qualquer momento</li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">6. Cookies</h2>
+            <p class="text-base">
+              Nosso site utiliza cookies para melhorar sua experiência de navegação. Você pode configurar seu navegador para recusar cookies, mas isso pode afetar a funcionalidade do site.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">7. Alterações nesta Política</h2>
+            <p class="text-base">
+              Podemos atualizar esta política de privacidade periodicamente. Recomendamos que você revise esta página regularmente para se manter informado sobre nossas práticas.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">8. Contato</h2>
+            <p class="text-base">
+              Se você tiver dúvidas sobre esta política de privacidade, entre em contato conosco pelo e-mail contato@alugueldebetoneira.com.br ou pelo telefone (11) 98765-4321.
+            </p>
+          </div>
+
+          <p class="text-sm text-gray-500 pt-8 border-t border-gray-200">
+            Última atualização: 15 de janeiro de 2024
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

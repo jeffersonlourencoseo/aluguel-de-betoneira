@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Termos de Uso | Aluguel de Betoneira";
+const description = "Leia nossos termos de uso para conhecer as condições de locação de betoneiras e uso do site.";
+---
+
+<Layout title={title} description={description} canonical="/termos">
+  <Header currentPath="" />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-24 lg:py-32 bg-secondary">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-16 max-w-3xl">
+          Termos de Uso
+        </h1>
+        <p class="text-lg text-gray-100 max-w-2xl">
+          Ao utilizar nossos serviços, você concorda com os termos e condições descritos abaixo. Leia com atenção.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+        <div class="space-y-8 text-gray-600">
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">1. Aceitação dos Termos</h2>
+            <p class="text-base">
+              Ao acessar e utilizar o site da Aluguel de Betoneira, você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve utilizar nossos serviços.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">2. Serviços Oferecidos</h2>
+            <p class="text-base">
+              A Aluguel de Betoneira oferece serviços de locação de betoneiras e equipamentos para construção civil. Todos os equipamentos são entregues em estado de funcionamento e acompanhados de termo de responsabilidade.
+            </p>
+            <p class="text-base">
+              Reservamo-nos o direito de modificar, suspender ou descontinuar qualquer serviço a qualquer momento, mediante aviso prévio.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">3. Condições de Locação</h2>
+            <p class="text-base">
+              As condições de locação incluem:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base">
+              <li>Prazo mínimo de locação de 1 dia</li>
+              <li>Pagamento antecipado ou conforme acordo comercial</li>
+              <li>Documentação válida necessária para locação</li>
+              <li>Assinatura do termo de responsabilidade do equipamento</li>
+              <li>Multa por atraso na devolução conforme contrato</li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">4. Responsabilidades do Cliente</h2>
+            <p class="text-base">
+              O cliente se compromete a:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base">
+              <li>Utilizar o equipamento conforme as instruções de operação</li>
+              <li>Manter o equipamento em local seguro durante a locação</li>
+              <li>Não realizar modificações no equipamento</li>
+              <li>Comunicar imediatamente qualquer defeito ou problema</li>
+              <li>Devolver o equipamento nas condições acordadas</li>
+            </ul>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">5. Danos e Sinistros</h2>
+            <p class="text-base">
+              O cliente é responsável por danos causados por mau uso, negligência ou operação inadequada do equipamento. Danos decorrentes de defeitos de fabricação são de responsabilidade da locadora.
+            </p>
+            <p class="text-base">
+              Em caso de roubo ou furto, o cliente deve registrar boletim de ocorrência e comunicar a locadora em até 24 horas.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">6. Propriedade Intelectual</h2>
+            <p class="text-base">
+              Todo o conteúdo deste site, incluindo textos, imagens, logotipos e design, é de propriedade exclusiva da Aluguel de Betoneira e está protegido por leis de direitos autorais.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">7. Limitação de Responsabilidade</h2>
+            <p class="text-base">
+              A Aluguel de Betoneira não se responsabiliza por danos indiretos, incidentais ou consequenciais resultantes do uso ou incapacidade de usar nossos serviços.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">8. Lei Aplicável</h2>
+            <p class="text-base">
+              Estes termos são regidos pelas leis da República Federativa do Brasil. Quaisquer disputas serão resolvidas no foro da comarca de São Paulo, SP.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">9. Contato</h2>
+            <p class="text-base">
+              Para dúvidas sobre estes termos, entre em contato pelo e-mail contato@alugueldebetoneira.com.br.
+            </p>
+          </div>
+
+          <p class="text-sm text-gray-500 pt-8 border-t border-gray-200">
+            Última atualização: 15 de janeiro de 2024
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

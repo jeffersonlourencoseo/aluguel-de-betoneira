@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(mkdir *)",
+      "Bash(mv temp-astro/* .)",
+      "Bash(mv temp-astro/.vscode .)",
+      "Bash(mv temp-astro/.* .)",
+      "Bash(npm install *)",
+      "Bash(npx astro *)",
+      "Bash(rm -rf temp-astro)",
+      "Bash(npm run *)",
+      "Bash(npm list *)",
+      "Bash(npm ls *)",
+      "Bash(npm uninstall *)",
+      "Bash(git *)"
+    ]
+  }
+}

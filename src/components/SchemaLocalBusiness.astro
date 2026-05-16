@@ -1,0 +1,116 @@
+---
+import { SITE_CONFIG } from '../data/config';
+
+interface Props {
+  servicos?: Array<{ title: string }>;
+  pageType?: 'home' | 'about' | 'contact' | 'service' | 'blog';
+}
+
+const { servicos = [], pageType = 'home' } = Astro.props;
+
+const address = SITE_CONFIG.nap.address;
+const fullAddress = `${address.street}, ${address.neighborhood}, ${address.city} - ${address.state}, ${address.zip}`;
+
+// LocalBusiness Schema (obrigatório para Google Maps / Painel de Conhecimento)
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${SITE_CONFIG.url}/#localbusiness`,
+  name: SITE_CONFIG.nap.name,
+  description: SITE_CONFIG.description,
+  url: SITE_CONFIG.url,
+  telephone: SITE_CONFIG.nap.phone,
+  email: SITE_CONFIG.nap.email,
+  priceRange: SITE_CONFIG.priceRange,
+  image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: address.street,
+    addressLocality: address.city,
+    addressRegion: address.state,
+    postalCode: address.zip,
+    addressCountry: address.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SITE_CONFIG.geo.latitude,
+    longitude: SITE_CONFIG.geo.longitude,
+  },
+  openingHoursSpecification: SITE_CONFIG.openingHours.map((h) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  areaServed: {
+    '@type': 'Place',
+    name: SITE_CONFIG.areaServed,
+  },
+  serviceType: 'Locação de Betoneiras',
+  hasOfferCatalog: servicos.length > 0
+    ? {
+        '@type': 'OfferCatalog',
+        name: 'Serviços de Locação',
+        itemListElement: servicos.map((s, i) => ({
+          '@type': 'Offer',
+          position: i + 1,
+          itemOffered: { '@type': 'Service', name: s.title },
+        })),
+      }
+    : undefined,
+};
+
+// WebSite Schema (SearchAction para Sitelinks Searchbox)
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_CONFIG.url}/#website`,
+  name: SITE_CONFIG.name,
+  url: SITE_CONFIG.url,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE_CONFIG.url}/busca?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+// Organization Schema (logo + sameAs redes sociais)
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE_CONFIG.url}/#organization`,
+  name: SITE_CONFIG.nap.name,
+  url: SITE_CONFIG.url,
+  logo: `${SITE_CONFIG.url}/images/logo.png`,
+  sameAs: [SITE_CONFIG.social.whatsapp, SITE_CONFIG.social.instagram].filter(Boolean),
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: SITE_CONFIG.nap.phone,
+    contactType: 'customer service',
+    availableLanguage: 'Portuguese',
+    areaServed: 'BR',
+  },
+};
+
+// BreadcrumbList Schema (página atual)
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Início',
+      item: SITE_CONFIG.url,
+    },
+  ],
+};
+
+const schemas = [localBusiness, website, organization, breadcrumbs].filter(Boolean);
+---
+
+{
+  schemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))
+}

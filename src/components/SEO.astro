@@ -1,0 +1,76 @@
+---
+import { SITE_CONFIG } from '../data/config';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = SITE_CONFIG.description,
+  keywords = SITE_CONFIG.keywords,
+  canonical = Astro.url.pathname,
+  ogImage = SITE_CONFIG.ogImage,
+  noindex = false,
+} = Astro.props;
+
+const fullTitle = title.includes(SITE_CONFIG.name) ? title : `${title} | ${SITE_CONFIG.name}`;
+const fullCanonical = `${SITE_CONFIG.url}${canonical}`;
+const fullOgImage = `${SITE_CONFIG.url}${ogImage}`;
+---
+
+<!-- Charset & Viewport -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#1E3A8A" />
+
+<!-- Primary Meta -->
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="language" content="Portuguese" />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'} />
+
+<!-- Geo / Local SEO -->
+<meta name="geo.region" content="BR-SP" />
+<meta name="geo.placename" content={SITE_CONFIG.nap.address.city} />
+<meta name="geo.position" content={`${SITE_CONFIG.geo.latitude};${SITE_CONFIG.geo.longitude}`} />
+<meta name="ICBM" content={`${SITE_CONFIG.geo.latitude}, ${SITE_CONFIG.geo.longitude}`} />
+
+<!-- Canonical -->
+<link rel="canonical" href={fullCanonical} />
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<!-- Preconnect Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" />
+
+<!-- Open Graph — Facebook / WhatsApp / LinkedIn -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_CONFIG.name} />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content={fullCanonical} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={SITE_CONFIG.name} />
+<meta name="twitter:url" content={fullCanonical} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />

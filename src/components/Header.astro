@@ -1,0 +1,107 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+
+const navLinks = [
+  { href: "/", label: "Início" },
+  { href: "/sobre", label: "Sobre" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contato", label: "Contato" }
+];
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
+  <div class="container mx-auto flex h-16 items-center justify-between px-6 sm:px-8 lg:px-12">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-secondary transition-all hover:scale-105 active:scale-95">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-accent">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </span>
+      Aluguel de Betoneira
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-all hover:scale-105 active:scale-95 ${
+            currentPath === link.href
+              ? "bg-primary/10 text-secondary"
+              : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contato"
+        class="ml-4 inline-flex items-center rounded-full bg-secondary px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-secondary/30 hover:bg-secondary-700 hover:scale-105 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      >
+        Solicitar Orçamento
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      type="button"
+      id="mobile-menu-btn"
+      class="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 md:hidden transition-all hover:scale-105 active:scale-95"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Abrir menu</span>
+      <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+    <div class="space-y-1 px-4 py-3">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`block rounded-md px-3 py-2 text-base font-medium transition-all hover:scale-[1.02] active:scale-95 ${
+            currentPath === link.href
+              ? "bg-primary/10 text-secondary"
+              : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contato"
+        class="mt-4 block rounded-full bg-secondary px-5 py-3 text-center text-base font-semibold text-white shadow-lg shadow-secondary/30 hover:bg-secondary-700 hover:scale-[1.02] active:scale-95 transition-all"
+      >
+        Solicitar Orçamento
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  if (btn && menu && iconOpen && iconClose) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+</script>

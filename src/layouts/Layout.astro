@@ -1,0 +1,47 @@
+---
+import SEO from '../components/SEO.astro';
+import SchemaLocalBusiness from '../components/SchemaLocalBusiness.astro';
+import WhatsAppBtn from '../components/WhatsAppBtn.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: object;
+  servicos?: Array<{ title: string }>;
+}
+
+const { title, description, keywords, canonical, ogImage, noindex, schema, servicos } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      keywords={keywords}
+      canonical={canonical}
+      ogImage={ogImage}
+      noindex={noindex}
+    />
+
+    <!-- Schema.org JSON-LD — LocalBusiness + WebSite + Organization -->
+    <SchemaLocalBusiness servicos={servicos} />
+
+    <!-- Schema adicional por página (opcional) -->
+    {
+      schema && (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      )
+    }
+  </head>
+
+  <body class="font-sans antialiased text-gray-900 bg-white">
+    <slot />
+    <WhatsAppBtn />
+  </body>
+</html>

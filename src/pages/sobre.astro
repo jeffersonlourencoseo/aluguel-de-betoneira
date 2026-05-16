@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Sobre Nós | Aluguel de Betoneira";
+const description = "Conheça a Aluguel de Betoneira. Especialistas em locação de betoneiras para construção civil com mais de 10 anos de experiência no mercado.";
+---
+
+<Layout title={title} description={description} canonical="/sobre">
+  <Header currentPath="/sobre" />
+
+  <main>
+    <!-- HERO -->
+    <section class="py-24 lg:py-32 bg-secondary">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-16 max-w-3xl">
+          Sobre a Aluguel de Betoneira
+        </h1>
+        <p class="text-lg text-gray-100 max-w-2xl">
+          Há mais de uma década, somos referência em locação de betoneiras para construção civil. Nossa missão é fornecer equipamentos de qualidade com atendimento diferenciado.
+        </p>
+      </div>
+    </section>
+
+    <!-- NOSSA HISTÓRIA -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
+              Nossa História
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+              De duas betoneiras a centenas de obras atendidas
+            </h2>
+            <div class="space-y-6 text-base text-gray-600">
+              <p>
+                A Aluguel de Betoneira nasceu em 2014, quando seus fundadores perceberam uma lacuna no mercado: construtores e reformadores precisavam de betoneiras confiáveis, mas encontravam apenas equipamentos mal conservados e atendimento impessoal.
+              </p>
+              <p>
+                Começamos com apenas duas betoneiras 120L e um caminhão de entrega. A proposta era simples: entregar equipamentos revisados, no horário combinado, com preço justo e transparência total.
+              </p>
+              <p>
+                Hoje, contamos com uma frota completa que atende desde pequenas reformas residenciais até grandes empreendimentos comerciais. Nossa equipe cresceu, mas o compromisso com a qualidade permanece o mesmo desde o primeiro dia.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg">
+              <div class="flex h-full w-full items-center justify-center bg-gray-800 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <span class="sr-only">Imagem da empresa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSÃO, VISÃO E VALORES -->
+    <section class="py-24 lg:py-32 bg-gray-50">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
+            Nossa Essência
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+            Missão, Visão e Valores
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Missão</h3>
+            <p class="text-base text-gray-600">
+              Facilitar a vida de construtores, engenheiros e reformadores fornecendo betoneiras de qualidade com entrega rápida, preço justo e atendimento humanizado.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Visão</h3>
+            <p class="text-base text-gray-600">
+              Ser a locadora de betoneiras mais confiável da região metropolitana, reconhecida pela qualidade dos equipamentos e pela excelência no atendimento ao cliente.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Valores</h3>
+            <div class="space-y-3 text-base text-gray-600">
+              <p><strong class="text-gray-900">Qualidade:</strong> Nada sai sem revisão completa.</p>
+              <p><strong class="text-gray-900">Pontualidade:</strong> Horário é compromisso de verdade.</p>
+              <p><strong class="text-gray-900">Transparência:</strong> Preço claro, sem surpresas.</p>
+              <p><strong class="text-gray-900">Respeito:</strong> Tratamos cada cliente como parceiro.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPROMISSO COM SEGURANÇA -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg">
+              <div class="flex h-full w-full items-center justify-center bg-gray-800 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-1 lg:order-2">
+            <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
+              Segurança em Primeiro Lugar
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+              Compromisso com a NR-18 e Manutenção Preventiva
+            </h2>
+            <div class="space-y-6 text-base text-gray-600">
+              <p>
+                Segurança não é opcional. Todos os nossos equipamentos atendem às normas técnicas da construção civil, incluindo a NR-18 (Condições e Meio Ambiente de Trabalho na Indústria da Construção).
+              </p>
+              <p>
+                Antes de cada locação, realizamos uma inspeção completa que inclui:
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-secondary mt-0.5">✓</span>
+                  <span>Verificação do sistema elétrico e motor</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-secondary mt-0.5">✓</span>
+                  <span>Inspeção do tambor, eixo e engrenagens</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-secondary mt-0.5">✓</span>
+                  <span>Lubrificação de todas as partes móveis</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-secondary mt-0.5">✓</span>
+                  <span>Teste de funcionamento completo</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-secondary mt-0.5">✓</span>
+                  <span>Limpeza e higienização do equipamento</span>
+                </li>
+              </ul>
+              <p>
+                Durante a locação, você conta com suporte técnico prioritário. Se algo não funcionar como deveria, substituímos o equipamento no mesmo dia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSA EQUIPE -->
+    <section class="py-24 lg:py-32 bg-gray-50">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
+            Nossa Equipe
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+            Atendimento humanizado, de pessoa para pessoa
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Nosso time é formado por profissionais que entendem de obra e sabem a importância de um equipamento funcionando perfeitamente.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-white text-2xl font-bold">
+              JS
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">João Silva</h3>
+            <p class="text-secondary font-semibold mb-4">Fundador e Diretor</p>
+            <p class="text-base text-gray-600">
+              Engenheiro civil com 15 anos de experiência. Cuida pessoalmente da qualidade de cada equipamento.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-white text-2xl font-bold">
+              AP
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Ana Paula Costa</h3>
+            <p class="text-secondary font-semibold mb-4">Atendimento ao Cliente</p>
+            <p class="text-base text-gray-600">
+              Responsável pelos orçamentos e logística. Responde no WhatsApp em minutos.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-white text-2xl font-bold">
+              MR
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Marcos Rocha</h3>
+            <p class="text-secondary font-semibold mb-4">Técnico de Manutenção</p>
+            <p class="text-base text-gray-600">
+              Mecânico especializado que garante que cada betoneira saia em perfeito estado.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

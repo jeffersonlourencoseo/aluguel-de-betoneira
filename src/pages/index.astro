@@ -1,0 +1,423 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const allServicos = await getCollection('servicos');
+const servicos = allServicos.sort((a, b) => (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0));
+
+const title = "Aluguel de Betoneira | Locação de Betoneiras para Construção Civil";
+const description = "Aluguel de betoneira com entrega rápida e preço justo. Locação de betoneiras 120L, 150L, 200L e 400L revisadas. Solicite orçamento grátis!";
+const keywords = "aluguel de betoneira, locação de betoneira, betoneira para construção civil, alugar betoneira 120L, alugar betoneira 150L, alugar betoneira 200L, aluguel de betoneira preço, locação de equipamentos construção civil";
+
+const depoimentos = [
+  {
+    nome: "Carlos Eduardo Silva",
+    cargo: "Construtor Residencial",
+    texto: "Já aluguei betoneira aqui mais de 10 vezes. A entrega é sempre pontual e o equipamento chega limpo e funcionando perfeitamente. Recomendo de olhos fechados.",
+    inicial: "CS"
+  },
+  {
+    nome: "Mariana Oliveira",
+    cargo: "Engenheira Civil",
+    texto: "Como engenheira, preciso de equipamentos confiáveis. A qualidade das betoneiras e o suporte técnico da equipe me deram total segurança para indicar aos meus clientes.",
+    inicial: "MO"
+  },
+  {
+    nome: "Roberto Mendes",
+    cargo: "Mestre de Obras",
+    texto: "O atendimento pelo WhatsApp é rápido e o preço é justo. A betoneira 150L atendeu minha obra de 3 meses sem nenhum problema. Parabéns pelo serviço.",
+    inicial: "RM"
+  }
+];
+
+const cidades = [
+  "São Paulo", "Guarulhos", "Osasco", "Santo André",
+  "São Bernardo", "São Caetano", "Diadema", "Mauá",
+  "Ribeirão Pires", "Rio Grande da Serra", "Mogi das Cruzes", "Suzano"
+];
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/">
+  <Header currentPath="/" />
+
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-secondary">
+      <div class="absolute inset-0 opacity-10">
+        <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100" height="100" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      <div class="relative container mx-auto px-6 sm:px-8 lg:px-12 py-24 lg:py-32">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 mb-8">
+            Líder em Locação de Betoneiras
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-10">
+            Aluguel de Betoneira com Entrega Rápida
+          </h1>
+
+          <p class="text-lg sm:text-xl leading-relaxed text-gray-100 mb-10">
+            Locação de betoneiras profissionais para sua obra. Equipamentos revisados, preço justo e atendimento em toda a região. Solicite seu orçamento agora mesmo!
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://wa.me/5511987654321"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-green-600 px-8 py-5 text-base font-bold text-white shadow-xl hover:bg-green-700 hover:scale-105 active:scale-95 transition-all"
+            >
+              <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Solicitar Orçamento no WhatsApp
+            </a>
+
+            <a
+              href="/servicos"
+              class="inline-flex items-center justify-center rounded-full bg-white/10 px-8 py-5 text-base font-bold text-white ring-1 ring-inset ring-white/20 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all backdrop-blur-sm"
+            >
+              Ver Nossos Equipamentos
+              <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="mt-12 flex flex-wrap items-center gap-6 text-sm text-gray-100">
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              Entrega em até 2h
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              Equipamentos Revisados
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              Melhor Preço Garantido
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+            Por que somos a escolha certa?
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Mais de 1.000 obras atendidas com pontualidade e qualidade
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Entrega em 2h</h3>
+            <p class="text-base text-gray-600">
+              Solicite antes das 14h e receba ainda hoje na sua obra. Atendimento prioritário para urgências.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Equipamentos Revisados</h3>
+            <p class="text-base text-gray-600">
+              Toda betoneira passa por inspeção completa antes da entrega. Motor, lubrificação e estrutura 100%.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Melhor Preço</h3>
+            <p class="text-base text-gray-600">
+              Orçamento sem taxas ocultas. Descontos especiais para locações semanais e mensais. Pague pelo que usar.
+            </p>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+            <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Atendimento Humanizado</h3>
+            <p class="text-base text-gray-600">
+              Fale direto com quem entende de obra. Nossa equipe ajuda a escolher o equipamento ideal para você.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE RESUMO -->
+    <section class="py-24 lg:py-32 bg-gray-50">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg">
+              <div class="flex h-full w-full items-center justify-center bg-gray-800 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <span class="sr-only">Imagem da empresa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-1 lg:order-2">
+            <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
+              Sobre Nós
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Mais de 10 anos entregando qualidade em cada obra
+            </h2>
+            <div class="space-y-4 text-base text-gray-600">
+              <p>
+                Desde 2014, a Aluguel de Betoneira se especializou em um só serviço: fornecer betoneiras confiáveis com entrega rápida. Começamos com duas máquinas e hoje atendemos centenas de obras por mês.
+              </p>
+              <p>
+                Nossa diferença está no cuidado. Cada equipamento passa por revisão completa antes de sair. Cada cliente recebe atendimento personalizado. E cada entrega é feita no horário combinado.
+              </p>
+            </div>
+            <a
+              href="/sobre"
+              class="mt-8 inline-flex items-center rounded-full bg-secondary px-8 py-4 text-base font-bold text-white shadow-lg shadow-secondary/30 hover:bg-secondary-700 hover:scale-105 active:scale-95 transition-all"
+            >
+              Conheça Nossa História
+              <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSSOS EQUIPAMENTOS -->
+    <section class="py-24 lg:py-32 bg-white" id="servicos">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
+            Nossos Equipamentos
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+            Betoneiras para todo tipo de obra
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Da reforma residencial ao grande empreendimento, temos o equipamento certo para você.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {servicos.map((s) => (
+            <article class="group relative rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+              <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-accent mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{s.data.title}</h3>
+              <p class="text-sm text-secondary font-semibold mb-3">{s.data.capacidade}</p>
+              <p class="text-base text-gray-600 mb-6">{s.data.description}</p>
+              <a href={`/servicos/${s.slug}`} class="inline-flex items-center text-sm font-bold text-secondary hover:text-secondary-700 transition-colors">
+                Ver Detalhes →
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            href="/servicos"
+            class="inline-flex items-center justify-center rounded-full bg-secondary px-8 py-4 text-base font-bold text-white shadow-lg shadow-secondary/30 hover:bg-secondary-700 hover:scale-105 active:scale-95 transition-all"
+          >
+            Ver Todos os Equipamentos
+            <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="py-24 lg:py-32 bg-gray-50">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
+            Depoimentos
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+            O que nossos clientes dizem
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Construtores, engenheiros e mestres de obras que confiam no nosso trabalho
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {depoimentos.map((dep) => (
+            <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+              <div class="flex items-center gap-1 mb-6">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                ))}
+              </div>
+              <p class="text-base text-gray-700 mb-8 leading-relaxed">"{dep.texto}"</p>
+              <div class="flex items-center gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white font-bold text-sm">
+                  {dep.inicial}
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">{dep.nome}</p>
+                  <p class="text-sm text-gray-500">{dep.cargo}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCAL SEO -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="mx-auto max-w-3xl text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+            Atendemos toda a região
+          </h2>
+          <p class="mt-4 text-lg text-gray-600">
+            Realizamos entregas de betoneiras em diversas cidades da região metropolitana.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+          {cidades.map((city) => (
+            <div class="flex items-center gap-3 rounded-xl border border-gray-200 px-5 py-4 transition-all hover:shadow-md hover:scale-[1.02]">
+              <svg class="h-5 w-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="text-sm font-medium text-gray-700">Aluguel em {city}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 lg:py-32 bg-gray-50" id="faq">
+      <div class="container mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Perguntas Frequentes</h2>
+          <p class="mt-4 text-lg text-gray-600">Tire suas dúvidas sobre o aluguel de betoneira</p>
+        </div>
+
+        <div class="space-y-6">
+          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
+              Qual o prazo mínimo de locação de betoneira?
+              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-base text-gray-600">O prazo mínimo é de 1 dia. Oferecemos descontos especiais para locações semanais e mensais.</p>
+          </details>
+
+          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
+              A betoneira inclui motor e garantia?
+              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-base text-gray-600">Sim! Todas são entregues com motor funcionando perfeitamente. Garantia de funcionamento durante toda a locação.</p>
+          </details>
+
+          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
+              Vocês fazem entrega e retirada?
+              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-base text-gray-600">Sim, entrega e retirada em toda a região metropolitana. O valor é calculado por distância e informado no orçamento.</p>
+          </details>
+
+          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
+              Quais as formas de pagamento aceitas?
+              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="mt-4 text-base text-gray-600">Aceitamos dinheiro, PIX, cartão de débito/crédito (com parcelamento) e transferência bancária.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-24 lg:py-32 bg-secondary">
+      <div class="container mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
+          Pronto para começar sua obra?
+        </h2>
+        <p class="text-lg text-gray-100 mb-10 max-w-2xl mx-auto">
+          Não perca tempo. Solicite seu orçamento agora e receba sua betoneira ainda hoje. Atendimento imediato pelo WhatsApp.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://wa.me/5511987654321"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-full bg-green-600 px-10 py-5 text-lg font-bold text-white shadow-xl hover:bg-green-700 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
+          >
+            <svg class="mr-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Conversar no WhatsApp
+          </a>
+          <a
+            href="tel:+5511987654321"
+            class="inline-flex items-center justify-center rounded-full bg-white/10 px-10 py-5 text-lg font-bold text-white ring-1 ring-inset ring-white/20 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
+          >
+            <svg class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Ligar Agora
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
