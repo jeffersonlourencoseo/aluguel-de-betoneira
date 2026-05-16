@@ -196,11 +196,17 @@ const address = "Av. Paulista, 1000 - Bela Vista, São Paulo - SP, 01310-100";
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const nome = (form.querySelector('input[name="nome"]')?.value || '').trim();
-        const telefone = (form.querySelector('input[name="telefone"]')?.value || '').trim();
-        const email = (form.querySelector('input[name="email"]')?.value || '').trim();
-        const servico = (form.querySelector('select[name="servico"]')?.value || '');
-        const mensagem = (form.querySelector('textarea[name="mensagem"]')?.value || '').trim();
+        const nomeEl = form.querySelector('input[name="nome"]');
+        const telefoneEl = form.querySelector('input[name="telefone"]');
+        const emailEl = form.querySelector('input[name="email"]');
+        const servicoEl = form.querySelector('select[name="servico"]');
+        const mensagemEl = form.querySelector('textarea[name="mensagem"]');
+
+        const nome = (nomeEl instanceof HTMLInputElement ? nomeEl.value : '').trim();
+        const telefone = (telefoneEl instanceof HTMLInputElement ? telefoneEl.value : '').trim();
+        const email = (emailEl instanceof HTMLInputElement ? emailEl.value : '').trim();
+        const servico = (servicoEl instanceof HTMLSelectElement ? servicoEl.value : '');
+        const mensagem = (mensagemEl instanceof HTMLTextAreaElement ? mensagemEl.value : '').trim();
 
         let texto = 'Olá! Vim pelo site e gostaria de solicitar um orçamento para aluguel de betoneira.';
         texto += '%0A%0A*Nome:* ' + encodeURIComponent(nome);
@@ -213,7 +219,7 @@ const address = "Av. Paulista, 1000 - Bela Vista, São Paulo - SP, 01310-100";
             'betoneira-200l': 'Betoneira 200L',
             'betoneira-400l': 'Betoneira 400L',
             'nao-sei': 'Não sei qual escolher'
-          };
+          } as Record<string, string>;
           texto += '%0A*Equipamento:* ' + encodeURIComponent(labels[servico] || servico);
         }
         if (mensagem) texto += '%0A%0A*Mensagem:* ' + encodeURIComponent(mensagem);

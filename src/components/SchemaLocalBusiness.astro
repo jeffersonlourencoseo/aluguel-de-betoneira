@@ -6,10 +6,9 @@ interface Props {
   pageType?: 'home' | 'about' | 'contact' | 'service' | 'blog';
 }
 
-const { servicos = [], pageType = 'home' } = Astro.props;
+const { servicos = [] } = Astro.props;
 
 const address = SITE_CONFIG.nap.address;
-const fullAddress = `${address.street}, ${address.neighborhood}, ${address.city} - ${address.state}, ${address.zip}`;
 
 // LocalBusiness Schema (obrigatório para Google Maps / Painel de Conhecimento)
 const localBusiness = {
@@ -81,7 +80,7 @@ const organization = {
   '@id': `${SITE_CONFIG.url}/#organization`,
   name: SITE_CONFIG.nap.name,
   url: SITE_CONFIG.url,
-  logo: `${SITE_CONFIG.url}/images/logo.png`,
+  logo: `${SITE_CONFIG.url}/images/logo.svg`,
   sameAs: [SITE_CONFIG.social.whatsapp, SITE_CONFIG.social.instagram].filter(Boolean),
   contactPoint: {
     '@type': 'ContactPoint',
@@ -111,6 +110,6 @@ const schemas = [localBusiness, website, organization, breadcrumbs].filter(Boole
 
 {
   schemas.map((schema) => (
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
   ))
 }

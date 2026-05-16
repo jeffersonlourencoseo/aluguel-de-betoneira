@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
 
   // URLs
   url: 'https://alugueldebetoneira.com.br',
-  ogImage: '/images/og-image.jpg',
+  ogImage: '/images/og-image.svg',
 
   // NAP (Name, Address, Phone) — CRITICO para SEO Local
   nap: {

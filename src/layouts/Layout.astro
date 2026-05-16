@@ -35,7 +35,7 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
     <!-- Schema adicional por página (opcional) -->
     {
       schema && (
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
       )
     }
   </head>
