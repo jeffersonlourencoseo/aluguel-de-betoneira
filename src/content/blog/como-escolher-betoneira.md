@@ -3,6 +3,7 @@ title: "Como Escolher a Betoneira Ideal para Sua Obra"
 description: "Guia completo para escolher o tamanho certo de betoneira, considerando o volume de concreto, tipo de obra e prazo de entrega."
 pubDate: 2024-01-15
 author: "Aluguel de Betoneira"
+image: "/images/blog-1.jpg"
 tags: ["dicas", "guia", "betoneira"]
 ---
 

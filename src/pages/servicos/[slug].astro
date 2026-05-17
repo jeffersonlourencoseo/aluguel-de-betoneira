@@ -24,8 +24,18 @@ const description = servico.data.description;
 
   <main>
     <!-- HERO DO SERVIÇO -->
-    <section class="py-24 lg:py-32 bg-secondary">
-      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-5xl">
+    <section class="relative py-24 lg:py-32 bg-secondary overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1920&auto=format&fit=crop"
+          alt=""
+          class="h-full w-full object-cover blur-sm scale-110"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-secondary/70"></div>
+      </div>
+
+      <div class="relative container mx-auto px-6 sm:px-8 lg:px-12 max-w-5xl">
         <div class="flex items-center gap-3 text-sm text-gray-100 mb-6">
           <a href="/servicos" class="hover:text-primary transition-colors">Serviços</a>
           <span>/</span>
@@ -143,24 +153,9 @@ const description = servico.data.description;
           <!-- Sidebar Preços + CTA -->
           <div class="lg:col-span-1">
             <div class="sticky top-24 space-y-6">
-              <!-- Preços -->
               <div class="rounded-2xl border border-gray-200 bg-gray-50 p-10 transition-all hover:shadow-lg">
-                <h3 class="text-xl font-bold text-gray-900 mb-6">Investimento</h3>
-
-                <div class="space-y-4 mb-8">
-                  <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span class="text-gray-600">Diária</span>
-                    <span class="text-xl font-bold text-gray-900">{servico.data.precoDiaria}</span>
-                  </div>
-                  <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                    <span class="text-gray-600">Semanal</span>
-                    <span class="text-xl font-bold text-gray-900">{servico.data.precoSemanal}</span>
-                  </div>
-                  <div class="flex justify-between items-center py-3">
-                    <span class="text-gray-600">Mensal</span>
-                    <span class="text-xl font-bold text-gray-900">{servico.data.precoMensal}</span>
-                  </div>
-                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-6">Solicite um Orçamento</h3>
+                <p class="text-gray-600 mb-8">Entre em contato para receber valores atualizados e condições especiais para o seu projeto.</p>
 
                 <a
                   href="/contato"
@@ -170,7 +165,7 @@ const description = servico.data.description;
                 </a>
 
                 <a
-                  href="https://wa.me/5521997751577"
+                  href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20achei%20voc%C3%AAs%20no%20google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="block w-full text-center rounded-full bg-green-600 px-6 py-4 text-base font-bold text-white shadow-lg shadow-green-600/30 hover:bg-green-700 hover:scale-105 active:scale-95 transition-all"

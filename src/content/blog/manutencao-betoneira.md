@@ -3,6 +3,7 @@ title: "Manutenção Preventiva de Betoneira: Dicas do Especialista"
 description: "Aprenda como cuidar da sua betoneira alugada para garantir o melhor desempenho e evitar problemas durante a obra."
 pubDate: 2024-02-10
 author: "Aluguel de Betoneira"
+image: "/images/blog-2.jpg"
 tags: ["manutencao", "dicas", "seguranca"]
 ---
 

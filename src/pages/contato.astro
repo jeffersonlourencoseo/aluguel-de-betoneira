@@ -17,12 +17,22 @@ const address = "Av. Brasil, 11201 - Penha Circular, Rio de Janeiro - RJ, 21012-
 
   <main>
     <!-- HERO -->
-    <section class="py-24 lg:py-32 bg-secondary">
-      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-16 max-w-3xl">
+    <section class="relative py-32 lg:py-40 bg-secondary overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1920&auto=format&fit=crop"
+          alt=""
+          class="h-full w-full object-cover blur-sm scale-110"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-secondary/70"></div>
+      </div>
+
+      <div class="relative container mx-auto px-6 sm:px-8 lg:px-12">
+        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-12 max-w-4xl">
           Entre em Contato
         </h1>
-        <p class="text-lg text-gray-100 max-w-2xl">
+        <p class="text-2xl sm:text-3xl text-gray-100 max-w-3xl leading-relaxed">
           Solicite um orçamento grátis ou tire suas dúvidas. Nossa equipe responde em poucos minutos pelo WhatsApp.
         </p>
       </div>
@@ -35,17 +45,17 @@ const address = "Av. Brasil, 11201 - Penha Circular, Rio de Janeiro - RJ, 21012-
           <!-- NAP e Info -->
           <div class="space-y-10">
             <div>
-              <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
                 Fale Conosco
               </h2>
-              <p class="text-lg text-gray-600">
+              <p class="text-xl text-gray-600">
                 Escolha a forma mais conveniente. Nosso atendimento é rápido e humanizado.
               </p>
             </div>
 
             <!-- WhatsApp CTA Grande -->
             <a
-              href={`https://wa.me/${phoneRaw}`}
+              href={`https://wa.me/${phoneRaw}?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!`}
               target="_blank"
               rel="noopener noreferrer"
               class="block rounded-2xl bg-green-600 p-10 text-white hover:bg-green-700 transition-all shadow-xl hover:scale-[1.02] active:scale-95"
@@ -208,7 +218,7 @@ const address = "Av. Brasil, 11201 - Penha Circular, Rio de Janeiro - RJ, 21012-
         const servico = (servicoEl instanceof HTMLSelectElement ? servicoEl.value : '');
         const mensagem = (mensagemEl instanceof HTMLTextAreaElement ? mensagemEl.value : '').trim();
 
-        let texto = 'Olá! Vim pelo site e gostaria de solicitar um orçamento para aluguel de betoneira.';
+        let texto = 'Olá, achei vocês no google e gostaria de mais informações!';
         texto += '%0A%0A*Nome:* ' + encodeURIComponent(nome);
         texto += '%0A*Telefone:* ' + encodeURIComponent(telefone);
         if (email) texto += '%0A*E-mail:* ' + encodeURIComponent(email);

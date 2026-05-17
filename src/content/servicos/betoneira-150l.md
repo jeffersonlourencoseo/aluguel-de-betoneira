@@ -2,9 +2,6 @@
 title: "Aluguel de Betoneira 150L"
 description: "Betoneira 150L para obras médias. Ótimo custo-benefício com alta produtividade para construtoras e empreiteiros."
 capacidade: "150 Litros"
-precoDiaria: "R$ 100,00"
-precoSemanal: "R$ 500,00"
-precoMensal: "R$ 1.500,00"
 motor: "Elétrico 1 CV ou Gasolina 6,5 HP"
 peso: "260 kg"
 featured: true

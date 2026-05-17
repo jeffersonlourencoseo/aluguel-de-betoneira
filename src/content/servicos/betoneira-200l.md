@@ -2,9 +2,6 @@
 title: "Aluguel de Betoneira 200L"
 description: "Betoneira 200L para obras de grande porte. Alta produtividade e durabilidade comprovada para construções exigentes."
 capacidade: "200 Litros"
-precoDiaria: "R$ 140,00"
-precoSemanal: "R$ 700,00"
-precoMensal: "R$ 2.100,00"
 motor: "Elétrico 2 CV ou Gasolina 8 HP"
 peso: "320 kg"
 featured: true

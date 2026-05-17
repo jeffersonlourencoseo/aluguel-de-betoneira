@@ -2,9 +2,6 @@
 title: "Aluguel de Betoneira 120L"
 description: "Betoneira 120L ideal para pequenas reformas e construções residenciais. Compacta, fácil de transportar e com motor elétrico ou à gasolina."
 capacidade: "120 Litros"
-precoDiaria: "R$ 80,00"
-precoSemanal: "R$ 400,00"
-precoMensal: "R$ 1.200,00"
 motor: "Elétrico 1/2 CV ou Gasolina 5,5 HP"
 peso: "210 kg"
 featured: true

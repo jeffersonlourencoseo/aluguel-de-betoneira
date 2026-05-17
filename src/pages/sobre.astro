@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = "Sobre Nós | Aluguel de Betoneira";
+const title = "Quem Somos | Aluguel de Betoneira";
 const description = "Conheça a Aluguel de Betoneira. Especialistas em locação de betoneiras para construção civil com mais de 10 anos de experiência no mercado.";
 ---
 
@@ -12,12 +12,22 @@ const description = "Conheça a Aluguel de Betoneira. Especialistas em locação
 
   <main>
     <!-- HERO -->
-    <section class="py-24 lg:py-32 bg-secondary">
-      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-16 max-w-3xl">
-          Sobre a Aluguel de Betoneira
+    <section class="relative py-32 lg:py-40 bg-secondary overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1920&auto=format&fit=crop"
+          alt=""
+          class="h-full w-full object-cover blur-sm scale-110"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-secondary/70"></div>
+      </div>
+
+      <div class="relative container mx-auto px-6 sm:px-8 lg:px-12">
+        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-12 max-w-4xl">
+          Quem Somos
         </h1>
-        <p class="text-lg text-gray-100 max-w-2xl">
+        <p class="text-2xl sm:text-3xl text-gray-100 max-w-3xl leading-relaxed">
           Há mais de uma década, somos referência em locação de betoneiras para construção civil. Nossa missão é fornecer equipamentos de qualidade com atendimento diferenciado.
         </p>
       </div>
@@ -31,10 +41,10 @@ const description = "Conheça a Aluguel de Betoneira. Especialistas em locação
             <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
               Nossa História
             </div>
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
               De duas betoneiras a centenas de obras atendidas
             </h2>
-            <div class="space-y-6 text-base text-gray-600">
+            <div class="space-y-6 text-lg text-gray-600">
               <p>
                 A Aluguel de Betoneira nasceu em 2014, quando seus fundadores perceberam uma lacuna no mercado: construtores e reformadores precisavam de betoneiras confiáveis, mas encontravam apenas equipamentos mal conservados e atendimento impessoal.
               </p>
@@ -49,14 +59,12 @@ const description = "Conheça a Aluguel de Betoneira. Especialistas em locação
 
           <div class="relative">
             <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg">
-              <div class="flex h-full w-full items-center justify-center bg-gray-800 text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                  <line x1="8" y1="21" x2="16" y2="21"/>
-                  <line x1="12" y1="17" x2="12" y2="21"/>
-                </svg>
-                <span class="sr-only">Imagem da empresa</span>
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
+                alt="Equipe de construção civil em obra"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -70,7 +78,7 @@ const description = "Conheça a Aluguel de Betoneira. Especialistas em locação
           <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
             Nossa Essência
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
             Missão, Visão e Valores
           </h2>
         </div>
@@ -118,11 +126,12 @@ const description = "Conheça a Aluguel de Betoneira. Especialistas em locação
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div class="order-2 lg:order-1">
             <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg">
-              <div class="flex h-full w-full items-center justify-center bg-gray-800 text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
+              <img
+                src="https://images.pexels.com/photos/19665533/pexels-photo-19665533/free-photo-of-concrete-mixer-at-construction-site.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Betoneira em obra"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -130,17 +139,17 @@ const description = "Conheça a Aluguel de Betoneira. Especialistas em locação
             <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
               Segurança em Primeiro Lugar
             </div>
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
               Compromisso com a NR-18 e Manutenção Preventiva
             </h2>
-            <div class="space-y-6 text-base text-gray-600">
+            <div class="space-y-6 text-lg text-gray-600">
               <p>
                 Segurança não é opcional. Todos os nossos equipamentos atendem às normas técnicas da construção civil, incluindo a NR-18 (Condições e Meio Ambiente de Trabalho na Indústria da Construção).
               </p>
               <p>
                 Antes de cada locação, realizamos uma inspeção completa que inclui:
               </p>
-              <ul class="space-y-3">
+              <ul class="space-y-4">
                 <li class="flex items-start gap-3">
                   <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-secondary mt-0.5">✓</span>
                   <span>Verificação do sistema elétrico e motor</span>
@@ -178,7 +187,7 @@ const description = "Conheça a Aluguel de Betoneira. Especialistas em locação
           <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
             Nossa Equipe
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
             Atendimento humanizado, de pessoa para pessoa
           </h2>
           <p class="mt-4 text-lg text-gray-600">

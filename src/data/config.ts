@@ -46,7 +46,7 @@ export const SITE_CONFIG = {
 
   // Redes sociais
   social: {
-    whatsapp: 'https://wa.me/5521997751577',
+    whatsapp: 'https://wa.me/5521997751577?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!',
     instagram: 'https://instagram.com/alugueldebetoneira',
   },
 
