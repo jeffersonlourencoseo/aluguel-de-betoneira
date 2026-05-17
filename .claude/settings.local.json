@@ -14,7 +14,30 @@
       "Bash(npm ls *)",
       "Bash(npm uninstall *)",
       "Bash(git *)",
-      "Bash(npx vercel *)"
+      "Bash(npx vercel *)",
+      "Bash(npx serve *)",
+      "Bash(npx localtunnel *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://slick-nails-laugh.loca.lt)",
+      "Bash(curl *)",
+      "Bash(npx cloudflared *)",
+      "Bash(npx kill-port *)",
+      "Bash(Get-Content package.json)",
+      "Bash(ConvertFrom-Json)",
+      "Bash(Select-Object -ExpandProperty scripts)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :4321)",
+      "WebSearch",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(npx sharp *)",
+      "Bash(node *)",
+      "Bash(gh *)",
+      "WebFetch(domain:aluguel-de-betoneira.vercel.app)",
+      "Bash(python3 -c ' *)",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "Bash(pdftotext \"C:\\\\Users\\\\Jefferson\\\\Downloads\\\\screencapture-pagespeed-web-dev-analysis-https-aluguel-de-betoneira-vercel-app-lehnd9uluf-2026-05-17-12_16_32.pdf\" -)",
+      "Bash(gswin64c -sDEVICE=txtwrite -sOutputFile=- -dBATCH -dNOPAUSE \"C:\\\\Users\\\\Jefferson\\\\Downloads\\\\screencapture-pagespeed-web-dev-analysis-https-aluguel-de-betoneira-vercel-app-lehnd9uluf-2026-05-17-12_16_32.pdf\")",
+      "Bash(pdfimages *)"
     ]
   }
 }
