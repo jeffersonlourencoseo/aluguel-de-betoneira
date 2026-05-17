@@ -30,6 +30,9 @@ const fullOgImage = `${SITE_CONFIG.url}${ogImage}`;
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#1E3A8A" />
 
+  <!-- Preload hero image (LCP) -->
+  <link rel="preload" as="image" href="/images/hero-obra.jpg" type="image/jpeg" fetchpriority="high" />
+
 <!-- Primary Meta -->
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
