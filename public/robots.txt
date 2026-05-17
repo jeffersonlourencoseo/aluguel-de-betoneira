@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /privacidade
-Disallow: /termos
 
 Sitemap: https://alugueldebetoneira.com.br/sitemap.xml

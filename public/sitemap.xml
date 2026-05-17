@@ -61,9 +61,45 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://alugueldebetoneira.com.br/blog/quanto-custa-alugar-betoneira</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alugueldebetoneira.com.br/blog/betoneira-eletrica-vs-gasolina</loc>
+    <lastmod>2024-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alugueldebetoneira.com.br/blog/nr18-seguranca-betoneira</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alugueldebetoneira.com.br/blog/calcular-volume-concreto</loc>
+    <lastmod>2024-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://alugueldebetoneira.com.br/contato</loc>
     <lastmod>2024-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://alugueldebetoneira.com.br/privacidade</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://alugueldebetoneira.com.br/termos</loc>
+    <lastmod>2024-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
