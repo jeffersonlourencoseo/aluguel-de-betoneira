@@ -44,21 +44,21 @@ const cidades = [
 
   <main>
     <!-- HERO -->
-    <section class="relative overflow-hidden bg-secondary">
-      <div class="absolute inset-0">
+    <section class="relative overflow-hidden bg-gray-900">
+      <div class="absolute inset-0 overflow-hidden">
         <img
           src="/images/hero-blur-1200.jpg"
           srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
           sizes="100vw"
           alt=""
-          class="h-full w-full object-cover"
+          class="hero-parallax h-[115%] w-full object-cover -mt-[7%]"
           loading="eager"
           fetchpriority="high"
           decoding="async"
           width="1200"
           height="800"
         />
-        <div class="absolute inset-0 bg-secondary/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#2D2D2D]/85 to-[#4A4A4A]/75"></div>
       </div>
 
       <div class="relative container mx-auto px-6 sm:px-8 lg:px-12 py-32 lg:py-40">
@@ -80,7 +80,7 @@ const cidades = [
               href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center rounded-full bg-green-600 px-10 py-6 text-lg font-bold text-white shadow-xl hover:bg-green-700 hover:scale-105 active:scale-95 transition-all"
+              class="inline-flex items-center justify-center rounded-full bg-whatsapp px-10 py-6 text-lg font-bold text-white shadow-xl hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all"
             >
               <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -136,9 +136,9 @@ const cidades = [
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+          <article class="reveal rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]" data-stagger="0">
             <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Entrega em 2h</h3>
             <p class="text-lg text-gray-600">
@@ -146,7 +146,7 @@ const cidades = [
             </p>
           </article>
 
-          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+          <article class="reveal rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]" data-stagger="1">
             <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
@@ -156,9 +156,9 @@ const cidades = [
             </p>
           </article>
 
-          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+          <article class="reveal rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]" data-stagger="2">
             <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Melhor Preço</h3>
             <p class="text-lg text-gray-600">
@@ -166,9 +166,9 @@ const cidades = [
             </p>
           </article>
 
-          <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+          <article class="reveal rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]" data-stagger="3">
             <div class="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20 text-secondary mb-6 mx-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20"/><path d="M2 14h20"/><path d="M12 2l8 8H4l8-8z"/></svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Atendimento Humanizado</h3>
             <p class="text-lg text-gray-600">
@@ -180,17 +180,22 @@ const cidades = [
     </section>
 
     <!-- SOBRE RESUMO -->
-    <section class="py-24 lg:py-32 bg-gray-50">
+    <section class="py-24 lg:py-32 section-concrete overflow-hidden">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div class="order-2 lg:order-1">
-            <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg">
+          <div class="order-2 lg:order-1 relative">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200 lg:translate-x-8">
               <img
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
                 alt="Equipe de construção civil em obra"
                 class="h-full w-full object-cover"
                 loading="lazy"
               />
+            </div>
+            <div class="absolute -bottom-6 -right-6 z-10 hidden lg:block">
+              <div class="bg-secondary text-white px-5 py-3 rounded-lg shadow-xl font-display text-xl tracking-wide">
+                Desde 2014
+              </div>
             </div>
           </div>
 
@@ -239,19 +244,26 @@ const cidades = [
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {servicos.map((s) => (
-            <article class="group relative rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
-              <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-accent mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">{s.data.title}</h3>
-              <p class="text-base text-secondary font-semibold mb-3">{s.data.capacidade}</p>
-              <p class="text-lg text-gray-600 mb-6">{s.data.description}</p>
-              <a href={`/servicos/${s.slug}`} class="inline-flex items-center text-base font-bold text-secondary hover:text-secondary-700 transition-colors">
-                Ver Detalhes →
-              </a>
-            </article>
-          ))}
+          {servicos.map((s, i) => {
+            const capNum = parseInt(s.data.capacidade);
+            const isHeavy = capNum >= 400;
+            return (
+              <article class={`group relative rounded-2xl border border-gray-200 bg-white p-10 transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal ${isHeavy ? 'border-t-4 border-t-secondary shadow-xl' : 'shadow-sm'}`} data-stagger={i}>
+                <span class="absolute right-3 top-2 font-display text-7xl text-gray-200/60 leading-none select-none pointer-events-none">
+                  {capNum}
+                </span>
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-gray-900 mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">{s.data.title}</h3>
+                <p class="text-base text-secondary font-semibold mb-3">{s.data.capacidade}</p>
+                <p class="text-lg text-gray-600 mb-6">{s.data.description}</p>
+                <a href={`/servicos/${s.slug}`} class="inline-flex items-center text-base font-bold text-secondary hover:text-secondary-700 transition-colors">
+                  Ver Detalhes →
+                </a>
+              </article>
+            );
+          })}
         </div>
 
         <div class="mt-12 text-center">
@@ -269,7 +281,7 @@ const cidades = [
     </section>
 
     <!-- DEPOIMENTOS -->
-    <section class="py-24 lg:py-32 bg-gray-50">
+    <section class="py-24 lg:py-32 section-concrete">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12">
         <div class="text-center max-w-3xl mx-auto mb-16">
           <div class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-secondary mb-6">
@@ -284,8 +296,8 @@ const cidades = [
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {depoimentos.map((dep) => (
-            <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+          {depoimentos.map((dep, i) => (
+            <article class="reveal rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]" data-stagger={i}>
               <div class="flex items-center gap-1 mb-6">
                 {[1,2,3,4,5].map(() => (
                   <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
@@ -322,8 +334,8 @@ const cidades = [
         </div>
 
         <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-          {cidades.map((city) => (
-            <div class="flex items-center gap-3 rounded-xl border border-gray-200 px-5 py-4 transition-all hover:shadow-md hover:scale-[1.02]">
+          {cidades.map((city, i) => (
+            <div class="reveal flex items-center gap-3 rounded-xl border border-gray-200 px-5 py-4 transition-all hover:shadow-md hover:scale-[1.02]" data-stagger={i}>
               <svg class="h-5 w-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -336,7 +348,7 @@ const cidades = [
     </section>
 
     <!-- FAQ -->
-    <section class="py-24 lg:py-32 bg-gray-50" id="faq">
+    <section class="py-24 lg:py-32 section-concrete" id="faq">
       <div class="container mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
         <div class="text-center mb-16">
           <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">Perguntas Frequentes</h2>
@@ -344,7 +356,7 @@ const cidades = [
         </div>
 
         <div class="space-y-6">
-          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+          <details class="reveal group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
             <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
               Qual o prazo mínimo de locação de betoneira?
               <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -354,7 +366,7 @@ const cidades = [
             <p class="mt-4 text-base text-gray-600">O prazo mínimo é de 1 dia. Oferecemos descontos especiais para locações semanais e mensais.</p>
           </details>
 
-          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+          <details class="reveal group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
             <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
               A betoneira inclui motor e garantia?
               <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -364,7 +376,7 @@ const cidades = [
             <p class="mt-4 text-base text-gray-600">Sim! Todas são entregues com motor funcionando perfeitamente. Garantia de funcionamento durante toda a locação.</p>
           </details>
 
-          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+          <details class="reveal group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
             <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
               Vocês fazem entrega e retirada?
               <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -374,7 +386,7 @@ const cidades = [
             <p class="mt-4 text-base text-gray-600">Sim, entrega e retirada em toda a região metropolitana. O valor é calculado por distância e informado no orçamento.</p>
           </details>
 
-          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-primary/20 transition-all">
+          <details class="reveal group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
             <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 transition-all hover:scale-[1.01]">
               Quais as formas de pagamento aceitas?
               <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -401,7 +413,7 @@ const cidades = [
             href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-full bg-green-600 px-10 py-5 text-lg font-bold text-white shadow-xl hover:bg-green-700 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
+            class="inline-flex items-center justify-center rounded-full bg-whatsapp px-10 py-5 text-lg font-bold text-white shadow-xl hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
           >
             <svg class="mr-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -423,4 +435,22 @@ const cidades = [
   </main>
 
   <Footer />
+
+  <script is:inline>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var img = document.querySelector('.hero-parallax');
+      if (!img) return;
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            img.style.transform = 'translateY(' + (window.scrollY * 0.08) + 'px)';
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
 </Layout>

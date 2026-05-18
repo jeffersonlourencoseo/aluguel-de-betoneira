@@ -30,7 +30,7 @@ const description = post.data.description;
 
   <main>
     <!-- Hero Section -->
-    <section class="relative py-24 lg:py-32 bg-secondary overflow-hidden">
+    <section class="relative py-24 lg:py-32 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
           src="/images/hero-blur-1200.jpg"
@@ -44,7 +44,7 @@ const description = post.data.description;
           width="1200"
           height="800"
         />
-        <div class="absolute inset-0 bg-secondary/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#2D2D2D]/85 to-[#4A4A4A]/75"></div>
       </div>
 
       <div class="relative container mx-auto px-6 sm:px-8 lg:px-12 max-w-5xl">
@@ -61,7 +61,7 @@ const description = post.data.description;
         </h1>
 
         <div class="flex items-center gap-3">
-          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-accent font-bold text-sm">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-gray-900 font-bold text-sm">
             {post.data.author.charAt(0)}
           </div>
           <div class="text-gray-100">
@@ -112,7 +112,7 @@ const description = post.data.description;
                 <p class="text-gray-100 text-sm mb-6">Solicite um orçamento grátis e receba nossa proposta em poucos minutos.</p>
                 <a
                   href="/contato"
-                  class="block w-full text-center rounded-full bg-primary px-6 py-4 text-base font-bold text-accent shadow-lg shadow-primary/20 hover:bg-primary-400 hover:scale-105 active:scale-95 transition-all mb-4"
+                  class="block w-full text-center rounded-full bg-primary px-6 py-4 text-base font-bold text-gray-900 shadow-lg shadow-primary/20 hover:bg-primary-400 hover:scale-105 active:scale-95 transition-all mb-4"
                 >
                   Solicitar Orçamento
                 </a>
@@ -120,7 +120,7 @@ const description = post.data.description;
                   href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20achei%20voc%C3%AAs%20no%20google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="block w-full text-center rounded-full bg-green-600 px-6 py-4 text-base font-bold text-white shadow-lg shadow-green-600/20 hover:bg-green-700 hover:scale-105 active:scale-95 transition-all"
+                  class="block w-full text-center rounded-full bg-whatsapp px-6 py-4 text-base font-bold text-white shadow-lg shadow-green-600/20 hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all"
                 >
                   Falar no WhatsApp
                 </a>
@@ -153,7 +153,7 @@ const description = post.data.description;
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
               {relatedPosts.map((related) => (
-                <article class="group flex flex-col rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]">
+                <article class="group flex flex-col rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal">
                   <a href={`/blog/${related.slug}`} class="flex flex-col h-full">
                     <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
                       {related.data.image ? (

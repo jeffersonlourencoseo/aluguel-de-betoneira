@@ -43,5 +43,22 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
   <body class="font-sans antialiased text-gray-900 bg-white">
     <slot />
     <WhatsAppBtn />
+
+    <script is:inline>
+      (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var d = parseInt(el.dataset.stagger || '0', 10) * 100;
+              setTimeout(function () { el.classList.add('is-visible'); }, d);
+              obs.unobserve(el);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+      })();
+    </script>
   </body>
 </html>
