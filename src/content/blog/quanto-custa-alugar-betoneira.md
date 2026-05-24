@@ -55,6 +55,15 @@ O motor é o coração da betoneira. No momento da entrega, nossa equipe faz um 
 
 Para obras localizadas dentro da região metropolitana do Rio de Janeiro, a entrega é rápida. Basta solicitar antes das 14h para receber ainda no mesmo dia. O valor do frete é calculado por distância e informado no orçamento, sem surpresas.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Tudo incluso: revisão, entrega e suporte</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Equipamento revisado, entrega no mesmo dia e suporte técnico incluído. Solicite seu orçamento agora.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20completo%20de%20aluguel%20de%20betoneira" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Fatores que Influenciam o Aluguel de Betoneira Valor Diária
 
 O **aluguel de betoneira valor diária** não é um número fixo. Existem fatores específicos que podem fazer o preço subir ou descer. Conhecendo esses fatores, você pode planejar melhor sua obra e até economizar na locação.
@@ -82,6 +91,15 @@ Solicitar um orçamento pelo nosso site ou WhatsApp é rápido e sem burocracia.
 Com essas informações, nossa equipe envia um orçamento detalhado em poucos minutos. O orçamento inclui o valor da locação, o frete de entrega e retirada e as condições de pagamento. Não cobramos taxas ocultas. O que está no orçamento é o que você paga.
 
 Para quem precisa de múltiplos equipamentos, como betoneira e andaime, por exemplo, podemos montar um pacote com desconto especial. Empreiteiros e construtoras que locam regularmente também têm condições diferenciadas.
+
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Orçamento transparente em minutos</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe o endereço e o prazo da obra. Você recebe o valor exato da locação e do frete sem taxas ocultas.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20transparente%20de%20aluguel%20de%20betoneira" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
 
 ## Locação Mensal: A Melhor Opção para Obras Longas
 

@@ -55,6 +55,15 @@ A Baixada Fluminense, incluindo Nova Iguaçu, Duque de Caxias, Belford Roxo e Ni
 
 Também atendemos a zona Oeste (Jacarepaguá, Barra da Tijuca, Recreio), zona Sul (Botafogo, Copacabana, Ipanema, Leblon) e zona Centro (Centro, Saúde, Gamboa, Santo Cristo). Para essas regiões, o prazo de entrega pode ser de até 24 horas, e o frete é calculado individualmente no orçamento.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Atendemos toda a região metropolitana do Rio</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe seu bairro e receba em minutos o orçamento com prazo de entrega e frete exatos.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7amento%20de%20aluguel%20de%20betoneira%20para%20meu%20bairro" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Como Funciona o Aluguel de Betoneira Perto de Mim
 
 O processo de locação com entrega rápida é simples e pode ser feito inteiramente pelo WhatsApp. Veja como garantir o **aluguel de uma betoneira** com entrega no seu bairro.
@@ -70,6 +79,15 @@ Defina qual betoneira você precisa (120L, 150L, 200L ou 400L) e por quanto temp
 ### Passo 3: Confirme e Receba na Obra
 
 Após aprovar o orçamento, confirme a data e horário de entrega. Nossa equipe leva a betoneira diretamente no canteiro, posiciona o equipamento no local indicado, faz o teste de funcionamento e entrega as instruções de uso. Você recebe tudo pronto para trabalhar.
+
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">3 passos para alugar com entrega rápida</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Peça pelo WhatsApp e receba ainda hoje na sua obra. Entrega no mesmo dia para solicitações antes das 14h.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20preciso%20de%20betoneira%20com%20entrega%20r%C3%A1pida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Entrega Rápida no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
 
 ## Vantagens do Aluguel de Uma Betoneira com Entrega Rápida
 
@@ -90,6 +108,15 @@ Antes de deixar o equipamento, fazemos um teste de funcionamento completo. Ligar
 ### Instruções de Uso e Segurança
 
 Para quem não tem experiência com o equipamento, entregamos instruções básicas de operação e segurança na hora da instalação. Saber como ligar corretamente, a capacidade máxima de mistura e os cuidados com a manutenção diária prolonga a vida útil da betoneira e evita acidentes.
+
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Equipamento revisado, testado e posicionado no local certo</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Solicite sua betoneira agora. Nossa equipe entrega, instala, testa e orienta na sua obra.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20alugar%20uma%20betoneira%20revisada%20com%20entrega%20r%C3%A1pida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
 
 ## O Que Fazer Enquanto Espera a Entrega
 

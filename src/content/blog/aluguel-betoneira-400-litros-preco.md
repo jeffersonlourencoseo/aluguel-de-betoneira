@@ -30,6 +30,15 @@ O preço da locação da betoneira 400 litros varia conforme o prazo. Para loca�
 
 Como você pode ver, a betoneira 400 litros é um equipamento robusto. Apesar do peso de 520 kg, ela é projetada para ser transportada em caminhão baú ou carroceria reforçada. Nossa equipe faz a entrega completa na sua obra, posicionando o equipamento no local exato onde vai ser utilizado.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Produza até 10 m³ de concreto por dia</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Solicite o valor da betoneira 400 litros para sua obra grande. Entrega programada em toda a região metropolitana.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20betoneira%20400%20litros" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Quando Usar a Betoneira 400 Litros?
 
 Nem toda obra precisa de uma betoneira 400 litros. Na verdade, para pequenas reformas ou construções residenciais simples, uma 120 litros ou 150 litros é mais indicada. A betoneira 400 litros brilha em cenários específicos que exigem alto volume de produção.
@@ -59,6 +68,15 @@ Muitos clientes nos perguntam se vale a pena pagar o **aluguel de betoneira 400 
 
 A conclusão é clara: se a obra tem um único ponto de concreto, a betoneira 400 litros é mais econômica. Se a obra é grande e tem dois pontos distantes, duas de 200 litros podem fazer sentido. Nosso time de atendimento ajuda a fazer essa análise pelo WhatsApp.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Dúvida entre 400L e duas 200L?</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Nosso time ajuda a fazer o cálculo certo pelo WhatsApp. Informe o layout da sua obra e receba a indicação ideal.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvida%20entre%20betoneira%20400L%20e%20duas%20200L" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Ajuda no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Como Funciona o Aluguel de Betoneira 400 Litros
 
 O processo de locação da betoneira 400 litros é o mesmo dos outros modelos, com alguns cuidados extras devido ao tamanho do equipamento. Aqui está o passo a passo completo.
@@ -82,6 +100,15 @@ A betoneira 400 litros opera da mesma forma que modelos menores, mas exige mais 
 ### Passo 5: Retirada no Fim da Locação
 
 No último dia de locação, agendamos a retirada da betoneira no horário combinado. Nossa equipe recolhe o equipamento e faz uma inspeção rápida. Se tudo estiver em ordem, a locação é encerrada sem burocracia.
+
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Entrega, instalação e retirada inclusas</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Peça seu orçamento de betoneira 400 litros. Nossa equipe entrega no canteiro, posiciona e testa o equipamento.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7amento%20de%20betoneira%20400%20litros%20com%20entrega" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
 
 ## Condições de Pagamento e Descontos
 

@@ -65,6 +65,15 @@ Muitos clientes chegam indecisos entre o **aluguel de betoneira 150 litros preç
 
 A regra prática é simples: se sua obra precisa de até 3 m³ de concreto por dia, a betoneira 150 litros é suficiente e mais econômica. Se a demanda ultrapassa 3 m³ diários ou se você quer reduzir o tempo de batida de massa, a betoneira 250 litros é o investimento certo.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Ainda em dúvida entre 150L e 250L?</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Mande os detalhes da sua obra no WhatsApp que indicamos o modelo ideal com preço justo.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20estou%20em%20d%C3%BAvida%20entre%20betoneira%20150L%20e%20250L" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Ajuda no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Quando Escolher o Aluguel de Betoneira 150 Litros?
 
 A betoneira 150 litros é indicada para uma ampla gama de projetos. Conheça os cenários onde ela brilha e oferece o melhor custo-benefício para o seu investimento.
@@ -128,6 +137,15 @@ Nosso serviço de entrega leva a betoneira diretamente no canteiro de obras. A e
 
 Se surgir qualquer problema durante o período de aluguel, nossa equipe de suporte está disponível pelo WhatsApp para orientar ou, se necessário, trocar o equipamento no mesmo dia. Não cobramos taxas extras por problemas técnicos que não sejam causados por mau uso.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Equipamento revisado, entrega e suporte no mesmo dia</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Tudo pronto para trabalhar desde o primeiro minuto. Solicite seu orçamento de betoneira 150L ou 250L agora.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7amento%20de%20betoneira%20150L%20ou%20250L" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Como Alugar uma Betoneira 150 Litros ou 250 Litros
 
 O processo de locação é simples, rápido e pode ser feito inteiramente pelo WhatsApp em poucos minutos. Veja o passo a passo para garantir o **aluguel de betoneira 150 litros preço** ou **aluguel de betoneira 250 litros preço** ideal para a sua obra.
@@ -147,6 +165,15 @@ Após aprovar o orçamento, basta confirmar a data e horário da entrega. Recome
 ### Passo 4: Receba e Use na Obra
 
 No dia agendado, nossa equipe entrega a betoneira, posiciona o equipamento, faz o teste de funcionamento e entrega as instruções de uso. Você recebe a betoneira pronta para trabalhar desde o primeiro momento.
+
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">4 passos simples para alugar sua betoneira</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Comece agora pelo WhatsApp e receba o equipamento em poucas horas na sua obra.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20quero%20alugar%20uma%20betoneira%20150L%20ou%20250L" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Alugar pelo WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
 
 ## Dicas para Economizar no Aluguel de Betoneira
 
