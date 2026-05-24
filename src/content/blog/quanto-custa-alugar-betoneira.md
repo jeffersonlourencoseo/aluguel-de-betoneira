@@ -1,7 +1,7 @@
 ---
 title: "Quanto Custa o Aluguel de Betoneira? Guia Completo de Preços 2024"
 description: "Descubra quanto custa o aluguel de betoneira no Rio de Janeiro. Tabela de preços por capacidade, valor da diária e fatores que influenciam o custo da locação."
-pubDate: 2024-05-20
+pubDate: 2026-05-05
 author: "Aluguel de Betoneira"
 image: "/images/blog-1.jpg"
 tags: ["preco", "guia", "orcamento"]

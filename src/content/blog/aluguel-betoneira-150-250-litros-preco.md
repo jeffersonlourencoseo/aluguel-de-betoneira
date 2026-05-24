@@ -1,7 +1,7 @@
 ---
 title: "Aluguel de Betoneira 150 Litros e 250 Litros Preço: Guia de Equipamentos para Obras Médias"
 description: "Veja o preço do aluguel de betoneira 150 litros e 250 litros. Equipamentos intermediários para reformas, construções residenciais e comerciais no Rio de Janeiro."
-pubDate: 2024-05-24
+pubDate: 2026-05-12
 author: "Aluguel de Betoneira"
 image: "/images/blog-3.jpg"
 tags: ["equipamentos", "150-litros", "250-litros", "obras-medias"]
