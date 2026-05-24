@@ -1,6 +1,7 @@
 ---
 title: "Aluguel de Betoneira 120L"
 description: "Betoneira 120L ideal para pequenas reformas e construções residenciais no Rio de Janeiro. Compacta, fácil de transportar e com motor elétrico ou a gasolina. Solicite orçamento grátis."
+keywords: "aluguel de betoneira 120 litros, betoneira 120l rio de janeiro, locação betoneira pequena, aluguel betoneira compacta rj"
 capacidade: "120 Litros"
 motor: "Elétrico 1/2 CV ou Gasolina 5,5 HP"
 peso: "210 kg"

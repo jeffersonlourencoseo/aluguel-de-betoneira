@@ -19,6 +19,7 @@ const servicosCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    keywords: z.string().optional(),
     capacidade: z.string(),
     motor: z.string().optional(),
     peso: z.string().optional(),

@@ -37,7 +37,20 @@
       "WebFetch(domain:pagespeed.web.dev)",
       "Bash(pdftotext \"C:\\\\Users\\\\Jefferson\\\\Downloads\\\\screencapture-pagespeed-web-dev-analysis-https-aluguel-de-betoneira-vercel-app-lehnd9uluf-2026-05-17-12_16_32.pdf\" -)",
       "Bash(gswin64c -sDEVICE=txtwrite -sOutputFile=- -dBATCH -dNOPAUSE \"C:\\\\Users\\\\Jefferson\\\\Downloads\\\\screencapture-pagespeed-web-dev-analysis-https-aluguel-de-betoneira-vercel-app-lehnd9uluf-2026-05-17-12_16_32.pdf\")",
-      "Bash(pdfimages *)"
+      "Bash(pdfimages *)",
+      "Bash(sed -i 's|q=80&w=1920&auto=format&fit=crop|q=80&w=1200&auto=format&fit=crop|g' 'C:\\\\Users\\\\Jefferson\\\\Desktop\\\\SEO LOCAL\\\\ALUGUEL DE BETONEIRA$f')",
+      "Bash(sed -i 's|class=\"h-full w-full object-cover blur-sm scale-110\"|class=\"h-full w-full object-cover\"|g' 'C:\\\\Users\\\\Jefferson\\\\Desktop\\\\SEO LOCAL\\\\ALUGUEL DE BETONEIRA$f')",
+      "PowerShell(Get-Item *)",
+      "Skill(frontend-design)",
+      "PowerShell(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\Jefferson\\\\Desktop\\\\SEO LOCAL\\\\ALUGUEL DE BETONEIRA\" | Where-Object { $_.Extension -in \".astro\",\".mjs\",\".css\",\".md\" } | Select-Object FullName | Sort-Object FullName)",
+      "PowerShell(Get-ChildItem -Recurse -Path \"C:\\\\Users\\\\Jefferson\\\\Desktop\\\\SEO LOCAL\\\\ALUGUEL DE BETONEIRA\\\\src\" | Where-Object { $_.Extension -in \".astro\",\".mjs\",\".css\",\".md\",\".ts\" } | Select-Object FullName | Sort-Object FullName)",
+      "PowerShell($size = \\(Get-ChildItem -Path \"C:\\\\Users\\\\Jefferson\\\\Desktop\\\\SEO LOCAL\\\\ALUGUEL DE BETONEIRA\\\\dist\" -Recurse | Measure-Object -Property Length -Sum\\).Sum; \"Tamanho atual da pasta dist: {0:N0} bytes \\({1:N2} MB\\)\" -f $size, \\($size / 1MB\\))",
+      "PowerShell($size = \\(Get-ChildItem -Path \"C:\\\\Users\\\\Jefferson\\\\Desktop\\\\SEO LOCAL\\\\ALUGUEL DE BETONEIRA\\\\dist\" -Recurse | Measure-Object -Property Length -Sum\\).Sum; \"Tamanho final da pasta dist: {0:N0} bytes \\({1:N2} MB\\)\" -f $size, \\($size / 1MB\\))",
+      "Bash(python *)",
+      "PowerShell(git commit -m $msg)",
+      "mcp__ide__executeCode",
+      "Bash(python3 *)",
+      "PowerShell(git commit *)"
     ]
   }
 }

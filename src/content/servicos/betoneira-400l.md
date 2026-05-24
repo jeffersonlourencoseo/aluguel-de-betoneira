@@ -1,6 +1,7 @@
 ---
 title: "Aluguel de Betoneira 400L"
 description: "Betoneira 400L industrial de alta capacidade no Rio de Janeiro. Ideal para grandes empreendimentos, usinas e projetos que exigem máxima produtividade. Orçamento personalizado."
+keywords: "betoneira 400l industrial rj, betoneira grande capacidade rio de janeiro, locação betoneira 400l, aluguel betoneira industrial"
 capacidade: "400 Litros"
 motor: "Elétrico 3 CV ou Gasolina 13 HP"
 peso: "480 kg"

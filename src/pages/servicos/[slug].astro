@@ -18,6 +18,7 @@ const { Content } = await servico.render();
 
 const title = `${servico.data.title} | Aluguel de Betoneira`;
 const description = servico.data.description;
+const keywords = servico.data.keywords;
 
 const pageUrl = `${SITE_CONFIG.url}/servicos/${servico.slug}`;
 const imageUrl = `${SITE_CONFIG.url}${servico.data.image || '/images/og-image.svg'}`;
@@ -82,7 +83,7 @@ const faqSchema = faqData[servico.slug]
   : null;
 ---
 
-<Layout title={title} description={description} canonical={`/servicos/${servico.slug}`} schema={serviceSchema}>
+<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}`} schema={serviceSchema}>
   <Header currentPath="/servicos" />
 
   {

@@ -1,6 +1,7 @@
 ---
 title: "Aluguel de Betoneira 150L"
 description: "Betoneira 150L para obras médias no Rio de Janeiro. Ótimo custo-benefício com alta produtividade para construtoras e empreiteiros. Entrega rápida e equipamento revisado."
+keywords: "aluguel de betoneira 150 litros, betoneira 150l rio de janeiro, locação betoneira 150l, aluguel betoneira media rj"
 capacidade: "150 Litros"
 motor: "Elétrico 1 CV ou Gasolina 6,5 HP"
 peso: "260 kg"

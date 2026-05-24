@@ -1,6 +1,7 @@
 ---
 title: "Aluguel de Betoneira 200L"
 description: "Betoneira 200L para obras de grande porte no Rio de Janeiro. Alta produtividade e durabilidade comprovada para construções exigentes. Solicite orçamento grátis."
+keywords: "aluguel de betoneira 200 litros, betoneira 200l rio de janeiro, locação betoneira grande, aluguel betoneira obra grande rj"
 capacidade: "200 Litros"
 motor: "Elétrico 2 CV ou Gasolina 8 HP"
 peso: "320 kg"
