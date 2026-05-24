@@ -37,10 +37,6 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#1A1A1A" />
 
-  <!-- Preconnect to image CDN -->
-  <link rel="preconnect" href="https://images.unsplash.com" />
-  <link rel="dns-prefetch" href="https://images.unsplash.com" />
-
   <!-- Preload LCP hero image (local, self-hosted) -->
   <link rel="preload" as="image" href="/images/hero-blur-640.jpg" imagesrcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w" imagesizes="100vw" fetchpriority="high" />
 
