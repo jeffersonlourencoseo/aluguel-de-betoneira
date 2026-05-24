@@ -1,0 +1,579 @@
+================================================================================
+RELATORIO COMPLETO — Projeto SEO Aluguel de Betoneira RJ
+Gerado em: 2026-05-24
+Commit mais recente: b67f074
+================================================================================
+
+
+1. VISAO GERAL DO PROJETO
+--------------------------------------------------------------------------------
+Site oficial       : https://www.alugueldebetoneirarj.com.br
+Negocio            : Locacao de betoneiras (120L, 150L, 200L, 400L) na regiao
+                     metropolitana do Rio de Janeiro
+Fundacao           : 2014
+Paginas no build   : 16 paginas estaticas
+Branch ativa       : main
+Repositorio        : https://github.com/jeffersonlourencoseo/aluguel-de-betoneira
+
+
+2. TECNOLOGIA & STACK
+--------------------------------------------------------------------------------
+Framework          : Astro 4.16.19
+Estilo             : Tailwind CSS 3.4.0
+SSG                : Saida estatica (static)
+Node               : >= 22.12.0
+
+Integracoes Astro:
+  - @astrojs/tailwind     : Utilidades CSS
+  - @astrojs/sitemap 3.2.1: Geracao automatica de sitemap
+                             (downgrade de v3.7.2 por crash com Astro 4.16)
+  - @playform/compress   : Minificacao HTML/CSS/JS/imagens no build
+  - @astrojs/partytown   : Execucao de scripts de terceiros em web worker
+
+
+3. ESTRUTURA DO SITE (16 PAGINAS)
+--------------------------------------------------------------------------------
+Paginas existentes:
+  1. /                              — Home
+  2. /sobre                         — Quem Somos
+  3. /contato                       — Contato + Formulario
+  4. /servicos                      — Listagem de equipamentos
+  5. /servicos/betoneira-120l       — Página de servico 120L
+  6. /servicos/betoneira-150l       — Página de servico 150L
+  7. /servicos/betoneira-200l       — Página de servico 200L
+  8. /servicos/betoneira-400l       — Página de servico 400L
+  9. /blog                          — Listagem de artigos
+ 10. /blog/quanto-custa-alugar-betoneira        — Artigo 1
+ 11. /blog/aluguel-betoneira-400-litros-preco   — Artigo 2
+ 12. /blog/aluguel-betoneira-150-250-litros-preco — Artigo 3
+ 13. /blog/aluguel-betoneira-mensal             — Artigo 4
+ 14. /blog/aluguel-betoneira-perto-de-mim       — Artigo 5
+ 15. /privacidade                   — Politica de Privacidade
+ 16. /termos                        — Termos de Uso
+
+Paginas AUSENTES / rotas quebradas:
+  - /blog/betoneira-eletrica-vs-gasolina
+    Artigo foi deletado durante recriacao do blog. Link morto se referenciado.
+
+
+4. SEO TECNICO — CONFIGURACOES GLOBAIS
+--------------------------------------------------------------------------------
+
+4.1 Central de Dados (src/data/config.ts)
+-------------------------------------------
+  Nome               : Aluguel de Betoneira
+  Tagline            : Locacao de Betoneiras para Construcao Civil
+  Telefone           : (21) 99775-1577
+  WhatsApp           : 5521997751577
+  Email              : contato@alugueldebetoneirarj.com.br
+  Endereco           : Av. Brasil, 11201 — Penha Circular
+                       Rio de Janeiro - RJ, 21012-351
+  Geo-coordenadas    : lat -22.8235, lng -43.2848 (Penha Circular)
+  Horario            : Seg-Sex 07h-18h, Sab 08h-12h
+  Keywords globais   : aluguel de betoneira, locacao de betoneira,
+                       betoneira para construcao civil, alugar betoneira 120L,
+                       alugar betoneira 150L, alugar betoneira 200L,
+                       aluguel de betoneira preco,
+                       locacao de equipamentos construcao civil
+  Price Range        : $$
+  Area Served        : Rio de Janeiro e Grande Rio
+  Founded            : 2014
+
+4.2 Componente SEO (src/components/SEO.astro)
+----------------------------------------------
+Meta tags presentes em TODAS as paginas:
+  - Charset UTF-8, viewport, theme-color #1A1A1A
+  - Preconnect a images.unsplash.com
+  - Preload LCP: /images/hero-blur-640.jpg com srcset 640w/960w/1200w,
+    fetchpriority="high"
+  - Title dinamico: "${title} | ${SITE_CONFIG.name}" (se nao incluir ja)
+  - Description customizavel por pagina
+  - Keywords: default do SITE_CONFIG, sobrescrita por pagina via prop `keywords`
+  - Robots: index, follow, max-snippet:-1, max-image-preview:large,
+            max-video-preview:-1
+  - Geo tags: geo.region=BR-RJ, geo.placename=Rio de Janeiro,
+              geo.position, ICBM
+  - Canonical: construido via Astro.site + canonical prop
+  - Open Graph completo: og:type, og:site_name, og:locale=pt_BR,
+    og:url, og:title, og:description, og:image (1200x630)
+  - Twitter Cards: summary_large_image
+  - Article OG: quando type="article", renderiza article:published_time,
+    article:modified_time, article:author, article:section=Construcao Civil
+
+4.3 robots.txt (public/robots.txt)
+----------------------------------
+  User-agent: *
+  Allow: /
+  Sitemap: https://www.alugueldebetoneirarj.com.br/sitemap-index.xml
+
+4.4 Sitemap
+-----------
+  - Gerado automaticamente por @astrojs/sitemap no build
+  - Saida: dist/sitemap-index.xml + dist/sitemap-0.xml
+  - Confirmado em todos os builds: "[@astrojs/sitemap] 'sitemap-index.xml' created"
+
+4.5 Compressao de Build
+-----------------------
+  - @playform/compress reduz HTML em ~4-6%, CSS em ~15%, imagem hero em ~47%
+  - Ultimo build: hero-obra.jpg 97.98 KB reduzidos (47.29%)
+
+
+5. SEO ON-PAGE POR PAGINA
+--------------------------------------------------------------------------------
+
+5.1 HOME (/)
+------------
+  Title       : Aluguel de Betoneira | Locacao de Betoneiras para Construcao Civil
+  Description : Aluguel de betoneira com entrega rapida e preco justo. Locacao de
+                betoneiras 120L, 150L, 200L e 400L revisadas. Solicite orcamento gratis!
+  Keywords    : Globais do config (passadas explicitamente via prop)
+  Canonical   : /
+  H1          : Aluguel de Betoneira com Entrega Rapida
+  H2s         : Por que somos a escolha certa?
+                Mais de 10 anos entregando qualidade em cada obra
+                Betoneiras para todo tipo de obra
+                O que nossos clientes dizem
+                Atendemos toda a regiao
+                Perguntas Frequentes
+                Pronto para comecar sua obra?
+  Conteudo    :
+    - Hero com CTA WhatsApp
+    - 4 diferenciais (entrega 2h, equipamentos revisados, melhor preco,
+      atendimento humanizado)
+    - Resumo "Quem Somos" com link para /sobre
+    - Grid de 4 equipamentos com link para /servicos/{slug}
+    - 3 depoimentos com estrelas visuais
+    - Grid de 12 cidades (Local SEO)
+    - FAQ com 4 perguntas (details/summary)
+    - CTA final com WhatsApp e telefone
+
+  Depoimentos (3 cards):
+    1. Carlos Eduardo Silva — Construtor Residencial
+       Texto: "Ja aluguei betoneira aqui mais de 10 vezes..."
+    2. Mariana Oliveira — Engenheira Civil
+       Texto: "Como engenheira, preciso de equipamentos confiaveis..."
+    3. Roberto Mendes — Mestre de Obras
+       Texto: "O atendimento pelo WhatsApp e rapido e o preco e justo..."
+
+  Estrelas visuais: ★★★★★ na cor #E8A838 com aria-label="5 estrelas"
+
+  Internal links: /servicos, /sobre, /contato, WhatsApp, telefone
+
+
+5.2 SOBRE (/sobre)
+------------------
+  Title       : Quem Somos | Aluguel de Betoneira RJ desde 2014
+  Description : Somos especialistas l betoneira 400l industrial rj,
+                betoneira grande capacidade rio de janeiro,
+                locacao betoneira 400l
+  Canonical   : /sobre
+  H1          : Quem Somos
+  H2s         : Nossa Historia
+                Missao, Visao e Valores
+                Compromisso com a NR-18 e Manutencao Preventiva
+                Atendimento humanizado, de pessoa para pessoa
+  Conteudo    :
+    - Hero com background blur
+    - Historia desde 2014
+    - Cards Missao / Visao / Valores
+    - Secao NR-18 com checklist de 5 itens de inspecao
+    - Equipe ficticia (3 pessoas):
+        * Joao Silva — Fundador e Diretor
+        * Ana Paula Costa — Atendimento ao Cliente
+        * Marcos Rocha — Tecnico de Manutencao
+  Imagens     : Unsplash e Pexels (externas, lazy loading)
+  OBSERVACAO  : Description contem possivel typo ("l" no lugar de "em") e
+                keyword stuffing de betoneira 400L, que nao reflete o conteudo
+                real da pagina /sobre.
+
+
+5.3 CONTATO (/contato)
+----------------------
+  Title       : Contato | Aluguel de Betoneira RJ - WhatsApp e Orcamento Gratis
+  Description : Aluguel de betoneira rj, locacao betoneira rio de janeiro,
+                aluguel betoneira preco. Orcamento gratis pelo WhatsApp
+                (21) 99775-1577.
+  Canonical   : /contato
+  H1          : Entre em Contato
+  NAP         : Telefone, email, endereco, horario de atendimento —
+                TUDO presente na pagina
+  Formulario  : Nome, Telefone, Email, Select de equipamento, Mensagem
+                Submit redireciona para WhatsApp com mensagem pre-preenchida
+  WhatsApp CTA: Card verde com link wa.me/5521997751577
+
+
+5.4 SERVICOS (/servicos)
+------------------------
+  Title       : Servicos | Aluguel de Betoneira - Todos os Modelos
+  Description : Conheca nossas betoneiras para locacao: 120L, 150L, 200L e 400L.
+                Equipamentos revisados com entrega rapida e preco justo.
+  Canonical   : /servicos
+  H1          : Nossos Servicos
+  Conteudo    : Grid de 4 cards com link para cada equipamento e CTA contato
+  Service Schema: SchemaLocalBusiness injeta hasOfferCatalog com os 4 servicos
+
+
+5.5 PAGINAS DE SERVICO INDIVIDUAL (/servicos/[slug].astro)
+-----------------------------------------------------------
+Template dinamico para cada .md da collection servicos.
+
+  Title       : ${post.data.title} | Aluguel de Betoneira
+  Description : Vinda do frontmatter do .md
+  Keywords    : Vinda do frontmatter do .md (campo adicionado em b67f074)
+  Canonical   : /servicos/${slug}
+  Schema Service    : JSON-LD tipo Service com provider, areaServed, image
+  Schema FAQPage    : 4 perguntas por equipamento
+  H1          : Titulo do servico
+  H2s         : Especificacoes Tecnicas
+                Beneficios da Locacao
+  Breadcrumb  : Servicos / {titulo}
+  Sidebar sticky  : CTA orcamento + WhatsApp + "Nao sabe qual escolher?"
+  Beneficios  : 4 cards
+                  - Sem investimento alto
+                  - Manutencao zero
+                  - Entrega rapida
+                  - Suporte tecnico
+
+  Keywords por servico:
+    120L: aluguel de betoneira 120 litros, betoneira 120l rio de janeiro,
+          locacao betoneira pequena, aluguel betoneira compacta rj
+    150L: aluguel de betoneira 150 litros, betoneira 150l rio de janeiro,
+          locacao betoneira 150l, aluguel betoneira media rj
+    200L: aluguel de betoneira 200 litros, betoneira 200l rio de janeiro,
+          locacao betoneira grande, aluguel betoneira obra grande rj
+    400L: betoneira 400l industrial rj, betoneira grande capacidade rio de janeiro,
+          locacao betoneira 400l, aluguel betoneira industrial
+
+
+5.6 BLOG (/blog)
+----------------
+  Title       : Blog | Aluguel de Betoneira - Dicas e Guias
+  Description : Confira dicas, guias e novidades sobre locacao de betoneiras,
+                construcao civil e manutencao de equipamentos.
+  Canonical   : /blog
+  Conteudo    : Grid de posts com imagem, data, autor, titulo, descricao, tags
+                Filtro por tags (visual, nao funcional como filtro real)
+                Contador: "{posts.length} artigos publicados"
+                CTA final com WhatsApp
+
+
+5.7 ARTIGOS DO BLOG (/blog/[slug].astro)
+----------------------------------------
+  Artigos (5):
+    1. Quanto Custa o Aluguel de Betoneira?
+       Slug: quanto-custa-alugar-betoneira
+       PubDate: 2024-05-20
+       Tags: preco, guia, orcamento
+       Palavras: ~2100+
+
+    2. Aluguel de Betoneira 400 Litros Preco
+       Slug: aluguel-betoneira-400-litros-preco
+       Palavras: ~1900
+
+    3. Aluguel de Betoneira 150 e 250 Litros Preco
+       Slug: aluguel-betoneira-150-250-litros-preco
+       PubDate: 2024-05-24
+       Tags: equipamentos, 150-litros, 250-litros, obras-medias
+       Palavras: ~2300
+
+    4. Aluguel de Betoneira Mensal
+       Slug: aluguel-betoneira-mensal
+       PubDate: 2024-05-26
+       Tags: locacao, mensal, economia, obras-longas
+       Palavras: ~2200
+
+    5. Aluguel de Betoneira Perto de Mim
+       Slug: aluguel-betoneira-perto-de-mim
+       Palavras: ~2000
+
+  Features por artigo:
+    - Frontmatter: title, description, pubDate, author, image, tags
+    - Reading time: wordCount / 200
+    - Schema Article: wordCount, timeRequired, author, publisher, dates
+    - FAQPage Schema: 4 perguntas por artigo
+    - Breadcrumb: Inicio / Blog / Titulo
+    - Sidebar CTA: link /contato e WhatsApp
+    - "Outras Dicas de Obra": 3 posts relacionados (mais recentes, excluindo atual)
+    - Tags renderizadas como chips
+
+
+6. SCHEMA.ORG / STRUCTURED DATA
+--------------------------------------------------------------------------------
+
+6.1 SchemaLocalBusiness (src/components/SchemaLocalBusiness.astro)
+-------------------------------------------------------------------
+Injetado em TODAS as paginas via Layout.astro. Renderiza 4 schemas:
+
+  1. LocalBusiness
+     - @id: https://www.alugueldebetoneirarj.com.br/#localbusiness
+     - NAP completo, geo-coordenadas, openingHours, areaServed
+     - serviceType: "Locacao de Betoneiras"
+     - AggregateRating: ratingValue=5, bestRating=5, reviewCount=3
+     - 3 Reviews embutidos:
+         * Carlos Eduardo Silva, 2024-03-15
+         * Mariana Oliveira, 2024-04-10
+         * Roberto Mendes, 2024-05-01
+     - hasOfferCatalog: quando servicos prop passada (home e /servicos)
+
+  2. WebSite
+     - @id: /#website
+     - SearchAction para Sitelinks Searchbox: /busca?q={search_term_string}
+
+  3. Organization
+     - @id: /#organization
+     - Logo: /images/logo.svg
+     - sameAs: WhatsApp + Instagram
+     - contactPoint: telefone, customer service, Portuguese, BR
+
+  4. BreadcrumbList
+     - ItemListElement: Inicio (posicao 1)
+
+  OBSERVACAO: O BreadcrumbList na home so tem 1 item. Paginas internas tem
+  breadcrumb visual no HTML mas o Schema nao reflete a hierarquia completa.
+
+
+6.2 Schemas por Tipo de Pagina
+------------------------------
+  Home              : LocalBusiness + WebSite + Organization + BreadcrumbList
+  /sobre            : LocalBusiness + WebSite + Organization + BreadcrumbList
+  /contato          : LocalBusiness + WebSite + Organization + BreadcrumbList
+  /servicos         : LocalBusiness(+hasOfferCatalog) + WebSite + Organization
+                      + BreadcrumbList
+  /servicos/120l-400l: LocalBusiness + WebSite + Organization + BreadcrumbList
+                      + Service + FAQPage
+  /blog             : LocalBusiness + WebSite + Organization + BreadcrumbList
+  /blog/artigos     : LocalBusiness + WebSite + Organization + BreadcrumbList
+                      + Article + FAQPage
+
+
+6.3 Article Schema (src/pages/blog/[slug].astro)
+------------------------------------------------
+  - @type: Article
+  - headline, description, url, image
+  - author: Organization "Aluguel de Betoneira"
+  - publisher: Organization com @id
+  - datePublished / dateModified (fallback pubDate)
+  - wordCount: calculado do body
+  - timeRequired: PT${minutos}M
+  - articleSection: Construcao Civil
+
+
+6.4 FAQPage Schema — Blog
+--------------------------
+  5 artigos, 4 perguntas cada:
+    - quanto-custa-alugar-betoneira
+    - aluguel-betoneira-400-litros-preco
+    - aluguel-betoneira-150-250-litros-preco
+    - aluguel-betoneira-mensal
+    - aluguel-betoneira-perto-de-mim
+
+
+6.5 FAQPage Schema — Servicos
+------------------------------
+  4 servicos, 4 perguntas cada:
+    - betoneira-120l
+    - betoneira-150l
+    - betoneira-200l
+    - betoneira-400l
+
+
+7. PERFORMANCE & CORE WEB VITALS
+--------------------------------------------------------------------------------
+
+Otimizacoes implementadas:
+  - Self-host hero image: hero-obra.jpg + versoes blur (640/960/1200)
+  - Preload LCP: hero-blur-640.jpg com srcset e fetchpriority="high"
+  - Blur placeholder: imagem desfocada carregada antes do hero real
+  - Width/height em todas as imagens: elimina CLS
+  - Lazy loading: imagens abaixo da fold
+  - Fetchpriority: hero images com "high"
+  - Font loading: Google Fonts com media="print" onload (non-blocking)
+  - Compressao: HTML/CSS/JS/SVG/imagens minificados automaticamente
+  - Partytown: GTM em web worker, nao bloqueia main thread
+
+Sinais do build log:
+  - CSS reduzido em ~15% (Inter font)
+  - HTML reduzido em ~4-6% por pagina
+  - Hero image reduzida em 47.29% (97.98 KB)
+  - SVGs reduzidos em 14-19%
+
+PENDENTE / NAO VERIFICADO:
+  - Score real do Lighthouse/PageSpeed Insights nao medido
+  - hero-obra.jpg pode ser redundante (blur e usado como LCP)
+  - Nao ha metrica de Web Vitals (LCP, CLS, INP) de navegador real
+
+
+8. INTEGRACOES & RASTREAMENTO
+--------------------------------------------------------------------------------
+
+8.1 Google Tag Manager
+----------------------
+  ID        : GTM-TZBXS6HT
+  Execucao  : Via Partytown (type="text/partytown") no <head>
+  noscript  : iframe fallback no <body>
+  Arquivos  : src/layouts/Layout.astro linhas 49-65
+
+
+8.2 WhatsApp
+------------
+  Link primario (geral):
+    wa.me/5521997751577?text=Ola, vim do site e gostaria de mais informacoes!
+
+  Link secundario (blog):
+    wa.me/5521997751577?text=Ola, achei voces no google e gostaria de mais
+    informacoes!
+
+  Formulario de contato:
+    Redireciona para WhatsApp com mensagem pre-formatada contendo nome,
+    telefone, email, equipamento selecionado e mensagem.
+
+
+8.3 Redes Sociais
+-----------------
+  Instagram: https://instagram.com/alugueldebetoneira
+  WhatsApp : presente no Schema sameAs
+
+
+9. ASSETS & IMAGENS
+--------------------------------------------------------------------------------
+
+Pasta public/images/:
+  - blog-1.jpg a blog-7.jpg      : Imagens para artigos do blog
+  - hero-blur-640/960/1200.jpg   : Hero blur em 3 resolucoes
+  - hero-obra.jpg                : Imagem original da obra (home)
+  - logo.svg                     : Logo da empresa
+  - og-image.svg                 : Open Graph default
+
+CDN externo:
+  - images.unsplash.com          : Preconnect configurado
+                                 Imagens da secao "Sobre" e "Nossa Historia"
+  - images.pexels.com            : Imagem da secao NR-18 em /sobre
+
+Pasta imagens/ (root):
+  - Fora de public/
+  - Adicionada ao .gitignore
+  - Usada para trabalho local (imagens originais nao otimizadas)
+
+
+10. GIT & DEPLOY
+--------------------------------------------------------------------------------
+
+Repositorio remoto: https://github.com/jeffersonlourencoseo/aluguel-de-betoneira.git
+Branch             : main
+
+Commits recentes (15 ultimos):
+  b67f074 seo: otimiza contato e adiciona keywords por pagina de servico
+  ed1e16a seo: otimiza title e meta description da pagina /sobre
+  37728ad chore: force redeploy betoneira-150l (empty commit)
+  ae1d853 refactor: reescreve pagina betoneira-150l com padrao enriquecido
+  abffb2c content: expande 4 paginas de servico para 700-900 palavras
+  9a9f9a3 fix: reviewCount corrigido para 3 reviews reais visiveis na home
+  9a69f36 feat: Schema Review + AggregateRating na home e estrelas visuais
+  6034a88 fix: adiciona FAQPage Schema JSON-LD nas 4 paginas de servico
+  05fd2db fix: canonical URL + enriquecimento paginas de servico + FAQ
+  682b8b2 content: 5 artigos de blog otimizados com FAQ Schema
+  6badd6a seo: sitemap auto, compress, Schema Article/Service, OG article
+  4ca23f1 refactor: redesign industrial completo do site
+  c6ec6f3 perf: self-host hero image e reduz LCP
+  b811e7b perf: corrige preload LCP e remove bandwidth competition
+  09ad7d8 perf: blur server-side no Unsplash + preload LCP image
+
+Protocolo estabelecido: Commit apos cada alteracao.
+
+
+11. PENDENCIAS & OBSERVACOES
+--------------------------------------------------------------------------------
+
+11.1 Description /sobre com erro/keyword stuffing
+-------------------------------------------------
+  Atual: "Somos especialistas l betoneira 400l industrial rj..."
+  Problema: "l" parece typo (provavelmente seria "em").
+            Keyword "betoneira 400l industrial rj" nao reflete conteudo real
+            da pagina /sobre (que fala da empresa, nao especificamente de 400L).
+  Status: IMPLEMENTADO MAS COM COPY PROBLEMATICA
+
+
+11.2 Link morto para artigo deletado
+------------------------------------
+  Artigo betoneira-eletrica-vs-gasolina foi deletado durante recriacao do blog.
+  Versao mais recente da 150L aponta para blog/aluguel-betoneira-150-250-litros-preco.
+  Status: NAO VERIFICADO se ainda existe link quebrado externamente.
+
+
+11.3 Breadcrumb Schema incompleto
+---------------------------------
+  BreadcrumbList so lista "Inicio" em todas as paginas.
+  Ideal: paginas internas deveriam ter breadcrumbs completos
+         (Inicio > Servicos > Betoneira 150L).
+  Status: PENDENTE
+
+
+11.4 Tags do blog nao filtraveis
+---------------------------------
+  blog/index.astro renderiza tags como <span> com cursor-default.
+  Nao funcionam como links reais para filtros.
+  Status: FUNCIONALIDADE VISUAL/PARCIAL
+
+
+11.5 Sitelinks Searchbox
+------------------------
+  WebSite Schema define SearchAction para /busca?q={search_term_string}.
+  Status: PENDENTE — nao ha pagina /busca implementada.
+
+
+11.6 ICBM meta tag
+------------------
+  SEO.astro linha 59: <meta name="ICBM" content="-22.8235, -43.2848">
+  Status: OK — tag obsoleta mas inofensiva para SEO local.
+
+
+11.7 Indice de palavras-chave
+-------------------------------
+  Arquivo "palavras chave.txt" existe no root, ignorado no .gitignore.
+  Status: NAO VERIFICADO — nao sei se ainda e usado para referencia.
+
+
+11.8 Imagens externas (Unsplash/Pexels)
+---------------------------------------
+  /sobre usa imagens de images.unsplash.com e images.pexels.com.
+  Sem fallback local se CDNs falharem.
+  Status: FUNCIONAL MAS DEPENDENCIA EXTERNA.
+
+
+11.9 Deploy em producao
+-----------------------
+  Build local gera 16 paginas sem erro.
+  Status: NAO VERIFICADO se dist/ mais recente foi enviado ao servidor
+          de producao (usuario mencionou preocupacao com cache/sincronizacao).
+
+
+12. RESUMO DE IMPLEMENTACOES SEO COMPLETADAS
+--------------------------------------------------------------------------------
+
+  Tarefa                                          | Status | Commit
+  ------------------------------------------------|--------|------------------
+  Sitemap automatico                              | OK     | 6badd6a
+  Compressao build                                | OK     | 6badd6a
+  Schema LocalBusiness + Organization + WebSite   | OK     | 6badd6a
+  Schema Article (blog)                           | OK     | 6badd6a
+  Schema Service (servicos)                       | OK     | 6badd6a
+  Schema BreadcrumbList                           | OK     | 6badd6a
+  Open Graph dinamico (article vs website)        | OK     | 6badd6a
+  FAQPage Schema — 5 artigos blog                 | OK     | 682b8b2
+  FAQPage Schema — 4 servicos                     | OK     | 6034a88
+  Canonical URLs corretos                         | OK     | 05fd2db
+  5 artigos blog enriquecidos (~2000 palavras)    | OK     | 682b8b2
+  4 paginas servico expandidas (700-900 palavras) | OK     | abffb2c
+  Links internos entre servicos e blog            | OK     | abffb2c
+  AggregateRating + 3 Reviews na home             | OK     | 9a69f36
+  reviewCount corrigido para 3                    | OK     | 9a9f9a3
+  Estrelas visuais nos depoimentos                | OK     | 9a69f36
+  Keywords especificas por pagina de servico      | OK     | b67f074
+  Otimizacao title/description /sobre             | OK     | ed1e16a
+  Otimizacao title/description /contato             | OK     | b67f074
+  Self-host hero + blur + preload LCP             | OK     | 09ad7d8..c6ec6f3
+
+
+================================================================================
+FIM DO RELATORIO
+================================================================================
