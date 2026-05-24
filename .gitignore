@@ -20,6 +20,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Arquivos de trabalho local
+palavras chave.txt
+imagens/
+
 # jetbrains setting folder
 .idea/
 
