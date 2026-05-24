@@ -38,10 +38,58 @@ const serviceSchema = {
     name: SITE_CONFIG.areaServed,
   },
 };
+
+const faqData = {
+  'betoneira-120l': [
+    { name: 'Quanto custa alugar uma betoneira 120 litros?', text: 'O valor da diária para betoneira 120 litros começa a partir de R$ 80,00, com descontos para locações semanais e mensais.' },
+    { name: 'Para qual tipo de obra a betoneira 120 litros é indicada?', text: 'Ela é ideal para pequenas reformas, construções residenciais simples, calçadas e muros de arrimo.' },
+    { name: 'A betoneira 120 litros inclui motor?', text: 'Sim, todas as betoneiras são entregues com motor funcionando perfeitamente e garantia durante a locação.' },
+    { name: 'Qual o prazo mínimo de locação?', text: 'O prazo mínimo é de 1 dia. Oferecemos descontos especiais para locações semanais e mensais.' },
+  ],
+  'betoneira-150l': [
+    { name: 'Quanto custa alugar uma betoneira 150 litros?', text: 'O valor da diária para betoneira 150 litros começa a partir de R$ 100,00, com descontos para locações semanais e mensais.' },
+    { name: 'Qual a diferença entre betoneira 120L e 150L?', text: 'A betoneira 150 litros tem maior capacidade de mistura e produção, sendo ideal para obras residenciais de médio porte e reformas comerciais.' },
+    { name: 'A entrega está incluída no valor da locação?', text: 'O frete de entrega e retirada é calculado por distância e informado no orçamento. Região Norte do Rio tem frete reduzido.' },
+    { name: 'Posso trocar de modelo durante a locação?', text: 'Sim, é possível fazer upgrade para modelos maiores durante a locação, pagando apenas a diferença proporcional.' },
+  ],
+  'betoneira-200l': [
+    { name: 'Quanto custa alugar uma betoneira 200 litros?', text: 'O valor da diária para betoneira 200 litros começa a partir de R$ 130,00, com descontos para locações semanais e mensais.' },
+    { name: 'Para qual tipo de obra a betoneira 200 litros é indicada?', text: 'Ela é ideal para construções residenciais de grande porte, reformas extensas e pequenos empreendimentos comerciais.' },
+    { name: 'Qual a produção diária da betoneira 200 litros?', text: 'A betoneira 200 litros produz até 7 m³ de concreto por dia, com motor de 2 CV.' },
+    { name: 'É melhor alugar duas 150L ou uma 200L?', text: 'Para um único ponto de concreto, a betoneira 200 litros é mais econômica e prática de operar.' },
+  ],
+  'betoneira-400l': [
+    { name: 'Quanto custa alugar uma betoneira 400 litros?', text: 'O valor da diária para betoneira 400 litros começa a partir de R$ 250,00, com descontos para locações semanais e mensais.' },
+    { name: 'Para qual tipo de obra a betoneira 400 litros é indicada?', text: 'Ela é ideal para construções comerciais, usinas de concreto temporárias, grandes reformas e empreendimentos de grande porte.' },
+    { name: 'Qual a produção diária da betoneira 400 litros?', text: 'A betoneira 400 litros produz até 10 m³ de concreto por dia, com capacidade de mistura de ~260 litros.' },
+    { name: 'É melhor alugar uma 400L ou duas de 200L?', text: 'Se a obra tem um único ponto de concreto, a betoneira 400 litros é mais econômica. Para dois pontos distantes, duas de 200L podem fazer sentido.' },
+  ],
+};
+
+const faqSchema = faqData[servico.slug]
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqData[servico.slug].map((q) => ({
+        '@type': 'Question',
+        name: q.name,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: q.text,
+        },
+      })),
+    }
+  : null;
 ---
 
 <Layout title={title} description={description} canonical={`/servicos/${servico.slug}`} schema={serviceSchema}>
   <Header currentPath="/servicos" />
+
+  {
+    faqSchema && (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )
+  }
 
   <main>
     <!-- HERO DO SERVIÇO -->
