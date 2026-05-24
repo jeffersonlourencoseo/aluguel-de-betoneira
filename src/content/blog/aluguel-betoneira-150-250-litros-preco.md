@@ -164,6 +164,15 @@ Se sua obra também precisa de andaime, compactador de solo ou outro equipamento
 
 Para obras com prazo superior a 15 dias, o **aluguel de betoneira mensal** é sempre mais vantajoso. O custo por dia cai drasticamente em comparação com locações avulsas, e você ganha tranquilidade sem precisar renovar a locação toda semana.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Escolha a betoneira ideal para sua obra</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Dúvida entre 150L e 250L? Mande os detalhes da sua obra no WhatsApp que indicamos o modelo certo com preço justo.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20ajuda%20para%20escolher%20entre%20betoneira%20150L%20e%20250L" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Conclusão: Aluguel de Betoneira 150 Litros Preço e 250 Litros Preço que Vale a Pena
 
 Tanto o **aluguel de betoneira 150 litros preço** quanto o **aluguel de betoneira 250 litros preço** representam excelentes investimentos para quem precisa de concreto em obra no Rio de Janeiro. A escolha entre os dois modelos depende exclusivamente do volume de trabalho e do prazo do seu projeto.

@@ -145,6 +145,15 @@ Para construtoras que gerenciam várias obras ao mesmo tempo, é possível inclu
 
 Clientes mensais recebem um relatório detalhado de utilização do equipamento, incluindo dias de operação, eventuais paradas para manutenção e produtividade estimada. Esse relatório ajuda na gestão da obra e no planejamento de locações futuras.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Obra longa? Economize com o plano mensal</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Reduza o custo por dia e ganhe prioridade no atendimento. Solicite seu orçamento mensal em minutos.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20aluguel%20de%20betoneira%20mensal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Conclusão: Aluguel de Betoneira Mensal é a Escolha Inteligente
 
 O **aluguel de betoneira mensal** é a escolha mais inteligente para obras que duram mais de duas semanas. Com economia de até 50% sobre o valor da locação diária, suporte técnico prioritário e a tranquilidade de não precisar renovar a locação toda semana, o plano mensal transforma o custo de equipamento em um investimento previsível e controlado.

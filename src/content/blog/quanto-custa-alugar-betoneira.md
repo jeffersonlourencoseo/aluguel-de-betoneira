@@ -30,6 +30,15 @@ A seguir, apresentamos uma tabela comparativa dos valores praticados no mercado.
 
 Lembre-se: os valores acima são apenas uma referência do **aluguel de betoneira preço** praticado no mercado. Para obter um orçamento exato e sem compromisso, o ideal é entrar em contato diretamente pelo WhatsApp e informar o tipo de obra, a duração da locação e o endereço da entrega.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Quer saber o preço exato para sua obra?</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe a capacidade, o prazo e o endereço que enviamos seu orçamento em minutos. Sem taxas ocultas.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20aluguel%20de%20betoneira" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## O que Está Incluído no Aluguel de uma Betoneira?
 
 Quando você faz o **aluguel de uma betoneira** conosco, o valor já inclui tudo o que é necessário para que o equipamento funcione perfeitamente desde o primeiro dia. Muitos clientes se surpreendem positivamente ao descobrir que não precisam se preocupar com manutenção, lubrificação ou peças de reposição.
@@ -90,7 +99,16 @@ Além do preço menor, a locação mensal oferece tranquilidade. Você não prec
 
 O **aluguel de betoneira** no Rio de Janeiro pode ser simples, rápido e econômico quando você escolhe a locadora certa. Com equipamentos revisados, entrega no mesmo dia e orçamento transparente, você ganha tempo e economiza na sua obra.
 
-Não deixe para depois. Descubra agora mesmo o **quanto custa aluguel de betoneira** para o seu projeto. [Solicite um orçamento grátis pelo WhatsApp](/contato) e receba sua betoneira ainda hoje em qualquer bairro do Rio de Janeiro e região metropolitana.
+Não deixe para depois. Descubra agora mesmo o **quanto custa aluguel de betoneira** para o seu projeto.
+
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Solicite seu orçamento grátis agora</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Orçamento sem compromisso em poucos minutos. Atendemos toda a região metropolitana do Rio de Janeiro com entrega rápida.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20achei%20voc%C3%AAs%20no%20google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Falar no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar Orçamento</a>
+  </div>
+</div>
 
 ---
 

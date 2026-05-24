@@ -89,6 +89,15 @@ O **aluguel de betoneira 400 litros valor** pode ser parcelado para locações l
 
 Além disso, pacotes que incluem betoneira 400 litros + outros equipamentos, como compactador de solo ou andaime, têm desconto de até 15% no valor total. Consulte nossa equipe para montar um pacote sob medida para a sua obra.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Precisa de betoneira 400 litros na sua obra?</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Solicite um orçamento rápido pelo WhatsApp. Entrega programada em toda a região metropolitana do Rio.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20betoneira%20400%20litros" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Conclusão: Aluguel de Betoneira 400 Litros Valor que Vale a Pena
 
 Se sua obra exige concreto em volume, o **aluguel de betoneira 400 litros valor** é um investimento que se paga na produtividade. Com capacidade de produção até 10 m³ por dia, você elimina gargalos no cronograma e reduz o custo por metro quadrado de concreto batido.

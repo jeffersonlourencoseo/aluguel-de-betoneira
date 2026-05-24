@@ -127,6 +127,15 @@ Uma locadora próxima deve oferecer suporte técnico rápido. Pergunte qual é o
 
 Busque avaliações de clientes que fizeram o **aluguel de uma betoneira** na sua região. Depoimentos de pessoas do mesmo bairro ou cidade confirmam se a entrega foi rápida, se o equipamento chegou em bom estado e se o atendimento foi eficiente.
 
+<div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
+  <h3 class="text-2xl font-bold text-white mb-3">Betoneira perto de você, entrega garantida</h3>
+  <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe seu bairro e receba em minutos o orçamento com prazo de entrega e frete exatos.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20alugar%20uma%20betoneira%20com%20entrega%20r%C3%A1pida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
+    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+  </div>
+</div>
+
 ## Conclusão: Aluguel de Betoneira Perto de Mim com Entrega Garantida
 
 A busca por **aluguel de betoneira perto de mim** deve terminar em uma locadora que combine proximidade real, equipamentos de qualidade, entrega rápida e suporte técnico eficiente. Na região metropolitana do Rio de Janeiro, cobrimos todos esses requisitos com uma <a href="/sobre">base logística estratégica</a> que permite entrega no mesmo dia para a zona Norte e regiões adjacentes.
