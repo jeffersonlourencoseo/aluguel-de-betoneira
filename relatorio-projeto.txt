@@ -1,0 +1,231 @@
+================================================================================
+RELATORIO COMPLETO DO PROJETO — ALUGUEL DE BETONEIRA
+Gerado em: 2026-05-23
+================================================================================
+
+1. VISAO GERAL
+--------------------------------------------------------------------------------
+Site estatico profissional para locacao de betoneiras na regiao do Rio de
+Janeiro. Desenvolvido com foco maximo em SEO Local, performance (PageSpeed) e
+conversao (CTAs para WhatsApp). O site esta em producao no dominio oficial.
+
+Dominio: https://www.alugueldebetoneirarj.com.br/
+Proposito: Gerar leads qualificados via SEO local e converter visitantes em
+orcamentos pelo WhatsApp.
+Publico-alvo: Construtores, engenheiros civis, mestres de obras e reformadores
+residenciais no RJ.
+
+
+2. STACK TECNOLOGICO
+--------------------------------------------------------------------------------
+| Tecnologia        | Versao      | Funcao                                 |
+|-------------------|-------------|----------------------------------------|
+| Astro             | 4.15        | Framework estatico (SSG)               |
+| Tailwind CSS      | 3.4         | Estilizacao utilitaria                 |
+| TypeScript        | 5.9         | Tipagem estatica                       |
+| Markdown          | —           | Conteudo de blog e servicos            |
+| Node.js           | >=22.12.0   | Runtime                                |
+
+Integracoes Astro:
+- @astrojs/tailwind — Tailwind integrado ao build
+- astro:content — Colecoes tipadas de Markdown (blog + servicos)
+
+
+3. ESTRUTURA DE ARQUIVOS
+--------------------------------------------------------------------------------
+ALUGUEL DE BETONEIRA/
+|-- astro.config.mjs          # Config base (site URL + tailwind)
+|-- tailwind.config.mjs       # Tema customizado (cores, fontes)
+|-- tsconfig.json             # Strict mode
+|-- package.json              # Dependencias
+|-- README.md                 # Documentacao interna
+|
+|-- public/                   # Assets estaticos (copiados para dist/)
+|   |-- favicon.*, apple-touch-icon.svg
+|   |-- images/               # Hero blur, blog, og-image, logo
+|   |-- robots.txt
+|   |-- sitemap.xml
+|
+|-- src/
+|   |-- data/config.ts        # "Cerebro" — NAP, geo, horarios, redes
+|   |-- content/
+|   |   |-- blog/             # 6 artigos em Markdown
+|   |   |-- servicos/         # 4 fichas tecnicas em Markdown
+|   |   |-- config.ts         # Schema das colecoes (zod)
+|   |-- components/
+|   |   |-- SEO.astro         # Meta tags, Open Graph, Twitter, geo
+|   |   |-- SchemaLocalBusiness.astro  # JSON-LD Schema.org
+|   |   |-- Header.astro      # Nav sticky + mobile menu
+|   |   |-- Footer.astro      # Links, copyright, redes
+|   |   |-- WhatsAppBtn.astro # Botao flutuante com pulsacao
+|   |   |-- Hero.astro        # (componente legado)
+|   |-- layouts/
+|   |   |-- Layout.astro      # Layout base + scripts globais
+|   |-- pages/                # Rotas do site (file-based routing)
+|   |   |-- index.astro       # Home completa
+|   |   |-- sobre.astro       # Quem Somos, Missao/Visao/Valores
+|   |   |-- contato.astro     # NAP + formulario -> WhatsApp
+|   |   |-- privacidade.astro # LGPD / Politica de Privacidade
+|   |   |-- termos.astro      # Termos de Uso
+|   |   |-- blog/
+|   |   |   |-- index.astro   # Listagem de artigos
+|   |   |   |-- [slug].astro  # Pagina dinamica de artigo
+|   |   |-- servicos/
+|   |   |   |-- index.astro   # Grid de servicos
+|   |   |   |-- [slug].astro  # Pagina dinamica de equipamento
+|   |-- styles/global.css     # CSS custom (reveal, prose, noise)
+|
+|-- dist/                     # Build de producao pronto para deploy
+
+
+4. PAGINAS E FUNCIONALIDADES
+--------------------------------------------------------------------------------
+
+Paginas Estaticas
+| Pagina        | URL           | Destaque                                      |
+|---------------|---------------|-----------------------------------------------|
+| Home          | /             | Hero c/ parallax, diferenciais, equipamentos  |
+| Quem Somos    | /sobre        | Historia desde 2014, equipe, NR-18             |
+| Contato       | /contato      | NAP completo, formulario -> WhatsApp          |
+| Privacidade   | /privacidade  | Texto completo de LGPD                        |
+| Termos        | /termos       | Condicoes de locacao, responsabilidades       |
+
+Paginas Dinamicas (Content Collections)
+| Tipo     | Quantidade | Rota                                          |
+|----------|------------|-----------------------------------------------|
+| Servicos | 4          | /servicos/betoneira-{120l,150l,200l,400l}     |
+| Blog     | 6          | /blog/{slug}                                  |
+
+Componentes Reutilizaveis
+- SEO.astro: <title>, meta description, keywords, geo-tags, canonical, OG,
+  Twitter Cards, preload de imagem LCP
+- SchemaLocalBusiness.astro: JSON-LD de LocalBusiness, WebSite, Organization,
+  BreadcrumbList
+- WhatsAppBtn.astro: Botao flutuante fixo com animacao de pulsacao
+- Header/Footer: Navegacao principal e links de rodape
+
+
+5. SEO ESTRUTURADO (IMPLEMENTADO)
+--------------------------------------------------------------------------------
+
+On-Page SEO
+- Schema.org: LocalBusiness, Organization, WebSite (c/ SearchAction),
+  BreadcrumbList, OfferCatalog
+- NAP Consistente: Nome, telefone (21) 99775-1577, endereco Av. Brasil, 11201 —
+  Penha Circular, RJ
+- Geo-localizacao: Meta tags geo.region, geo.placename, geo.position, ICBM
+- Open Graph / Twitter Cards: Titulos, descricoes e imagem de compartilhamento
+- Canonical URLs: Em todas as paginas
+- Sitemap.xml + Robots.txt: Presentes em public/
+
+Performance (PageSpeed)
+- Self-host da imagem hero (eliminou LCP externo)
+- Preload da imagem LCP com srcset responsivo (640w / 960w / 1200w)
+- Reducao de CSS em 45% (prose custom leve vs @tailwindcss/typography)
+- Fontes do Google carregadas com media="print" onload="this.media='all'"
+  (non-blocking)
+- Imagens com loading="lazy" (exceto hero), decoding="async",
+  fetchpriority="high"
+- Parallax leve em JS vanilla com requestAnimationFrame e passive: true
+
+
+6. DESIGN E IDENTIDADE VISUAL
+--------------------------------------------------------------------------------
+
+Paleta de Cores
+| Cor          | Hex       | Uso                                          |
+|--------------|-----------|----------------------------------------------|
+| Primary      | #E8A838   | Amarelo-ouro — destaques, CTAs secundarios   |
+| Secondary    | #C75B2A   | Laranja-queimado — botoes principais, links  |
+| Gray Scale   | #1A1A1A  | Textos, fundos, bordas                       |
+| WhatsApp     | #25D366   | Botao flutuante e CTAs de conversao          |
+
+Tipografia
+- Display: Bebas Neue — titulos H1-H6
+- Body: Work Sans (400-700) — textos e UI
+
+UI/UX Patterns
+- Estilo Industrial: fundos de secao com textura de concreto sutil
+- Cards com hover: shadow-lg, translate-y, scale
+- Scroll Reveal: IntersectionObserver, respeita prefers-reduced-motion
+- Mobile-first: Menu hamburguer com aria-expanded, navegacao sticky c/ blur
+
+
+7. CONTEUDO
+--------------------------------------------------------------------------------
+
+Blog (6 Artigos)
+1. Como Escolher a Betoneira Ideal para Sua Obra
+2. Manutencao de Betoneira
+3. Quanto Custa Alugar uma Betoneira
+4. Betoneira Eletrica vs Gasolina
+5. NR-18 e Seguranca na Operacao
+6. Como Calcular o Volume de Concreto
+
+Servicos (4 Equipamentos)
+| Modelo          | Capacidade | Motor            | Peso  | Featured |
+|-----------------|------------|------------------|-------|----------|
+| Betoneira 120L  | 120 Litros | 1/2 CV / 5,5 HP  | 180kg | —        |
+| Betoneira 150L  | 150 Litros | 1 CV / 6,5 HP    | 260kg | SIM      |
+| Betoneira 200L  | 200 Litros | 2 CV / 6,5 HP    | 320kg | —        |
+| Betoneira 400L  | 400 Litros | 2 CV / 13 HP     | 520kg | —        |
+
+
+8. HISTORICO DE DESENVOLVIMENTO (GIT)
+--------------------------------------------------------------------------------
+Branch: main | Total de commits: 16
+
+Linha do Tempo de Evolucao
+| Data          | Commit    | Foco                                           |
+|---------------|-----------|------------------------------------------------|
+| 7 dias atras  | d9c1bad   | Site completo v1.0                             |
+| 7 dias atras  | e4c10f9   | README + estrutura                             |
+| 7 dias atras  | 90738ed   | Fix auditoria + placeholders                   |
+| 7 dias atras  | fea538b   | Dados atualizados para RJ                      |
+| 6 dias atras  | 6a30638   | SEO e conversao                                |
+| 6 dias atras  | a1c0ff3   | Fix link Instagram                             |
+| 6 dias atras  | 5636e81   | Fix robots.txt + sitemap                       |
+| 6 dias atras  | b269347   | Performance mobile (LCP, fonts, imagens)       |
+| 6 dias atras  | 0663738   | Elimina LCP externo -> imagem local            |
+| 6 dias atras  | 71580e5   | Hero otimizado para mobile                     |
+| 6 dias atras  | b83c14e   | Blur no fundo do hero                          |
+| 6 dias atras  | 1da1b1e   | Reduz CSS 45% + otimiza imagens                |
+| 6 dias atras  | 09ad7d8   | Blur server-side + preload LCP                 |
+| 6 dias atras  | b811e7b   | Corrige preload + bandwidth competition        |
+| 6 dias atras  | c6ec6f3   | Self-host hero image + LCP 90+                 |
+| 5 dias atras  | 4ca23f1   | Redesign industrial completo                   |
+
+O projeto evoluiu de um MVP para um site otimizado para PageSpeed 90+ com
+redesign visual industrial.
+
+
+9. STATUS ATUAL E DEPLOY
+--------------------------------------------------------------------------------
+- Build: Funcionando (npm run build gera dist/)
+- Deploy: Pasta dist/ pronta para hospedagem estatica (Vercel, Netlify,
+  Cloudflare Pages, etc.)
+- Arquivos nao rastreados: Pasta imagens/ (provavelmente assets de design)
+- Modificacoes pendentes: .claude/settings.local.json e .gitignore
+  (nao afetam o site)
+
+
+10. RESUMO EXECUTIVO
+--------------------------------------------------------------------------------
+O projeto e um site institucional de alta conversao construido com Astro para
+maxima performance. A arquitetura e limpa, modular e centrada em dados
+(src/data/config.ts), permitindo que qualquer alteracao de NAP, telefone ou
+endereco reflita instantaneamente em todo o site, SEO e Schema.org.
+
+Os ultimos commits demonstram uma evolucao clara:
+1. Conteudo e estrutura base
+2. SEO local e dados da empresa
+3. Performance mobile e Core Web Vitals
+4. Redesign visual industrial
+
+O resultado e um site rapido, bem posicionado para buscas locais
+("aluguel de betoneira rio de janeiro") e otimizado para converter visitantes
+em contatos via WhatsApp.
+
+================================================================================
+FIM DO RELATORIO
+================================================================================

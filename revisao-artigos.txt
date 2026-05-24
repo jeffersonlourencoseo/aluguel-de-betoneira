@@ -1,0 +1,281 @@
+REVISAO DETALHADA DOS ARTIGOS - ALUGUEL DE BETONEIRA RJ
+Data da revisao: 2026-05-24
+Revisor: Claude Code
+
+================================================================================
+1. RESUMO EXECUTIVO
+================================================================================
+
+Foram revisados 5 artigos de blog recém-criados, o layout do template de artigos,
+a estrutura SEO e as boas práticas de rankeamento. O build Astro 4.16 passou com
+sucesso após as correções. 5 erros de português foram identificados e corrigidos.
+
+Status geral: APROVADO com correções menores aplicadas.
+
+================================================================================
+2. ERROS DE PORTUGUES ENCONTRADOS E CORRIGIDOS
+================================================================================
+
+ERRO 1 [Artigo 2 - aluguel-betoneira-400-litros-preco.md]
+Local: Paragrafo do Passo 1 (Solicite o Orcamento)
+Problema: "...aluguel de betoneira 400 litros valor exto para o seu caso."
+Correcao: "...aluguel de betoneira 400 litros valor exato para o seu caso."
+Gravidade: ALTA (erro de digitacao que prejudica credibilidade)
+
+ERRO 2 [Artigo 2 - aluguel-betoneira-400-litros-preco.md]
+Local: Paragrafo apos tabela de especificacoes
+Problema: "Pesar do peso de 520 kg, ela e projetada para ser transportada..."
+Correcao: "Apesar do peso de 520 kg, ela e projetada para ser transportada..."
+Gravidade: ALTA (erro ortografico basico)
+
+ERRO 3 [Artigo 3 - aluguel-betoneira-150-250-litros-preco.md]
+Local: Titulo H2
+Problema: "O Upgrade para Obras Mais Demandas"
+Correcao: "O Upgrade para Obras de Maior Volume"
+Gravidade: ALTA ("demandas" como adjetivo nao existe em portugues; estrutura
+            gramatical incorreta que afeta a qualidade percebida do conteudo)
+
+ERRO 4 [Artigo 4 - aluguel-betoneira-mensal.md]
+Local: Titulo H3
+Problema: "Cadastro para Clientes Frecuentes"
+Correcao: "Cadastro para Clientes Frequentes"
+Gravidade: MEDIA (erro de grafia; palavra espanhola misturada)
+
+ERRO 5 [Artigo 5 - aluguel-betoneira-perto-de-mim.md]
+Local: Secao "Prepare o Local de Instalacao"
+Problema: "Se a betoneira for a gasolina..."
+Nota: A crase "a gasolina" foi removida. O correto e "motor a gasolina" ou
+      "betoneira a gasolina" sem crase. A forma anterior "a gasolina" com
+      crase estava gramaticalmente incorreta.
+Gravidade: MEDIA
+
+================================================================================
+3. ANALISE DE LAYOUT E ESTRUTURA DOS ARTIGOS
+================================================================================
+
+PONTOS POSITIVOS:
+-----------------
+1. Estrutura de headings hierarquica e consistente em todos os artigos
+   - H1: Titulo do artigo (unico por pagina)
+   - H2: Secoes principais
+   - H3: Subsecoes e topicos especificos
+   - Isso facilita leitura scanneada e sinaliza organizacao ao Google
+
+2. Uso estrategico de tabelas comparativas
+   - Artigo 1: Tabela de precos por capacidade
+   - Artigo 2: Tabela de especificacoes + comparacao 400L vs 2x200L
+   - Artigo 3: Tabela comparativa 150L vs 250L + tabela de precos
+   - Artigo 4: Tabela comparativa mensal vs diario vs semanal
+   Tabelas = rich snippets de tabela no Google (otimo para SEO)
+
+3. FAQ no final de cada artigo
+   - Formato de perguntas e respostas diretas
+   - Oportunidade para FAQ Schema (ver secao 6 - recomendacoes)
+
+4. CTA (Call-to-Action) clara no final de cada artigo
+   - Link para /contato com texto persuasivo
+   - Sidebar com botao de WhatsApp em destaque
+   - Boa conversao de leitores em leads
+
+5. Tempo de leitura calculado e exibido
+   - Implementado via wordCount / 200 palavras por minuto
+   - Aumenta engajamento e reduz bounce rate
+
+PONTOS A MELHORAR:
+------------------
+1. Faltam links internos entre artigos
+   - Exemplo: Artigo 3 (150L/250L) deveria linkar para Artigo 2 (400L) quando
+     menciona "obras maiores precisam de 400 litros"
+   - Exemplo: Artigo 4 (mensal) deveria linkar para Artigo 1 (precos) quando
+     fala de "valor da diaria"
+   - Links internos fortalecem a arquitetura de informacao e distribuem link juice
+
+2. Nao ha uso de listas com marcadores (bullet points) em meio ao texto
+   - Apenas tabelas e paragrafos. Listas HTML (<ul>) melhoram a leitura rapida
+   - O FAQ usa formato de texto corrido; poderia usar listas ou accordion
+
+3. Imagens dos artigos (blog-3.jpg a blog-5.jpg) existem fisicamente,
+   mas nao ha descrição de contexto nas imagens no corpo do artigo.
+   - A imagem do hero usa alt={post.data.title} (bom)
+   - Mas nao ha outras imagens ilustrativas no meio do texto para quebrar
+     blocos de texto densos
+
+================================================================================
+4. ANALISE SEO TECNICA
+================================================================================
+
+ON-PAGE SEO - STATUS:
+---------------------
+[x] Title tags otimizados (60-90 caracteres)
+[x] Meta descriptions presentes (~150-170 caracteres)
+    - Nota: Artigo 4 e Artigo 2 estao com ~165-170 chars. Recomendado e
+      maximo 160 para nao ser truncado no Google. Nao e critico.
+[x] URLs amigaveis com palavras-chave exatas
+[x] Schema.org Article implementado (JSON-LD)
+    - wordCount, timeRequired, author, publisher, datePublished incluidos
+[x] BreadcrumbList via navegacao HTML semantica
+[x] Open Graph tipo "article" com metadados de publicacao
+[x] Canonical URLs corretos via Astro.site
+[x] H1 unico por pagina
+[x] Headings com palavras-chave distribuidas naturalmente
+[x] Imagens com width/height (CLS zero)
+[x] Atributo "loading" e "decoding" em imagens
+[x] Sitemap auto-gerado pelo @astrojs/sitemap
+[x] Robots.txt aponta para sitemap-index.xml correto
+
+KEYWORD MAPPING:
+----------------
+Keyword 1:  "aluguel de betoneira"            -> Distribuida em todos os 5 artigos (OK)
+Keyword 2:  "aluguel de betoneira preco"      -> Artigo 1 (foco principal)
+Keyword 3:  "valor de aluguel de betoneira 400 litros" -> Artigo 2 (foco principal)
+Keyword 4:  "aluguel de betoneira 150 litros preco"  -> Artigo 3 (foco principal)
+Keyword 5:  "aluguel de betoneira valor diaria"     -> Artigo 1 (foco principal)
+Keyword 6:  "aluguel de betoneira 250 litros preco"  -> Artigo 3 (foco principal)
+Keyword 7:  "quanto custa aluguel de betoneira"      -> Artigo 1 (foco principal, na URL)
+Keyword 8:  "aluguel de betoneira 400 litros valor"  -> Artigo 2 (foco principal, na URL)
+Keyword 9:  "aluguel de betoneira perto de mim"     -> Artigo 5 (foco principal, na URL)
+Keyword 10: "aluguel de betoneira mensal"            -> Artigo 4 (foco principal, na URL)
+Keyword 11: "aluguel de uma betoneira"               -> Artigos 1, 4, 5 (distribuicao natural)
+
+Avaliacao de distribuicao: EXCELENTE
+- Todas as 11 palavras-chave estao cobertas
+- Nao ha cannibalizacao problematica (cada artigo tem foco unico)
+- URLs otimizadas com as keywords mais valiosas
+
+DENSIDADE DE PALAVRAS-CHAVE (estimativa):
+------------------------------------------
+Artigo 1: ~2100 palavras. Keyword "aluguel de betoneira" aparece ~25 vezes.
+          Densidade ~1,2% (IDEAL: 1-2%)
+Artigo 2: ~1900 palavras. Keyword "aluguel de betoneira 400 litros valor" ~12x.
+          Densidade foco ~0,6% + variacoes (IDEAL)
+Artigo 3: ~2300 palavras. Keywords 150L/250L preco ~15x cada.
+          Densidade ~0,7% cada (IDEAL)
+Artigo 4: ~2200 palavras. Keyword "aluguel de betoneira mensal" ~18x.
+          Densidade ~0,8% (IDEAL)
+Artigo 5: ~2000 palavras. Keyword "aluguel de betoneira perto de mim" ~12x.
+          Densidade ~0,6% (IDEAL)
+
+Nenhum artigo apresenta sinais de keyword stuffing. A distribuicao e natural.
+
+================================================================================
+5. ANALISE DE CONTEUDO E ESTRATEGIA DE RANKEAMENTO
+================================================================================
+
+INTENCAO DE BUSCA (Search Intent):
+-----------------------------------
+Artigo 1 - "Quanto custa"           -> Intencao: Investigacional/Transacional
+Artigo 2 - "400 litros preco"       -> Intencao: Investigacional/Transacional
+Artigo 3 - "150/250 litros preco"   -> Intencao: Investigacional/Transacional
+Artigo 4 - "mensal"                 -> Intencao: Transacional
+Artigo 5 - "perto de mim"           -> Intencao: Local/Transacional
+
+Todos os artigos atendem bem a intencao de busca. Ha informacao (precos,
+especificacoes) + transacao (CTA para WhatsApp/orcamento).
+
+E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness):
+--------------------------------------------------------------------
+[x] Autor listado: "Aluguel de Betoneira" (organizacao, nao pessoa)
+[x] Schema Organization vinculada ao Article
+[x] Dados de contato consistentes (email, telefone)
+[x] Conteudo tecnico especifico (CV, kg, m³) demonstra expertise
+[x] Localizacao geografica clara (Rio de Janeiro, Niteroi, etc.)
+
+Fator a melhorar: Nao ha biografia do autor com foto e credenciais.
+Como o autor e a propria empresa, isso e aceitavel, mas adicionar um
+"Sobre o Autor" com foto e CNPJ poderia reforcar o E-E-A-T.
+
+CONTEUDO LOCAL SEO:
+-------------------
+[x] Mencoes geograficas naturais (Zona Norte, Niteroi, Sao Goncalo,
+    Nova Iguacu, Duque de Caxias, Penha, Ramos, Olaria, etc.)
+[x] Schema LocalBusiness ja implementado no layout
+[x] NAP consistente (Nome, Endereco, Telefone) em todo o site
+[x] ICBM e geo.position meta tags presentes
+
+================================================================================
+6. RECOMENDACOES PRIORITARIAS PARA MELHORAR O RANKEAMENTO
+================================================================================
+
+RECOMENDACAO 1 [Alta Prioridade] - Adicionar FAQ Schema
+---------------------------------------------------------
+Os 5 artigos ja tem secao de FAQ no final. Converter essas perguntas e respostas
+em Schema.org FAQPage JSON-LD aumenta a chance de aparecer nas rich results
+"People Also Ask" do Google.
+
+Implementacao: Adicionar um segundo bloco <script type="application/ld+json">
+no [slug].astro junto com o articleSchema, com @type: "FAQPage" e mainEntity
+contendo as perguntas e respostas.
+
+RECOMENDACAO 2 [Media Prioridade] - Links Internos Entre Artigos
+-----------------------------------------------------------------
+Adicionar 2-3 links internos em cada artigo apontando para outros artigos do blog.
+Exemplo: no artigo 3, quando menciona "para obras maiores, veja o guia da 400L",
+colocar link para /blog/aluguel-betoneira-400-litros-preco.
+
+Beneficio: Reduz bounce rate, aumenta tempo de sessao, distribui autoridade de
+pagina (PageRank interno).
+
+RECOMENDACAO 3 [Media Prioridade] - Melhorar a Meta Description do Artigo 4
+---------------------------------------------------------------------------
+Atual: "Conheca as vantagens do aluguel de betoneira mensal. Reduza o custo por dia,
+elimine burocracia e mantenha sua obra no cronograma com equipamento profissional
+no Rio de Janeiro."
+
+Contagem: ~170 caracteres (pode ser truncada no SERP).
+Sugerida: "Descubra as vantagens do aluguel de betoneira mensal. Reduza o custo
+por dia e mantenha sua obra no cronograma no Rio de Janeiro. Orcamento gratis."
+(~155 caracteres)
+
+RECOMENDACAO 4 [Baixa Prioridade] - Adicionar Imagens no Corpo dos Artigos
+---------------------------------------------------------------------------
+Os artigos sao textuais. Adicionar 1-2 imagens ilustrativas (ex: foto de betoneira
+150L vs 250L, infografico de comparacao) entre as secoes melhora o engajamento e
+permite otimizacao de imagens para Google Images.
+
+Cada imagem deve ter:
+- Nome de arquivo descritivo (ex: betoneira-150-litros-obra.jpg)
+- Alt text com palavra-chave
+- Legenda (caption) quando relevante
+
+RECOMENDACAO 5 [Baixa Prioridade] - Atualizar Datas para 2026
+-------------------------------------------------------------
+Os artigos tem pubDate em 2024. Se o conteudo for "evergreen", as datas nao
+precisam ser mudadas. Mas se houver precos que mudaram desde 2024, atualizar
+para 2026 e revisar a tabela de precos pode melhorar a relevancia temporal
+para o Google.
+
+Nota: Nao aplicar esta mudanca sem confirmar se os precos de 2024 ainda sao
+validos em 2026.
+
+================================================================================
+7. VERIFICACAO TECNICA POS-CORRECAO
+================================================================================
+
+[x] npm run build executado com sucesso
+[x] 16 paginas geradas (5 blog + 1 blog index + 4 servicos + 1 servicos index +
+    1 index + 1 sobre + 1 contato + 1 privacidade + 1 termos)
+[x] Sitemap-index.xml gerado corretamente
+[x] Compressao ativa (@playform/compress): 32KB economizados em HTML
+[x] Nenhum erro de compilacao Astro
+[x] Nenhum erro de CSS
+[x] Todas as imagens de blog existem (blog-1.jpg a blog-5.jpg)
+
+================================================================================
+8. CONCLUSAO
+================================================================================
+
+Os 5 artigos estao APROVADOS para publicacao apos as 5 correcoes de portugues.
+O conjunto de artigos cobre as 11 palavras-chave de forma inteligente, sem
+keyword stuffing, com estrutura tecnica solida e CTAs bem posicionados.
+
+Score geral dos artigos:
+- Portugues:        9.0/10 (apos correcoes)
+- Layout/UX:        8.5/10
+- SEO On-Page:      9.5/10
+- E-E-A-T:          8.0/10
+- Local SEO:        9.0/10
+
+Proximos passos sugeridos:
+1. Implementar FAQ Schema (recomendacao 1)
+2. Adicionar links internos cruzados entre artigos (recomendacao 2)
+3. Fazer deploy e solicitar indexacao via Google Search Console

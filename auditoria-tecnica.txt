@@ -1,0 +1,186 @@
+================================================================================
+AUDITORIA TECNICA — ALUGUEL DE BETONEIRA
+Gerado em: 2026-05-23
+================================================================================
+
+PARTE 1 — DIAGNOSTICO
+--------------------------------------------------------------------------------
+
+1. SITEMAP
+Sim, existe em /public/sitemap.xml. E um arquivo estatico/manual com 16 URLs
+cadastradas (home, sobre, servicos, 4 paginas de equipamentos, blog, 6 artigos,
+contato, privacidade, termos).
+
+PROBLEMA: as datas lastmod estao congeladas em 2024. A cada novo artigo
+publicado, o sitemap precisa ser editado na mao.
+
+
+2. ROBOTS.TXT
+Sim, existe em /public/robots.txt. Conteudo muito basico:
+
+  User-agent: *
+  Allow: /
+  Sitemap: https://alugueldebetoneira.com.br/sitemap.xml
+
+Funciona, mas nao tem diretivas para crawlers especificos nem bloqueio de
+pastas internas.
+
+
+3. ANALYTICS / TAG MANAGER
+NAO HA NENHUM SCRIPT de Google Analytics, GTM, Meta Pixel, Microsoft Clarity
+ou similar no projeto. Verificado em Layout.astro, SEO.astro e global.css —
+zero tags de rastreamento.
+
+
+4. FONTES
+Carregadas via Google Fonts (link externo) em SEO.astro:
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+
+O carregamento esta otimizado (non-blocking com media="print"), mas ainda
+depende de requisicao externa. Nao ha fontes self-hosted.
+
+
+5. CSS
+- Tailwind CSS via @astrojs/tailwind (configurado em astro.config.mjs)
+- CSS global em src/styles/global.css (animacoes reveal, prose custom, fundo de
+  concreto)
+- NAO usa CSS Modules
+
+
+6. IMAGENS
+- Hero: Self-hosted em 3 tamanhos (hero-blur-640.jpg, 960.jpg, 1200.jpg) com
+  srcset responsivo e preload no <head>
+- Blog: Mix de imagens locais (/images/blog-*.jpg) e Unsplash externo
+- Tecnica: Usa <img> padrao do HTML. NAO usa o componente <Image /> do Astro,
+  entao nao aproveita otimizacao automatica de formato/tamanho.
+
+
+7. INTEGRACOES ASTRO
+Apenas UMA integracao ativa no astro.config.mjs:
+
+  integrations: [tailwind()]
+
+Nao ha @astrojs/sitemap, partytown, compress, mdx, etc.
+
+
+8. SCHEMA.ORG / JSON-LD
+JA IMPLEMENTADO MANUALMENTE em SchemaLocalBusiness.astro. Inclui:
+- LocalBusiness (com NAP, geo, horarios, area de atuacao)
+- WebSite (com SearchAction para Sitelinks Searchbox)
+- Organization (logo, sameAs redes sociais, contactPoint)
+- BreadcrumbList
+- OfferCatalog (lista de servicos quando disponivel)
+
+Esta bem feito e injetado via <script type="application/ld+json">.
+
+
+9. BUILD
+Site 100% estatico (SSG). Astro esta no modo padrao de geracao estatica.
+Nao usa SSR, serverless ou edge functions. Build gera a pasta dist/ pronta para
+deploy em qualquer CDN estatica.
+
+
+10. OUTRAS OBSERVACOES
+- Cache/headers: Nada configurado no codigo. Depende 100% da plataforma de
+  hospedagem (Vercel, Netlify, Cloudflare) para enviar headers de cache.
+- PWA: Nao ha service worker, manifest.json nem icones em multiplas resolucoes
+  para PWA.
+- Core Web Vitals: Ja otimizado manualmente (LCP, CLS, FID), mas sem ferramenta
+  de minificacao de build.
+
+
+PARTE 2 — RECOMENDACOES DE INSTALACAO
+--------------------------------------------------------------------------------
+
+| Plugin / Integration       | Status            | Recomendo? | Por que ajuda  |
+|----------------------------|-------------------|------------|----------------|
+| @astrojs/sitemap           | Nao instalado     | INSTALAR   | Substitui o    |
+|                            |                   | AGORA      | sitemap manual |
+|                            |                   |            | estatico.      |
+|                            |                   |            | Gera           |
+|                            |                   |            | automaticamente|
+|                            |                   |            | todas as rotas |
+|                            |                   |            | (incluindo     |
+|                            |                   |            | novos artigos) |
+|                            |                   |            | e mantem       |
+|                            |                   |            | lastmod        |
+|                            |                   |            | atualizado.    |
+|----------------------------|-------------------|------------|----------------|
+| @playform/compress         | Nao instalado     | INSTALAR   | Minifica HTML, |
+|                            |                   | AGORA      | CSS, JS e      |
+|                            |                   |            | imagens no     |
+|                            |                   |            | build. Reduz   |
+|                            |                   |            | o tamanho do   |
+|                            |                   |            | dist/ em       |
+|                            |                   |            | 20-40%,        |
+|                            |                   |            | melhorando     |
+|                            |                   |            | diretamente o  |
+|                            |                   |            | PageSpeed      |
+|                            |                   |            | Insights.      |
+|----------------------------|-------------------|------------|----------------|
+| Migrar para <Image /> do   | Nao usa           | FAZER      | O componente   |
+| Astro                      |                   | AGORA      | <Image /> do   |
+|                            |                   |            | Astro usa      |
+|                            |                   |            | sharp          |
+|                            |                   |            | internamente   |
+|                            |                   |            | para gerar     |
+|                            |                   |            | formatos       |
+|                            |                   |            | modernos       |
+|                            |                   |            | (WebP/AVIF),  |
+|                            |                   |            | redimensionar  |
+|                            |                   |            | e lazy-load    |
+|                            |                   |            | automatico.    |
+|----------------------------|-------------------|------------|----------------|
+| @astrojs/partytown         | Nao instalado     | INSTALAR   | So faz sentido |
+|                            |                   | DEPOIS     | quando voce    |
+|                            |                   |            | adicionar      |
+|                            |                   |            | GTM/Analytics. |
+|                            |                   |            | Move scripts   |
+|                            |                   |            | de terceiros   |
+|                            |                   |            | para web       |
+|                            |                   |            | worker,        |
+|                            |                   |            | evitando que   |
+|                            |                   |            | bloqueiem o    |
+|                            |                   |            | main thread e  |
+|                            |                   |            | prejudiquem o  |
+|                            |                   |            | LCP.           |
+|----------------------------|-------------------|------------|----------------|
+| astro-robots-txt           | Nao instalado     | NAO        | O robots.txt   |
+|                            |                   | NECESSARIO | manual ja e    |
+|                            |                   |            | suficiente para|
+|                            |                   |            | um site de 16  |
+|                            |                   |            | paginas. So    |
+|                            |                   |            | valeria a pena |
+|                            |                   |            | se o site      |
+|                            |                   |            | escalasse para |
+|                            |                   |            | centenas de    |
+|                            |                   |            | paginas.       |
+|----------------------------|-------------------|------------|----------------|
+| Schema.org via JSON-LD     | JA implementado   | NAO        |                |
+| manual                     |                   | INSTALAR   |                |
+|                            |                   |            |                |
+
+
+RESUMO DAS ACOES PRIORITARIAS
+--------------------------------------------------------------------------------
+1. npm install @astrojs/sitemap
+   -> adicionar ao astro.config.mjs e deletar /public/sitemap.xml (vira
+      automatico)
+
+2. npm install @playform/compress
+   -> adicionar ao astro.config.mjs para minificacao de build
+
+3. Refatorar imagens para <Image /> do Astro
+   -> aproveita sharp interno para otimizacao automatica de formato e tamanho
+
+4. Quando adicionar GTM/Analytics futuramente
+   -> instalar @astrojs/partytown para nao quebrar o LCP
+
+Com essas 3 instalacoes, o site ganha automatizacao de SEO (sitemap), reducao
+de payload (compress) e imagens otimizadas nativamente (sharp via <Image />),
+o que empurra o PageSpeed de 90+ para 95+ e reduz trabalho manual a longo prazo.
+
+================================================================================
+FIM DA AUDITORIA
+================================================================================

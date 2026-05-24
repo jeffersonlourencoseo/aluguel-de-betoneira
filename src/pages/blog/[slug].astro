@@ -52,6 +52,54 @@ const articleSchema = {
   timeRequired: timeRequired,
   articleSection: 'Construção Civil',
 };
+
+const faqData = {
+  'quanto-custa-alugar-betoneira': [
+    { name: 'Quanto custa alugar uma betoneira por dia?', text: 'O valor da diária varia conforme a capacidade, começando a partir de R$ 80,00 para modelos de 120 litros.' },
+    { name: 'O preço do aluguel de betoneira inclui entrega?', text: 'O valor da locação não inclui o frete de entrega e retirada, que é calculado por distância e informado no orçamento.' },
+    { name: 'Posso alugar uma betoneira por apenas um dia?', text: 'Sim, o prazo mínimo é de 1 dia. Locações mais longas têm descontos progressivos.' },
+    { name: 'É melhor alugar por diária ou por mês?', text: 'Para obras acima de 15 dias, o aluguel mensal é mais econômico, reduzindo o custo por dia drasticamente.' },
+  ],
+  'aluguel-betoneira-400-litros-preco': [
+    { name: 'Quanto custa o aluguel de betoneira 400 litros?', text: 'O valor da diária para uma betoneira 400 litros começa a partir de R$ 250,00, com descontos para locações semanais e mensais.' },
+    { name: 'Quando usar uma betoneira 400 litros?', text: 'Ela é indicada para construções comerciais, usinas de concreto temporárias e grandes reformas que exigem alto volume de produção.' },
+    { name: 'É melhor alugar uma 400L ou duas de 200L?', text: 'Se a obra tem um único ponto de concreto, a betoneira 400 litros é mais econômica. Se há dois pontos distantes, duas de 200L podem fazer sentido.' },
+    { name: 'O aluguel de betoneira 400 litros inclui entrega?', text: 'Sim, entregamos diretamente na obra, posicionamos o equipamento e fazemos o teste de funcionamento.' },
+  ],
+  'aluguel-betoneira-150-250-litros-preco': [
+    { name: 'Qual a diferença entre betoneira 150 litros e 250 litros?', text: 'A 150L produz até 3 m³/dia e a 250L até 5 m³/dia. A 250L é ideal para obras maiores com custo por m³ mais baixo.' },
+    { name: 'Quanto custa alugar uma betoneira 150 litros?', text: 'A diária começa a partir de R$ 100,00, com descontos progressivos para locações semanais e mensais.' },
+    { name: 'Posso trocar de modelo durante a locação?', text: 'Sim, é possível fazer upgrade de uma 150L para 250L durante a locação pagando apenas a diferença proporcional.' },
+    { name: 'O frete está incluído no preço do aluguel?', text: 'Não. O frete é calculado por distância e informado no orçamento. Zona Norte tem frete reduzido.' },
+  ],
+  'aluguel-betoneira-mensal': [
+    { name: 'Quanto economizo com aluguel mensal vs diário?', text: 'O aluguel mensal pode reduzir o custo por dia em até 50% comparado à locação diária avulsa.' },
+    { name: 'Posso cancelar a locação mensal antes do prazo?', text: 'Sim, cobramos apenas o proporcional dos dias usados, sem multa se comunicado com 3 dias de antecedência.' },
+    { name: 'O pagamento mensal pode ser parcelado?', text: 'Sim, aceitamos parcelamento em até 3 vezes no cartão. Pagamento à vista tem desconto de 5%.' },
+    { name: 'É possível trocar de modelo durante a locação mensal?', text: 'Sim, é possível fazer upgrade ou downgrade sem custo de logística adicional, ajustando o valor proporcionalmente.' },
+  ],
+  'aluguel-betoneira-perto-de-mim': [
+    { name: 'Vocês entregam betoneira no mesmo dia?', text: 'Sim, para zona Norte do Rio entregamos no mesmo dia para solicitações antes das 14h. Outras regiões até 24h.' },
+    { name: 'Qual o valor do frete?', text: 'Calculado por distância. Bairros próximos à base têm frete reduzido. Niterói, São Gonçalo e Baixada têm acréscimo proporcional.' },
+    { name: 'Posso retirar a betoneira na loja?', text: 'Sim, a retirada na base elimina o custo de frete de entrega, desde que agendada previamente.' },
+    { name: 'E se a betoneira quebrar depois da entrega?', text: 'Suporte técnico prioritário para região metropolitana. Trocamos o equipamento no mesmo dia se necessário.' },
+  ],
+};
+
+const faqSchema = faqData[post.slug]
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqData[post.slug].map((q) => ({
+        '@type': 'Question',
+        name: q.name,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: q.text,
+        },
+      })),
+    }
+  : null;
 ---
 
 <Layout
@@ -64,6 +112,12 @@ const articleSchema = {
   schema={articleSchema}
 >
   <Header currentPath="/blog" />
+
+  {
+    faqSchema && (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )
+  }
 
   <main>
     <!-- Hero Section -->
