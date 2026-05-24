@@ -50,7 +50,7 @@ const cidades = [
           src="/images/hero-blur-1200.jpg"
           srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
           sizes="100vw"
-          alt=""
+          alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="hero-parallax h-[115%] w-full object-cover -mt-[7%]"
           loading="eager"
           fetchpriority="high"
@@ -261,7 +261,7 @@ const cidades = [
                 <p class="text-base text-secondary font-semibold mb-3">{s.data.capacidade}</p>
                 <p class="text-lg text-gray-600 mb-6">{s.data.description}</p>
                 <a href={`/servicos/${s.slug}`} class="inline-flex items-center text-base font-bold text-secondary hover:text-secondary-700 transition-colors">
-                  Ver Detalhes →
+                  Ver detalhes da {s.data.title} →
                 </a>
               </article>
             );

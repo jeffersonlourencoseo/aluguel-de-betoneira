@@ -1,0 +1,166 @@
+=======================================================
+PROMPT DE CORRECOES FINAIS — Projeto SEO Aluguel de Betoneira RJ
+Gerado por: Agente Consultivo (auditoria frontend ao vivo)
+Data: 2026-05-24
+Baseado na analise do site em producao: https://www.alugueldebetoneirarj.com.br/
+=======================================================
+
+INSTRUCAO GERAL
+---------------
+Voce e um engenheiro Astro especialista em SEO tecnico. Execute as 4
+correcoes abaixo UMA POR VEZ. Apos cada correcao, rode `npm run build` e
+confirme que passa sem erros. So entao passe para a proxima.
+
+---
+
+CORRECAO 1 — Alt text vazio no hero (TODAS as paginas)
+-------------------------------------------------------
+PRIORIDADE: MEDIA
+
+Problema:
+  A imagem hero (LCP) em TODAS as paginas tem `alt=""`:
+  ```html
+  <img alt="" src="/images/hero-blur-1200.jpg" ...>
+  ```
+
+  Como a imagem e a LCP e transmite contexto visual (obra de construcao),
+  um alt vazio e aceitavel para imagens decorativas, mas um texto descritivo
+  reforca o SEO semantico e a acessibilidade.
+
+Acao:
+  1. Identifique onde a imagem hero e renderizada (provavelmente em um
+     componente reutilizavel ou em Layout.astro).
+  2. Substitua `alt=""` por algo descritivo e relevante, ex:
+     alt="Betoneira em obra de construcao civil no Rio de Janeiro"
+  3. Certifique-se de que a mudanca afeta TODAS as paginas (home, sobre,
+     contato, servicos, blog, artigos, etc.).
+  4. Se a imagem for usada via componente <Image /> do Astro, verifique se
+     o alt e passado como prop ou hardcoded.
+  5. Rode `npm run build` e confirme.
+
+---
+
+CORRECAO 2 — SearchAction Schema aponta para pagina inexistente (/busca 404)
+---------------------------------------------------------------------------
+PRIORIDADE: ALTA
+
+Problema:
+  O Schema WebSite em SchemaLocalBusiness.astro declara:
+  ```json
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.alugueldebetoneirarj.com.br/busca?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+  ```
+  Mas a pagina /busca NAO EXISTE (retorna 404).
+  Isso pode gerar erro de cobertura no Google Search Console e confundir
+  o Google sobre a estrutura do site.
+
+Acao (escolha uma das duas opcoes):
+
+  OPCAO A — Remover o SearchAction (mais rapido, zero risco):
+    1. Abra src/components/SchemaLocalBusiness.astro
+    2. Localize o bloco `potentialAction` dentro do Schema WebSite.
+    3. Remova todo o objeto potentialAction (ou comente).
+    4. Rode `npm run build` e confirme que o JSON-LD do WebSite nao contem
+       mais potentialAction.
+
+  OPCAO B — Criar pagina /busca simples (mais trabalho, mais valor):
+    1. Crie src/pages/busca.astro
+    2. Leia a query string ?q=xxx via Astro.url.searchParams
+    3. Filtre posts do blog e/ou servicos que contenham o termo no titulo
+       ou descricao.
+    4. Renderize uma lista simples de resultados.
+    5. Adicione um campo de input na pagina.
+    6. Rode `npm run build` e confirme que /busca e gerada em dist/busca/.
+
+  Diga ao usuario qual opcao voce escolheu e por que.
+
+---
+
+CORRECAO 3 — Texto ancora genérico nos cards de equipamento na home
+--------------------------------------------------------------------
+PRIORIDADE: MEDIA
+
+Problema:
+  Os 4 cards de servico na home usam texto ancora identico e genérico:
+  ```html
+  <a href="/servicos/betoneira-120l">Ver Detalhes →</a>
+  <a href="/servicos/betoneira-150l">Ver Detalhes →</a>
+  <a href="/servicos/betoneira-200l">Ver Detalhes →</a>
+  <a href="/servicos/betoneira-400l">Ver Detalhes →</a>
+  ```
+
+  Links internos com texto ancora identico e nao descritivo perdem valor
+  semantico. O Google usa o texto ancora para entender o contexto da pagina
+  de destino.
+
+Acao:
+  1. Abra a pagina da home (src/pages/index.astro) e localize os cards de
+     equipamentos na secao "Nossos Servicos".
+  2. Altere o texto ancora de cada card para algo descritivo e unico.
+     Sugestoes:
+     - "Ver detalhes da Betoneira 120L"
+     - "Ver detalhes da Betoneira 150L"
+     - "Ver detalhes da Betoneira 200L"
+     - "Ver detalhes da Betoneira 400L"
+  3. Mantenha o design e o icone (→) — apenas o texto muda.
+  4. Rode `npm run build` e confirme.
+
+---
+
+CORRECAO 4 — H2 duplicado nas paginas de servico (/servicos/[slug].astro)
+-------------------------------------------------------------------------
+PRIORIDADE: BAIXA
+
+Problema:
+  Em /servicos/betoneira-150l/ (e provavelmente nas outras 3 paginas),
+  existem dois H2s muito similares:
+  ```
+  H2: "Especificacoes Tecnicas"
+  H2: "Especificacoes Tecnicas da Betoneira 150 Litros"
+  ```
+
+  Titulos H2 duplicados ou quase identicos criam confusao semantica.
+  O Google pode ter dificuldade de identificar qual secao e a principal.
+
+Acao:
+  1. Abra o template src/pages/servicos/[slug].astro (ou o componente que
+     renderiza o conteudo do servico).
+  2. Localize os dois H2s de "Especificacoes Tecnicas".
+  3. Decida qual H2 e o correto e remova/consolide o outro.
+     Sugestao: Manter apenas "Especificacoes Tecnicas da Betoneira 150 Litros"
+     (mais descritivo) e transformar o primeiro em H3 ou remover.
+  4. Verifique se o mesmo padrao existe nas paginas:
+     /servicos/betoneira-120l, /200l, /400l
+  5. Aplique a mesma correcao em todas.
+  6. Rode `npm run build` e confirme.
+
+---
+
+CHECKLIST FINAL DE VALIDACAO
+------------------------------
+Apos TODAS as correcoes, execute:
+
+  [ ] npm run build passa sem erros
+  [ ] grep por `alt=""` + hero no dist/ nao retorna mais (ou retorna alt descritivo)
+  [ ] grep por potentialAction no dist/ retorna 0 (se escolheu Opcao A)
+     OU dist/busca/index.html existe (se escolheu Opcao B)
+  [ ] Os links dos cards na home tem textos ancoras unicos e descritivos
+  [ ] grep por "Especificacoes Tecnicas" no dist/ nao mostra H2 duplicado
+  [ ] Deploy para producao apos validacao (se possivel)
+
+---
+
+FORMATO DE RESPOSTA
+-------------------
+Para cada correcao, responda:
+1. Arquivo(s) modificados
+2. O que mudou (antes vs depois)
+3. Resultado de `npm run build`
+4. Se encontrou algum obstaculo inesperado
+
+=======================================================
+FIM DO PROMPT
+=======================================================
