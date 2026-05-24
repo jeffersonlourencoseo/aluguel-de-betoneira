@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
     'Aluguel de betoneira com entrega rapida e preco justo. Locacao de betoneiras 120L, 150L, 200L e 400L revisadas. Solicite orcamento gratis!',
 
   // URLs
-  url: 'https://alugueldebetoneira.com.br',
+  url: 'https://www.alugueldebetoneirarj.com.br',
   ogImage: '/images/og-image.svg',
 
   // NAP (Name, Address, Phone) — CRITICO para SEO Local
@@ -21,7 +21,7 @@ export const SITE_CONFIG = {
     phone: '(21) 99775-1577',
     phoneRaw: '5521997751577',
     whatsapp: '5521997751577',
-    email: 'contato@alugueldebetoneira.com.br',
+    email: 'contato@alugueldebetoneirarj.com.br',
     address: {
       street: 'Av. Brasil, 11201',
       neighborhood: 'Penha Circular',

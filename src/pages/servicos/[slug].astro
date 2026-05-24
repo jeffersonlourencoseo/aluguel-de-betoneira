@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { SITE_CONFIG } from '../../data/config';
 
 export async function getStaticPaths() {
   const servicos = await getCollection('servicos');
@@ -17,9 +18,29 @@ const { Content } = await servico.render();
 
 const title = `${servico.data.title} | Aluguel de Betoneira`;
 const description = servico.data.description;
+
+const pageUrl = `${SITE_CONFIG.url}/servicos/${servico.slug}`;
+const imageUrl = `${SITE_CONFIG.url}${servico.data.image || '/images/og-image.svg'}`;
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: servico.data.title,
+  description: servico.data.description,
+  url: pageUrl,
+  image: imageUrl,
+  provider: {
+    '@type': 'Organization',
+    '@id': `${SITE_CONFIG.url}/#organization`,
+  },
+  areaServed: {
+    '@type': 'Place',
+    name: SITE_CONFIG.areaServed,
+  },
+};
 ---
 
-<Layout title={title} description={description} canonical={`/servicos/${servico.slug}`}>
+<Layout title={title} description={description} canonical={`/servicos/${servico.slug}`} schema={serviceSchema}>
   <Header currentPath="/servicos" />
 
   <main>

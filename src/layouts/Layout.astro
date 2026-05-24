@@ -12,9 +12,12 @@ interface Props {
   noindex?: boolean;
   schema?: object;
   servicos?: Array<{ title: string }>;
+  type?: string;
+  pubDate?: string;
+  updatedDate?: string;
 }
 
-const { title, description, keywords, canonical, ogImage, noindex, schema, servicos } = Astro.props;
+const { title, description, keywords, canonical, ogImage, noindex, schema, servicos, type, pubDate, updatedDate } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,6 +30,9 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
       canonical={canonical}
       ogImage={ogImage}
       noindex={noindex}
+      type={type}
+      pubDate={pubDate}
+      updatedDate={updatedDate}
     />
 
     <!-- Schema.org JSON-LD — LocalBusiness + WebSite + Organization -->
@@ -38,9 +44,26 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
         <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
       )
     }
+
+    <!-- Google Tag Manager (via Partytown para não bloquear render) -->
+    <script is:inline type="text/partytown">
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TZBXS6HT');
+    </script>
   </head>
 
   <body class="font-sans antialiased text-gray-900 bg-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZBXS6HT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
     <slot />
     <WhatsAppBtn />
 
