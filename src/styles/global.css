@@ -2,160 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection color */
-::selection {
-  background-color: #C75B2A;
-  color: #ffffff;
-}
-
-/* Focus visible */
-:focus-visible {
-  outline: 2px solid #C75B2A;
-  outline-offset: 2px;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
+@layer base {
+  /* Smooth scroll */
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: #C75B2A;
+    color: #ffffff;
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    outline: 2px solid #C75B2A;
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
-/* Scoped display typography */
-main :is(h1, h2, h3, h4, h5, h6) {
-  font-family: 'Bebas Neue', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-.prose :is(h2, h3) {
-  font-family: 'Bebas Neue', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
+@layer components {
+  /* Scoped display typography (exclui .prose para nao conflitar com article styles do plugin) */
+  main :is(h1, h2, h3, h4, h5, h6):not(.prose *) {
+    font-family: 'Bebas Neue', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
 
-/* Concrete section background + subtle noise */
-.section-concrete {
-  background-color: #F5F3F0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
-}
+  /* Concrete section background + subtle noise */
+  .section-concrete {
+    background-color: #F5F3F0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+  }
 
-/* Scroll-reveal animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
+  /* Scroll-reveal animations */
   .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
-}
-
-/* Lightweight prose replacement (saves ~20KB vs @tailwindcss/typography) */
-.prose {
-  color: #4A4A4A;
-}
-.prose p {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  line-height: 1.75;
-}
-.prose h2 {
-  margin-top: 2em;
-  margin-bottom: 1em;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.333;
-  color: #1A1A1A;
-}
-.prose h3 {
-  margin-top: 1.6em;
-  margin-bottom: 0.6em;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #1A1A1A;
-}
-.prose ul {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  padding-left: 1.625em;
-  list-style-type: disc;
-}
-.prose ol {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  padding-left: 1.625em;
-  list-style-type: decimal;
-}
-.prose li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-.prose a {
-  color: #C75B2A;
-  text-decoration: underline;
-  font-weight: 500;
-}
-.prose a:hover {
-  color: #A04420;
-}
-.prose strong {
-  color: #1A1A1A;
-  font-weight: 600;
-}
-.prose img {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  border-radius: 0.75rem;
-}
-.prose figure {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-.prose blockquote {
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
-  padding-left: 1em;
-  border-left: 0.25rem solid #D1CFCA;
-  font-style: italic;
-  color: #4A4A4A;
-}
-.prose hr {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  border: 0;
-  border-top: 1px solid #D1CFCA;
-}
-.prose > :first-child {
-  margin-top: 0;
-}
-.prose > :last-child {
-  margin-bottom: 0;
-}
-
-/* prose-lg overrides */
-.prose-lg p {
-  font-size: 1.125rem;
-}
-.prose-lg h2 {
-  font-size: 1.666rem;
-}
-.prose-lg h3 {
-  font-size: 1.333rem;
-}
-.prose-lg ul,
-.prose-lg ol {
-  padding-left: 1.666em;
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
 }

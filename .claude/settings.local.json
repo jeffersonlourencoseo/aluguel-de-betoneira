@@ -50,7 +50,12 @@
       "PowerShell(git commit -m $msg)",
       "mcp__ide__executeCode",
       "Bash(python3 *)",
-      "PowerShell(git commit *)"
+      "PowerShell(git commit *)",
+      "Bash(grep -o '\\\\\\\\.prose\\\\\\\\b' dist/_astro/_slug_.Shg8Pb3g.css)",
+      "Bash(grep -o '\\\\\\\\.prose\\\\\\\\b' dist/_astro/_slug_.VLcO-1Nj.css)",
+      "Bash(grep -o '\\\\\\\\.prose-table' dist/_astro/_slug_.VLcO-1Nj.css)",
+      "Bash(grep -o '\\\\\\\\.prose-blockquote' dist/_astro/_slug_.VLcO-1Nj.css)",
+      "Bash(grep -o '\\\\\\\\.prose\\\\\\\\b' dist/_astro/*.css)"
     ]
   }
 }
