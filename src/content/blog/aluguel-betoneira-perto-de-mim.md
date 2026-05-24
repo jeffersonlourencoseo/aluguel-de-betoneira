@@ -1,7 +1,7 @@
 ---
 title: "Aluguel de Betoneira Perto de Mim: Entrega Rápida em Toda a Região Metropolitana"
 description: "Procure aluguel de betoneira perto de mim e encontre entrega rápida no Rio de Janeiro, Niterói, São Gonçalo e região. Equipamentos revisados e entrega no mesmo dia."
-pubDate: 2026-05-18
+pubDate: 2026-05-05
 author: "Aluguel de Betoneira"
 image: "/images/blog-5.jpg"
 tags: ["local", "entrega-rapida", "regiao-metropolitana", "praticidade"]

@@ -1,7 +1,7 @@
 ---
 title: "Aluguel de Betoneira 400 Litros Preço: Equipamento para Obras de Grande Porte"
 description: "Conheça o valor do aluguel de betoneira 400 litros. Equipamento profissional para construções industriais, obras de grande porte e usinas de concreto no Rio de Janeiro."
-pubDate: 2026-05-08
+pubDate: 2026-04-14
 author: "Aluguel de Betoneira"
 image: "/images/blog-2.jpg"
 tags: ["equipamentos", "400-litros", "obras-grandes"]

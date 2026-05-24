@@ -1,7 +1,7 @@
 ---
 title: "Aluguel de Betoneira Mensal: Economia e Praticidade para Obras Longas"
 description: "Descubra as vantagens do aluguel de betoneira mensal. Reduza o custo por dia e mantenha sua obra no cronograma no Rio de Janeiro. Orçamento grátis."
-pubDate: 2026-05-15
+pubDate: 2026-04-28
 author: "Aluguel de Betoneira"
 image: "/images/blog-4.jpg"
 tags: ["locacao", "mensal", "economia", "obras-longas"]
