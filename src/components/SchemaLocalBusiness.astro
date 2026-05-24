@@ -4,11 +4,52 @@ import { SITE_CONFIG } from '../data/config';
 interface Props {
   servicos?: Array<{ title: string }>;
   pageType?: 'home' | 'about' | 'contact' | 'service' | 'blog';
+  breadcrumbName?: string;
 }
 
-const { servicos = [] } = Astro.props;
+const { servicos = [], breadcrumbName } = Astro.props;
 
 const address = SITE_CONFIG.nap.address;
+const pathname = Astro.url.pathname;
+
+// Breadcrumb dinâmico baseado no pathname
+function buildBreadcrumbItems() {
+  const items: Array<{ name: string; item?: string }> = [
+    { name: 'Início', item: SITE_CONFIG.url },
+  ];
+
+  if (pathname === '/' || pathname === '') return items;
+
+  const segments = pathname.split('/').filter(Boolean);
+
+  if (segments[0] === 'sobre') {
+    items.push({ name: 'Quem Somos' });
+  } else if (segments[0] === 'contato') {
+    items.push({ name: 'Contato' });
+  } else if (segments[0] === 'servicos') {
+    items.push({ name: 'Serviços', item: `${SITE_CONFIG.url}/servicos` });
+    if (segments[1] && breadcrumbName) {
+      items.push({ name: breadcrumbName });
+    } else if (segments[1]) {
+      items.push({ name: 'Detalhes do Serviço' });
+    }
+  } else if (segments[0] === 'blog') {
+    items.push({ name: 'Blog', item: `${SITE_CONFIG.url}/blog` });
+    if (segments[1] && breadcrumbName) {
+      items.push({ name: breadcrumbName });
+    } else if (segments[1]) {
+      items.push({ name: 'Artigo' });
+    }
+  } else if (segments[0] === 'privacidade') {
+    items.push({ name: 'Privacidade' });
+  } else if (segments[0] === 'termos') {
+    items.push({ name: 'Termos' });
+  }
+
+  return items;
+}
+
+const breadcrumbItems = buildBreadcrumbItems();
 
 // LocalBusiness Schema (obrigatório para Google Maps / Painel de Conhecimento)
 const localBusiness = {
@@ -141,18 +182,16 @@ const organization = {
   },
 };
 
-// BreadcrumbList Schema (página atual)
+// BreadcrumbList Schema (dinâmico)
 const breadcrumbs = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Início',
-      item: SITE_CONFIG.url,
-    },
-  ],
+  itemListElement: breadcrumbItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    ...(item.item ? { item: item.item } : {}),
+  })),
 };
 
 const schemas = [localBusiness, website, organization, breadcrumbs].filter(Boolean);

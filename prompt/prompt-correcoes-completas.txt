@@ -1,0 +1,233 @@
+=======================================================
+PROMPT DE CORRECOES — Projeto SEO Aluguel de Betoneira RJ
+Gerado por: Agente Consultivo
+Data: 2026-05-24
+Baseado no relatorio: relatorio-seo-completo.txt
+=======================================================
+
+INSTRUCAO GERAL
+---------------
+Voce e um engenheiro Astro especialista em SEO tecnico. Execute as correcoes
+abaixo UMA POR VEZ. Apos cada correcao, rode `npm run build` e confirme que
+passa sem erros. So entao passe para a proxima.
+
+---
+
+CORRECAO 1 — Description da pagina /sobre (COPY CRITICA)
+----------------------------------------------------------
+PRIORIDADE: ALTA
+
+Problema:
+  A meta description de /sobre esta com typo e keyword stuffing.
+  Atual: "Somos especialistas l betoneira 400l industrial rj, betoneira grande
+capacidade rio de janeiro, locacao betoneira 400l"
+
+  Issues:
+  1. "l" parece typo (provavelmente deveria ser "em")
+  2. A pagina /sobre fala da empresa, historia, missao, valores, equipe —
+     NAO especificamente sobre betoneira 400L. Forcar essa keyword aqui e
+     keyword stuffing e pode prejudicar o ranqueamento.
+
+Acao:
+  1. Abra src/pages/sobre.astro
+  2. Localize a prop `description` passada para o componente <SEO />
+  3. Reescreva a description de forma natural, refletindo o conteudo REAL
+     da pagina (historia, experiencia, atendimento humanizado, NR-18).
+     Mantenha no maximo 1-2 keywords principais de forma organica.
+     Limite: ~155-160 caracteres.
+
+  Exemplo de direcao (ajuste conforme necessario):
+  "Somos especialistas em locacao de betoneiras no Rio de Janeiro desde 2014.
+Atendimento humanizado, equipamentos revisados e entrega rapida."
+
+  4. Rode `npm run build` e confirme que nao ha erros.
+
+---
+
+CORRECAO 2 — Breadcrumb Schema incompleto (JSON-LD)
+---------------------------------------------------
+PRIORIDADE: ALTA
+
+Problema:
+  O Schema BreadcrumbList em SchemaLocalBusiness.astro so renderiza 1 item:
+  "Inicio" em TODAS as paginas.
+
+  O Google recomenda breadcrumbs completos refletindo a hierarquia real:
+  - Home: Inicio
+  - /servicos: Inicio > Servicos
+  - /servicos/betoneira-150l: Inicio > Servicos > Betoneira 150L
+  - /blog: Inicio > Blog
+  - /blog/artigo: Inicio > Blog > Titulo do Artigo
+  - /sobre: Inicio > Quem Somos
+  - /contato: Inicio > Contato
+
+Acao:
+  1. Abra src/components/SchemaLocalBusiness.astro
+  2. Adicione uma prop opcional chamada `breadcrumbItems` (array de objetos
+     com `name` e `url`) ou determine a hierarquia baseada na URL atual
+     (Astro.url.pathname).
+  3. Atualize o BreadcrumbList para renderizar dinamicamente todos os niveis.
+     Exemplo de estrutura:
+     ```
+     {
+       "@context": "https://schema.org",
+       "@type": "BreadcrumbList",
+       "itemListElement": [
+         {
+           "@type": "ListItem",
+           "position": 1,
+           "name": "Inicio",
+           "item": "https://www.alugueldebetoneirarj.com.br/"
+         },
+         {
+           "@type": "ListItem",
+           "position": 2,
+           "name": "Servicos",
+           "item": "https://www.alugueldebetoneirarj.com.br/servicos/"
+         }
+         // etc
+       ]
+     }
+     ```
+  4. Em cada pagina que usa <SchemaLocalBusiness />, passe a hierarquia
+     correta (ou faca o componente inferir automaticamente pelo pathname).
+  5. Rode `npm run build` e valide o HTML gerado:
+     - grep por BreadcrumbList em dist/ e confirme que paginas internas tem
+       2+ itens.
+  6. Teste a validade do JSON-LD no Google Rich Results Test
+     (https://search.google.com/test/rich-results).
+
+---
+
+CORRECAO 3 — Tags do blog devem ser links filtraveis
+------------------------------------------------------
+PRIORIDADE: MEDIA
+
+Problema:
+  Em blog/index.astro, as tags sao renderizadas como <span> com cursor-default.
+  Elas NAO funcionam como links. Isso e funcionalidade visual pura.
+
+  Impacto: perda de navegacao interna e estrutura semantica. Usuarios tentam
+  clicar e nada acontece.
+
+Acao:
+  1. Abra src/pages/blog/index.astro
+  2. Localize onde as tags sao renderizadas (provavelmente um .map() de tags).
+  3. Converta cada tag de <span> para <a> apontando para:
+     /blog?tag={tag-slug}
+     (ou crie rotas dinamicas /blog/tag/{tag} se preferir — mas query string
+      e mais simples de implementar no Astro estatico).
+  4. No topo da pagina blog/index.astro, leia a query string (Astro.url.searchParams)
+     e, se houver ?tag=xxx, filtre os posts para mostrar apenas daquela tag.
+     Se nao houver filtro, mostre todos (comportamento atual).
+  5. Adicione um indicador visual quando um filtro esta ativo:
+     "Mostrando artigos com a tag: {tag} [limpar filtro]"
+  6. Estilize os links de tag para parecerem clicaveis (hover, underline, etc).
+  7. Rode `npm run build` e confirme que nao ha erros.
+
+---
+
+CORRECAO 4 — Sitelinks Searchbox sem pagina de busca
+----------------------------------------------------
+PRIORIDADE: BAIXA (remover ou implementar)
+
+Problema:
+  O Schema WebSite em SchemaLocalBusiness.astro declara um SearchAction:
+  ```
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.alugueldebetoneirarj.com.br/busca?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+  ```
+  Mas NAO existe pagina /busca no projeto. Isso pode gerar erro no
+  Google Search Console (URL nao encontrada).
+
+Acao (escolha uma das duas):
+
+  OPCAO A — Remover o SearchAction (mais rapido, menos risco):
+    1. Em SchemaLocalBusiness.astro, remova o bloco potentialAction/SearchAction.
+    2. Rode `npm run build` e confirme.
+
+  OPCAO B — Implementar pagina de busca simples:
+    1. Crie src/pages/busca.astro
+    2. Leia a query string ?q=xxx
+    3. Filtre posts do blog e/ou servicos que contenham o termo no titulo
+       ou descricao.
+    4. Mostre resultados em uma lista simples.
+    5. Adicione um <input> de busca na pagina.
+    6. Certifique-se de que a URL /busca?q={search_term_string} funciona.
+    7. Rode `npm run build` e confirme.
+
+  Diga ao usuario qual opcao voce escolheu e por que.
+
+---
+
+CORRECAO 5 — Verificar e remover link morto (artigo deletado)
+-------------------------------------------------------------
+PRIORIDADE: MEDIA
+
+Problema:
+  O artigo "betoneira-eletrica-vs-gasolina" foi deletado durante recriacao do
+  blog. Se ainda houver links apontando para /blog/betoneira-eletrica-vs-gasolina,
+  isso gera 404 e prejudica SEO.
+
+Acao:
+  1. Faca uma busca em TODO o projeto (src/ + components/ + layouts/ + content/)
+     por referencias ao slug "betoneira-eletrica-vs-gasolina".
+     Comando util: grep -r "betoneira-eletrica-vs-gasolina" src/ public/
+  2. Se encontrar links quebrados:
+     - Se o link estiver em um artigo antigo, redirecione para o artigo mais
+       relevante existente (ex: aluguel-betoneira-150-250-litros-preco)
+     - Ou remova o link se nao houver substituto logico
+  3. Rode `npm run build` e confirme que nao ha erros.
+
+---
+
+CORRECAO 6 — Fallback local para imagens externas em /sobre
+-----------------------------------------------------------
+PRIORIDADE: BAIXA
+
+Problema:
+  A pagina /sobre usa imagens de images.unsplash.com e images.pexels.com.
+  Se esses CDNs falharem ou demorarem, a pagina fica sem imagens.
+
+Acao:
+  1. Faca download das imagens externas usadas em /sobre.
+  2. Coloque-as em public/images/sobre/
+  3. Atualize as referencias em sobre.astro para apontar para os caminhos locais.
+  4. Mantenha os atributos width/height e lazy loading.
+  5. Rode `npm run build` e confirme.
+
+  Nota: Se houver muitas imagens, faca pelo menos para as imagens acima da fold.
+  Imagens abaixo da fold podem ficar como backlog.
+
+---
+
+CHECKLIST FINAL DE VALIDACAO
+------------------------------
+Apos TODAS as correcoes, execute:
+
+  [ ] npm run build passa sem erros
+  [ ] grep por BreadcrumbList no dist/ mostra hierarquia completa nas internas
+  [ ] grep por "betoneira-eletrica-vs-gasolina" nao retorna nada no src/
+  [ ] As tags em /blog sao <a> clicaveis
+  [ ] A description de /sobre nao tem typo nem keyword stuffing
+  [ ] Se escolheu Opcao B (busca), /busca?q=betoneira funciona
+  [ ] Se escolheu Opcao A (remover SearchAction), nao ha mais potentialAction no Schema WebSite
+
+---
+
+FORMATO DE RESPOSTA
+-------------------
+Para cada correcao, responda:
+1. O que voce mudou (arquivo + linhas)
+2. O resultado esperado vs o resultado obtido
+3. Se `npm run build` passou ou nao (e o erro se falhou)
+4. Screenshots ou trechos de codigo relevantes
+
+Se encontrar algum obstaculo inesperado, pare e pergunte antes de seguir.
+
+=======================================================
+FIM DO PROMPT
+=======================================================

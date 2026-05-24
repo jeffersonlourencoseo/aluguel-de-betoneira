@@ -12,12 +12,13 @@ interface Props {
   noindex?: boolean;
   schema?: object;
   servicos?: Array<{ title: string }>;
+  breadcrumbName?: string;
   type?: string;
   pubDate?: string;
   updatedDate?: string;
 }
 
-const { title, description, keywords, canonical, ogImage, noindex, schema, servicos, type, pubDate, updatedDate } = Astro.props;
+const { title, description, keywords, canonical, ogImage, noindex, schema, servicos, breadcrumbName, type, pubDate, updatedDate } = Astro.props;
 ---
 
 <!doctype html>
@@ -36,7 +37,7 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
     />
 
     <!-- Schema.org JSON-LD — LocalBusiness + WebSite + Organization -->
-    <SchemaLocalBusiness servicos={servicos} />
+    <SchemaLocalBusiness servicos={servicos} breadcrumbName={breadcrumbName} />
 
     <!-- Schema adicional por página (opcional) -->
     {

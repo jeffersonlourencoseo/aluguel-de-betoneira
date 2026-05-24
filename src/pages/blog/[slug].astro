@@ -110,6 +110,7 @@ const faqSchema = faqData[post.slug]
   pubDate={post.data.pubDate.toISOString()}
   updatedDate={post.data.updatedDate?.toISOString()}
   schema={articleSchema}
+  breadcrumbName={post.data.title}
 >
   <Header currentPath="/blog" />
 
