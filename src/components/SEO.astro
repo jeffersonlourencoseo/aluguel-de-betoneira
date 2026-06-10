@@ -25,9 +25,14 @@ const {
   updatedDate,
 } = Astro.props;
 
+function normalizeCanonical(path: string): string {
+  if (path === '/') return path;
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
 const fullTitle = title.includes(SITE_CONFIG.name) ? title : `${title} | ${SITE_CONFIG.name}`;
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') || SITE_CONFIG.url;
-const fullCanonical = `${siteUrl}${canonical}`;
+const fullCanonical = `${siteUrl}${normalizeCanonical(canonical)}`;
 const fullOgImage = `${siteUrl}${ogImage}`;
 ---
 
