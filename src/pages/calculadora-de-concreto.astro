@@ -1,0 +1,269 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_CONFIG } from '../data/config';
+
+const title = "Calculadora de Concreto | Aluguel de Betoneira RJ";
+const description = "Calcule o volume de concreto da sua obra em metros cúbicos (m³). Descubra quantos sacos de cimento, areia e brita precisa e qual betoneira alugar no Rio de Janeiro.";
+const keywords = "calculadora de concreto, volume de concreto, quantidade de concreto, calcular concreto m3, betoneira para concreto, aluguel de betoneira rio de janeiro";
+
+const pageUrl = `${SITE_CONFIG.url}/calculadora-de-concreto/`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Calculadora de Volume de Concreto',
+  applicationCategory: 'UtilitiesApplication',
+  description: 'Calculadora gratuita para calcular volume de concreto em m³, materiais necessários e betoneira recomendada.',
+  url: pageUrl,
+  operatingSystem: 'Any',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'BRL',
+  },
+  provider: {
+    '@type': 'Organization',
+    '@id': `${SITE_CONFIG.url}/#organization`,
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Como calcular o volume de concreto?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Multiplique comprimento x largura x espessura (em metros). O resultado é o volume em metros cúbicos (m³). Recomenda-se adicionar 10% de perda para segurança.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quantos sacos de cimento por m³ de concreto?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Para concreto de uso geral, use aproximadamente 7 sacos de cimento de 50kg por metro cúbico de concreto.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qual betoneira escolher para 5 m³ de concreto?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Para 5 m³ de concreto, a betoneira 150L é ideal, com produção de até 3 m³/dia, ou a 200L, que produz até 7 m³/dia.',
+      },
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical="/calculadora-de-concreto" schema={schema} breadcrumbName="Calculadora de Concreto">
+  <Header currentPath="/calculadora-de-concreto" />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative py-24 lg:py-32 bg-gray-900 overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="/images/hero-blur-1200.jpg"
+          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+          sizes="100vw"
+          alt="Betoneira em obra de construção civil no Rio de Janeiro"
+          class="h-full w-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#2D2D2D]/85 to-[#4A4A4A]/75"></div>
+      </div>
+
+      <div class="relative container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-sm text-gray-100 mb-6">
+          <a href="/" class="hover:text-primary transition-colors">Início</a>
+          <span>/</span>
+          <span class="text-white">Calculadora de Concreto</span>
+        </nav>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+          Calculadora de Volume de Concreto
+        </h1>
+        <p class="text-xl text-gray-100 max-w-2xl">
+          Calcule em segundos quantos m³ de concreto sua obra precisa, a quantidade de materiais e a betoneira ideal para alugar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Form -->
+          <div class="rounded-2xl border border-gray-200 bg-gray-50 p-8 lg:p-10">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Preencha as medidas</h2>
+            <form id="calc-form" class="space-y-5">
+              <div>
+                <label for="comprimento" class="block text-sm font-medium text-gray-700 mb-2">Comprimento (metros)</label>
+                <input
+                  type="text"
+                  id="comprimento"
+                  inputmode="decimal"
+                  placeholder="Ex: 10,5"
+                  required
+                  class="block w-full rounded-xl border border-gray-300 bg-white px-5 py-4 text-gray-900 placeholder-gray-400 focus:border-secondary focus:ring-secondary transition-all"
+                />
+              </div>
+              <div>
+                <label for="largura" class="block text-sm font-medium text-gray-700 mb-2">Largura (metros)</label>
+                <input
+                  type="text"
+                  id="largura"
+                  inputmode="decimal"
+                  placeholder="Ex: 4,2"
+                  required
+                  class="block w-full rounded-xl border border-gray-300 bg-white px-5 py-4 text-gray-900 placeholder-gray-400 focus:border-secondary focus:ring-secondary transition-all"
+                />
+              </div>
+              <div>
+                <label for="espessura" class="block text-sm font-medium text-gray-700 mb-2">Espessura (centímetros)</label>
+                <input
+                  type="text"
+                  id="espessura"
+                  inputmode="decimal"
+                  placeholder="Ex: 10"
+                  required
+                  class="block w-full rounded-xl border border-gray-300 bg-white px-5 py-4 text-gray-900 placeholder-gray-400 focus:border-secondary focus:ring-secondary transition-all"
+                />
+              </div>
+              <div>
+                <label for="perda" class="block text-sm font-medium text-gray-700 mb-2">Margem de perda (%)</label>
+                <select
+                  id="perda"
+                  class="block w-full rounded-xl border border-gray-300 bg-white px-5 py-4 text-gray-900 focus:border-secondary focus:ring-secondary transition-all"
+                >
+                  <option value="0">0% (cálculo exato)</option>
+                  <option value="5">5%</option>
+                  <option value="10" selected>10% (recomendado)</option>
+                  <option value="15">15%</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                class="w-full inline-flex items-center justify-center rounded-full bg-secondary px-8 py-4 text-base font-bold text-white shadow-lg shadow-secondary/30 hover:bg-secondary-700 hover:scale-105 active:scale-95 transition-all"
+              >
+                Calcular Volume
+              </button>
+            </form>
+          </div>
+
+          <!-- Result -->
+          <div id="resultado" class="hidden rounded-2xl border border-gray-200 bg-white p-8 lg:p-10 shadow-sm">
+            <p class="text-gray-500 text-center">Preencha o formulário e clique em calcular para ver o resultado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to -->
+    <section class="py-24 lg:py-32 section-concrete">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center">Como funciona o cálculo?</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <article class="rounded-2xl bg-white p-8 border border-gray-200 shadow-sm text-center">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white font-bold text-xl mb-4">1</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Medida da área</h3>
+            <p class="text-gray-600">Informe o comprimento e a largura da área que será concretada em metros.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-8 border border-gray-200 shadow-sm text-center">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white font-bold text-xl mb-4">2</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Espessura</h3>
+            <p class="text-gray-600">Informe a espessura da laje, contrapiso ou camada de concreto em centímetros.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-8 border border-gray-200 shadow-sm text-center">
+            <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white font-bold text-xl mb-4">3</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Resultado</h3>
+            <p class="text-gray-600">Receba o volume em m³, a quantidade de materiais e a betoneira recomendada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formula -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+        <div class="rounded-2xl bg-secondary/10 border border-secondary/20 p-8 lg:p-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Fórmula usada</h2>
+          <p class="text-lg text-gray-700 mb-6">
+            O volume de concreto é calculado multiplicando as três dimensões. Como a espessura costuma ser informada em centímetros, dividimos por 100 para converter em metros:
+          </p>
+          <div class="rounded-xl bg-white p-6 border border-gray-200 font-mono text-lg text-gray-900 text-center">
+            Volume (m³) = Comprimento × Largura × (Espessura ÷ 100)
+          </div>
+          <p class="mt-6 text-gray-700">
+            O resultado é acrescido da margem de perda escolhida para garantir que você não fique sem material durante a concretagem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 lg:py-32 section-concrete">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">Perguntas Frequentes</h2>
+        <div class="space-y-6">
+          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
+            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900">
+              Como calcular o volume de concreto?
+              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Multiplique comprimento x largura x espessura, mantendo todas as medidas em metros. Adicione uma margem de 10% para compensar perdas durante a obra.</p>
+          </details>
+          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
+            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900">
+              Quantos sacos de cimento por m³ de concreto?
+              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="mt-4 text-gray-600">A recomendação prática é usar cerca de 7 sacos de cimento de 50kg para cada metro cúbico de concreto de uso geral.</p>
+          </details>
+          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
+            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900">
+              Qual betoneira alugar para 5 m³ de concreto?
+              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Para 5 m³ de concreto, a betoneira 150L atende bem, com produção de até 3 m³ por dia. Se o prazo for curto, a betoneira 200L produz até 7 m³/dia.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 lg:py-32 bg-secondary">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">Já calculou? Peça seu orçamento agora</h2>
+        <p class="text-lg text-gray-100 mb-10 max-w-2xl mx-auto">
+          Escolha a betoneira certa e receba o equipamento na sua obra com entrega rápida no Rio de Janeiro.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/servicos/" class="inline-flex items-center justify-center rounded-full bg-white px-10 py-5 text-lg font-bold text-secondary shadow-xl hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">
+            Ver Equipamentos
+          </a>
+          <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20calculei%20o%20volume%20de%20concreto%20no%20site%20e%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-10 py-5 text-lg font-bold text-white shadow-xl hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {Object.keys(faqSchema).length > 0 && (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  )}
+
+  <script is:inline src="/js/calculadora-concreto.js"></script>
+
+  <Footer />
+</Layout>
