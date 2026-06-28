@@ -15,7 +15,7 @@ Neste guia completo, vamos mostrar a tabela de preços atualizada, explicar o qu
 
 O **quanto custa aluguel de betoneira** no mercado carioca depende basicamente do modelo escolhido. Betoneiras menores, como a de 120 litros, são mais baratas. Já equipamentos de 400 litros, ideais para grandes empreendimentos, têm um **aluguel de betoneira valor diária** maior por conta da maior capacidade de produção.
 
-Em média, o **aluguel de betoneira preço** para obras residenciais pequenas começa em valores acessíveis. A locação de uma <a href="/servicos/betoneira-150l">betoneira 150 litros</a>, por exemplo, é a escolha mais popular entre construtoras e empreiteiros da região metropolitana do Rio de Janeiro. O valor é calculado por período, e é possível obter descontos significativos para locações semanais ou mensais.
+Em média, o **aluguel de betoneira preço** para obras residenciais pequenas começa em valores acessíveis. A locação de uma <a href="/servicos/betoneira-150l/">betoneira 150 litros</a>, por exemplo, é a escolha mais popular entre construtoras e empreiteiros da região metropolitana do Rio de Janeiro. O valor é calculado por período, e é possível obter descontos significativos para locações semanais ou mensais.
 
 A seguir, apresentamos uma tabela comparativa dos valores praticados no mercado. É importante destacar que o **valor de aluguel de betoneira** pode sofrer pequenas variações de acordo com a região, a necessidade de entrega e a demanda do mercado na época da locação.
 
@@ -35,7 +35,7 @@ Lembre-se: os valores acima são apenas uma referência do **aluguel de betoneir
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe a capacidade, o prazo e o endereço que enviamos seu orçamento em minutos. Sem taxas ocultas.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20aluguel%20de%20betoneira" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -60,7 +60,7 @@ Para obras localizadas dentro da região metropolitana do Rio de Janeiro, a entr
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Equipamento revisado, entrega no mesmo dia e suporte técnico incluído. Solicite seu orçamento agora.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20completo%20de%20aluguel%20de%20betoneira" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -74,7 +74,7 @@ A regra é simples: quanto mais tempo você ficar com a betoneira, menor o custo
 
 ### Capacidade do Equipamento
 
-<a href="/servicos/betoneira-120l">Betoneiras de 120 litros</a> são mais baratas, mas produzem menos concreto por ciclo. Se sua obra exige volume, pode ser mais econômico alugar uma <a href="/servicos/betoneira-200l">de 200 litros</a> do que ficar batendo massa várias vezes na de 120. Nosso time ajuda a fazer esse cálculo no WhatsApp.
+<a href="/servicos/betoneira-120l/">Betoneiras de 120 litros</a> são mais baratas, mas produzem menos concreto por ciclo. Se sua obra exige volume, pode ser mais econômico alugar uma <a href="/servicos/betoneira-200l/">de 200 litros</a> do que ficar batendo massa várias vezes na de 120. Nosso time ajuda a fazer esse cálculo no WhatsApp.
 
 ### Distância da Entrega
 
@@ -97,7 +97,7 @@ Para quem precisa de múltiplos equipamentos, como betoneira e andaime, por exem
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe o endereço e o prazo da obra. Você recebe o valor exato da locação e do frete sem taxas ocultas.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20transparente%20de%20aluguel%20de%20betoneira" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -124,7 +124,7 @@ Não deixe para depois. Descubra agora mesmo o **quanto custa aluguel de betonei
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Orçamento sem compromisso em poucos minutos. Atendemos toda a região metropolitana do Rio de Janeiro com entrega rápida.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20achei%20voc%C3%AAs%20no%20google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Falar no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar Orçamento</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar Orçamento</a>
   </div>
 </div>
 

@@ -1,0 +1,25 @@
+{
+  "name": "Aluguel de Betoneira RJ",
+  "short_name": "Betoneira RJ",
+  "description": "Locação de betoneiras 120L, 150L, 200L e 400L no Rio de Janeiro. Entrega rápida e preço justo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1A1A",
+  "theme_color": "#1A1A1A",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

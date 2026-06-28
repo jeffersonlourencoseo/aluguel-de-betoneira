@@ -55,7 +55,7 @@ Muitos clientes nos perguntam se vale mais a pena alugar uma 400L ou duas betone
 
 A conclusão é clara: se a obra tem um único ponto de concreto, a betoneira 400 litros é mais econômica. Se a obra é grande e tem dois pontos distantes, duas de 200 litros podem fazer sentido. Nosso time de atendimento ajuda a fazer essa análise pelo WhatsApp.
 
-Para obras menores que não precisam de volume industrial, a [betoneira 200 litros](/servicos/betoneira-200l) oferece excelente produtividade com custo mais acessível.
+Para obras menores que não precisam de volume industrial, a [betoneira 200 litros](/servicos/betoneira-200l/) oferece excelente produtividade com custo mais acessível.
 
 ## Locação Especializada da Betoneira 400 Litros
 
@@ -68,6 +68,6 @@ Para equipamentos de grande porte, oferecemos serviços adicionais que garantem 
 
 O **aluguel de betoneira 400 litros** pode ser parcelado para locações longas. Aceitamos PIX, dinheiro, cartão e transferência bancária. Para construtoras e empreiteiras que locam regularmente, oferecemos condições comerciais diferenciadas.
 
-Além disso, pacotes que incluem betoneira 400 litros + outros equipamentos, como compactador de solo ou andaime, têm desconto de até 15% no valor total. Para obras longas, o [aluguel mensal](/blog/aluguel-betoneira-mensal) reduz o custo por dia em até 50%.
+Além disso, pacotes que incluem betoneira 400 litros + outros equipamentos, como compactador de solo ou andaime, têm desconto de até 15% no valor total. Para obras longas, o [aluguel mensal](/blog/aluguel-betoneira-mensal/) reduz o custo por dia em até 50%.
 
-Entre em contato para um orçamento personalizado e condições especiais para locações de longo prazo. Confira também nosso [guia completo de preços da betoneira 400 litros](/blog/aluguel-betoneira-400-litros-preco).
+Entre em contato para um orçamento personalizado e condições especiais para locações de longo prazo. Confira também nosso [guia completo de preços da betoneira 400 litros](/blog/aluguel-betoneira-400-litros-preco/).

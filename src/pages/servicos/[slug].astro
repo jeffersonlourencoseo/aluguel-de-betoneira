@@ -20,7 +20,7 @@ const title = `${servico.data.title} | Aluguel de Betoneira`;
 const description = servico.data.description;
 const keywords = servico.data.keywords;
 
-const pageUrl = `${SITE_CONFIG.url}/servicos/${servico.slug}`;
+const pageUrl = `${SITE_CONFIG.url}/servicos/${servico.slug}/`;
 const imageUrl = `${SITE_CONFIG.url}${servico.data.image || '/images/og-image.svg'}`;
 
 const serviceSchema = {
@@ -83,7 +83,7 @@ const faqSchema = faqData[servico.slug]
   : null;
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}`} schema={serviceSchema} breadcrumbName={servico.data.title} preloadHero={false}>
+<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}/`} schema={serviceSchema} breadcrumbName={servico.data.title} preloadHero={false}>
   <Header currentPath="/servicos" />
 
   {
@@ -113,7 +113,7 @@ const faqSchema = faqData[servico.slug]
 
       <div class="relative container mx-auto px-6 sm:px-8 lg:px-12 max-w-5xl">
         <div class="flex items-center gap-3 text-sm text-gray-100 mb-6">
-          <a href="/servicos" class="hover:text-primary transition-colors">Serviços</a>
+          <a href="/servicos/" class="hover:text-primary transition-colors">Serviços</a>
           <span>/</span>
           <span class="text-white">{servico.data.title}</span>
         </div>
@@ -234,7 +234,7 @@ const faqSchema = faqData[servico.slug]
                 <p class="text-gray-600 mb-8">Entre em contato para receber valores atualizados e condições especiais para o seu projeto.</p>
 
                 <a
-                  href="/contato"
+                  href="/contato/"
                   class="block w-full text-center rounded-full bg-secondary px-6 py-4 text-base font-bold text-white shadow-lg shadow-secondary/30 hover:bg-secondary-700 hover:scale-105 active:scale-95 transition-all mb-4"
                 >
                   Solicitar Orçamento

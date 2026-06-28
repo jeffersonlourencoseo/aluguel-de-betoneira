@@ -81,7 +81,7 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
             <span class="text-lg text-gray-700">
               Mostrando artigos com a tag: <strong class="text-secondary">#{tagFilter}</strong>
             </span>
-            <a href="/blog" class="ml-auto inline-flex items-center text-sm font-semibold text-secondary hover:text-secondary-700 transition-colors">
+            <a href="/blog/" class="ml-auto inline-flex items-center text-sm font-semibold text-secondary hover:text-secondary-700 transition-colors">
               Limpar filtro →
             </a>
           </div>
@@ -98,7 +98,7 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
           {posts.map((post, i) => (
             <article class="group flex flex-col rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal" data-stagger={i}>
-              <a href={`/blog/${post.slug}`} class="flex flex-col h-full">
+              <a href={`/blog/${post.slug}/`} class="flex flex-col h-full">
                 <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
                   {post.data.image ? (
                     <img
@@ -106,6 +106,7 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
                       alt={post.data.title}
                       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
                       width="800"
                       height="450"
                     />
@@ -176,7 +177,7 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
               Falar no WhatsApp
             </a>
             <a
-              href="/contato"
+              href="/contato/"
               class="inline-flex items-center justify-center rounded-full bg-white/10 px-10 py-6 text-lg font-bold text-white ring-1 ring-inset ring-white/20 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all backdrop-blur-sm"
             >
               Solicitar Orçamento

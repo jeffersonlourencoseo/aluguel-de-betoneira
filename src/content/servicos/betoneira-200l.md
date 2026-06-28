@@ -47,14 +47,14 @@ A betoneira 200 litros entra em cena quando a demanda por concreto é maior e a 
 
 Veja como a 200L se posiciona entre os modelos menores e maiores:
 
-| Critério | [Betoneira 150L](/servicos/betoneira-150l) | Betoneira 200L | [Betoneira 400L](/servicos/betoneira-400l) |
+| Critério | [Betoneira 150L](/servicos/betoneira-150l/) | Betoneira 200L | [Betoneira 400L](/servicos/betoneira-400l/) |
 |----------|---------------|---------------|---------------|
 | Capacidade de mistura | 100 litros | 140 litros | 260 litros |
 | Motor | 1 CV | 2 CV | 3 CV |
 | Produção diária | Até 3 m³ | Até 5 m³ | Até 10 m³ |
 | Custo de locação | Mais econômico | Custo intermediário | Premium |
 
-Se sua obra precisa de até 3 m³ diários, a [betoneira 150 litros](/servicos/betoneira-150l) é suficiente. Se a demanda é de 5 m³ ou mais, a betoneira 200 litros é o investimento certo. Para obras industriais ou usinas de concreto, a [betoneira 400 litros](/servicos/betoneira-400l) entrega a máxima produtividade.
+Se sua obra precisa de até 3 m³ diários, a [betoneira 150 litros](/servicos/betoneira-150l/) é suficiente. Se a demanda é de 5 m³ ou mais, a betoneira 200 litros é o investimento certo. Para obras industriais ou usinas de concreto, a [betoneira 400 litros](/servicos/betoneira-400l/) entrega a máxima produtividade.
 
 ## Condições de Locação e Preços
 
@@ -66,8 +66,8 @@ O **aluguel de betoneira 200 litros** tem valores intermediários, oferecendo ex
 | Semanal (7 dias) | A partir de R$ 750,00 |
 | Mensal (30 dias) | A partir de R$ 2.000,00 |
 
-Para obras com prazo superior a 15 dias, o [aluguel de betoneira mensal](/blog/aluguel-betoneira-mensal) reduz drasticamente o custo por dia. A locação mensal é ideal para construções residenciais com prazo de 30 a 90 dias, reformas comerciais extensas e condomínios em construção.
+Para obras com prazo superior a 15 dias, o [aluguel de betoneira mensal](/blog/aluguel-betoneira-mensal/) reduz drasticamente o custo por dia. A locação mensal é ideal para construções residenciais com prazo de 30 a 90 dias, reformas comerciais extensas e condomínios em construção.
 
 Nossa equipe entrega o equipamento no local, realiza a instalação e fornece orientações de uso. Durante a locação, você conta com suporte técnico prioritário pelo WhatsApp. Se surgir qualquer problema, enviamos um técnico ou trocamos o equipamento no mesmo dia.
 
-Para grandes volumes, descubra os detalhes no nosso [guia de preços da betoneira 400 litros](/blog/aluguel-betoneira-400-litros-preco) e entenda quando fazer o upgrade.
+Para grandes volumes, descubra os detalhes no nosso [guia de preços da betoneira 400 litros](/blog/aluguel-betoneira-400-litros-preco/) e entenda quando fazer o upgrade.

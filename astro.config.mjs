@@ -50,6 +50,10 @@ export default defineConfig({
       serialize: serializeSitemap,
     }),
     compress(),
-    partytown(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push', 'gtag'],
+      },
+    }),
   ],
 });

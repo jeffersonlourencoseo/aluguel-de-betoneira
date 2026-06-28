@@ -60,7 +60,7 @@ Também atendemos a zona Oeste (Jacarepaguá, Barra da Tijuca, Recreio), zona Su
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe seu bairro e receba em minutos o orçamento com prazo de entrega e frete exatos.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7amento%20de%20aluguel%20de%20betoneira%20para%20meu%20bairro" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -85,7 +85,7 @@ Após aprovar o orçamento, confirme a data e horário de entrega. Nossa equipe 
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Peça pelo WhatsApp e receba ainda hoje na sua obra. Entrega no mesmo dia para solicitações antes das 14h.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20preciso%20de%20betoneira%20com%20entrega%20r%C3%A1pida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Entrega Rápida no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -114,7 +114,7 @@ Para quem não tem experiência com o equipamento, entregamos instruções bási
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Solicite sua betoneira agora. Nossa equipe entrega, instala, testa e orienta na sua obra.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20alugar%20uma%20betoneira%20revisada%20com%20entrega%20r%C3%A1pida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -159,15 +159,15 @@ Busque avaliações de clientes que fizeram o **aluguel de uma betoneira** na su
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Informe seu bairro e receba em minutos o orçamento com prazo de entrega e frete exatos.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20alugar%20uma%20betoneira%20com%20entrega%20r%C3%A1pida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
 ## Conclusão: Aluguel de Betoneira Perto de Mim com Entrega Garantida
 
-A busca por **aluguel de betoneira perto de mim** deve terminar em uma locadora que combine proximidade real, equipamentos de qualidade, entrega rápida e suporte técnico eficiente. Na região metropolitana do Rio de Janeiro, cobrimos todos esses requisitos com uma <a href="/sobre">base logística estratégica</a> que permite entrega no mesmo dia para a zona Norte e regiões adjacentes.
+A busca por **aluguel de betoneira perto de mim** deve terminar em uma locadora que combine proximidade real, equipamentos de qualidade, entrega rápida e suporte técnico eficiente. Na região metropolitana do Rio de Janeiro, cobrimos todos esses requisitos com uma <a href="/sobre/">base logística estratégica</a> que permite entrega no mesmo dia para a zona Norte e regiões adjacentes.
 
-Se você está em qualquer bairro do Rio de Janeiro, Niterói, São Gonçalo, Nova Iguaçu, Duque de Caxias ou cidades próximas, [solicite agora um orçamento pelo WhatsApp](/contato) e descubra como é fácil fazer o **aluguel de uma betoneira** com entrega rápida. Nosso time responde em minutos, calcula o frete exato para o seu endereço e agenda a entrega para o melhor horário da sua obra.
+Se você está em qualquer bairro do Rio de Janeiro, Niterói, São Gonçalo, Nova Iguaçu, Duque de Caxias ou cidades próximas, [solicite agora um orçamento pelo WhatsApp](/contato/) e descubra como é fácil fazer o **aluguel de uma betoneira** com entrega rápida. Nosso time responde em minutos, calcula o frete exato para o seu endereço e agenda a entrega para o melhor horário da sua obra.
 
 Não perca tempo com locadoras distantes que demoram dias para entregar. O **aluguel de betoneira perto de mim** que funciona de verdade está a uma mensagem de distância.
 

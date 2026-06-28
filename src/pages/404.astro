@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Página Não Encontrada | Aluguel de Betoneira RJ';
+const description = 'A página solicitada não foi encontrada. Encontre aqui links úteis para alugar betoneira no Rio de Janeiro.';
+---
+
+<Layout title={title} description={description} canonical="/404" noindex={true} preloadHero={false}>
+  <Header currentPath="/404" />
+
+  <main class="flex flex-col">
+    <section class="flex-1 bg-gray-900 py-24 lg:py-32">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <div class="mx-auto max-w-2xl">
+          <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black text-primary mb-6">
+            404
+          </h1>
+          <p class="text-2xl sm:text-3xl font-bold text-white mb-6">
+            Página não encontrada
+          </p>
+          <p class="text-lg text-gray-300 mb-10">
+            Parece que você chegou em uma página que não existe mais. Não se preocupe, podemos te levar de volta para o conteúdo sobre aluguel de betoneira no Rio de Janeiro.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="/"
+              class="inline-flex items-center justify-center rounded-full bg-secondary px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-secondary-700 hover:scale-105 active:scale-95 transition-all"
+            >
+              Voltar para o Início
+            </a>
+            <a
+              href="/contato/"
+              class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all"
+            >
+              Falar com Atendimento
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 lg:py-24">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="mx-auto max-w-3xl">
+          <h2 class="text-2xl font-bold text-gray-900 text-center mb-10">
+            O que você procura?
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="/servicos/"
+              class="rounded-xl border border-gray-200 bg-gray-50 p-5 hover:border-secondary hover:bg-secondary/5 transition-all"
+            >
+              <h3 class="font-bold text-gray-900 mb-1">Nossos Equipamentos</h3>
+              <p class="text-sm text-gray-600">Betoneiras 120L, 150L, 200L e 400L para locação.</p>
+            </a>
+            <a
+              href="/calculadora-de-concreto/"
+              class="rounded-xl border border-gray-200 bg-gray-50 p-5 hover:border-secondary hover:bg-secondary/5 transition-all"
+            >
+              <h3 class="font-bold text-gray-900 mb-1">Calculadora de Concreto</h3>
+              <p class="text-sm text-gray-600">Calcule o volume de concreto da sua obra em m³.</p>
+            </a>
+            <a
+              href="/blog/"
+              class="rounded-xl border border-gray-200 bg-gray-50 p-5 hover:border-secondary hover:bg-secondary/5 transition-all"
+            >
+              <h3 class="font-bold text-gray-900 mb-1">Blog</h3>
+              <p class="text-sm text-gray-600">Dicas sobre locação de betoneira e construção civil.</p>
+            </a>
+            <a
+              href="/sobre/"
+              class="rounded-xl border border-gray-200 bg-gray-50 p-5 hover:border-secondary hover:bg-secondary/5 transition-all"
+            >
+              <h3 class="font-bold text-gray-900 mb-1">Quem Somos</h3>
+              <p class="text-sm text-gray-600">Conheça nossa história desde 2014 no Rio de Janeiro.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

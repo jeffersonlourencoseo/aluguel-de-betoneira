@@ -47,20 +47,20 @@ A betoneira 120 litros brilha em projetos de pequeno porte onde a demanda de con
 
 Muitos clientes nos perguntam quando vale a pena subir para uma betoneira maior. Veja a comparação rápida:
 
-| Critério | Betoneira 120L | [Betoneira 150L](/servicos/betoneira-150l) |
+| Critério | Betoneira 120L | [Betoneira 150L](/servicos/betoneira-150l/) |
 |----------|---------------|---------------|
 | Capacidade de mistura | 80 litros | 100 litros |
 | Peso | 210 kg | 260 kg |
 | Produção diária | Até 2 m³ | Até 3 m³ |
 | Ideal para | Reformas pequenas | Construções residenciais |
 
-Se sua obra for apenas uma reforma rápida ou pequena estrutura, a 120L é suficiente e mais econômica. Se você precisa de mais produtividade para uma construção residencial completa, a [betoneira 150 litros](/servicos/betoneira-150l) pode ser a escolha certa. Nossa equipe ajuda a definir o modelo ideal pelo WhatsApp.
+Se sua obra for apenas uma reforma rápida ou pequena estrutura, a 120L é suficiente e mais econômica. Se você precisa de mais produtividade para uma construção residencial completa, a [betoneira 150 litros](/servicos/betoneira-150l/) pode ser a escolha certa. Nossa equipe ajuda a definir o modelo ideal pelo WhatsApp.
 
 ## Como Alugar uma Betoneira 120 Litros no Rio de Janeiro
 
 Solicite um orçamento gratuito pelo WhatsApp ou formulário de contato. Basta informar o endereço da obra, o prazo estimado e o tipo de projeto. Nossa equipe responde em minutos com o valor da locação e o frete de entrega.
 
-Atendemos toda a região metropolitana com entrega e retirada inclusas na maioria dos bairros. Aceitamos PIX, dinheiro, cartão e transferência bancária. Para locações acima de 15 dias, o [aluguel mensal](/blog/aluguel-betoneira-mensal) oferece desconto de até 50% sobre o valor da diária.
+Atendemos toda a região metropolitana com entrega e retirada inclusas na maioria dos bairros. Aceitamos PIX, dinheiro, cartão e transferência bancária. Para locações acima de 15 dias, o [aluguel mensal](/blog/aluguel-betoneira-mensal/) oferece desconto de até 50% sobre o valor da diária.
 
 ## Dicas de Uso e Segurança na Betoneira 120L
 
@@ -72,4 +72,4 @@ Se a betoneira for a gasolina, mantenha o local ventilado e afastado de materiai
 
 Atendemos toda a região metropolitana do Rio de Janeiro com entrega programada. Bairros da zona Norte como Penha, Ramos, Olaria, Vicente de Carvalho, Brás de Pina e Irajá têm entrega no mesmo dia para solicitações antes das 14h. Também atendemos Niterói, São Gonçalo, Nova Iguaçu e Duque de Caxias com prazo de até 24 horas.
 
-Quer saber exatamente quanto custa? Confira nosso [guia completo de preços de aluguel de betoneira](/blog/quanto-custa-alugar-betoneira) e planeje seu orçamento com antecedência.
+Quer saber exatamente quanto custa? Confira nosso [guia completo de preços de aluguel de betoneira](/blog/quanto-custa-alugar-betoneira/) e planeje seu orçamento com antecedência.

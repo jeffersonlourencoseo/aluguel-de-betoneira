@@ -36,7 +36,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: post.data.title,
   description: post.data.description,
-  url: `${SITE_CONFIG.url}/blog/${post.slug}`,
+  url: `${SITE_CONFIG.url}/blog/${post.slug}/`,
   image: post.data.image ? `${SITE_CONFIG.url}${post.data.image}` : `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
   author: {
     '@type': 'Organization',
@@ -105,7 +105,7 @@ const faqSchema = faqData[post.slug]
 <Layout
   title={title}
   description={description}
-  canonical={`/blog/${post.slug}`}
+  canonical={`/blog/${post.slug}/`}
   type="article"
   pubDate={post.data.pubDate.toISOString()}
   updatedDate={post.data.updatedDate?.toISOString()}
@@ -144,7 +144,7 @@ const faqSchema = faqData[post.slug]
         <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-sm text-gray-100 mb-6">
           <a href="/" class="hover:text-primary transition-colors">Início</a>
           <span>/</span>
-          <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
+          <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
           <span>/</span>
           <span class="text-white">{post.data.title}</span>
         </nav>
@@ -182,6 +182,7 @@ const faqSchema = faqData[post.slug]
                   alt={post.data.title}
                   class="w-full h-auto object-cover"
                   loading="eager"
+                  decoding="async"
                   width="1200"
                   height="675"
                 />
@@ -215,7 +216,7 @@ const faqSchema = faqData[post.slug]
                 <h3 class="text-xl font-bold text-white mb-3">Precisa de uma betoneira?</h3>
                 <p class="text-gray-100 text-sm mb-6">Solicite um orçamento grátis e receba nossa proposta em poucos minutos.</p>
                 <a
-                  href="/contato"
+                  href="/contato/"
                   class="block w-full text-center rounded-full bg-primary px-6 py-4 text-base font-bold text-gray-900 shadow-lg shadow-primary/20 hover:bg-primary-400 hover:scale-105 active:scale-95 transition-all mb-4"
                 >
                   Solicitar Orçamento
@@ -233,10 +234,10 @@ const faqSchema = faqData[post.slug]
               <div class="rounded-2xl border border-gray-200 bg-gray-50 p-10 transition-all hover:shadow-md">
                 <h4 class="text-lg font-bold text-gray-900 mb-4">Categorias</h4>
                 <div class="flex flex-wrap gap-2">
-                  <a href="/blog" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Dicas de Obra</a>
-                  <a href="/blog" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Locação</a>
-                  <a href="/blog" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Equipamentos</a>
-                  <a href="/blog" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Segurança</a>
+                  <a href="/blog/" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Dicas de Obra</a>
+                  <a href="/blog/" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Locação</a>
+                  <a href="/blog/" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Equipamentos</a>
+                  <a href="/blog/" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary transition-all hover:scale-105">Segurança</a>
                 </div>
               </div>
             </div>
@@ -252,13 +253,13 @@ const faqSchema = faqData[post.slug]
           <div class="max-w-5xl mx-auto">
             <div class="flex items-center justify-between mb-12">
               <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Outras Dicas de Obra</h2>
-              <a href="/blog" class="text-sm font-semibold text-secondary hover:text-secondary-700 transition-colors">Ver todas →</a>
+              <a href="/blog/" class="text-sm font-semibold text-secondary hover:text-secondary-700 transition-colors">Ver todas →</a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
               {relatedPosts.map((related) => (
                 <article class="group flex flex-col rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal">
-                  <a href={`/blog/${related.slug}`} class="flex flex-col h-full">
+                  <a href={`/blog/${related.slug}/`} class="flex flex-col h-full">
                     <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
                       {related.data.image ? (
                         <img

@@ -74,7 +74,7 @@ A tabela mostra claramente a vantagem do plano mensal. Para uma obra de 30 dias,
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Solicite um orçamento personalizado para o prazo da sua obra. Quanto mais tempo, menor o custo por dia.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7amento%20de%20aluguel%20de%20betoneira%20mensal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento Mensal no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -84,7 +84,7 @@ O processo de locação mensal é simples e pode ser feito inteiramente pelo Wha
 
 ### Passo 1: Avalie a Demanda da Obra
 
-Calcule quantos dias a obra vai durar e qual o volume de concreto necessário por dia. Com essas informações, é possível escolher o <a href="/servicos">modelo certo de betoneira</a> e definir se o plano mensal é realmente a melhor opção. Obras com mais de 15 dias de duração já começam a se beneficiar do formato mensal.
+Calcule quantos dias a obra vai durar e qual o volume de concreto necessário por dia. Com essas informações, é possível escolher o <a href="/servicos/">modelo certo de betoneira</a> e definir se o plano mensal é realmente a melhor opção. Obras com mais de 15 dias de duração já começam a se beneficiar do formato mensal.
 
 ### Passo 2: Solicite o Orçamento Mensal
 
@@ -107,7 +107,7 @@ No último dia do contrato mensal, você pode optar por renovar a locação por 
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Feche seu plano mensal agora. Assinatura digital, entrega no dia combinado e atendimento prioritário.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20quero%20fechar%20um%20plano%20mensal%20de%20aluguel%20de%20betoneira" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Feche seu Plano no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -132,7 +132,7 @@ Locações mensais têm prioridade na agenda de entrega. Isso significa que, mes
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Condições exclusivas para locação mensal. Pague como preferir e economize ainda mais.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20as%20condi%C3%A7%C3%B5es%20de%20loca%C3%A7%C3%A3o%20mensal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Ver Condições no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -177,7 +177,7 @@ Clientes mensais recebem um relatório detalhado de utilização do equipamento,
   <p class="text-gray-100 mb-6 max-w-xl mx-auto">Reduza o custo por dia e ganhe prioridade no atendimento. Solicite seu orçamento mensal em minutos.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
     <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20aluguel%20de%20betoneira%20mensal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">Pedir Orçamento no WhatsApp</a>
-    <a href="/contato" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
+    <a href="/contato/" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-secondary shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">Solicitar pelo Site</a>
   </div>
 </div>
 
@@ -185,7 +185,7 @@ Clientes mensais recebem um relatório detalhado de utilização do equipamento,
 
 O **aluguel de betoneira mensal** é a escolha mais inteligente para obras que duram mais de duas semanas. Com economia de até 50% sobre o valor da locação diária, suporte técnico prioritário e a tranquilidade de não precisar renovar a locação toda semana, o plano mensal transforma o custo de equipamento em um investimento previsível e controlado.
 
-Se você está planejando uma obra residencial, reforma comercial ou empreendimento de grande porte no Rio de Janeiro, considere o **aluguel de uma betoneira** no formato mensal. [Solicite agora um orçamento pelo WhatsApp](/contato) e descubra as condições especiais que preparamos para o seu projeto. Entregamos em toda a região metropolitana, incluindo Niterói, São Gonçalo, Nova Iguaçu, Duque de Caxias e todos os bairros da zona Norte do Rio.
+Se você está planejando uma obra residencial, reforma comercial ou empreendimento de grande porte no Rio de Janeiro, considere o **aluguel de uma betoneira** no formato mensal. [Solicite agora um orçamento pelo WhatsApp](/contato/) e descubra as condições especiais que preparamos para o seu projeto. Entregamos em toda a região metropolitana, incluindo Niterói, São Gonçalo, Nova Iguaçu, Duque de Caxias e todos os bairros da zona Norte do Rio.
 
 ---
 
