@@ -21,7 +21,7 @@ const title = "Blog | Aluguel de Betoneira - Dicas e Guias";
 const description = "Confira dicas, guias e novidades sobre locação de betoneiras, construção civil e manutenção de equipamentos.";
 ---
 
-<Layout title={title} description={description} canonical="/blog">
+<Layout title={title} description={description} canonical="/blog/">
   <Header currentPath="/blog" />
 
   <main>
@@ -58,12 +58,12 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
       <div class="container mx-auto px-6 sm:px-8 lg:px-12">
         <div class="flex flex-wrap items-center gap-4">
           <span class="text-lg font-bold text-gray-900">Categorias:</span>
-          <a href="/blog" class={`inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold transition-all hover:scale-105 ${tagFilter ? 'bg-white text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary' : 'bg-secondary text-white hover:bg-secondary-700'}`}>
+          <a href="/blog/" class={`inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold transition-all hover:scale-105 ${tagFilter ? 'bg-white text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary' : 'bg-secondary text-white hover:bg-secondary-700'}`}>
             Todos
           </a>
           {allTags.map((tag) => (
             <a
-              href={`/blog?tag=${encodeURIComponent(tag)}`}
+              href={`/blog/?tag=${encodeURIComponent(tag)}`}
               class={`inline-flex items-center rounded-full px-5 py-2.5 text-base font-medium border transition-all hover:scale-105 ${tagFilter === tag ? 'bg-secondary text-white border-secondary' : 'bg-white text-gray-700 border-gray-200 hover:border-secondary hover:text-secondary'}`}
             >
               #{tag}
