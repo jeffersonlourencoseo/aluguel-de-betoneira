@@ -11,7 +11,7 @@ const title = "Serviços | Aluguel de Betoneira - Todos os Modelos";
 const description = "Conheça nossas betoneiras para locação: 120L, 150L, 200L e 400L. Equipamentos revisados com entrega rápida e preço justo.";
 ---
 
-<Layout title={title} description={description} canonical="/servicos" servicos={servicos.map((s) => ({ title: s.data.title }))}>
+<Layout title={title} description={description} canonical="/servicos" servicos={servicos.map((s) => ({ title: s.data.title }))} preloadHero={false}>
   <Header currentPath="/servicos" />
 
   <main>

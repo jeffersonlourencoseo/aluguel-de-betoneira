@@ -11,6 +11,7 @@ interface Props {
   type?: string;
   pubDate?: string;
   updatedDate?: string;
+  preloadHero?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   type = 'website',
   pubDate,
   updatedDate,
+  preloadHero = true,
 } = Astro.props;
 
 function normalizeCanonical(path: string): string {
@@ -42,9 +44,12 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#1A1A1A" />
 
-  <!-- Preload LCP hero image (local, self-hosted) -->
-  <link rel="preload" as="image" href="/images/hero-blur-640.jpg" imagesrcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w" imagesizes="100vw" fetchpriority="high" />
-
+{
+  preloadHero && (
+    <!-- Preload LCP hero image (local, self-hosted) -->
+    <link rel="preload" as="image" href="/images/hero-blur-640.jpg" imagesrcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w" imagesizes="100vw" fetchpriority="high" />
+  )
+}
 
 <!-- Primary Meta -->
 <title>{fullTitle}</title>
@@ -70,8 +75,7 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 <!-- Preconnect Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" /></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" />
 
 <!-- Open Graph — Facebook / WhatsApp / LinkedIn -->
 <meta property="og:type" content={type} />
@@ -93,11 +97,13 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 <meta property="og:image" content={fullOgImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={fullTitle} />
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content={SITE_CONFIG.name} />
+<meta name="twitter:site" content="@aluguelbetoneira" />
 <meta name="twitter:url" content={fullCanonical} />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullOgImage} />
+<meta name="twitter:image:alt" content={fullTitle} />

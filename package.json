@@ -10,6 +10,8 @@
     "build": "astro build",
     "postbuild": "node scripts/postbuild.mjs",
     "preview": "astro preview",
+    "check": "astro check",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
     "astro": "astro"
   },
   "dependencies": {

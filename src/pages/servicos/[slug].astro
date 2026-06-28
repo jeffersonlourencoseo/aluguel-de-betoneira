@@ -83,7 +83,7 @@ const faqSchema = faqData[servico.slug]
   : null;
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}`} schema={serviceSchema} breadcrumbName={servico.data.title}>
+<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}`} schema={serviceSchema} breadcrumbName={servico.data.title} preloadHero={false}>
   <Header currentPath="/servicos" />
 
   {

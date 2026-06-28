@@ -16,9 +16,10 @@ interface Props {
   type?: string;
   pubDate?: string;
   updatedDate?: string;
+  preloadHero?: boolean;
 }
 
-const { title, description, keywords, canonical, ogImage, noindex, schema, servicos, breadcrumbName, type, pubDate, updatedDate } = Astro.props;
+const { title, description, keywords, canonical, ogImage, noindex, schema, servicos, breadcrumbName, type, pubDate, updatedDate, preloadHero } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,6 +35,7 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
       type={type}
       pubDate={pubDate}
       updatedDate={updatedDate}
+      preloadHero={preloadHero}
     />
 
     <!-- Schema.org JSON-LD — LocalBusiness + WebSite + Organization -->

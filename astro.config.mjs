@@ -1,40 +1,53 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
+import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
 import compress from '@playform/compress';
 import partytown from '@astrojs/partytown';
 
+const siteUrl = 'https://www.alugueldebetoneirarj.com.br';
+
+const pageRules = {
+  [siteUrl + '/']: { priority: 1.0, changefreq: ChangeFreqEnum.DAILY },
+  [siteUrl + '/servicos/']: { priority: 0.85, changefreq: ChangeFreqEnum.WEEKLY },
+  [siteUrl + '/blog/']: { priority: 0.85, changefreq: ChangeFreqEnum.WEEKLY },
+};
+
+/** @param {import('@astrojs/sitemap').SitemapItem} item */
+function serializeSitemap(item) {
+  const url = item.url;
+
+  let changefreq = ChangeFreqEnum.MONTHLY;
+  let priority = 0.6;
+
+  if (pageRules[url]) {
+    priority = pageRules[url].priority;
+    changefreq = pageRules[url].changefreq;
+  } else if (url.includes('/servicos/')) {
+    priority = 0.9;
+    changefreq = ChangeFreqEnum.WEEKLY;
+  } else if (url.includes('/blog/')) {
+    priority = 0.8;
+    changefreq = ChangeFreqEnum.MONTHLY;
+  }
+
+  item.priority = priority;
+  item.changefreq = changefreq;
+
+  return item;
+}
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.alugueldebetoneirarj.com.br',
+  site: siteUrl,
   trailingSlash: 'always',
   integrations: [
     tailwind(),
     sitemap({
       lastmod: new Date(),
-      changefreq: 'weekly',
+      changefreq: ChangeFreqEnum.WEEKLY,
       priority: 0.7,
-      serialize(item) {
-        const url = item.url;
-        if (url === 'https://www.alugueldebetoneirarj.com.br/') {
-          item.priority = 1.0;
-          item.changefreq = 'daily';
-        } else if (url.includes('/servicos/')) {
-          item.priority = 0.9;
-          item.changefreq = 'weekly';
-        } else if (url.includes('/blog/')) {
-          item.priority = 0.8;
-          item.changefreq = 'monthly';
-        } else if (url === 'https://www.alugueldebetoneirarj.com.br/blog/' || url === 'https://www.alugueldebetoneirarj.com.br/servicos/') {
-          item.priority = 0.85;
-          item.changefreq = 'weekly';
-        } else {
-          item.priority = 0.6;
-          item.changefreq = 'monthly';
-        }
-        return item;
-      },
+      serialize: serializeSitemap,
     }),
     compress(),
     partytown(),

@@ -44,6 +44,8 @@ function buildBreadcrumbItems() {
     items.push({ name: 'Privacidade' });
   } else if (segments[0] === 'termos') {
     items.push({ name: 'Termos' });
+  } else if (segments[0] === 'calculadora-de-concreto') {
+    items.push({ name: 'Calculadora de Concreto' });
   }
 
   return items;
@@ -51,7 +53,7 @@ function buildBreadcrumbItems() {
 
 const breadcrumbItems = buildBreadcrumbItems();
 
-// LocalBusiness Schema (obrigatório para Google Maps / Painel de Conhecimento)
+// LocalBusiness Schema (obrigatório para SEO Local)
 const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
@@ -87,56 +89,6 @@ const localBusiness = {
     name: SITE_CONFIG.areaServed,
   },
   serviceType: 'Locação de Betoneiras',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    bestRating: '5',
-    reviewCount: '3',
-  },
-  review: [
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'Carlos Eduardo Silva',
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      reviewBody: 'Já aluguei betoneira aqui mais de 10 vezes. A entrega é sempre pontual e o equipamento chega limpo e funcionando perfeitamente. Recomendo de olhos fechados.',
-      datePublished: '2026-03-15',
-    },
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'Mariana Oliveira',
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      reviewBody: 'Como engenheira, preciso de equipamentos confiáveis. A qualidade das betoneiras e o suporte técnico da equipe me deram total segurança para indicar aos meus clientes.',
-      datePublished: '2026-04-10',
-    },
-    {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: 'Roberto Mendes',
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      reviewBody: 'O atendimento pelo WhatsApp é rápido e o preço é justo. A betoneira 150L atendeu minha obra de 3 meses sem nenhum problema.',
-      datePublished: '2026-05-01',
-    },
-  ],
   hasOfferCatalog: servicos.length > 0
     ? {
         '@type': 'OfferCatalog',
@@ -175,7 +127,7 @@ const organization = {
   name: SITE_CONFIG.nap.name,
   url: SITE_CONFIG.url,
   logo: `${SITE_CONFIG.url}/images/logo.svg`,
-  sameAs: [SITE_CONFIG.social.whatsapp, SITE_CONFIG.social.instagram].filter(Boolean),
+  sameAs: [SITE_CONFIG.social.instagram].filter(Boolean),
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: SITE_CONFIG.nap.phone,

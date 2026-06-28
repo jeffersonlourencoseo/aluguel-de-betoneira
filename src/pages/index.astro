@@ -39,7 +39,7 @@ const cidades = [
 ];
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical="/" servicos={servicos.map((s) => ({ title: s.data.title }))}>
+<Layout title={title} description={description} keywords={keywords} canonical="/" servicos={servicos.map((s) => ({ title: s.data.title }))} preloadHero={true}>
   <Header currentPath="/" />
 
   <main>
