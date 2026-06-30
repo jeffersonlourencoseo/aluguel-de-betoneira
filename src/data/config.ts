@@ -55,6 +55,20 @@ export const SITE_CONFIG = {
     'aluguel de betoneira, locacao de betoneira, betoneira para construcao civil, alugar betoneira 120L, alugar betoneira 150L, alugar betoneira 200L, aluguel de betoneira preco, locacao de equipamentos construcao civil',
   priceRange: '$$',
   areaServed: 'Rio de Janeiro e Grande Rio',
+  areaServedCities: [
+    'Rio de Janeiro',
+    'Niterói',
+    'São Gonçalo',
+    'Duque de Caxias',
+    'Nova Iguaçu',
+    'Belford Roxo',
+    'Mesquita',
+    'Nilópolis',
+    'São João de Meriti',
+    'Petrópolis',
+    'Magé',
+    'Itaboraí',
+  ],
 
   // Fundacao
   founded: '2014',

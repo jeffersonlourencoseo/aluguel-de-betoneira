@@ -1,0 +1,53 @@
+---
+export interface Review {
+  author: string;
+  role?: string;
+  text: string;
+  rating: number;
+}
+
+interface Props {
+  reviews: Review[];
+  bestRating?: number;
+  worstRating?: number;
+}
+
+const { reviews, bestRating = 5, worstRating = 1 } = Astro.props;
+
+const averageRating = reviews.length > 0
+  ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
+  : '0';
+
+const aggregateRatingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AggregateRating',
+  ratingValue: averageRating,
+  bestRating: String(bestRating),
+  worstRating: String(worstRating),
+  reviewCount: String(reviews.length),
+};
+
+const reviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${Astro.url.origin}/#localbusiness`,
+  aggregateRating: aggregateRatingSchema,
+  review: reviews.map((review) => ({
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: review.author,
+      ...(review.role ? { jobTitle: review.role } : {}),
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(review.rating),
+      bestRating: String(bestRating),
+      worstRating: String(worstRating),
+    },
+    reviewBody: review.text,
+  })),
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />

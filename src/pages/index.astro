@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SchemaFAQ from '../components/SchemaFAQ.astro';
+import SchemaReviews from '../components/SchemaReviews.astro';
 
 const allServicos = await getCollection('servicos');
 const servicos = allServicos.sort((a, b) => (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0));
@@ -16,19 +18,22 @@ const depoimentos = [
     nome: "Carlos Eduardo Silva",
     cargo: "Construtor Residencial",
     texto: "Já aluguei betoneira aqui mais de 10 vezes. A entrega é sempre pontual e o equipamento chega limpo e funcionando perfeitamente. Recomendo de olhos fechados.",
-    inicial: "CS"
+    inicial: "CS",
+    rating: 5
   },
   {
     nome: "Mariana Oliveira",
     cargo: "Engenheira Civil",
     texto: "Como engenheira, preciso de equipamentos confiáveis. A qualidade das betoneiras e o suporte técnico da equipe me deram total segurança para indicar aos meus clientes.",
-    inicial: "MO"
+    inicial: "MO",
+    rating: 5
   },
   {
     nome: "Roberto Mendes",
     cargo: "Mestre de Obras",
     texto: "O atendimento pelo WhatsApp é rápido e o preço é justo. A betoneira 150L atendeu minha obra de 3 meses sem nenhum problema. Parabéns pelo serviço.",
-    inicial: "RM"
+    inicial: "RM",
+    rating: 5
   }
 ];
 
@@ -37,10 +42,39 @@ const cidades = [
   "Nova Iguaçu", "Belford Roxo", "Mesquita", "Nilópolis",
   "São João de Meriti", "Petrópolis", "Magé", "Itaboraí"
 ];
+
+const faqs = [
+  {
+    question: "Qual o prazo mínimo de locação de betoneira?",
+    answer: "O prazo mínimo é de 1 dia. Oferecemos descontos especiais para locações semanais e mensais."
+  },
+  {
+    question: "A betoneira inclui motor e garantia?",
+    answer: "Sim! Todas são entregues com motor funcionando perfeitamente. Garantia de funcionamento durante toda a locação."
+  },
+  {
+    question: "Vocês fazem entrega e retirada?",
+    answer: "Sim, entrega e retirada em toda a região metropolitana. O valor é calculado por distância e informado no orçamento."
+  },
+  {
+    question: "Quais as formas de pagamento aceitas?",
+    answer: "Aceitamos dinheiro, PIX, cartão de débito/crédito (com parcelamento) e transferência bancária."
+  }
+];
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical="/" servicos={servicos.map((s) => ({ title: s.data.title }))} preloadHero={true}>
+<Layout title={title} description={description} keywords={keywords} canonical="/" servicos={servicos.map((s) => ({ title: s.data.title, slug: s.slug }))} preloadHero={true}>
   <Header currentPath="/" />
+
+  <SchemaFAQ items={faqs} />
+  <SchemaReviews
+    reviews={depoimentos.map((dep) => ({
+      author: dep.nome,
+      role: dep.cargo,
+      text: dep.texto,
+      rating: dep.rating,
+    }))}
+  />
 
   <main>
     <!-- HERO -->

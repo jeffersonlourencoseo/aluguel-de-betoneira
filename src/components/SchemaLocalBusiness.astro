@@ -2,7 +2,7 @@
 import { SITE_CONFIG } from '../data/config';
 
 interface Props {
-  servicos?: Array<{ title: string }>;
+  servicos?: Array<{ title: string; slug?: string }>;
   pageType?: 'home' | 'about' | 'contact' | 'service' | 'blog';
   breadcrumbName?: string;
 }
@@ -11,6 +11,10 @@ const { servicos = [], breadcrumbName } = Astro.props;
 
 const address = SITE_CONFIG.nap.address;
 const pathname = Astro.url.pathname;
+
+const sameAs = [SITE_CONFIG.social.instagram].filter(Boolean);
+const googleBusinessUrl = ''; // substituir pela URL do Google Business Profile quando disponível
+if (googleBusinessUrl) sameAs.push(googleBusinessUrl);
 
 // Breadcrumb dinâmico baseado no pathname
 function buildBreadcrumbItems() {
@@ -27,14 +31,14 @@ function buildBreadcrumbItems() {
   } else if (segments[0] === 'contato') {
     items.push({ name: 'Contato' });
   } else if (segments[0] === 'servicos') {
-    items.push({ name: 'Serviços', item: `${SITE_CONFIG.url}/servicos` });
+    items.push({ name: 'Serviços', item: `${SITE_CONFIG.url}/servicos/` });
     if (segments[1] && breadcrumbName) {
       items.push({ name: breadcrumbName });
     } else if (segments[1]) {
       items.push({ name: 'Detalhes do Serviço' });
     }
   } else if (segments[0] === 'blog') {
-    items.push({ name: 'Blog', item: `${SITE_CONFIG.url}/blog` });
+    items.push({ name: 'Blog', item: `${SITE_CONFIG.url}/blog/` });
     if (segments[1] && breadcrumbName) {
       items.push({ name: breadcrumbName });
     } else if (segments[1]) {
@@ -61,7 +65,7 @@ const localBusiness = {
   name: SITE_CONFIG.nap.name,
   description: SITE_CONFIG.description,
   url: SITE_CONFIG.url,
-  telephone: SITE_CONFIG.nap.phone,
+  telephone: `+55${SITE_CONFIG.nap.phoneRaw}`,
   email: SITE_CONFIG.nap.email,
   priceRange: SITE_CONFIG.priceRange,
   image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
@@ -87,16 +91,30 @@ const localBusiness = {
   areaServed: {
     '@type': 'Place',
     name: SITE_CONFIG.areaServed,
+    containsPlace: SITE_CONFIG.areaServedCities.map((city) => ({
+      '@type': 'City',
+      name: city,
+      containedInPlace: {
+        '@type': 'State',
+        name: 'Rio de Janeiro',
+      },
+    })),
   },
   serviceType: 'Locação de Betoneiras',
   hasOfferCatalog: servicos.length > 0
     ? {
         '@type': 'OfferCatalog',
-        name: 'Serviços de Locação',
+        name: 'Locação de Betoneiras',
         itemListElement: servicos.map((s, i) => ({
           '@type': 'Offer',
           position: i + 1,
-          itemOffered: { '@type': 'Service', name: s.title },
+          itemOffered: s.slug
+            ? {
+                '@type': 'Product',
+                '@id': `${SITE_CONFIG.url}/servicos/${s.slug}/#product`,
+                name: s.title,
+              }
+            : { '@type': 'Service', name: s.title },
         })),
       }
     : undefined,
@@ -127,14 +145,24 @@ const organization = {
   name: SITE_CONFIG.nap.name,
   url: SITE_CONFIG.url,
   logo: `${SITE_CONFIG.url}/images/logo.svg`,
-  sameAs: [SITE_CONFIG.social.instagram].filter(Boolean),
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: SITE_CONFIG.nap.phone,
-    contactType: 'customer service',
-    availableLanguage: 'Portuguese',
-    areaServed: 'BR',
-  },
+  sameAs,
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: `+55${SITE_CONFIG.nap.phoneRaw}`,
+      contactType: 'customer service',
+      contactOption: 'WhatsApp',
+      availableLanguage: 'Portuguese',
+      areaServed: 'BR',
+    },
+    {
+      '@type': 'ContactPoint',
+      telephone: `+55${SITE_CONFIG.nap.phoneRaw}`,
+      contactType: 'sales',
+      availableLanguage: 'Portuguese',
+      areaServed: 'BR',
+    },
+  ],
 };
 
 // BreadcrumbList Schema (dinâmico)

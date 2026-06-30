@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE_CONFIG } from '../data/config';
 
 const title = "Contato | Aluguel de Betoneira RJ - WhatsApp e Orçamento Grátis";
 const description = "Aluguel de betoneira rj, locação betoneira rio de janeiro, aluguel betoneira preço. Orçamento grátis pelo WhatsApp (21) 99775-1577.";
@@ -10,9 +11,22 @@ const phone = "(21) 99775-1577";
 const phoneRaw = "5521997751577";
 const email = "contato@alugueldebetoneirarj.com.br";
 const address = "Av. Brasil, 11201 - Penha Circular, Rio de Janeiro - RJ, 21012-351";
+
+const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': `${SITE_CONFIG.url}/contato/#contactpage`,
+  url: `${SITE_CONFIG.url}/contato/`,
+  name: title,
+  description: description,
+  mainEntity: {
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_CONFIG.url}/#localbusiness`,
+  },
+};
 ---
 
-<Layout title={title} description={description} canonical="/contato" preloadHero={false}>
+<Layout title={title} description={description} canonical="/contato" schema={contactPageSchema} preloadHero={false}>
   <Header currentPath="/contato" />
 
   <main>

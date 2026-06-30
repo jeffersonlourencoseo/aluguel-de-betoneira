@@ -48,6 +48,7 @@ export default defineConfig({
       changefreq: ChangeFreqEnum.WEEKLY,
       priority: 0.7,
       serialize: serializeSitemap,
+      entryLimit: 50000,
     }),
     compress(),
     partytown({

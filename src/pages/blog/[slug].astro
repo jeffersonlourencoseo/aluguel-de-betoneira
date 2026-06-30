@@ -30,10 +30,11 @@ const wordCount = post.body.split(/\s+/).filter(Boolean).length;
 const readingTimeMinutes = Math.ceil(wordCount / 200);
 const timeRequired = `PT${readingTimeMinutes}M`;
 
-// Schema Article
-const articleSchema = {
+// Schema BlogPosting
+const blogPostingSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'BlogPosting',
+  '@id': `${SITE_CONFIG.url}/blog/${post.slug}/#post`,
   headline: post.data.title,
   description: post.data.description,
   url: `${SITE_CONFIG.url}/blog/${post.slug}/`,
@@ -41,6 +42,7 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'Aluguel de Betoneira',
+    '@id': `${SITE_CONFIG.url}/#organization`,
   },
   publisher: {
     '@type': 'Organization',
@@ -51,6 +53,10 @@ const articleSchema = {
   wordCount: wordCount,
   timeRequired: timeRequired,
   articleSection: 'Construção Civil',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${SITE_CONFIG.url}/blog/${post.slug}/`,
+  },
 };
 
 const faqData = {
@@ -109,7 +115,7 @@ const faqSchema = faqData[post.slug]
   type="article"
   pubDate={post.data.pubDate.toISOString()}
   updatedDate={post.data.updatedDate?.toISOString()}
-  schema={articleSchema}
+  schema={blogPostingSchema}
   breadcrumbName={post.data.title}
   preloadHero={false}
 >

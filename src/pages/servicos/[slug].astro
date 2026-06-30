@@ -23,20 +23,60 @@ const keywords = servico.data.keywords;
 const pageUrl = `${SITE_CONFIG.url}/servicos/${servico.slug}/`;
 const imageUrl = `${SITE_CONFIG.url}${servico.data.image || '/images/og-image.svg'}`;
 
-const serviceSchema = {
+const skuMap = {
+  'betoneira-120l': 'BTN-120L',
+  'betoneira-150l': 'BTN-150L',
+  'betoneira-200l': 'BTN-200L',
+  'betoneira-400l': 'BTN-400L',
+};
+
+const productSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
+  '@type': 'Product',
+  '@id': `${pageUrl}#product`,
   name: servico.data.title,
   description: servico.data.description,
   url: pageUrl,
   image: imageUrl,
-  provider: {
-    '@type': 'Organization',
-    '@id': `${SITE_CONFIG.url}/#organization`,
+  sku: skuMap[servico.slug] || servico.slug,
+  brand: {
+    '@type': 'Brand',
+    name: SITE_CONFIG.name,
   },
-  areaServed: {
-    '@type': 'Place',
-    name: SITE_CONFIG.areaServed,
+  additionalProperty: [
+    {
+      '@type': 'PropertyValue',
+      name: 'Capacidade',
+      value: servico.data.capacidade,
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Motor',
+      value: servico.data.motor,
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Peso',
+      value: servico.data.peso,
+    },
+  ],
+  offers: {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    '@id': `${pageUrl}#offer`,
+    url: pageUrl,
+    priceCurrency: 'BRL',
+    availability: 'https://schema.org/InStock',
+    businessFunction: 'http://purl.org/goodrelations/v1#LeaseOut',
+    areaServed: {
+      '@type': 'Place',
+      name: SITE_CONFIG.areaServed,
+    },
+    seller: {
+      '@type': 'LocalBusiness',
+      '@id': `${SITE_CONFIG.url}/#localbusiness`,
+    },
+    priceValidUntil: '2026-12-31',
   },
 };
 
@@ -83,7 +123,7 @@ const faqSchema = faqData[servico.slug]
   : null;
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}/`} schema={serviceSchema} breadcrumbName={servico.data.title} preloadHero={false}>
+<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}/`} schema={productSchema} breadcrumbName={servico.data.title} preloadHero={false}>
   <Header currentPath="/servicos" />
 
   {

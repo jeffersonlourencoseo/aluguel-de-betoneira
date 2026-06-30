@@ -2,12 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE_CONFIG } from '../data/config';
 
 const title = "Quem Somos | Aluguel de Betoneira RJ desde 2014";
 const description = "Somos especialistas em locação de betoneiras no Rio de Janeiro desde 2014. Atendimento humanizado, equipamentos revisados e entrega rápida.";
+
+const aboutPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': `${SITE_CONFIG.url}/sobre/#aboutpage`,
+  url: `${SITE_CONFIG.url}/sobre/`,
+  name: title,
+  description: description,
+  mainEntity: {
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_CONFIG.url}/#localbusiness`,
+  },
+};
 ---
 
-<Layout title={title} description={description} canonical="/sobre" preloadHero={false}>
+<Layout title={title} description={description} canonical="/sobre" schema={aboutPageSchema} preloadHero={false}>
   <Header currentPath="/sobre" />
 
   <main>
