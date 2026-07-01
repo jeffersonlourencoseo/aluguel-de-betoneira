@@ -44,6 +44,16 @@
       "source": "/sitemap-0.xml",
       "destination": "/sitemap.xml",
       "permanent": true
+    },
+    {
+      "source": "/quem-somos",
+      "destination": "/sobre/",
+      "permanent": true
+    },
+    {
+      "source": "/quem-somos/:path*",
+      "destination": "/sobre/:path*",
+      "permanent": true
     }
   ],
   "headers": [

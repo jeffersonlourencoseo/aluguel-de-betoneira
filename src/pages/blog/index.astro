@@ -6,15 +6,11 @@ import Footer from '../../components/Footer.astro';
 
 const allPosts = await getCollection('blog');
 
-// Leitura do filtro por query string
-const tagFilter = Astro.url.searchParams.get('tag');
-const filteredPosts = tagFilter
-  ? allPosts.filter((post) => post.data.tags.includes(tagFilter) && !post.data.draft)
-  : allPosts.filter((post) => !post.data.draft);
+const posts = allPosts
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const posts = filteredPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-// Extrair todas as tags únicas
+// Extrair todas as tags únicas (exibidas como rótulos, sem filtro em SSG)
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))];
 
 const title = "Blog | Aluguel de Betoneira - Dicas e Guias";
@@ -29,16 +25,14 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
     <section class="relative py-32 lg:py-40 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
-          sizes="100vw"
+          src="/images/hero-obra.jpg"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover"
           loading="eager"
           fetchpriority="high"
           decoding="async"
-          width="1200"
-          height="800"
+          width="1257"
+          height="586"
         />
         <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#2D2D2D]/85 to-[#4A4A4A]/75"></div>
       </div>
@@ -53,42 +47,12 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
       </div>
     </section>
 
-    <!-- Categorias -->
-    <section class="py-16 lg:py-20 section-concrete border-b border-gray-200">
-      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div class="flex flex-wrap items-center gap-4">
-          <span class="text-lg font-bold text-gray-900">Categorias:</span>
-          <a href="/blog/" class={`inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold transition-all hover:scale-105 ${tagFilter ? 'bg-white text-gray-700 border border-gray-200 hover:border-secondary hover:text-secondary' : 'bg-secondary text-white hover:bg-secondary-700'}`}>
-            Todos
-          </a>
-          {allTags.map((tag) => (
-            <a
-              href={`/blog/?tag=${encodeURIComponent(tag)}`}
-              class={`inline-flex items-center rounded-full px-5 py-2.5 text-base font-medium border transition-all hover:scale-105 ${tagFilter === tag ? 'bg-secondary text-white border-secondary' : 'bg-white text-gray-700 border-gray-200 hover:border-secondary hover:text-secondary'}`}
-            >
-              #{tag}
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <!-- Posts Grid -->
     <section class="py-24 lg:py-32 bg-white">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12">
-        {tagFilter && (
-          <div class="mb-10 flex items-center gap-3 rounded-xl bg-secondary/10 px-6 py-4 border border-secondary/20">
-            <span class="text-lg text-gray-700">
-              Mostrando artigos com a tag: <strong class="text-secondary">#{tagFilter}</strong>
-            </span>
-            <a href="/blog/" class="ml-auto inline-flex items-center text-sm font-semibold text-secondary hover:text-secondary-700 transition-colors">
-              Limpar filtro →
-            </a>
-          </div>
-        )}
         <div class="flex items-center justify-between mb-16">
           <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
-            {tagFilter ? 'Artigos Filtrados' : 'Últimos Artigos'}
+            Últimos Artigos
           </h2>
           <span class="text-lg text-gray-500">
             {posts.length} artigo{posts.length !== 1 ? 's' : ''} publicado{posts.length !== 1 ? 's' : ''}
@@ -136,7 +100,7 @@ const description = "Confira dicas, guias e novidades sobre locação de betonei
                   </p>
                   <div class="mt-6 flex flex-wrap gap-2">
                     {post.data.tags.map((tag) => (
-                      <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-600">
+                      <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-600 cursor-default">
                         #{tag}
                       </span>
                     ))}

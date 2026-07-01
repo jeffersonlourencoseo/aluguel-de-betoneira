@@ -73,9 +73,9 @@ const faqData = {
     { name: 'O aluguel de betoneira 400 litros inclui entrega?', text: 'Sim, entregamos diretamente na obra, posicionamos o equipamento e fazemos o teste de funcionamento.' },
   ],
   'aluguel-betoneira-150-250-litros-preco': [
-    { name: 'Qual a diferença entre betoneira 150 litros e 250 litros?', text: 'A 150L produz até 3 m³/dia e a 250L até 5 m³/dia. A 250L é ideal para obras maiores com custo por m³ mais baixo.' },
+    { name: 'Qual a diferença entre betoneira 150 litros e 200 litros?', text: 'A 150L produz até 3 m³/dia e a 200L até 5 m³/dia. A 200L é ideal para obras maiores com custo por m³ mais baixo.' },
     { name: 'Quanto custa alugar uma betoneira 150 litros?', text: 'A diária começa a partir de R$ 100,00, com descontos progressivos para locações semanais e mensais.' },
-    { name: 'Posso trocar de modelo durante a locação?', text: 'Sim, é possível fazer upgrade de uma 150L para 250L durante a locação pagando apenas a diferença proporcional.' },
+    { name: 'Posso trocar de modelo durante a locação?', text: 'Sim, é possível fazer upgrade de uma 150L para 200L durante a locação pagando apenas a diferença proporcional.' },
     { name: 'O frete está incluído no preço do aluguel?', text: 'Não. O frete é calculado por distância e informado no orçamento. Zona Norte tem frete reduzido.' },
   ],
   'aluguel-betoneira-mensal': [
@@ -86,9 +86,9 @@ const faqData = {
   ],
   'aluguel-betoneira-perto-de-mim': [
     { name: 'Vocês entregam betoneira no mesmo dia?', text: 'Sim, para zona Norte do Rio entregamos no mesmo dia para solicitações antes das 14h. Outras regiões até 24h.' },
-    { name: 'Qual o valor do frete?', text: 'Calculado por distância. Bairros próximos à base têm frete reduzido. Niterói, São Gonçalo e Baixada têm acréscimo proporcional.' },
+    { name: 'Qual o valor do frete?', text: 'Calculado por distância. Bairros próximos à base têm frete reduzido. Bairros mais distantes podem ter acréscimo proporcional.' },
     { name: 'Posso retirar a betoneira na loja?', text: 'Sim, a retirada na base elimina o custo de frete de entrega, desde que agendada previamente.' },
-    { name: 'E se a betoneira quebrar depois da entrega?', text: 'Suporte técnico prioritário para região metropolitana. Trocamos o equipamento no mesmo dia se necessário.' },
+    { name: 'E se a betoneira quebrar depois da entrega?', text: 'Suporte técnico prioritário para a cidade do Rio de Janeiro. Trocamos o equipamento no mesmo dia se necessário.' },
   ],
 };
 
@@ -132,16 +132,14 @@ const faqSchema = faqData[post.slug]
     <section class="relative py-24 lg:py-32 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
-          sizes="100vw"
+          src="/images/hero-obra.jpg"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover"
           loading="eager"
           fetchpriority="high"
           decoding="async"
-          width="1200"
-          height="800"
+          width="1257"
+          height="586"
         />
         <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#2D2D2D]/85 to-[#4A4A4A]/75"></div>
       </div>
@@ -201,12 +199,9 @@ const faqSchema = faqData[post.slug]
             <div class="mt-16 pt-8 border-t border-gray-200">
               <div class="flex flex-wrap gap-2">
                 {post.data.tags.map((tag) => (
-                  <a
-                    href={`/blog/?tag=${encodeURIComponent(tag)}`}
-                    class="inline-flex items-center rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:scale-105 hover:bg-gray-200"
-                  >
+                  <span class="inline-flex items-center rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
                     #{tag}
-                  </a>
+                  </span>
                 ))}
               </div>
             </div>

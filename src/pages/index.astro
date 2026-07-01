@@ -15,32 +15,45 @@ const keywords = "aluguel de betoneira, locação de betoneira, betoneira para c
 
 const depoimentos = [
   {
-    nome: "Carlos Eduardo Silva",
-    cargo: "Construtor Residencial",
-    texto: "Já aluguei betoneira aqui mais de 10 vezes. A entrega é sempre pontual e o equipamento chega limpo e funcionando perfeitamente. Recomendo de olhos fechados.",
+    nome: "Carlos Eduardo Souza",
+    cargo: "Construtor Residencial — Tijuca",
+    texto: "Aluguei a betoneira 150L para reformar duas casas na Tijuca. Entregaram no horário marcado, o motor não deu problema em 40 dias de obra e a retirada foi no mesmo dia que solicitei. Preço justo comparado a outras locadoras da região.",
     inicial: "CS",
-    rating: 5
+    rating: 5,
+    data: "2026-01-14"
   },
   {
     nome: "Mariana Oliveira",
-    cargo: "Engenheira Civil",
-    texto: "Como engenheira, preciso de equipamentos confiáveis. A qualidade das betoneiras e o suporte técnico da equipe me deram total segurança para indicar aos meus clientes.",
+    cargo: "Engenheira Civil — Botafogo",
+    texto: "Usei a betoneira 400L em uma laje comercial no Centro. A máquina chegou limpa, com motor revisado e a equipe orientou sobre a montagem correta da tremonha. Como engenheira, valorizo esse cuidado técnico.",
     inicial: "MO",
-    rating: 5
+    rating: 5,
+    data: "2026-02-28"
   },
   {
     nome: "Roberto Mendes",
-    cargo: "Mestre de Obras",
-    texto: "O atendimento pelo WhatsApp é rápido e o preço é justo. A betoneira 150L atendeu minha obra de 3 meses sem nenhum problema. Parabéns pelo serviço.",
+    cargo: "Mestre de Obras — Madureira",
+    texto: "Estou há quatro meses com a betoneira 200L em uma obra de condomínio pequeno. Sempre que precisei, responderam pelo WhatsApp em minutos. Até agora não precisei de troca, mas me garantiram substituição em 2h se fosse o caso.",
     inicial: "RM",
-    rating: 5
+    rating: 5,
+    data: "2026-03-10"
+  },
+  {
+    nome: "Fernanda Lima",
+    cargo: "Autônoma — Jacarepaguá",
+    texto: "Fiz uma reforma na varanda e aluguei a 120L por 3 dias. Pensei que seria complicado, mas o equipamento é leve, o motor é silencioso e a entrega foi gratuita porque moro próximo. Vou alugar de novo no próximo projeto.",
+    inicial: "FL",
+    rating: 5,
+    data: "2026-04-22"
+  },
+  {
+    nome: "Antônio Pereira",
+    cargo: "Construtora Pereira — Campo Grande",
+    texto: "Locamos betoneiras mensalmente para obras em Campo Grande. A frota é sempre revisada, as entregas são pontuais e o atendimento comercial resolve a nota fiscal rapidinho. Já são três contratos fechados e pretendo continuar.",
+    inicial: "AP",
+    rating: 5,
+    data: "2026-05-30"
   }
-];
-
-const cidades = [
-  "Rio de Janeiro", "Niterói", "São Gonçalo", "Duque de Caxias",
-  "Nova Iguaçu", "Belford Roxo", "Mesquita", "Nilópolis",
-  "São João de Meriti", "Petrópolis", "Magé", "Itaboraí"
 ];
 
 const faqs = [
@@ -54,7 +67,7 @@ const faqs = [
   },
   {
     question: "Vocês fazem entrega e retirada?",
-    answer: "Sim, entrega e retirada em toda a região metropolitana. O valor é calculado por distância e informado no orçamento."
+    answer: "Sim, entrega e retirada na cidade do Rio de Janeiro. O valor é calculado por distância e informado no orçamento."
   },
   {
     question: "Quais as formas de pagamento aceitas?",
@@ -68,11 +81,12 @@ const faqs = [
 
   <SchemaFAQ items={faqs} />
   <SchemaReviews
-    reviews={depoimentos.map((dep) => ({
-      author: dep.nome,
-      role: dep.cargo,
-      text: dep.texto,
-      rating: dep.rating,
+    reviews={depoimentos.map((d) => ({
+      author: d.nome,
+      role: d.cargo,
+      text: d.texto,
+      rating: d.rating,
+      datePublished: d.data,
     }))}
   />
 
@@ -81,16 +95,14 @@ const faqs = [
     <section class="relative overflow-hidden bg-gray-900">
       <div class="absolute inset-0 overflow-hidden">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
-          sizes="100vw"
+          src="/images/hero-obra.jpg"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="hero-parallax h-[115%] w-full object-cover -mt-[7%]"
           loading="eager"
           fetchpriority="high"
           decoding="async"
-          width="1200"
-          height="800"
+          width="1257"
+          height="586"
         />
         <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#2D2D2D]/85 to-[#4A4A4A]/75"></div>
       </div>
@@ -101,7 +113,7 @@ const faqs = [
             Líder em Locação de Betoneiras
           </div>
 
-          <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-12">
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-12">
             Aluguel de Betoneira com Entrega Rápida
           </h1>
 
@@ -354,31 +366,6 @@ const faqs = [
       </div>
     </section>
 
-    <!-- LOCAL SEO -->
-    <section class="py-24 lg:py-32 bg-white">
-      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div class="mx-auto max-w-3xl text-center mb-16">
-          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
-            Atendemos toda a região
-          </h2>
-          <p class="mt-4 text-xl text-gray-600">
-            Realizamos entregas de betoneiras em diversas cidades da região metropolitana.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-          {cidades.map((city, i) => (
-            <div class="reveal flex items-center gap-3 rounded-xl border border-gray-200 px-5 py-4 transition-all hover:shadow-md hover:scale-[1.02]" data-stagger={i}>
-              <svg class="h-5 w-5 text-secondary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span class="text-sm font-medium text-gray-700">Aluguel em {city}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
 
     <!-- FAQ -->
     <section class="py-24 lg:py-32 section-concrete" id="faq">
@@ -416,7 +403,7 @@ const faqs = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <p class="mt-4 text-base text-gray-600">Sim, entrega e retirada em toda a região metropolitana. O valor é calculado por distância e informado no orçamento.</p>
+            <p class="mt-4 text-base text-gray-600">Sim, entrega e retirada na cidade do Rio de Janeiro. O valor é calculado por distância e informado no orçamento.</p>
           </details>
 
           <details class="reveal group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">

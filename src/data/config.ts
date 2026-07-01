@@ -47,28 +47,14 @@ export const SITE_CONFIG = {
   // Redes sociais
   social: {
     whatsapp: 'https://wa.me/5521997751577?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!',
-    instagram: 'https://instagram.com/alugueldebetoneira',
   },
 
   // SEO
   keywords:
     'aluguel de betoneira, locacao de betoneira, betoneira para construcao civil, alugar betoneira 120L, alugar betoneira 150L, alugar betoneira 200L, aluguel de betoneira preco, locacao de equipamentos construcao civil',
   priceRange: '$$',
-  areaServed: 'Rio de Janeiro e Grande Rio',
-  areaServedCities: [
-    'Rio de Janeiro',
-    'Niterói',
-    'São Gonçalo',
-    'Duque de Caxias',
-    'Nova Iguaçu',
-    'Belford Roxo',
-    'Mesquita',
-    'Nilópolis',
-    'São João de Meriti',
-    'Petrópolis',
-    'Magé',
-    'Itaboraí',
-  ],
+  areaServed: 'Rio de Janeiro',
+  areaServedCities: ['Rio de Janeiro'],
 
   // Fundacao
   founded: '2014',

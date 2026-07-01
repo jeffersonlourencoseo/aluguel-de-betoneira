@@ -47,7 +47,7 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 {
   preloadHero && (
     <!-- Preload LCP hero image (local, self-hosted) -->
-    <link rel="preload" as="image" href="/images/hero-blur-640.jpg" imagesrcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w" imagesizes="100vw" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero-obra.jpg" fetchpriority="high" />
   )
 }
 
@@ -77,7 +77,15 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 <!-- Preconnect Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" />
+</noscript>
 
 <!-- Open Graph — Facebook / WhatsApp / LinkedIn -->
 <meta property="og:type" content={type} />

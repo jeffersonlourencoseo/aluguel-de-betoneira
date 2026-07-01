@@ -185,7 +185,7 @@ Clientes mensais recebem um relatório detalhado de utilização do equipamento,
 
 O **aluguel de betoneira mensal** é a escolha mais inteligente para obras que duram mais de duas semanas. Com economia de até 50% sobre o valor da locação diária, suporte técnico prioritário e a tranquilidade de não precisar renovar a locação toda semana, o plano mensal transforma o custo de equipamento em um investimento previsível e controlado.
 
-Se você está planejando uma obra residencial, reforma comercial ou empreendimento de grande porte no Rio de Janeiro, considere o **aluguel de uma betoneira** no formato mensal. [Solicite agora um orçamento pelo WhatsApp](/contato/) e descubra as condições especiais que preparamos para o seu projeto. Entregamos em toda a região metropolitana, incluindo Niterói, São Gonçalo, Nova Iguaçu, Duque de Caxias e todos os bairros da zona Norte do Rio.
+Se você está planejando uma obra residencial, reforma comercial ou empreendimento de grande porte no Rio de Janeiro, considere o **aluguel de uma betoneira** no formato mensal. <a href="/contato/">Solicite agora um orçamento pelo WhatsApp</a> e descubra as condições especiais que preparamos para o seu projeto. Entregamos em toda a cidade do Rio de Janeiro.
 
 ---
 

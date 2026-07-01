@@ -21,7 +21,7 @@ const aboutPageSchema = {
 };
 ---
 
-<Layout title={title} description={description} canonical="/sobre" schema={aboutPageSchema} preloadHero={false}>
+<Layout title={title} description={description} canonical="/sobre/" schema={aboutPageSchema} preloadHero={false}>
   <Header currentPath="/sobre" />
 
   <main>
@@ -29,22 +29,20 @@ const aboutPageSchema = {
     <section class="relative py-32 lg:py-40 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
-          sizes="100vw"
+          src="/images/hero-obra.jpg"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover"
           loading="eager"
           fetchpriority="high"
           decoding="async"
-          width="1200"
-          height="800"
+          width="1257"
+          height="586"
         />
         <div class="absolute inset-0 bg-gradient-to-br from-[#1A1A1A]/90 via-[#2D2D2D]/85 to-[#4A4A4A]/75"></div>
       </div>
 
       <div class="relative container mx-auto px-6 sm:px-8 lg:px-12">
-        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-12 max-w-4xl">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-12 max-w-4xl">
           Quem Somos
         </h1>
         <p class="text-2xl sm:text-3xl text-gray-100 max-w-3xl leading-relaxed">
@@ -126,7 +124,7 @@ const aboutPageSchema = {
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Visão</h3>
             <p class="text-base text-gray-600">
-              Ser a locadora de betoneiras mais confiável da região metropolitana, reconhecida pela qualidade dos equipamentos e pela excelência no atendimento ao cliente.
+              Ser a locadora de betoneiras mais confiável do Rio de Janeiro, reconhecida pela qualidade dos equipamentos e pela excelência no atendimento ao cliente.
             </p>
           </article>
 
@@ -227,34 +225,34 @@ const aboutPageSchema = {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal" data-stagger={0}>
             <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-white text-2xl font-bold">
-              JS
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-1">João Silva</h3>
-            <p class="text-secondary font-semibold mb-4">Fundador e Diretor</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Direção e Operações</h3>
+            <p class="text-secondary font-semibold mb-4">Fundadores</p>
             <p class="text-base text-gray-600">
-              Engenheiro civil com 15 anos de experiência. Cuida pessoalmente da qualidade de cada equipamento.
+              Engenheiros e gestores com mais de 10 anos no mercado de locação de equipamentos para construção civil no Rio de Janeiro.
             </p>
           </article>
 
           <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal" data-stagger={1}>
             <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-white text-2xl font-bold">
-              AP
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-1">Ana Paula Costa</h3>
-            <p class="text-secondary font-semibold mb-4">Atendimento ao Cliente</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Atendimento ao Cliente</h3>
+            <p class="text-secondary font-semibold mb-4">Orçamentos e Logística</p>
             <p class="text-base text-gray-600">
-              Responsável pelos orçamentos e logística. Responde no WhatsApp em minutos.
+              Equipe dedicada a responder orçamentos, confirmar entregas e acompanhar cada locação do início ao fim.
             </p>
           </article>
 
           <article class="rounded-2xl border border-gray-200 bg-white p-10 shadow-sm text-center transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal" data-stagger={2}>
             <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-white text-2xl font-bold">
-              MR
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-1">Marcos Rocha</h3>
-            <p class="text-secondary font-semibold mb-4">Técnico de Manutenção</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Manutenção e Qualidade</h3>
+            <p class="text-secondary font-semibold mb-4">Técnicos Especializados</p>
             <p class="text-base text-gray-600">
-              Mecânico especializado que garante que cada betoneira saia em perfeito estado.
+              Mecânicos especializados que inspecionam, lubrificam e testam cada betoneira antes de sair para a obra.
             </p>
           </article>
         </div>

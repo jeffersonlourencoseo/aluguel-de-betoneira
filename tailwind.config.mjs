@@ -31,7 +31,7 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: '#E8A838',
+          DEFAULT: '#B0761F',
           50: '#FDF6E9',
           100: '#F9EBC8',
           200: '#F3DB96',
@@ -70,8 +70,8 @@ export default {
           950: '#111111',
         },
         whatsapp: {
-          DEFAULT: '#25D366',
-          dark: '#128C7E',
+          DEFAULT: '#128C7E',
+          dark: '#0D6B5F',
         },
       },
     },

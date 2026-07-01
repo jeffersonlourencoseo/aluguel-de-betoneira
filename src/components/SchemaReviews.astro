@@ -4,6 +4,7 @@ export interface Review {
   role?: string;
   text: string;
   rating: number;
+  datePublished?: string;
 }
 
 interface Props {
@@ -39,6 +40,7 @@ const reviewSchema = {
       name: review.author,
       ...(review.role ? { jobTitle: review.role } : {}),
     },
+    datePublished: review.datePublished,
     reviewRating: {
       '@type': 'Rating',
       ratingValue: String(review.rating),

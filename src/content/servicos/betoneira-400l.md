@@ -8,7 +8,7 @@ peso: "480 kg"
 featured: false
 ---
 
-A **betoneira 400 litros** é a solução definitiva para projetos que exigem máxima produtividade, alto volume de concreto e operação contínua. Equipamento industrial de alta performance, desenvolvido para atender construções comerciais, grandes empreendimentos imobiliários, usinas de concreto móveis e obras de infraestrutura na região metropolitana do Rio de Janeiro.
+A **betoneira 400 litros** é a solução definitiva para projetos que exigem máxima produtividade, alto volume de concreto e operação contínua. Equipamento industrial de alta performance, desenvolvido para atender construções comerciais, grandes empreendimentos imobiliários, usinas de concreto móveis e obras de infraestrutura na cidade do Rio de Janeiro.
 
 Com capacidade de mistura de 260 litros e motor de 3 CV, essa betoneira produz até 10 m³ de concreto por dia. Isso elimina gargalos no cronograma, reduz a mão de obra necessária para batida de massa e torna o custo por metro cúbico de concreto muito mais competitivo. Se sua obra é grande, o **aluguel de betoneira 400 litros** é um investimento que se paga na produtividade.
 

@@ -12,9 +12,11 @@ const { servicos = [], breadcrumbName } = Astro.props;
 const address = SITE_CONFIG.nap.address;
 const pathname = Astro.url.pathname;
 
-const sameAs = [SITE_CONFIG.social.instagram].filter(Boolean);
-const googleBusinessUrl = ''; // substituir pela URL do Google Business Profile quando disponível
-if (googleBusinessUrl) sameAs.push(googleBusinessUrl);
+// Mesmo sem Google Business Profile ou Instagram, mantemos o array vazio
+// para que o schema Organization continue válido e extensível no futuro.
+const sameAs: string[] = [];
+
+const googleMapsEmbedUrl = `https://www.google.com/maps?q=${SITE_CONFIG.geo.latitude},${SITE_CONFIG.geo.longitude}`;
 
 // Breadcrumb dinâmico baseado no pathname
 function buildBreadcrumbItems() {
@@ -101,6 +103,8 @@ const localBusiness = {
     })),
   },
   serviceType: 'Locação de Betoneiras',
+  hasMap: googleMapsEmbedUrl,
+  foundingDate: SITE_CONFIG.founded,
   hasOfferCatalog: servicos.length > 0
     ? {
         '@type': 'OfferCatalog',
@@ -120,21 +124,13 @@ const localBusiness = {
     : undefined,
 };
 
-// WebSite Schema (com SearchAction para Sitelinks Searchbox)
+// WebSite Schema (sem SearchAction: blog não possui página de busca real)
 const website = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': `${SITE_CONFIG.url}/#website`,
   name: SITE_CONFIG.name,
   url: SITE_CONFIG.url,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${SITE_CONFIG.url}/blog/?q={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 // Organization Schema (logo + sameAs redes sociais)
@@ -146,6 +142,7 @@ const organization = {
   url: SITE_CONFIG.url,
   logo: `${SITE_CONFIG.url}/images/logo.svg`,
   sameAs,
+  foundingDate: SITE_CONFIG.founded,
   contactPoint: [
     {
       '@type': 'ContactPoint',

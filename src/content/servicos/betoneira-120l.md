@@ -8,7 +8,7 @@ peso: "210 kg"
 featured: true
 ---
 
-A **betoneira 120 litros** é a escolha perfeita para quem precisa de um equipamento compacto, eficiente e econômico para pequenas obras e reformas residenciais na região metropolitana do Rio de Janeiro. Com capacidade de mistura de 80 litros, ela atende perfeitamente projetos que não exigem grande volume de concreto, entregando qualidade sem desperdiçar energia elétrica ou combustível.
+A **betoneira 120 litros** é a escolha perfeita para quem precisa de um equipamento compacto, eficiente e econômico para pequenas obras e reformas residenciais na cidade do Rio de Janeiro. Com capacidade de mistura de 80 litros, ela atende perfeitamente projetos que não exigem grande volume de concreto, entregando qualidade sem desperdiçar energia elétrica ou combustível.
 
 Se você está planejando uma reforma de apartamento, construção de muros, calçadas ou pequenas estruturas de concreto, o **aluguel de betoneira 120 litros** oferece o equilíbrio ideal entre custo baixo e produtividade suficiente. Nossa equipe entrega o equipamento diretamente na sua obra, pronto para uso imediato.
 
@@ -37,7 +37,7 @@ A betoneira 120 litros brilha em projetos de pequeno porte onde a demanda de con
 
 1. **Equipamento revisado**: Toda betoneira passa por inspeção técnica completa antes da entrega. Motor, engrenagens, tambor e sistema de lubrificação são verificados por nosso técnico especializado.
 
-2. **Entrega rápida**: Para a zona Norte do Rio de Janeiro, entregamos no mesmo dia para solicitações confirmadas antes das 14h. Também atendemos Niterói, São Gonçalo, Nova Iguaçu e Duque de Caxias.
+2. **Entrega rápida**: Para a zona Norte do Rio de Janeiro, entregamos no mesmo dia para solicitações confirmadas antes das 14h. Atendemos toda a cidade do Rio de Janeiro.
 
 3. **Suporte técnico**: Durante todo o período de locação, nossa equipe está disponível pelo WhatsApp para tirar dúvidas e resolver qualquer imprevisto com prioridade.
 
@@ -60,7 +60,7 @@ Se sua obra for apenas uma reforma rápida ou pequena estrutura, a 120L é sufic
 
 Solicite um orçamento gratuito pelo WhatsApp ou formulário de contato. Basta informar o endereço da obra, o prazo estimado e o tipo de projeto. Nossa equipe responde em minutos com o valor da locação e o frete de entrega.
 
-Atendemos toda a região metropolitana com entrega e retirada inclusas na maioria dos bairros. Aceitamos PIX, dinheiro, cartão e transferência bancária. Para locações acima de 15 dias, o [aluguel mensal](/blog/aluguel-betoneira-mensal/) oferece desconto de até 50% sobre o valor da diária.
+Atendemos toda a cidade do Rio de Janeiro com entrega e retirada inclusas na maioria dos bairros. Aceitamos PIX, dinheiro, cartão e transferência bancária. Para locações acima de 15 dias, o [aluguel mensal](/blog/aluguel-betoneira-mensal/) oferece desconto de até 50% sobre o valor da diária.
 
 ## Dicas de Uso e Segurança na Betoneira 120L
 
@@ -70,6 +70,6 @@ Se a betoneira for a gasolina, mantenha o local ventilado e afastado de materiai
 
 ## Regiões Atendidas com Entrega Rápida
 
-Atendemos toda a região metropolitana do Rio de Janeiro com entrega programada. Bairros da zona Norte como Penha, Ramos, Olaria, Vicente de Carvalho, Brás de Pina e Irajá têm entrega no mesmo dia para solicitações antes das 14h. Também atendemos Niterói, São Gonçalo, Nova Iguaçu e Duque de Caxias com prazo de até 24 horas.
+Atendemos toda a cidade do Rio de Janeiro com entrega programada. Bairros da zona Norte como Penha, Ramos, Olaria, Vicente de Carvalho, Brás de Pina, Irajá, Cordovil, Pavuna e Cascadura têm entrega no mesmo dia para solicitações antes das 14h.
 
 Quer saber exatamente quanto custa? Confira nosso [guia completo de preços de aluguel de betoneira](/blog/quanto-custa-alugar-betoneira/) e planeje seu orçamento com antecedência.
