@@ -12,6 +12,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "report": "node scripts/reports/fetch-data.mjs",
     "astro": "astro"
   },
   "dependencies": {
@@ -25,6 +26,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@google-analytics/data": "^6.1.0",
+    "googleapis": "^173.0.0",
     "typescript": "^5.9.3"
   }
 }
