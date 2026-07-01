@@ -1,0 +1,32 @@
+PASSO A PASSO - DEPLOY DO SITE
+================================
+
+OPCAO 1: VS CODE (mais facil)
+----------------------------
+1. Abra o programa VS Code
+2. Clique no icone de RAMO/ARVORE (3 icone da esquerda, parece um Y)
+3. Veja a bolinha com numero 1 em cima
+4. Clique na palavra "Push" ou na seta pra CIMA
+5. Se abrir navegador pedindo login, clique AUTORIZAR
+6. PRONTO - a Vercel atualiza sozinha
+
+OPCAO 2: TERMINAL (se VS Code nao der)
+--------------------------------------
+Copie e cole ESTE COMANDO no terminal:
+
+cd "C:\Users\Jefferson\Desktop\SEO LOCAL\ALUGUEL DE BETONEIRA" && git push origin main
+
+Se pedir usuario: jeffersonlourencoseo
+Se pedir senha: precisa criar token no GitHub (veja abaixo)
+
+COMO CRIAR SENHA NO GITHUB:
+----------------------------
+1. Abra Chrome e va em: github.com/settings/tokens
+2. Clique: Generate new token (classic)
+3. Escreva nome: meu pc
+4. MARQUE APENAS A CAIXINHA: repo
+5. Clique no botao VERDE: Generate token
+6. Copie o codigo que aparece (comeca com ghp_)
+7. Cole esse codigo como senha no terminal
+
+DICA: Se o terminal travar, feche e abra de novo.

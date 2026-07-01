@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Editar no GitHub</title>
+<style>
+body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+h1 { color: #333; }
+button { font-size: 18px; padding: 15px 30px; background: #2ea44f; color: white; border: none; border-radius: 6px; cursor: pointer; }
+button:hover { background: #22863a; }
+.code { background: #f6f8fa; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 14px; border: 1px solid #e1e4e8; }
+</style>
+</head>
+<body>
+
+<h1>PASSO 1: Abrir o arquivo no GitHub</h1>
+<p>Clique no botao verde abaixo. Ele vai abrir o arquivo no GitHub pra voce editar.</p>
+<a href="https://github.com/jeffersonlourencoseo/aluguel-de-betoneira/edit/main/src/components/SEO.astro" target="_blank">
+  <button>ABRIR ARQUIVO NO GITHUB</button>
+</a>
+
+<h1>PASSO 2: Achar o texto errado</h1>
+<p>Depois que abrir, aperte <strong>Ctrl + F</strong> no teclado.</p>
+<p>Digite isso na caixinha que aparecer:</p>
+<div class="code">fullCanonical = `${siteUrl}${canonical}`;</div>
+<p>O navegador vai achar essa linha sozinho e destacar em amarelo.</p>
+
+<h1>PASSO 3: Substituir pelo texto certo</h1>
+<p><strong>Selecione</strong> (clique e arraste) por cima dessa linha destacada, aperte <strong>Delete</strong> no teclado.</p>
+<p>Depois <strong>COLE</strong> isso no lugar (aperte <strong>Ctrl + V</strong>):</p>
+<div class="code">function normalizeCanonical(path: string): string {
+  if (path === '/') return path;
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
+const fullCanonical = `${siteUrl}${normalizeCanonical(canonical)}`;</div>
+
+<h1>PASSO 4: Salvar</h1>
+<p>Role a pagina pra <strong>mbaixo</strong> ate o final.</p>
+<p>Clique no botao <strong>verde</strong> escrito <strong>"Commit changes..."</strong>.</p>
+<p><strong>PRONTO!</strong> O site atualiza sozinho em 2 minutos.</p>
+
+</body>
+</html>
