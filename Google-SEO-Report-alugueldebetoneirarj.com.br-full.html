@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 22mm 18mm 25mm 18mm;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 9pt;
+      color: #6b7280;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-left {
+      content: "Confidential";
+      font-size: 7pt;
+      color: #d6d3cc;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-right {
+      content: "alugueldebetoneirarj.com.br Google SEO Report";
+      font-size: 8pt;
+      color: #cbd5e1;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+  }
+
+  @page :first {
+    margin: 0;
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+  }
+
+  @page toc {
+    @bottom-center {
+      content: counter(page);
+      font-size: 9pt;
+      color: #6b7280;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Times New Roman', 'DejaVu Serif', Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: white;
+  }
+
+  /* ─── Title Page (Clean White) ─── */
+  .title-page {
+    page: first;
+    width: 210mm;
+    height: 297mm;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1a1a2e;
+    position: relative;
+    padding: 50mm 30mm 40mm 30mm;
+    border-top: 6mm solid #1e3a5f;
+  }
+
+  .title-page .badge {
+    background: #f7f6f3;
+    border: 1px solid #d6d3cc;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 9pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15mm;
+    color: #1e3a5f;
+  }
+
+  .title-page h1 {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 5mm;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: #1a1a2e;
+  }
+
+  .title-page .subtitle {
+    font-size: 13pt;
+    color: #6b7280;
+    margin-bottom: 12mm;
+    font-weight: 300;
+  }
+
+  .title-page .url {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-bottom: 15mm;
+    padding: 4mm 8mm;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    background: #faf9f7;
+  }
+
+  .title-page .score-box {
+    background: #faf9f7;
+    border: 2px solid #d6d3cc;
+    border-radius: 12px;
+    padding: 6mm 12mm;
+    margin-bottom: 15mm;
+  }
+
+  .title-page .score-number {
+    font-size: 42pt;
+    font-weight: bold;
+    color: #1e3a5f;
+    line-height: 1;
+  }
+
+  .title-page .score-label {
+    font-size: 10pt;
+    color: #6b7280;
+    margin-top: 2mm;
+  }
+
+  .title-page .meta {
+    font-size: 9pt;
+    color: #6b7280;
+    margin-top: 8mm;
+    padding-top: 5mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+  .title-page .meta span {
+    margin: 0 8px;
+  }
+
+  /* ─── Table of Contents ─── */
+  .toc-page {
+    page: toc;
+    page-break-before: always;
+  }
+
+  .toc-page h2 {
+    font-size: 18pt;
+    color: #1e3a5f;
+    margin-bottom: 8mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid #1e3a5f;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .toc-list li {
+    padding: 2mm 0;
+    border-bottom: 1px solid #f1f5f9;
+    overflow: hidden;
+  }
+
+  .toc-list li.toc-section {
+    font-weight: bold;
+    font-size: 11pt;
+    padding-top: 4mm;
+    color: #0f172a;
+  }
+
+  .toc-list li.toc-sub {
+    padding-left: 8mm;
+    font-size: 9.5pt;
+    color: #475569;
+  }
+
+  .toc-score {
+    display: inline-block;
+    float: right;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: white;
+  }
+
+  .score-good { background: #2d6a4f; }
+  .score-warn { background: #d4740e; }
+  .score-bad { background: #c53030; }
+
+  /* ─── Section Styles ─── */
+  div.section {
+    page-break-before: always;
+  }
+
+  .section-header {
+    background: #faf9f7;
+    border-left: 4px solid #1e3a5f;
+    padding: 5mm 6mm;
+    margin-bottom: 6mm;
+    page-break-after: avoid;
+  }
+
+  .section-header h2 {
+    font-size: 16pt;
+    color: #0f172a;
+    margin-bottom: 1mm;
+  }
+
+  .section-header .section-score {
+    font-size: 12pt;
+    font-weight: bold;
+    float: right;
+    margin-top: -6mm;
+  }
+
+  h3 {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid #d6d3cc;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 10.5pt;
+    color: #334155;
+    margin-top: 4mm;
+    margin-bottom: 2mm;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin-bottom: 3mm;
+    color: #334155;
+  }
+
+  .highlight {
+    background: #fef3c7;
+    border-left: 3px solid #d4740e;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .critical-box {
+    background: #fef2f2;
+    border-left: 3px solid #c53030;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .success-box {
+    background: #f0fdf4;
+    border-left: 3px solid #2d6a4f;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0 6mm 0;
+    font-size: 9pt;
+  }
+
+  thead th {
+    background: #f7f6f3;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 3mm 4mm;
+    text-align: left;
+    border-bottom: 2px solid #d6d3cc;
+    font-size: 9pt;
+  }
+
+  tbody td {
+    padding: 2.5mm 3mm;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fdfcfa;
+  }
+
+  .status-pass {
+    color: #2d6a4f;
+    font-weight: bold;
+  }
+
+  .status-fail {
+    color: #c53030;
+    font-weight: bold;
+  }
+
+  .status-warn {
+    color: #d4740e;
+    font-weight: bold;
+  }
+
+  .status-partial {
+    color: #4a5568;
+    font-weight: bold;
+  }
+
+  /* ─── Charts ─── */
+  .chart-container {
+    text-align: center;
+    margin: 4mm 0;
+  }
+
+  .chart-container img {
+    max-width: 100%;
+    max-height: 120mm;
+    height: auto;
+  }
+
+  .chart-caption {
+    font-size: 8.5pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 2mm;
+    text-align: center;
+  }
+
+  .chart-half {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .chart-half img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ─── Two column layout ─── */
+  .two-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .two-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 2mm;
+  }
+
+  .four-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .four-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 1.5mm;
+  }
+
+  /* ─── Metric Cards ─── */
+  .metric-card {
+    background: #faf9f7;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    padding: 2.5mm 3mm;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .metric-card .value {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .metric-card .label {
+    font-size: 7.5pt;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1mm;
+  }
+
+  /* ─── Action Plan ─── */
+  .action-item {
+    background: #faf9f7;
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    border-left: 3px solid #cbd5e1;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .action-item.critical {
+    border-left-color: #c53030;
+    background: #fdf2f2;
+  }
+
+  .action-item.high {
+    border-left-color: #d4740e;
+    background: #fdf8ef;
+  }
+
+  .action-item.medium {
+    border-left-color: #1e3a5f;
+    background: #f0f4f8;
+  }
+
+  .action-item.low {
+    border-left-color: #94a3b8;
+  }
+
+  .action-item h4 {
+    margin-top: 0;
+    margin-bottom: 1.5mm;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .action-item .effort {
+    font-size: 8.5pt;
+    color: #64748b;
+    float: right;
+  }
+
+  .priority-tag {
+    display: inline-block;
+    padding: 0.5mm 3mm;
+    border-radius: 3px;
+    font-size: 8pt;
+    font-weight: bold;
+    color: white;
+    margin-right: 2mm;
+    vertical-align: middle;
+  }
+
+  .priority-critical { background: #c53030; }
+  .priority-high { background: #d4740e; }
+  .priority-medium { background: #1e3a5f; }
+  .priority-low { background: #94a3b8; }
+
+  /* ─── Code blocks ─── */
+  .code-block {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 3mm 4mm;
+    border-radius: 4px;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 8pt;
+    line-height: 1.6;
+    margin: 3mm 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid #d6d3cc;
+    margin: 5mm 0;
+  }
+
+  /* ─── Roadmap ─── */
+  .roadmap-phase {
+    background: #faf9f7;
+    border-radius: 6px;
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+    border: 1px solid #d6d3cc;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .roadmap-phase h4 {
+    margin-top: 0;
+    border-bottom: none;
+    color: #1e3a5f;
+  }
+
+  .roadmap-phase ul {
+    margin: 2mm 0 0 5mm;
+    padding: 0;
+  }
+
+  .roadmap-phase li {
+    margin-bottom: 1.5mm;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+
+  /* ─── Lists ─── */
+  ul {
+    margin-left: 5mm;
+    margin-bottom: 3mm;
+  }
+
+  li {
+    margin-bottom: 1.5mm;
+  }
+
+  /* ─── Data freshness ─── */
+  .data-freshness {
+    font-size: 8pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ======================================================= TITLE PAGE === -->
+<div class="title-page">
+  <div class="badge">Full SEO Audit Report</div>
+  <h1>alugueldebetoneirarj.com.br</h1>
+  <div class="subtitle">Prepared by Claude SEO</div>
+  <div class="score-box">
+    <div class="score-number">70<span style="font-size: 20pt; color: #94a3b8;">/100</span></div>
+    <div class="score-label">SEO Health Score</div>
+  </div>
+  <div class="meta">
+    <span>June 30, 2026</span>
+    <span>Full Audit</span>
+  </div>
+</div>
+
+
+<!-- ======================================================= TABLE OF CONTENTS === -->
+<div class="toc-page">
+  <h2>Table of Contents</h2>
+  <ul class="toc-list">
+    <li class="toc-section"><span>1. Executive Summary</span></li>
+    <li class="toc-sub"><span>Key Metrics, Critical Issues &amp; Quick Wins</span></li>
+    <li class="toc-section"><span>2. Audit Categories</span></li>
+    <li class="toc-sub"><span>What Works</span></li>
+    <li class="toc-sub"><span>Findings by Severity</span></li>
+    <li class="toc-section"><span>3. Core Web Vitals &amp; Performance</span> <span class="toc-score score-warn">77</span></li>
+    <li class="toc-sub"><span>Lighthouse Scores &amp; Lab Metrics</span></li>
+    <li class="toc-sub"><span>CrUX Field Data &amp; Trends</span></li>
+    <li class="toc-sub"><span>Failed Audits &amp; Opportunities</span></li>
+    <li class="toc-section"><span>4. Search Console Performance</span></li>
+    <li class="toc-sub"><span>Key Metrics &amp; Top Queries</span></li>
+    <li class="toc-sub"><span>Position Analysis &amp; Quick Wins</span></li>
+    <li class="toc-section"><span>5. Indexation Status</span></li>
+    <li class="toc-sub"><span>Index Coverage &amp; Per-URL Results</span></li>
+    <li class="toc-section"><span>6. Action Plan</span></li>
+    <li class="toc-sub"><span>Phased Roadmap</span></li>
+    <li class="toc-section"><span>7. Data Sources &amp; Methodology</span></li>
+  </ul>
+</div>
+
+
+<!-- ======================================================= 1. EXECUTIVE SUMMARY === -->
+<div class="section">
+  <div class="section-header">
+    <h2>1. Executive Summary</h2>
+  </div>
+
+  <p>This report presents a comprehensive SEO audit of <strong>alugueldebetoneirarj.com.br</strong> for a <strong>Local Construction Equipment Rental Service</strong> site, generated on June 30, 2026. Findings combine technical, content, schema, performance, visual, and search-readiness evidence as available.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="metric-card">
+        <div class="value" style="color: #d4740e;">70/100</div>
+        <div class="label">SEO Health Score</div>
+      </div>
+
+    </div>
+    <div class="col">
+      <div class="metric-card">
+        <div class="value" style="color: #d4740e;">77/100</div>
+        <div class="label">Lighthouse Performance</div>
+      </div>
+
+    </div>
+    <div class="col">
+      <div class="metric-card">
+        <div class="value" style="color: #d4740e;">88/100</div>
+        <div class="label">Lighthouse SEO</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="critical-box">
+    <strong>Critical Issues Found:</strong>
+    <ol>
+      <li><strong>Critical:</strong> Broken &#x27;Quem Somos&#x27; navigation link returns 404</li>
+      <li><strong>Critical:</strong> Severe content cannibalization on price-related blog posts</li>
+      <li><strong>Critical:</strong> Blog post promises 250L service that does not exist</li>
+      <li><strong>Critical:</strong> Inconsistent 400L technical specs across pages (2 CV vs 3 CV, 480 kg vs 520 kg)</li>
+      <li><strong>High:</strong> Missing meta descriptions on homepage and service pages</li>
+    </ol>
+  </div>
+
+  <div class="success-box">
+    <strong>Quick Wins:</strong>
+    <ol>
+      <li>Fix broken /quem-somos/ redirect and internal links</li>
+      <li>Add unique meta descriptions to all indexable pages</li>
+      <li>Force 301 redirect for trailing-slash URLs</li>
+      <li>Fix breadcrumb schema URLs to use trailing slash</li>
+      <li>Create /llms.txt for AI crawler guidance</li>
+    </ol>
+  </div>
+
+</div>
+
+<!-- ======================================================= 2. AUDIT CATEGORIES === -->
+<div class="section">
+  <div class="section-header">
+    <h2>2. Audit Categories</h2>
+  </div>
+
+  <h3>2.1 Technical SEO</h3>
+  <p><strong>Score:</strong> <span class="status-pass">87/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>HTTPS/HSTS active with valid Let&#x27;s Encrypt certificate</li>
+    <li>Canonical non-www to www redirect (308) configured</li>
+    <li>robots.txt allows all crawlers and references sitemap</li>
+    <li>XML sitemap contains 17 valid, indexable URLs</li>
+    <li>Canonical tags and meta robots are consistent across pages</li>
+    <li>Schema JSON-LD present and syntactically valid</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Trailing-slash URLs return 200 instead of 301 <span class="status-warn">High</span></h4>
+    <p>URL /servicos/betoneira-120l (without slash) returns 200, creating a duplicate indexable version.</p>
+    <p><strong>Recommendation:</strong> Configure server to 301-redirect all slashless URLs to the trailing-slash canonical version.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Breadcrumb schema uses inconsistent URLs <span class="status-warn">Medium</span></h4>
+    <p>BreadcrumbList item &#x27;Servicos&#x27; points to /servicos (no slash) while the real page is /servicos/.</p>
+    <p><strong>Recommendation:</strong> Update all breadcrumb item URLs to match canonical trailing-slash URLs.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Missing security headers <span class="status-warn">Low</span></h4>
+    <p>Content-Security-Policy and X-Frame-Options are not present.</p>
+    <p><strong>Recommendation:</strong> Add CSP and X-Frame-Options headers for additional security.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.2 Content Quality &amp; E-E-A-T</h3>
+  <p><strong>Score:</strong> <span class="status-warn">58/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Service pages include technical specification tables</li>
+    <li>Calculator tool provides utility value to users</li>
+    <li>Privacy policy and terms pages exist</li>
+    <li>Blog covers commercial intent topics (price, location, monthly rental)</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Inconsistent technical specifications for 400L model <span class="status-warn">Critical</span></h4>
+    <p>Service page lists 3 CV / 480 kg while blog posts list 2 CV / 520 kg for the same 400L mixer.</p>
+    <p><strong>Recommendation:</strong> Create a single source of truth for specs and update all pages accordingly.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>About page uses generic unverifiable team names <span class="status-warn">High</span></h4>
+    <p>Names like &#x27;Joao Silva&#x27;, &#x27;Ana Paula Costa&#x27;, &#x27;Marcos Rocha&#x27; appear without photos, LinkedIn, or professional registrations.</p>
+    <p><strong>Recommendation:</strong> Replace with real team profiles including photos, roles, tenure, and CREA/registrations where applicable.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Blog posts lack real author bylines <span class="status-warn">High</span></h4>
+    <p>Author is generic brand name or absent; reduces authority signals.</p>
+    <p><strong>Recommendation:</strong> Assign real authors and add Person schema.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Testimonials lack verification attributes <span class="status-warn">High</span></h4>
+    <p>No photos, cities, dates, or links to verify the three homepage testimonials.</p>
+    <p><strong>Recommendation:</strong> Use real customer reviews from Google Business or Reclame Aqui and mark them up with Review schema.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Year inconsistency in pricing article <span class="status-warn">Medium</span></h4>
+    <p>Title/H1 mentions &#x27;2026&#x27; but an H2 inside the article says &#x27;2024&#x27;.</p>
+    <p><strong>Recommendation:</strong> Review and update all dates to the current year.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.3 On-Page SEO</h3>
+  <p><strong>Score:</strong> <span class="status-warn">65/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>H1s and titles clearly mention target keywords and location</li>
+    <li>WhatsApp CTAs are prominent with pre-filled messages</li>
+    <li>Service pages have unique capacity-based targeting</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Meta descriptions missing on most pages <span class="status-warn">High</span></h4>
+    <p>Homepage and service pages do not contain a meta description tag.</p>
+    <p><strong>Recommendation:</strong> Write unique, CTR-optimized meta descriptions for every indexable page.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>CTA &#x27;Solicitar Orcamento&#x27; leads to different destinations <span class="status-warn">High</span></h4>
+    <p>Menu points to WhatsApp; service pages point to /contato/.</p>
+    <p><strong>Recommendation:</strong> Standardize labels: &#x27;Falar no WhatsApp&#x27; for wa.me; &#x27;Preencher Formulario&#x27; for /contato/.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Service pages have no inline quote form <span class="status-warn">Medium</span></h4>
+    <p>Conversion depends solely on WhatsApp/phone, excluding form-preferring leads.</p>
+    <p><strong>Recommendation:</strong> Add a short quote form at the bottom of each service page with equipment pre-selected.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.4 Schema / Structured Data</h3>
+  <p><strong>Score:</strong> <span class="status-warn">72/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>LocalBusiness, Organization, WebSite, BreadcrumbList present</li>
+    <li>Service, Article, FAQPage, WebApplication schemas used on relevant pages</li>
+    <li>All JSON-LD blocks parsed successfully</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Service schema missing offers/pricing <span class="status-warn">High</span></h4>
+    <p>Service pages include provider and description but no offers/priceCurrency/availability.</p>
+    <p><strong>Recommendation:</strong> Add Offer blocks with BRL pricing and availability to each service page.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>SearchAction points to non-existent internal search <span class="status-warn">Medium</span></h4>
+    <p>WebSite potentialAction uses /blog/?q={search_term_string} but the blog has no search results page.</p>
+    <p><strong>Recommendation:</strong> Remove SearchAction or build a real search results page.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>FAQ section on homepage lacks FAQPage markup <span class="status-warn">Medium</span></h4>
+    <p>Visible FAQ content is not marked as FAQPage, reducing LLM/AI citability.</p>
+    <p><strong>Recommendation:</strong> Add FAQPage JSON-LD to the homepage FAQ section.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Organization sameAs only lists Instagram <span class="status-warn">Low</span></h4>
+    <p>Limited external entity signals.</p>
+    <p><strong>Recommendation:</strong> Add Google Business Profile, Facebook, LinkedIn, and industry associations.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.5 Core Web Vitals &amp; Performance</h3>
+  <p><strong>Score:</strong> <span class="status-warn">74/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>TTFB ~60 ms (excellent)</li>
+    <li>CLS near 0 (excellent)</li>
+    <li>TBT 0 ms and low main-thread interference</li>
+    <li>Brotli compression and long-term cache headers active</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Render-blocking resources delay LCP <span class="status-warn">High</span></h4>
+    <p>Google Fonts CSS and Astro CSS block rendering, causing ~1.4-1.6 s element render delay.</p>
+    <p><strong>Recommendation:</strong> Load Google Fonts asynchronously; inline critical CSS and defer non-critical styles.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Hero image is intentionally blurred and low quality <span class="status-warn">High</span></h4>
+    <p>LCP element is a blurred JPEG placeholder, hurting perceived quality.</p>
+    <p><strong>Recommendation:</strong> Replace with a sharp, optimized WebP/AVIF photo of a real mixer on a job site.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Images served as JPEG instead of modern formats <span class="status-warn">Medium</span></h4>
+    <p>Hero and team photos are JPEG; WebP/AVIF would reduce size.</p>
+    <p><strong>Recommendation:</strong> Use Astro Picture component with WebP/AVIF fallback.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.6 Local SEO</h3>
+  <p><strong>Score:</strong> <span class="status-warn">58/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>NAP consistent across schema and contact page</li>
+    <li>Service area mentions multiple cities and neighborhoods</li>
+    <li>WhatsApp/phone CTAs are strong and pre-filled</li>
+    <li>LocalBusiness schema includes hours, address, and phone</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>No Google Business Profile detected <span class="status-warn">Critical</span></h4>
+    <p>No GBP result found for brand, phone, or address; business is invisible in Local Pack.</p>
+    <p><strong>Recommendation:</strong> Create/claim a Google Business Profile with identical NAP and category &#x27;Equipment Rental Agency&#x27; / &#x27;Construction Equipment Supplier&#x27;.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No dedicated city/borough landing pages <span class="status-warn">High</span></h4>
+    <p>Competitors rank with /locacao-de-betoneira-cidade/ pages; this site only has generic blog mentions.</p>
+    <p><strong>Recommendation:</strong> Create location landing pages for Niteroi, Sao Goncalo, Nova Iguacu, Duque de Caxias, etc.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No external reviews or citations <span class="status-warn">High</span></h4>
+    <p>No Google reviews, Reclame Aqui, or local directory listings found.</p>
+    <p><strong>Recommendation:</strong> Register on local directories and implement a review request workflow.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Address not visible in footer HTML <span class="status-warn">Medium</span></h4>
+    <p>Address only appears in schema and /contato/ page.</p>
+    <p><strong>Recommendation:</strong> Display full NAP in the footer of every page.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.7 AI Search Readiness (GEO)</h3>
+  <p><strong>Score:</strong> <span class="status-warn">72/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>robots.txt allows all major AI crawlers</li>
+    <li>Structured data helps LLM extraction</li>
+    <li>NAP and service information are consistent</li>
+    <li>FAQ content exists (though not all marked up)</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>llms.txt file missing <span class="status-warn">High</span></h4>
+    <p>No /llms.txt guide for AI crawlers.</p>
+    <p><strong>Recommendation:</strong> Create /llms.txt with business identity, services, service area, FAQs, and policies.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No external citations or references <span class="status-warn">High</span></h4>
+    <p>Content does not cite norms (NR-18, ABNT) or industry associations, weakening E-E-A-T for LLMs.</p>
+    <p><strong>Recommendation:</strong> Add authoritative references and links in educational blog posts.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Instagram profile name appears inconsistent <span class="status-warn">Medium</span></h4>
+    <p>sameAs points to @alugueldebetoneira but profile title observed as &#x27;Elevando&#x27;.</p>
+    <p><strong>Recommendation:</strong> Verify Instagram account ownership and update sameAs if needed.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.8 Content Architecture / Clustering</h3>
+  <p><strong>Score:</strong> <span class="status-fail">37/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Blog exists and covers commercial topics</li>
+    <li>Service pages linked from homepage</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>No clear pillar page or hub-and-spoke structure <span class="status-warn">High</span></h4>
+    <p>Blog is a flat chronological list; no central guide connects related topics.</p>
+    <p><strong>Recommendation:</strong> Create a pillar page (e.g., /blog/guia-de-aluguel-de-betoneira/) and reorganize posts as spokes.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Severe cannibalization on price queries <span class="status-warn">Critical</span></h4>
+    <p>Multiple posts target &#x27;quanto custa alugar betoneira&#x27; with overlapping H1/H2 keywords.</p>
+    <p><strong>Recommendation:</strong> Consolidate into one authoritative pricing guide and redirect/rewrite the others.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No top-of-funnel educational content <span class="status-warn">High</span></h4>
+    <p>All 5 blog posts are commercial; missing how-to, safety, and calculation guides.</p>
+    <p><strong>Recommendation:</strong> Publish guides on how to use a mixer, calculate concrete volume, and NR-18 safety.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.9 Visual / Mobile UX</h3>
+  <p><strong>Score:</strong> <span class="status-warn">64/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Site is responsive and uses large typography</li>
+    <li>Contact form is mobile-friendly</li>
+    <li>No intrusive interstitials or popups</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Hero H1 too large on mobile <span class="status-warn">High</span></h4>
+    <p>text-6xl H1 pushes trust badges and secondary CTA below the fold.</p>
+    <p><strong>Recommendation:</strong> Reduce H1 to text-4xl/text-5xl on mobile and ensure CTA/badge visibility above the fold.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Primary and WhatsApp colors fail WCAG contrast <span class="status-warn">High</span></h4>
+    <p>#E8A838 on white = 2.08:1; white on #25D366 = 1.98:1.</p>
+    <p><strong>Recommendation:</strong> Darken primary/CTA colors or increase font weight/size to meet WCAG AA.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Tap targets below 44 px <span class="status-warn">Medium</span></h4>
+    <p>Hamburger, footer links, and social icons are smaller than recommended.</p>
+    <p><strong>Recommendation:</strong> Increase padding and min-height to at least 44 px for all interactive elements.</p>
+  </div>
+  <hr class="divider">
+</div>
+
+<!-- ======================================================= 3. CORE WEB VITALS === -->
+<div class="section">
+  <div class="section-header">
+    <h2>3. Core Web Vitals &amp; Performance</h2>
+    <div class="section-score" style="color: #d4740e;">77/100</div>
+  </div>
+
+  <h3>3.1 Lighthouse Scores</h3>
+
+    <div class="chart-container">
+      <img src="file://C:\Users\Jefferson\Documents\claude-installs\charts\lighthouse_gauges.png" style="width: 85%;" alt="Lighthouse gauge scores">
+      <div class="chart-caption">Figure 1: Lighthouse audit scores across Performance, Accessibility, Best Practices, and SEO.</div>
+    </div>
+
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Score</th><th>Rating</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Performance</td><td class="status-warn">77</td><td>Needs Work</td></tr>
+      <tr><td>Accessibility</td><td class="status-warn">85</td><td>Needs Work</td></tr>
+      <tr><td>Best Practices</td><td class="status-pass">92</td><td>Good</td></tr>
+      <tr><td>SEO</td><td class="status-warn">88</td><td>Needs Work</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+  <h3>3.2 Lab Metrics (Simulated)</h3>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Value</th><th>Score</th><th>Threshold</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>First Contentful Paint (FCP)</td><td>2.0 s</td><td class="status-warn">72%</td><td>≤ 1.8s</td></tr>
+      <tr><td>Largest Contentful Paint (LCP)</td><td>2.0 s</td><td class="status-warn">80%</td><td>≤ 2.5s</td></tr>
+      <tr><td>Total Blocking Time (TBT)</td><td>0 ms</td><td class="status-pass">100%</td><td>≤ 200ms</td></tr>
+      <tr><td>Cumulative Layout Shift (CLS)</td><td>0.008</td><td class="status-pass">99%</td><td>≤ 0.1</td></tr>
+      <tr><td>Speed Index</td><td>2.7 s</td><td class="status-warn">65%</td><td>≤ 3.4s</td></tr>
+      <tr><td>Time to Interactive (TTI)</td><td>2.0 s</td><td class="status-warn">82%</td><td>≤ 3.8s</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 CrUX Field Data</h3>
+  <div class="highlight"><strong>CrUX Field Data:</strong> CrUX field data not available for this origin in this session (PageSpeed API quota exceeded; no GSC/GA credentials).</div>
+
+  <h3>3.4 Failed / Warning Audits (2)</h3>
+  <table>
+    <thead>
+      <tr><th>Audit</th><th>Score</th><th>Details</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Render-blocking resources</td><td class="status-fail">35%</td><td>Google Fonts CSS and Astro CSS block first paint</td></tr>
+      <tr><td>Reduce unused CSS</td><td class="status-fail">46%</td><td>13 KB of unused CSS rules on desktop</td></tr>
+    </tbody>
+  </table>
+
+  <h3>SEO Audit Issues (1)</h3>
+  <div class="action-item critical">
+    <h4>Document does not have a meta description</h4>
+  </div>
+
+  <h3>Optimization Opportunities (3)</h3>
+  <table>
+    <thead>
+      <tr><th>Opportunity</th><th>Estimated Savings</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Eliminate render-blocking resources</td><td>950ms</td></tr>
+      <tr><td>Reduce unused CSS</td><td>160ms</td></tr>
+      <tr><td>Serve images in next-gen formats</td><td>120ms</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- ======================================================= 4. SEARCH PERFORMANCE === -->
+<div class="section">
+  <div class="section-header">
+    <h2>4. Search Console Performance</h2>
+  </div>
+
+  <p class="data-freshness">Search Analytics data has a 2-3 day lag. Data available for ~16 months.</p>
+</div>
+
+<!-- ======================================================= 5. INDEXATION STATUS === -->
+<div class="section">
+  <div class="section-header">
+    <h2>5. Indexation Status</h2>
+  </div>
+
+  <p class="data-freshness">URL Inspection API: 2,000 inspections/day per property.</p>
+</div>
+
+<!-- ======================================================= 6. ACTION PLAN === -->
+<div class="section">
+  <div class="section-header">
+    <h2>6. Action Plan</h2>
+  </div>
+
+  <div class="roadmap-phase">
+    <h4>Phase 1 - Critical Fixes (0-7 days) <span class="effort">0-7 days</span></h4>
+    <ul>
+      <li>Fix broken /quem-somos/ link and add 301 redirect to /sobre/</li>
+      <li>Add unique meta descriptions to home, services, blog, about, contact, calculator</li>
+      <li>Force 301 redirect for all non-trailing-slash URLs</li>
+      <li>Fix breadcrumb schema URLs to use trailing slash</li>
+      <li>Standardize CTA labels and destinations</li>
+      <li>Create and publish /llms.txt</li>
+      <li>Replace hero blurred image with sharp, optimized hero photo</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 2 - Content Architecture (1-2 weeks) <span class="effort">1-2 weeks</span></h4>
+    <ul>
+      <li>Create pillar page /blog/guia-de-aluguel-de-betoneira/</li>
+      <li>Resolve price-post cannibalization by consolidating or differentiating</li>
+      <li>Decide on 250L service: create page or remove from post and redirect</li>
+      <li>Standardize 400L technical specs across all pages</li>
+      <li>Publish 4-6 top-of-funnel educational posts</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 3 - E-E-A-T &amp; Local (2-4 weeks) <span class="effort">2-4 weeks</span></h4>
+    <ul>
+      <li>Create/claim Google Business Profile and add hasMap embed</li>
+      <li>Replace generic team/testimonials with real verified profiles and reviews</li>
+      <li>Add real author bylines and Person schema to blog posts</li>
+      <li>Build location landing pages for major cities and boroughs</li>
+      <li>Register on local directories and start review acquisition</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 4 - Performance &amp; Schema (2-4 weeks) <span class="effort">2-4 weeks</span></h4>
+    <ul>
+      <li>Load Google Fonts asynchronously and inline critical CSS</li>
+      <li>Migrate images to WebP/AVIF with fallback</li>
+      <li>Add Offer/price schema to all service pages</li>
+      <li>Fix or remove non-functional SearchAction</li>
+      <li>Add FAQPage markup to homepage FAQ</li>
+      <li>Improve mobile contrast and tap targets</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================================================= DATA SOURCES & METHODOLOGY === -->
+<div class="section" style="text-align: center; padding-top: 15mm;">
+  <hr class="divider">
+  <h3 style="text-align: left;">Data Sources &amp; Methodology</h3>
+  <table>
+    <thead>
+      <tr><th>Source</th><th>Description</th><th>Update Frequency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PageSpeed Insights API</td>
+          <td>Lighthouse lab audit (mobile emulation, Moto G Power, slow 4G)</td>
+          <td>Real-time</td></tr>
+      <tr><td>Chrome UX Report (CrUX)</td>
+          <td>28-day rolling field data from real Chrome users</td>
+          <td>Daily ~04:00 UTC</td></tr>
+      <tr><td>CrUX History API</td>
+          <td>25-week p75 trend data per metric</td>
+          <td>Weekly</td></tr>
+      <tr><td>Google Search Console</td>
+          <td>Search Analytics (clicks, impressions, CTR, position)</td>
+          <td>2-3 day lag</td></tr>
+      <tr><td>URL Inspection API</td>
+          <td>Per-URL index status, coverage state, crawl info</td>
+          <td>Real-time (2,000/day)</td></tr>
+    </tbody>
+  </table>
+  <p style="color: #94a3b8; font-size: 9pt; margin-top: 5mm;">
+    Report generated by Claude SEO &mdash; Google SEO Intelligence Skill &mdash; June 30, 2026<br>
+    Methodology based on Google Web Vitals thresholds, Search Console documentation, and Lighthouse scoring algorithms.
+  </p>
+</div>
+
+</body>
+</html>
