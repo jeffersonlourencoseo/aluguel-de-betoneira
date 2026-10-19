@@ -44,7 +44,7 @@ const footerLinks = {
           <strong class="text-gray-900">{nap.name}</strong><br />
           {nap.address.street} - {nap.address.neighborhood}<br />
           {nap.address.city} - {nap.address.state}, {nap.address.zip}<br />
-          Tel/WhatsApp: <a href={`tel:+55${nap.phoneRaw}`} class="hover:text-primary transition-colors">{nap.phone}</a><br />
+          Tel/WhatsApp: <a href={`tel:+${nap.phoneRaw}`} class="hover:text-primary transition-colors">{nap.phone}</a><br />
           E-mail: <a href={`mailto:${nap.email}`} class="hover:text-primary transition-colors">{nap.email}</a>
         </address>
       </div>

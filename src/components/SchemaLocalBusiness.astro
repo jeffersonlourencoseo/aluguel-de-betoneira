@@ -67,7 +67,7 @@ const localBusiness = {
   name: SITE_CONFIG.nap.name,
   description: SITE_CONFIG.description,
   url: SITE_CONFIG.url,
-  telephone: `+55${SITE_CONFIG.nap.phoneRaw}`,
+  telephone: `+${SITE_CONFIG.nap.phoneRaw}`,
   email: SITE_CONFIG.nap.email,
   priceRange: SITE_CONFIG.priceRange,
   image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
@@ -146,7 +146,7 @@ const organization = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: `+55${SITE_CONFIG.nap.phoneRaw}`,
+      telephone: `+${SITE_CONFIG.nap.phoneRaw}`,
       contactType: 'customer service',
       contactOption: 'WhatsApp',
       availableLanguage: 'Portuguese',
@@ -154,7 +154,7 @@ const organization = {
     },
     {
       '@type': 'ContactPoint',
-      telephone: `+55${SITE_CONFIG.nap.phoneRaw}`,
+      telephone: `+${SITE_CONFIG.nap.phoneRaw}`,
       contactType: 'sales',
       availableLanguage: 'Portuguese',
       areaServed: 'BR',
