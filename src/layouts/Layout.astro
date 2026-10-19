@@ -48,25 +48,29 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
       )
     }
 
-    <!-- Google Tag Manager (via Partytown para não bloquear render) -->
-    <script is:inline type="text/partytown">
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TZBXS6HT');
+    <!-- Google tag (gtag.js) — carregamento adiado para não bloquear a thread principal -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BR79QVSZ4', { send_page_view: false, transport_type: 'beacon' });
+      function loadGtag() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9BR79QVSZ4';
+        document.head.appendChild(s);
+        gtag('event', 'page_view', { send_to: 'G-9BR79QVSZ4' });
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGtag, { timeout: 2000 });
+      } else {
+        window.addEventListener('load', loadGtag);
+      }
     </script>
   </head>
 
   <body class="font-sans antialiased text-gray-900 bg-white">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZBXS6HT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-
     <slot />
     <WhatsAppBtn />
 
@@ -85,6 +89,26 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
       })();
+    </script>
+
+    <!-- Rastreamento de cliques em telefone e WhatsApp (eventos GA4) -->
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a || typeof gtag !== 'function') return;
+        var href = a.getAttribute('href') || '';
+        var evento = null;
+        if (href.indexOf('tel:') === 0) evento = 'click_telefone';
+        else if (href.indexOf('wa.me/') !== -1 || href.indexOf('api.whatsapp.com') !== -1) evento = 'click_whatsapp';
+        if (!evento) return;
+        gtag('event', evento, {
+          send_to: 'G-9BR79QVSZ4',
+          link_url: href.split('?')[0],
+          link_text: (a.textContent || '').trim().slice(0, 60),
+          page_path: location.pathname,
+          transport_type: 'beacon'
+        });
+      }, true);
     </script>
   </body>
 </html>

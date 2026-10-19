@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
 import compress from '@playform/compress';
-import partytown from '@astrojs/partytown';
 
 const siteUrl = 'https://www.alugueldebetoneirarj.com.br';
 
@@ -51,10 +50,5 @@ export default defineConfig({
       entryLimit: 50000,
     }),
     compress(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push', 'gtag'],
-      },
-    }),
   ],
 });
