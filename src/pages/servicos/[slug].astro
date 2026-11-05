@@ -37,14 +37,18 @@ const productSchema = {
   image: imageUrl,
   provider: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
   areaServed: { '@type': 'City', name: SITE_CONFIG.areaServed },
-  offers: {
-    '@type': 'Offer',
-    url: pageUrl,
-    priceCurrency: 'BRL',
-    availability: 'https://schema.org/InStock',
-    priceSpecification: { '@type': 'PriceSpecification', minPrice: precoMin[servico.slug], priceCurrency: 'BRL' },
-    seller: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
-  },
+  ...(precoMin[servico.slug]
+    ? {
+        offers: {
+          '@type': 'Offer',
+          url: pageUrl,
+          priceCurrency: 'BRL',
+          availability: 'https://schema.org/InStock',
+          priceSpecification: { '@type': 'PriceSpecification', minPrice: precoMin[servico.slug], priceCurrency: 'BRL' },
+          seller: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
+        },
+      }
+    : {}),
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Capacidade', value: servico.data.capacidade },
     ...(servico.data.motor ? [{ '@type': 'PropertyValue', name: 'Motor', value: servico.data.motor }] : []),
@@ -73,6 +77,13 @@ const faqData = {
     { name: "Para qual tipo de obra a betoneira 200 litros é indicada?", text: "Ela é ideal para construções residenciais de grande porte, reformas extensas e pequenos empreendimentos comerciais." },
     { name: "Qual a produção diária da betoneira 200 litros?", text: "A betoneira 200 litros produz até 5 m³ de concreto por dia, com motor de 2 CV." },
     { name: "É melhor alugar duas 150L ou uma 200L?", text: "Para um único ponto de concreto, a betoneira 200 litros é mais econômica e prática de operar." },
+  ],
+  'betoneira-250l': [
+    { name: "Quanto custa alugar uma betoneira 250 litros?", text: "O valor do aluguel de betoneira 250 litros é sob consulta: depende do prazo da locação, do endereço de entrega e do frete. Peça seu orçamento gratuito pelo WhatsApp." },
+    { name: "Qual a capacidade de uma betoneira de 250 litros?", text: "O tambor da betoneira de 250 litros tem 250 litros. A capacidade de mistura, o motor e a produção por dia constam na ficha técnica do modelo, que enviamos pelo WhatsApp junto com o orçamento." },
+    { name: "Para qual obra a betoneira 250 litros é indicada?", text: "Ela é indicada para obras residenciais maiores, reformas extensas e pequenas obras comerciais em que a betoneira de 200 litros fica curta, mas a de 400 litros seria grande demais." },
+    { name: "É melhor alugar uma 250L ou uma 200L?", text: "Se a 200 litros atende o volume diário da obra com folga, ela costuma ser suficiente. Se a obra pede mais capacidade por batida, a 250 litros é o passo seguinte. Informe o volume pelo WhatsApp que a equipe indica o modelo." },
+    { name: "A entrega está incluída no valor da locação?", text: "O frete de entrega e retirada é calculado por distância e informado no orçamento." },
   ],
   'betoneira-400l': [
     { name: "Quanto custa uma betoneira de 400 litros para alugar?", text: "O valor da diária para betoneira 400 litros começa a partir de R$ 250,00, com descontos para locações semanais e mensais." },
@@ -129,10 +140,10 @@ const faqItems = (faqData[servico.slug] ?? []).map((q) => ({ question: q.name, a
             Capacidade: {servico.data.capacidade}
           </span>
           <span class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-inset ring-white/20">
-            Motor: {servico.data.motor}
+            Motor: {servico.data.motor ?? 'consulte a ficha técnica'}
           </span>
           <span class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-inset ring-white/20">
-            Peso: {servico.data.peso}
+            Peso: {servico.data.peso ?? 'consulte a ficha técnica'}
           </span>
         </div>
       </div>
@@ -157,11 +168,11 @@ const faqItems = (faqData[servico.slug] ?? []).map((q) => ({ question: q.name, a
                   </div>
                   <div class="p-6 border-b border-gray-200 transition-all hover:bg-gray-100">
                     <p class="text-sm text-gray-500 mb-1">Motor</p>
-                    <p class="text-lg font-bold text-gray-900">{servico.data.motor}</p>
+                    <p class="text-lg font-bold text-gray-900">{servico.data.motor ?? 'Consulte a ficha técnica'}</p>
                   </div>
                   <div class="p-6 border-b sm:border-b-0 sm:border-r border-gray-200 transition-all hover:bg-gray-100">
                     <p class="text-sm text-gray-500 mb-1">Peso Aproximado</p>
-                    <p class="text-lg font-bold text-gray-900">{servico.data.peso}</p>
+                    <p class="text-lg font-bold text-gray-900">{servico.data.peso ?? 'Consulte a ficha técnica'}</p>
                   </div>
                   <div class="p-6 transition-all hover:bg-gray-100">
                     <p class="text-sm text-gray-500 mb-1">Garantia</p>

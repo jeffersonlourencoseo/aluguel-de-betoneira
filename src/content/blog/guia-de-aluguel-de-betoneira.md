@@ -33,6 +33,7 @@ O **preço do aluguel de betoneira** varia conforme a capacidade, o prazo da loc
 | [120L](/servicos/betoneira-120l/) | A partir de R$ 80,00 | A partir de R$ 450,00 | A partir de R$ 1.200,00 |
 | [150L](/servicos/betoneira-150l/) | A partir de R$ 100,00 | A partir de R$ 580,00 | A partir de R$ 1.500,00 |
 | [200L](/servicos/betoneira-200l/) | A partir de R$ 130,00 | A partir de R$ 750,00 | A partir de R$ 2.000,00 |
+| [250L](/servicos/betoneira-250l/) | Sob consulta | Sob consulta | Sob consulta |
 | [400L](/servicos/betoneira-400l/) | A partir de R$ 250,00 | A partir de R$ 1.400,00 | A partir de R$ 4.500,00 |
 
 Esses valores são referências. O **frete de entrega e retirada** é calculado separadamente por distância. Obras na Zona Norte do Rio, como Penha, Ramos e Olaria, costumam ter frete reduzido por causa da proximidade com nossa base logística.

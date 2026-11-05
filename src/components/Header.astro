@@ -18,6 +18,7 @@ const servicosMenu = [
   { href: "/servicos/betoneira-120l/", label: "Betoneira 120L" },
   { href: "/servicos/betoneira-150l/", label: "Betoneira 150L" },
   { href: "/servicos/betoneira-200l/", label: "Betoneira 200L" },
+  { href: "/servicos/betoneira-250l/", label: "Betoneira 250L" },
   { href: "/servicos/betoneira-400l/", label: "Betoneira 400L" },
   { href: "/servicos/", label: "Ver todos os modelos" }
 ];
@@ -110,7 +111,7 @@ const servicosMenu = [
           >
             {link.label}
           </a>
-          {link.href === "/servicos/" && servicosMenu.slice(0, 4).map((item) => (
+          {link.href === "/servicos/" && servicosMenu.slice(0, 5).map((item) => (
             <a href={item.href} class="block rounded-md py-3 pl-8 pr-3 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">{item.label}</a>
           ))}
         </>

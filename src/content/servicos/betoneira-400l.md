@@ -100,7 +100,7 @@ A betoneira 400 litros opera da mesma forma que modelos menores, mas exige mais 
 No último dia de locação, agendamos a retirada da betoneira no horário combinado. Nossa equipe recolhe o equipamento e faz uma inspeção rápida. Se tudo estiver em ordem, a locação é encerrada sem burocracia.
 
 
-Para planejar a concretagem, leia [quantos sacos de cimento por m³ de concreto](/blog/quantos-sacos-de-cimento-por-m3-de-concreto/) e [traço de concreto para betoneira e como calcular a quantidade](/blog/traco-de-concreto-para-betoneira/).
+Se a 400 litros for mais do que a obra precisa, compare com o [aluguel de betoneira 250 litros](/servicos/betoneira-250l/). Para planejar a concretagem, leia [quantos sacos de cimento por m³ de concreto](/blog/quantos-sacos-de-cimento-por-m3-de-concreto/) e [traço de concreto para betoneira e como calcular a quantidade](/blog/traco-de-concreto-para-betoneira/).
 
 ## Locação Especializada da Betoneira 400 Litros
 

@@ -1,7 +1,7 @@
 {
   "home": {
     "title": "Aluguel de Betoneira no Rio de Janeiro | Locação RJ",
-    "description": "Aluguel de betoneira no Rio de Janeiro com modelos de 120L, 150L, 200L e 400L revisados, entrega e retirada na obra. Peça seu orçamento grátis pelo WhatsApp."
+    "description": "Aluguel de betoneira no Rio de Janeiro com modelos de 120L a 400L revisados, entrega e retirada na obra. Peça seu orçamento grátis pelo WhatsApp e alugue hoje."
   },
   "sobre": {
     "title": "Locadora de Betoneira no Rio de Janeiro | Quem Somos",
@@ -12,8 +12,8 @@
     "description": "Fale com a locadora de betoneira no Rio de Janeiro: endereço na Av. Brasil, horário, telefone, WhatsApp e formulário para pedir seu orçamento grátis hoje."
   },
   "servicos": {
-    "title": "Modelos de Betoneira: 120L, 150L, 200L e 400L no RJ",
-    "description": "Veja as betoneiras para alugar no Rio de Janeiro: modelos de 120L, 150L, 200L e 400L, com motor revisado e entrega na obra. Compare e peça orçamento grátis."
+    "title": "Modelos de Betoneira: de 120L a 400L para Alugar no RJ",
+    "description": "Veja as betoneiras para alugar no Rio de Janeiro: modelos de 120L, 150L, 200L, 250L e 400L, com entrega na obra. Compare os modelos e peça orçamento grátis."
   },
   "betoneira-120l": {
     "title": "Aluguel de Betoneira 120L no Rio de Janeiro | Locação RJ",
@@ -86,5 +86,9 @@
   "vale-a-pena-comprar-betoneira-para-alugar": {
     "title": "Vale a Pena Comprar Betoneira para Alugar? Prós e Contras",
     "description": "Vale a pena comprar betoneira para alugar? Compare investimento, manutenção, transporte e tempo de uso na obra e veja quando alugar a betoneira sai melhor."
+  },
+  "betoneira-250l": {
+    "title": "Aluguel de Betoneira 250 Litros: Preço sob Consulta no RJ",
+    "description": "Aluguel de betoneira 250 litros no Rio de Janeiro: capacidade, obras indicadas, quando escolher e entrega na obra. Valor sob consulta, peça orçamento grátis."
   }
 }

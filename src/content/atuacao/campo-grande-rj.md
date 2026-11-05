@@ -5,7 +5,7 @@ local: "Campo Grande"
 updatedDate: 2026-11-04
 faq:
   - question: "Quais lojas estão alugando betoneira em Campo Grande, RJ?"
-    answer: "Nós alugamos betoneiras de 120, 150, 200 e 400 litros com entrega em Campo Grande. Peça o orçamento pelo WhatsApp informando o endereço da obra, o modelo e o prazo."
+    answer: "Nós alugamos betoneiras de 120, 150, 200, 250 e 400 litros com entrega em Campo Grande. Peça o orçamento pelo WhatsApp informando o endereço da obra, o modelo e o prazo."
   - question: "Vocês entregam betoneira em Campo Grande?"
     answer: "Sim. Atendemos toda a cidade do Rio de Janeiro, incluindo Campo Grande. O prazo e o frete de entrega são informados no orçamento, de acordo com o endereço da obra."
   - question: "Qual betoneira alugar para uma obra em Campo Grande?"
@@ -16,7 +16,7 @@ faq:
     answer: "Pelo WhatsApp ou pelo formulário de contato: informe o endereço da obra em Campo Grande, o modelo desejado e o período da locação."
 ---
 
-Procura **aluguel de betoneira em Campo Grande, RJ**? Atendemos obras e reformas no bairro com betoneiras de 120, 150, 200 e 400 litros, equipamentos revisados antes de sair e orçamento gratuito pelo WhatsApp. O prazo e o frete de entrega para o seu endereço são informados no orçamento.
+Procura **aluguel de betoneira em Campo Grande, RJ**? Atendemos obras e reformas no bairro com betoneiras de 120, 150, 200, 250 e 400 litros, equipamentos revisados antes de sair e orçamento gratuito pelo WhatsApp. O prazo e o frete de entrega para o seu endereço são informados no orçamento.
 
 ## O que fazemos em Campo Grande
 
@@ -25,6 +25,7 @@ Levamos a betoneira até a obra, posicionamos no local indicado, testamos o func
 - [Betoneira 120 litros](/servicos/betoneira-120l/): pequenas reformas, muros e calçadas.
 - [Betoneira 150 litros](/servicos/betoneira-150l/): casas, sobrados e reformas comerciais.
 - [Betoneira 200 litros](/servicos/betoneira-200l/): construções residenciais maiores e obras comerciais.
+- [Betoneira 250 litros](/servicos/betoneira-250l/): obras maiores em que a 200 litros fica curta.
 - [Betoneira 400 litros](/servicos/betoneira-400l/): grandes obras e usinas temporárias de concreto.
 
 ## Bairros e pontos de referência atendidos

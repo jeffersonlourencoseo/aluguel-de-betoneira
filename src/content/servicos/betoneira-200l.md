@@ -70,6 +70,6 @@ Para obras com prazo superior a 15 dias, o [aluguel de betoneira mensal](/blog/g
 
 Nossa equipe entrega o equipamento no local, realiza a instalação e fornece orientações de uso. Durante a locação, você conta com suporte técnico prioritário pelo WhatsApp. Se surgir qualquer problema, enviamos um técnico ou trocamos o equipamento no mesmo dia.
 
-Não sabe se a 200 litros é a melhor para o seu caso? Leia [qual a melhor betoneira para a sua obra](/blog/qual-a-melhor-betoneira/), use a [calculadora de concreto](/calculadora-de-concreto/) e veja nosso [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/). Para obras na zona Oeste, confira [Campo Grande](/atuacao/campo-grande-rj/).
+Se a 200 litros ficar curta para o ritmo da obra, veja o [aluguel de betoneira 250 litros](/servicos/betoneira-250l/). Não sabe se a 200 litros é a melhor para o seu caso? Leia [qual a melhor betoneira para a sua obra](/blog/qual-a-melhor-betoneira/), use a [calculadora de concreto](/calculadora-de-concreto/) e veja nosso [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/). Para obras na zona Oeste, confira [Campo Grande](/atuacao/campo-grande-rj/).
 
 Para grandes volumes, descubra os detalhes no nosso [guia de preços da betoneira 400 litros](/blog/guia-de-aluguel-de-betoneira/) e entenda quando fazer o upgrade.

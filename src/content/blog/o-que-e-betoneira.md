@@ -8,7 +8,7 @@ faq:
   - question: "Qual a função de uma betoneira?"
     answer: "A função da betoneira é misturar cimento, areia, brita e água para produzir concreto (ou argamassa) de forma uniforme e com muito menos esforço do que a mistura manual."
   - question: "Quais são os tipos de betoneira?"
-    answer: "Os modelos se diferenciam principalmente pela capacidade do tambor e pelo motor, que pode ser elétrico ou a gasolina. Na nossa frota há betoneiras de 120, 150, 200 e 400 litros."
+    answer: "Os modelos se diferenciam principalmente pela capacidade do tambor e pelo motor, que pode ser elétrico ou a gasolina. Na nossa frota há betoneiras de 120, 150, 200, 250 e 400 litros."
   - question: "Por que se chama betoneira?"
     answer: "O nome vem de \"betão\", palavra usada para o concreto. Betoneira é a máquina que faz o betão."
 ---
@@ -32,6 +32,7 @@ Os dois critérios que mais mudam de um modelo para outro são a capacidade e o 
 | [Betoneira 120L](/servicos/betoneira-120l/) | ~80 litros | Até 2 m³ por dia | Elétrico 1/2 CV ou gasolina 5,5 HP |
 | [Betoneira 150L](/servicos/betoneira-150l/) | ~100 litros | Até 3 m³ por dia | Elétrico 1 CV ou gasolina 6,5 HP |
 | [Betoneira 200L](/servicos/betoneira-200l/) | ~140 litros | Até 5 m³ por dia | Elétrico 2 CV |
+| [Betoneira 250L](/servicos/betoneira-250l/) | Consulte a ficha técnica | Consulte a ficha técnica | Consulte a ficha técnica |
 | [Betoneira 400L](/servicos/betoneira-400l/) | ~260 litros | Até 10 m³ por dia | Elétrico 3 CV ou gasolina 13 HP |
 
 O motor elétrico é mais silencioso e serve para obras com energia disponível. O motor a gasolina é indicado para canteiros sem energia elétrica ou com tomadas distantes.

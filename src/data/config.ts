@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   name: 'Aluguel de Betoneira',
   tagline: 'Locação de Betoneiras para Construção Civil',
   description:
-    'Aluguel de betoneira com entrega rápida e preço justo. Locação de betoneiras 120L, 150L, 200L e 400L revisadas. Solicite orçamento grátis!',
+    'Aluguel de betoneira com entrega rápida e preço justo. Locação de betoneiras de 120L a 400L revisadas. Solicite orçamento grátis!',
 
   // URLs
   url: 'https://www.alugueldebetoneirarj.com.br',

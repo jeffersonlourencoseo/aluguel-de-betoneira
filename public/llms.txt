@@ -21,6 +21,7 @@ A empresa loca betoneiras profissionais nas seguintes capacidades:
 | 120 litros | Elétrico 1/2 CV ou Gasolina 5,5 HP | 210 kg | Pequenas reformas, muros, calçadas, projetos compactos |
 | 150 litros | Elétrico 1 CV ou Gasolina 6,5 HP | 260 kg | Construções residenciais térreas/sobrados pequenos, reformas comerciais médias |
 | 200 litros | Elétrico 2 CV ou Gasolina 8 HP | 320 kg | Construções de grande porte, reformas extensas, pequenos empreendimentos |
+| 250 litros | Consulte a ficha técnica | Consulte a ficha técnica | Obras em que a 200L fica curta e a 400L seria grande demais; valor sob consulta |
 | 400 litros | Elétrico 3 CV ou Gasolina 13 HP | 480 kg | Grandes empreendimentos, usinas de concreto móveis, obras industriais |
 
 > **Preços (diária, a partir de):** 120L R$ 80,00; 150L R$ 100,00; 200L R$ 130,00; 400L R$ 250,00. O valor final depende do prazo de locação e da distância para entrega (frete). Detalhes no guia de preço: https://www.alugueldebetoneirarj.com.br/blog/guia-de-aluguel-de-betoneira/. Orçamento gratuito pelo WhatsApp.
@@ -48,6 +49,7 @@ A base logística fica na Zona Norte do Rio, o que permite entrega no mesmo dia 
 - Betoneira 120L: https://www.alugueldebetoneirarj.com.br/servicos/betoneira-120l/
 - Betoneira 150L: https://www.alugueldebetoneirarj.com.br/servicos/betoneira-150l/
 - Betoneira 200L: https://www.alugueldebetoneirarj.com.br/servicos/betoneira-200l/
+- Betoneira 250L: https://www.alugueldebetoneirarj.com.br/servicos/betoneira-250l/
 - Betoneira 400L: https://www.alugueldebetoneirarj.com.br/servicos/betoneira-400l/
 - Blog: https://www.alugueldebetoneirarj.com.br/blog/
 - Guia de preço do aluguel de betoneira: https://www.alugueldebetoneirarj.com.br/blog/guia-de-aluguel-de-betoneira/
