@@ -22,7 +22,7 @@ A melhor betoneira é a que **entrega o volume de concreto que a sua obra precis
 | [Betoneira 120L](/servicos/betoneira-120l/) | ~80 litros | Até 2 m³ por dia | Pequenas reformas, calçadas, muros |
 | [Betoneira 150L](/servicos/betoneira-150l/) | ~100 litros | Até 3 m³ por dia | Casas térreas, sobrados, reformas comerciais |
 | [Betoneira 200L](/servicos/betoneira-200l/) | ~140 litros | Até 5 m³ por dia | Construções residenciais maiores e obras comerciais |
-| [Betoneira 250L](/servicos/betoneira-250l/) | Consulte a ficha técnica | Consulte a ficha técnica | Obras em que a 200L fica curta e a 400L seria grande demais |
+| [Betoneira 250L](/servicos/betoneira-250l/) | Referência: 170 a 200 litros | Consulte a ficha técnica | Obras em que a 200L fica curta e a 400L seria grande demais |
 | [Betoneira 400L](/servicos/betoneira-400l/) | ~260 litros | Até 10 m³ por dia | Grandes empreendimentos e usinas temporárias |
 
 Para saber o volume da sua obra, use a [calculadora de concreto](/calculadora-de-concreto/). Se a obra precisa de até 3 m³ por dia, a 150L costuma bastar; acima disso, a [betoneira 200 litros](/servicos/betoneira-200l/) reduz o número de batidas e o tempo de mistura.
