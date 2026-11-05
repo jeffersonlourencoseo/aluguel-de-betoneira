@@ -32,7 +32,7 @@ Os dois critérios que mais mudam de um modelo para outro são a capacidade e o 
 | [Betoneira 120L](/servicos/betoneira-120l/) | ~80 litros | Até 2 m³ por dia | Elétrico 1/2 CV ou gasolina 5,5 HP |
 | [Betoneira 150L](/servicos/betoneira-150l/) | ~100 litros | Até 3 m³ por dia | Elétrico 1 CV ou gasolina 6,5 HP |
 | [Betoneira 200L](/servicos/betoneira-200l/) | ~140 litros | Até 5 m³ por dia | Elétrico 2 CV |
-| [Betoneira 250L](/servicos/betoneira-250l/) | Referência: 170 a 200 litros | Consulte a ficha técnica | Elétrico de 1 a 1,5 CV (referência) |
+| [Betoneira 250L](/servicos/betoneira-250l/) | Referência: 170 a 200 litros | Entre a 200L e a 400L (cerca de 3 m³/h nominais) | Elétrico de 1 CV (referência) |
 | [Betoneira 400L](/servicos/betoneira-400l/) | ~260 litros | Até 10 m³ por dia | Elétrico 3 CV ou gasolina 13 HP |
 
 O motor elétrico é mais silencioso e serve para obras com energia disponível. O motor a gasolina é indicado para canteiros sem energia elétrica ou com tomadas distantes.
