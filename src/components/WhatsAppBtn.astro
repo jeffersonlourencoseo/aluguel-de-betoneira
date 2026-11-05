@@ -1,15 +1,12 @@
 ---
-import { SITE_CONFIG } from '../data/config';
-
-const message = encodeURIComponent(
-  'Olá, achei vocês no google e gostaria de mais informações!'
-);
-const whatsappUrl = `https://wa.me/${SITE_CONFIG.nap.whatsapp}?text=${message}`;
+import { whatsappUrl } from '../data/config';
 ---
 
 <!-- Botão Flutuante WhatsApp Premium -->
 <a
   href={whatsappUrl}
+  data-evento="clique_whatsapp"
+  data-local="flutuante"
   target="_blank"
   rel="noopener noreferrer"
   aria-label="Fale Conosco pelo WhatsApp"

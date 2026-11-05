@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_CONFIG } from '../../data/config';
+import FAQSection from '../../components/FAQSection.astro';
+import { SITE_CONFIG, whatsappUrl } from '../../data/config';
+import metas from '../../data/metas.json';
 
 export async function getStaticPaths() {
   const servicos = await getCollection('servicos');
@@ -16,129 +18,86 @@ export async function getStaticPaths() {
 const { servico } = Astro.props;
 const { Content } = await servico.render();
 
-const title = `${servico.data.title} | Aluguel de Betoneira`;
-const description = servico.data.description;
+const title = metas[servico.slug].title;
+const description = metas[servico.slug].description;
 const keywords = servico.data.keywords;
 
 const pageUrl = `${SITE_CONFIG.url}/servicos/${servico.slug}/`;
-const imageUrl = `${SITE_CONFIG.url}${servico.data.image || '/images/og-image.svg'}`;
+const imageUrl = `${SITE_CONFIG.url}${servico.data.image || SITE_CONFIG.ogImage}`;
 
-const skuMap = {
-  'betoneira-120l': 'BTN-120L',
-  'betoneira-150l': 'BTN-150L',
-  'betoneira-200l': 'BTN-200L',
-  'betoneira-400l': 'BTN-400L',
-};
-
+const precoMin = { 'betoneira-120l': 80, 'betoneira-150l': 100, 'betoneira-200l': 130, 'betoneira-400l': 250 };
+// Service (preco inicial da diaria; sem aggregateRating/review nao ha Offer valido para Product; nada de preco inventado)
 const productSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  '@id': `${pageUrl}#product`,
+  '@type': 'Service',
+  '@id': `${pageUrl}#service`,
   name: servico.data.title,
+  serviceType: 'Aluguel de betoneira',
   description: servico.data.description,
   url: pageUrl,
   image: imageUrl,
-  sku: skuMap[servico.slug] || servico.slug,
-  brand: {
-    '@type': 'Brand',
-    name: SITE_CONFIG.name,
-  },
-  additionalProperty: [
-    {
-      '@type': 'PropertyValue',
-      name: 'Capacidade',
-      value: servico.data.capacidade,
-    },
-    {
-      '@type': 'PropertyValue',
-      name: 'Motor',
-      value: servico.data.motor,
-    },
-    {
-      '@type': 'PropertyValue',
-      name: 'Peso',
-      value: servico.data.peso,
-    },
-  ],
+  provider: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
+  areaServed: { '@type': 'City', name: SITE_CONFIG.areaServed },
+  isPartOf: { '@id': `${pageUrl}#webpage` },
   offers: {
-    '@context': 'https://schema.org',
     '@type': 'Offer',
-    '@id': `${pageUrl}#offer`,
     url: pageUrl,
     priceCurrency: 'BRL',
     availability: 'https://schema.org/InStock',
-    businessFunction: 'http://purl.org/goodrelations/v1#LeaseOut',
-    areaServed: {
-      '@type': 'Place',
-      name: SITE_CONFIG.areaServed,
-    },
-    seller: {
-      '@type': 'LocalBusiness',
-      '@id': `${SITE_CONFIG.url}/#localbusiness`,
-    },
-    priceValidUntil: '2026-12-31',
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: precoMin[servico.slug], priceCurrency: 'BRL', unitText: 'DAY' },
+    seller: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
   },
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Capacidade', value: servico.data.capacidade },
+    ...(servico.data.motor ? [{ '@type': 'PropertyValue', name: 'Motor', value: servico.data.motor }] : []),
+    ...(servico.data.peso ? [{ '@type': 'PropertyValue', name: 'Peso', value: servico.data.peso }] : []),
+  ],
 };
 
 const faqData = {
   'betoneira-120l': [
-    { name: 'Quanto custa alugar uma betoneira 120 litros?', text: 'O valor da diária para betoneira 120 litros começa a partir de R$ 80,00, com descontos para locações semanais e mensais.' },
-    { name: 'Para qual tipo de obra a betoneira 120 litros é indicada?', text: 'Ela é ideal para pequenas reformas, construções residenciais simples, calçadas e muros de arrimo.' },
-    { name: 'A betoneira 120 litros inclui motor?', text: 'Sim, todas as betoneiras são entregues com motor funcionando perfeitamente e garantia durante a locação.' },
-    { name: 'Qual o prazo mínimo de locação?', text: 'O prazo mínimo é de 1 dia. Oferecemos descontos especiais para locações semanais e mensais.' },
+    { name: "Quanto custa alugar uma betoneira 120 litros?", text: "O valor da diária para betoneira 120 litros começa a partir de R$ 80,00, com descontos para locações semanais e mensais." },
+    { name: "Qual a capacidade de uma betoneira de 120 litros?", text: "A betoneira de 120 litros tem tambor de 120 litros e capacidade de mistura de cerca de 80 litros por batida, com produção estimada de até 2 m³ de concreto por dia." },
+    { name: "Para qual tipo de obra a betoneira 120 litros é indicada?", text: "Ela é ideal para pequenas reformas, construções residenciais simples, calçadas e muros de arrimo." },
+    { name: "A betoneira 120 litros inclui motor?", text: "Sim, todas as betoneiras são entregues com motor funcionando perfeitamente e garantia durante a locação." },
+    { name: "Qual o prazo mínimo de locação?", text: "O prazo mínimo é de 1 dia. Oferecemos descontos especiais para locações semanais e mensais." },
   ],
   'betoneira-150l': [
-    { name: 'Quanto custa alugar uma betoneira 150 litros?', text: 'O valor da diária para betoneira 150 litros começa a partir de R$ 100,00, com descontos para locações semanais e mensais.' },
-    { name: 'Qual a diferença entre betoneira 120L e 150L?', text: 'A betoneira 150 litros tem maior capacidade de mistura e produção, sendo ideal para obras residenciais de médio porte e reformas comerciais.' },
-    { name: 'A entrega está incluída no valor da locação?', text: 'O frete de entrega e retirada é calculado por distância e informado no orçamento. Região Norte do Rio tem frete reduzido.' },
-    { name: 'Posso trocar de modelo durante a locação?', text: 'Sim, é possível fazer upgrade para modelos maiores durante a locação, pagando apenas a diferença proporcional.' },
+    { name: "Quanto custa alugar uma betoneira 150 litros?", text: "O valor da diária para betoneira 150 litros começa a partir de R$ 100,00, com descontos para locações semanais e mensais." },
+    { name: "Qual a capacidade de uma betoneira de 150 litros?", text: "A betoneira de 150 litros tem tambor de 150 litros e capacidade de mistura de cerca de 100 litros por batida, com produção estimada de até 3 m³ de concreto por dia." },
+    { name: "Qual a diferença entre betoneira 120L e 150L?", text: "A betoneira 150 litros tem maior capacidade de mistura e produção, sendo ideal para obras residenciais de médio porte e reformas comerciais." },
+    { name: "A betoneira 150L precisa de tomada 220V?", text: "Sim, o motor elétrico de 1 CV opera em 220V monofásico. Garanta uma tomada adequada perto do local de uso ou peça o modelo a gasolina no orçamento." },
+    { name: "A entrega está incluída no valor da locação?", text: "O frete de entrega e retirada é calculado por distância e informado no orçamento. Região Norte do Rio tem frete reduzido." },
+    { name: "Posso trocar de modelo durante a locação?", text: "Sim, é possível fazer upgrade para modelos maiores durante a locação, pagando apenas a diferença proporcional." },
   ],
   'betoneira-200l': [
-    { name: 'Quanto custa alugar uma betoneira 200 litros?', text: 'O valor da diária para betoneira 200 litros começa a partir de R$ 130,00, com descontos para locações semanais e mensais.' },
-    { name: 'Para qual tipo de obra a betoneira 200 litros é indicada?', text: 'Ela é ideal para construções residenciais de grande porte, reformas extensas e pequenos empreendimentos comerciais.' },
-    { name: 'Qual a produção diária da betoneira 200 litros?', text: 'A betoneira 200 litros produz até 7 m³ de concreto por dia, com motor de 2 CV.' },
-    { name: 'É melhor alugar duas 150L ou uma 200L?', text: 'Para um único ponto de concreto, a betoneira 200 litros é mais econômica e prática de operar.' },
+    { name: "Quanto custa uma betoneira de 200 litros para alugar?", text: "O valor da diária para betoneira 200 litros começa a partir de R$ 130,00, com descontos para locações semanais e mensais." },
+    { name: "Para qual tipo de obra a betoneira 200 litros é indicada?", text: "Ela é ideal para construções residenciais de grande porte, reformas extensas e pequenos empreendimentos comerciais." },
+    { name: "Qual a produção diária da betoneira 200 litros?", text: "A betoneira 200 litros produz até 5 m³ de concreto por dia, com motor de 2 CV." },
+    { name: "É melhor alugar duas 150L ou uma 200L?", text: "Para um único ponto de concreto, a betoneira 200 litros é mais econômica e prática de operar." },
   ],
   'betoneira-400l': [
-    { name: 'Quanto custa alugar uma betoneira 400 litros?', text: 'O valor da diária para betoneira 400 litros começa a partir de R$ 250,00, com descontos para locações semanais e mensais.' },
-    { name: 'Para qual tipo de obra a betoneira 400 litros é indicada?', text: 'Ela é ideal para construções comerciais, usinas de concreto temporárias, grandes reformas e empreendimentos de grande porte.' },
-    { name: 'Qual a produção diária da betoneira 400 litros?', text: 'A betoneira 400 litros produz até 10 m³ de concreto por dia, com capacidade de mistura de ~260 litros.' },
-    { name: 'É melhor alugar uma 400L ou duas de 200L?', text: 'Se a obra tem um único ponto de concreto, a betoneira 400 litros é mais econômica. Para dois pontos distantes, duas de 200L podem fazer sentido.' },
+    { name: "Quanto custa uma betoneira de 400 litros para alugar?", text: "O valor da diária para betoneira 400 litros começa a partir de R$ 250,00, com descontos para locações semanais e mensais." },
+    { name: "Quanto concreto faz uma betoneira de 400 litros?", text: "A betoneira de 400 litros produz até 10 m³ de concreto por dia, com capacidade de mistura de cerca de 260 litros por batida." },
+    { name: "Quantos m³ tem uma betoneira de 400 litros?", text: "O tambor tem 400 litros (0,4 m³) e a capacidade de mistura é de cerca de 260 litros por batida." },
+    { name: "Para qual tipo de obra a betoneira 400 litros é indicada?", text: "Ela é ideal para construções comerciais, usinas de concreto temporárias, grandes reformas e empreendimentos de grande porte." },
+    { name: "É melhor alugar uma 400L ou duas de 200L?", text: "Se a obra tem um único ponto de concreto, a betoneira 400 litros é mais econômica. Para dois pontos distantes, duas de 200L podem fazer sentido." },
   ],
 };
 
-const faqSchema = faqData[servico.slug]
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqData[servico.slug].map((q) => ({
-        '@type': 'Question',
-        name: q.name,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: q.text,
-        },
-      })),
-    }
-  : null;
+const faqItems = (faqData[servico.slug] ?? []).map((q) => ({ question: q.name, answer: q.text }));
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}/`} schema={productSchema} breadcrumbName={servico.data.title} preloadHero={false}>
+<Layout title={title} description={description} keywords={keywords} canonical={`/servicos/${servico.slug}/`} schema={productSchema} faq={faqItems} pageType="ItemPage" breadcrumbName={servico.data.title} preloadHero={false}>
   <Header currentPath="/servicos" />
 
-  {
-    faqSchema && (
-      <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    )
-  }
 
   <main>
     <!-- HERO DO SERVIÇO -->
     <section class="relative py-24 lg:py-32 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+          src="/images/hero-blur-1200.webp"
+          srcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w"
           sizes="100vw"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover object-center"
@@ -167,7 +126,7 @@ const faqSchema = faqData[servico.slug]
         </p>
 
         <div class="flex flex-wrap gap-4">
-          <span class="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary-300 ring-1 ring-inset ring-primary/20">
             Capacidade: {servico.data.capacidade}
           </span>
           <span class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-inset ring-white/20">
@@ -187,9 +146,9 @@ const faqSchema = faqData[servico.slug]
           <div class="lg:col-span-2">
             <!-- Especificações Técnicas -->
             <div class="mb-16">
-              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
                 Ficha Técnica Resumida
-              </h3>
+              </h2>
 
               <div class="rounded-2xl border border-gray-200 section-concrete overflow-hidden">
                 <div class="grid grid-cols-1 sm:grid-cols-2">
@@ -218,6 +177,7 @@ const faqSchema = faqData[servico.slug]
               <article class="prose prose-lg prose-gray max-w-none">
                 <Content />
               </article>
+              <FAQSection items={faqItems} />
             </div>
 
             <!-- Benefícios -->
@@ -231,7 +191,7 @@ const faqSchema = faqData[servico.slug]
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-900">Sem investimento alto</h4>
+                    <h3 class="font-semibold text-gray-900">Sem investimento alto</h3>
                     <p class="text-sm text-gray-600">Alugue pelo tempo que precisar sem comprar o equipamento.</p>
                   </div>
                 </div>
@@ -240,7 +200,7 @@ const faqSchema = faqData[servico.slug]
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-900">Manutenção zero</h4>
+                    <h3 class="font-semibold text-gray-900">Manutenção zero</h3>
                     <p class="text-sm text-gray-600">Nós cuidamos da revisão. Você só usa.</p>
                   </div>
                 </div>
@@ -249,7 +209,7 @@ const faqSchema = faqData[servico.slug]
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-900">Entrega rápida</h4>
+                    <h3 class="font-semibold text-gray-900">Entrega rápida</h3>
                     <p class="text-sm text-gray-600">Receba no mesmo dia em toda a região.</p>
                   </div>
                 </div>
@@ -258,7 +218,7 @@ const faqSchema = faqData[servico.slug]
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <div>
-                    <h4 class="font-semibold text-gray-900">Suporte técnico</h4>
+                    <h3 class="font-semibold text-gray-900">Suporte técnico</h3>
                     <p class="text-sm text-gray-600">Atendimento prioritário durante a locação.</p>
                   </div>
                 </div>
@@ -270,7 +230,7 @@ const faqSchema = faqData[servico.slug]
           <div class="lg:col-span-1">
             <div class="sticky top-24 space-y-6">
               <div class="rounded-2xl border border-gray-200 section-concrete p-10 transition-all hover:shadow-lg">
-                <h3 class="text-xl font-bold text-gray-900 mb-6">Solicite um Orçamento</h3>
+                <h2 class="text-xl font-bold text-gray-900 mb-6">Solicite um Orçamento</h2>
                 <p class="text-gray-600 mb-8">Entre em contato para receber valores atualizados e condições especiais para o seu projeto.</p>
 
                 <a
@@ -281,7 +241,7 @@ const faqSchema = faqData[servico.slug]
                 </a>
 
                 <a
-                  href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20achei%20voc%C3%AAs%20no%20google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
+                  href={whatsappUrl} data-evento="clique_whatsapp" data-local={`servico-${servico.slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="block w-full text-center rounded-full bg-whatsapp px-6 py-4 text-base font-bold text-white shadow-lg shadow-whatsapp/30 hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all"
@@ -296,10 +256,10 @@ const faqSchema = faqData[servico.slug]
 
               <!-- CTA Extra -->
               <div class="rounded-2xl bg-secondary p-10 text-center transition-all hover:shadow-lg hover:scale-[1.02]">
-                <h4 class="text-lg font-bold text-white mb-3">Não sabe qual escolher?</h4>
+                <h3 class="text-lg font-bold text-white mb-3">Não sabe qual escolher?</h3>
                 <p class="text-gray-100 text-sm mb-6">Nossa equipe ajuda a escolher o equipamento ideal para sua obra.</p>
                 <a
-                  href="tel:+5521997751577"
+                  href={SITE_CONFIG.telefoneLink} data-evento="clique_telefone" data-local={`servico-${servico.slug}`}
                   class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-secondary hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all shadow-lg"
                 >
                   Ligar Agora

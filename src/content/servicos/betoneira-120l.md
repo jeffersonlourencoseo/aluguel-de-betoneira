@@ -1,6 +1,6 @@
 ---
 title: "Aluguel de Betoneira 120L"
-description: "Betoneira 120L ideal para pequenas reformas e construções residenciais no Rio de Janeiro. Compacta, fácil de transportar e com motor elétrico ou a gasolina. Solicite orçamento grátis."
+description: "Aluguel de betoneira 120L no Rio de Janeiro: modelo compacto para pequenas reformas e obras residenciais, motor revisado e entrega na obra. Orçamento grátis."
 keywords: "aluguel de betoneira 120 litros, betoneira 120l rio de janeiro, locação betoneira pequena, aluguel betoneira compacta rj"
 capacidade: "120 Litros"
 motor: "Elétrico 1/2 CV ou Gasolina 5,5 HP"
@@ -56,11 +56,23 @@ Muitos clientes nos perguntam quando vale a pena subir para uma betoneira maior.
 
 Se sua obra for apenas uma reforma rápida ou pequena estrutura, a 120L é suficiente e mais econômica. Se você precisa de mais produtividade para uma construção residencial completa, a [betoneira 150 litros](/servicos/betoneira-150l/) pode ser a escolha certa. Nossa equipe ajuda a definir o modelo ideal pelo WhatsApp.
 
+## Preço do Aluguel de Betoneira 120 Litros
+
+O **aluguel de betoneira 120 litros** tem o menor custo da nossa frota. Veja os valores de referência por período:
+
+| Período | Valor Estimado |
+|---------|---------------|
+| Diária | A partir de R$ 80,00 |
+| Semanal (7 dias) | A partir de R$ 450,00 |
+| Mensal (30 dias) | A partir de R$ 1.200,00 |
+
+O frete de entrega e retirada é calculado por distância e informado no orçamento. Para comparar todos os modelos, veja o [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/).
+
 ## Como Alugar uma Betoneira 120 Litros no Rio de Janeiro
 
 Solicite um orçamento gratuito pelo WhatsApp ou formulário de contato. Basta informar o endereço da obra, o prazo estimado e o tipo de projeto. Nossa equipe responde em minutos com o valor da locação e o frete de entrega.
 
-Atendemos toda a cidade do Rio de Janeiro com entrega e retirada inclusas na maioria dos bairros. Aceitamos PIX, dinheiro, cartão e transferência bancária. Para locações acima de 15 dias, o [aluguel mensal](/blog/aluguel-betoneira-mensal/) oferece desconto de até 50% sobre o valor da diária.
+Atendemos toda a cidade do Rio de Janeiro com entrega e retirada inclusas na maioria dos bairros. Aceitamos PIX, dinheiro, cartão e transferência bancária. Para locações acima de 15 dias, o [aluguel mensal](/blog/guia-de-aluguel-de-betoneira/) oferece desconto de até 50% sobre o valor da diária.
 
 ## Dicas de Uso e Segurança na Betoneira 120L
 
@@ -72,4 +84,6 @@ Se a betoneira for a gasolina, mantenha o local ventilado e afastado de materiai
 
 Atendemos toda a cidade do Rio de Janeiro com entrega programada. Bairros da zona Norte como Penha, Ramos, Olaria, Vicente de Carvalho, Brás de Pina, Irajá, Cordovil, Pavuna e Cascadura têm entrega no mesmo dia para solicitações antes das 14h.
 
-Quer saber exatamente quanto custa? Confira nosso [guia completo de preços de aluguel de betoneira](/blog/quanto-custa-alugar-betoneira/) e planeje seu orçamento com antecedência.
+Na zona Oeste, veja também o [aluguel de betoneira em Campo Grande](/atuacao/campo-grande-rj/). Dúvida na operação? Leia [como usar betoneira, passo a passo](/blog/como-usar-betoneira/) e use a [calculadora de concreto](/calculadora-de-concreto/) para estimar o volume da obra.
+
+Quer saber exatamente quanto custa? Confira nosso [guia completo de preços de aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/) e planeje seu orçamento com antecedência.

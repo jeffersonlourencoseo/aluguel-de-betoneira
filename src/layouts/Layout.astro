@@ -1,7 +1,9 @@
 ---
 import SEO from '../components/SEO.astro';
-import SchemaLocalBusiness from '../components/SchemaLocalBusiness.astro';
+import SchemaGraph from '../components/SchemaGraph.astro';
+import type { FAQItem } from '../components/SchemaGraph.astro';
 import WhatsAppBtn from '../components/WhatsAppBtn.astro';
+import { SITE_CONFIG } from '../data/config';
 
 interface Props {
   title: string;
@@ -10,7 +12,9 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   noindex?: boolean;
-  schema?: object;
+  schema?: object | object[];
+  faq?: FAQItem[];
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage' | 'ItemPage';
   servicos?: Array<{ title: string }>;
   breadcrumbName?: string;
   type?: string;
@@ -19,7 +23,9 @@ interface Props {
   preloadHero?: boolean;
 }
 
-const { title, description, keywords, canonical, ogImage, noindex, schema, servicos, breadcrumbName, type, pubDate, updatedDate, preloadHero } = Astro.props;
+const { title, description = SITE_CONFIG.description, keywords, canonical, ogImage, noindex, schema, faq, pageType, servicos, breadcrumbName, type, pubDate, updatedDate, preloadHero } = Astro.props;
+const path = canonical ?? Astro.url.pathname;
+const schemaPath = path === '/' ? '/' : path.endsWith('/') ? path : `${path}/`;
 ---
 
 <!doctype html>
@@ -38,15 +44,17 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
       preloadHero={preloadHero}
     />
 
-    <!-- Schema.org JSON-LD — LocalBusiness + WebSite + Organization -->
-    <SchemaLocalBusiness servicos={servicos} breadcrumbName={breadcrumbName} />
-
-    <!-- Schema adicional por página (opcional) -->
-    {
-      schema && (
-        <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
-      )
-    }
+    <!-- Schema.org JSON-LD: um unico script com @graph -->
+    <SchemaGraph
+      title={title}
+      description={description}
+      path={schemaPath}
+      pageType={pageType}
+      servicos={servicos}
+      breadcrumbName={breadcrumbName}
+      faq={faq}
+      nodes={schema}
+    />
 
     <!-- Google Tag Manager (via Partytown para não bloquear render) -->
     <script is:inline type="text/partytown">
@@ -69,6 +77,24 @@ const { title, description, keywords, canonical, ogImage, noindex, schema, servi
 
     <slot />
     <WhatsAppBtn />
+
+    <!-- Eventos: le data-evento / data-local e envia ao dataLayer (GTM via Partytown) -->
+    <script is:inline>
+      (function () {
+        function enviarEvento(nome, local) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: nome, local_botao: local || 'sem-local', transport_type: 'beacon' });
+        }
+        document.addEventListener('click', function (e) {
+          var el = e.target.closest ? e.target.closest('[data-evento]') : null;
+          if (el) enviarEvento(el.getAttribute('data-evento'), el.getAttribute('data-local'));
+        });
+        document.addEventListener('submit', function (e) {
+          var f = e.target.closest ? e.target.closest('[data-evento-envio]') : null;
+          if (f) enviarEvento(f.getAttribute('data-evento-envio'), f.getAttribute('data-local') || 'contato');
+        });
+      })();
+    </script>
 
     <script is:inline>
       (function () {

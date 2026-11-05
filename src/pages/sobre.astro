@@ -2,26 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import metas from '../data/metas.json';
 import { SITE_CONFIG } from '../data/config';
 
-const title = "Quem Somos | Aluguel de Betoneira RJ desde 2014";
-const description = "Somos especialistas em locação de betoneiras no Rio de Janeiro desde 2014. Atendimento humanizado, equipamentos revisados e entrega rápida.";
+const title = metas['sobre'].title;
+const description = metas['sobre'].description;
 
-const aboutPageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'AboutPage',
-  '@id': `${SITE_CONFIG.url}/sobre/#aboutpage`,
-  url: `${SITE_CONFIG.url}/sobre/`,
-  name: title,
-  description: description,
-  mainEntity: {
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_CONFIG.url}/#localbusiness`,
-  },
-};
 ---
 
-<Layout title={title} description={description} canonical="/sobre/" schema={aboutPageSchema} preloadHero={false}>
+<Layout title={title} description={description} canonical="/sobre/" pageType="AboutPage" preloadHero={false}>
   <Header currentPath="/sobre" />
 
   <main>
@@ -29,8 +18,8 @@ const aboutPageSchema = {
     <section class="relative py-32 lg:py-40 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+          src="/images/hero-blur-1200.webp"
+          srcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w"
           sizes="100vw"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover object-center"
@@ -62,17 +51,17 @@ const aboutPageSchema = {
               Nossa História
             </div>
             <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
-              De duas betoneiras a centenas de obras atendidas
+              Betoneiras revisadas para obras de todos os tamanhos
             </h2>
             <div class="space-y-6 text-lg text-gray-600">
               <p>
-                A Aluguel de Betoneira nasceu em 2014, quando seus fundadores perceberam uma lacuna no mercado: construtores e reformadores precisavam de betoneiras confiáveis, mas encontravam apenas equipamentos mal conservados e atendimento impessoal.
+                A Aluguel de Betoneira trabalha com locação de betoneiras para construção civil no Rio de Janeiro: construtores e reformadores precisam de equipamento confiável, bem conservado e de um atendimento direto, e é isso que buscamos entregar.
               </p>
               <p>
-                Começamos com apenas duas betoneiras 120L e um caminhão de entrega. A proposta era simples: entregar equipamentos revisados, no horário combinado, com preço justo e transparência total.
+                A proposta era simples: entregar equipamentos revisados, no horário combinado, com preço justo e transparência total.
               </p>
               <p>
-                Hoje, contamos com uma frota completa que atende desde pequenas reformas residenciais até grandes empreendimentos comerciais. Nossa equipe cresceu, mas o compromisso com a qualidade permanece o mesmo desde o primeiro dia.
+                Hoje, contamos com uma frota completa que atende desde pequenas reformas residenciais até grandes empreendimentos comerciais. Nossa equipe mantém o compromisso com a qualidade em cada locação.
               </p>
             </div>
           </div>
@@ -80,7 +69,7 @@ const aboutPageSchema = {
           <div class="relative">
             <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg lg:-translate-x-8 shadow-2xl ring-1 ring-gray-200">
               <img
-                src="/images/sobre/equipe-construcao.jpg"
+                src="/images/sobre/equipe-construcao.webp"
                 alt="Equipe de construção civil em obra"
                 class="h-full w-full object-cover"
                 loading="lazy"
@@ -90,7 +79,7 @@ const aboutPageSchema = {
               />
             </div>
             <div class="bg-secondary text-white font-display text-xl tracking-wide px-5 py-3 rounded-lg shadow-xl absolute -bottom-6 -left-6 z-10 hidden lg:block">
-              Mais de 10 Anos
+              Rio de Janeiro e região
             </div>
           </div>
         </div>
@@ -153,7 +142,7 @@ const aboutPageSchema = {
           <div class="order-2 lg:order-1">
             <div class="aspect-[4/3] rounded-2xl bg-gray-200 overflow-hidden transition-all hover:shadow-lg">
               <img
-                src="/images/sobre/betoneira-obra.jpg"
+                src="/images/sobre/betoneira-obra.webp"
                 alt="Betoneira em obra"
                 class="h-full w-full object-cover"
                 loading="lazy"
@@ -230,9 +219,9 @@ const aboutPageSchema = {
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-1">Direção e Operações</h3>
-            <p class="text-secondary font-semibold mb-4">Fundadores</p>
+            <p class="text-secondary font-semibold mb-4">Gestão</p>
             <p class="text-base text-gray-600">
-              Engenheiros e gestores com mais de 10 anos no mercado de locação de equipamentos para construção civil no Rio de Janeiro.
+              Gestores dedicados à locação de equipamentos para construção civil no Rio de Janeiro.
             </p>
           </article>
 
@@ -257,6 +246,15 @@ const aboutPageSchema = {
               Mecânicos especializados que inspecionam, lubrificam e testam cada betoneira antes de sair para a obra.
             </p>
           </article>
+        </div>
+
+        <div class="mx-auto mt-16 flex max-w-3xl flex-col items-center gap-6 sm:flex-row sm:items-start">
+          <img src={SITE_CONFIG.autor.avatar} alt={`Avatar de ${SITE_CONFIG.autor.nome}`} width="80" height="80" class="h-20 w-20 shrink-0 rounded-full" loading="lazy" decoding="async" />
+          <div class="text-center sm:text-left">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Quem escreve no blog: {SITE_CONFIG.autor.nome}</h3>
+            <p class="text-base text-gray-600 leading-relaxed">{SITE_CONFIG.autor.bio}</p>
+            <a href="/blog/" class="mt-3 inline-flex min-h-[48px] items-center font-semibold text-secondary hover:text-secondary-700 transition-colors">Ler os artigos do blog</a>
+          </div>
         </div>
       </div>
     </section>

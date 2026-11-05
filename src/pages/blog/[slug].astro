@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_CONFIG } from '../../data/config';
+import FAQSection from '../../components/FAQSection.astro';
+import { SITE_CONFIG, whatsappUrl } from '../../data/config';
+import metas from '../../data/metas.json';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -22,90 +24,48 @@ const relatedPosts = allPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
-const title = `${post.data.title} | Blog Aluguel de Betoneira`;
-const description = post.data.description;
+const title = metas[post.slug].title;
+const description = metas[post.slug].description;
+const autor = SITE_CONFIG.autor;
+const postUrl = `${SITE_CONFIG.url}/blog/${post.slug}/`;
+const imgDims = { 'blog-1': [800, 450], 'blog-2': [800, 533], 'blog-3': [800, 533], 'blog-4': [800, 599], 'blog-5': [612, 409], 'blog-6': [800, 533], 'blog-7': [800, 883] };
+const imgKey = post.data.image?.match(/(blog-\d+)/)?.[1];
+const [imgW, imgH] = imgDims[imgKey] ?? [800, 450];
+const dataBR = (d) => d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
 // Tempo de leitura
 const wordCount = post.body.split(/\s+/).filter(Boolean).length;
 const readingTimeMinutes = Math.ceil(wordCount / 200);
 const timeRequired = `PT${readingTimeMinutes}M`;
 
-// Schema BlogPosting
+// Schema BlogPosting (entra no @graph unico do Layout; autor = Person do config)
 const blogPostingSchema = {
-  '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  '@id': `${SITE_CONFIG.url}/blog/${post.slug}/#post`,
-  headline: post.data.title,
-  description: post.data.description,
-  url: `${SITE_CONFIG.url}/blog/${post.slug}/`,
+  '@id': `${postUrl}#post`,
+  headline: post.data.title.slice(0, 110),
+  description,
+  url: postUrl,
   image: post.data.image ? `${SITE_CONFIG.url}${post.data.image}` : `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
   author: {
-    '@type': 'Organization',
-    name: 'Aluguel de Betoneira',
-    '@id': `${SITE_CONFIG.url}/#organization`,
+    '@type': 'Person',
+    '@id': `${SITE_CONFIG.url}/#autor`,
+    name: autor.nome,
+    description: autor.bio,
+    image: `${SITE_CONFIG.url}${autor.avatar}`,
+    worksFor: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
   },
-  publisher: {
-    '@type': 'Organization',
-    '@id': `${SITE_CONFIG.url}/#organization`,
-  },
+  publisher: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
   datePublished: post.data.pubDate.toISOString(),
-  dateModified: post.data.updatedDate?.toISOString() || post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   wordCount: wordCount,
   timeRequired: timeRequired,
   articleSection: 'Construção Civil',
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': `${SITE_CONFIG.url}/blog/${post.slug}/`,
-  },
+  inLanguage: 'pt-BR',
+  isPartOf: { '@id': `${postUrl}#webpage` },
+  mainEntityOfPage: { '@id': `${postUrl}#webpage` },
 };
 
-const faqData = {
-  'quanto-custa-alugar-betoneira': [
-    { name: 'Quanto custa alugar uma betoneira por dia?', text: 'O valor da diária varia conforme a capacidade, começando a partir de R$ 80,00 para modelos de 120 litros.' },
-    { name: 'O preço do aluguel de betoneira inclui entrega?', text: 'O valor da locação não inclui o frete de entrega e retirada, que é calculado por distância e informado no orçamento.' },
-    { name: 'Posso alugar uma betoneira por apenas um dia?', text: 'Sim, o prazo mínimo é de 1 dia. Locações mais longas têm descontos progressivos.' },
-    { name: 'É melhor alugar por diária ou por mês?', text: 'Para obras acima de 15 dias, o aluguel mensal é mais econômico, reduzindo o custo por dia drasticamente.' },
-  ],
-  'aluguel-betoneira-400-litros-preco': [
-    { name: 'Quanto custa o aluguel de betoneira 400 litros?', text: 'O valor da diária para uma betoneira 400 litros começa a partir de R$ 250,00, com descontos para locações semanais e mensais.' },
-    { name: 'Quando usar uma betoneira 400 litros?', text: 'Ela é indicada para construções comerciais, usinas de concreto temporárias e grandes reformas que exigem alto volume de produção.' },
-    { name: 'É melhor alugar uma 400L ou duas de 200L?', text: 'Se a obra tem um único ponto de concreto, a betoneira 400 litros é mais econômica. Se há dois pontos distantes, duas de 200L podem fazer sentido.' },
-    { name: 'O aluguel de betoneira 400 litros inclui entrega?', text: 'Sim, entregamos diretamente na obra, posicionamos o equipamento e fazemos o teste de funcionamento.' },
-  ],
-  'aluguel-betoneira-150-250-litros-preco': [
-    { name: 'Qual a diferença entre betoneira 150 litros e 200 litros?', text: 'A 150L produz até 3 m³/dia e a 200L até 5 m³/dia. A 200L é ideal para obras maiores com custo por m³ mais baixo.' },
-    { name: 'Quanto custa alugar uma betoneira 150 litros?', text: 'A diária começa a partir de R$ 100,00, com descontos progressivos para locações semanais e mensais.' },
-    { name: 'Posso trocar de modelo durante a locação?', text: 'Sim, é possível fazer upgrade de uma 150L para 200L durante a locação pagando apenas a diferença proporcional.' },
-    { name: 'O frete está incluído no preço do aluguel?', text: 'Não. O frete é calculado por distância e informado no orçamento. Zona Norte tem frete reduzido.' },
-  ],
-  'aluguel-betoneira-mensal': [
-    { name: 'Quanto economizo com aluguel mensal vs diário?', text: 'O aluguel mensal pode reduzir o custo por dia em até 50% comparado à locação diária avulsa.' },
-    { name: 'Posso cancelar a locação mensal antes do prazo?', text: 'Sim, cobramos apenas o proporcional dos dias usados, sem multa se comunicado com 3 dias de antecedência.' },
-    { name: 'O pagamento mensal pode ser parcelado?', text: 'Sim, aceitamos parcelamento em até 3 vezes no cartão. Pagamento à vista tem desconto de 5%.' },
-    { name: 'É possível trocar de modelo durante a locação mensal?', text: 'Sim, é possível fazer upgrade ou downgrade sem custo de logística adicional, ajustando o valor proporcionalmente.' },
-  ],
-  'aluguel-betoneira-perto-de-mim': [
-    { name: 'Vocês entregam betoneira no mesmo dia?', text: 'Sim, para zona Norte do Rio entregamos no mesmo dia para solicitações antes das 14h. Outras regiões até 24h.' },
-    { name: 'Qual o valor do frete?', text: 'Calculado por distância. Bairros próximos à base têm frete reduzido. Bairros mais distantes podem ter acréscimo proporcional.' },
-    { name: 'Posso retirar a betoneira na loja?', text: 'Sim, a retirada na base elimina o custo de frete de entrega, desde que agendada previamente.' },
-    { name: 'E se a betoneira quebrar depois da entrega?', text: 'Suporte técnico prioritário para a cidade do Rio de Janeiro. Trocamos o equipamento no mesmo dia se necessário.' },
-  ],
-};
-
-const faqSchema = faqData[post.slug]
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqData[post.slug].map((q) => ({
-        '@type': 'Question',
-        name: q.name,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: q.text,
-        },
-      })),
-    }
-  : null;
+const faqItems = post.data.faq;
 ---
 
 <Layout
@@ -116,24 +76,20 @@ const faqSchema = faqData[post.slug]
   pubDate={post.data.pubDate.toISOString()}
   updatedDate={post.data.updatedDate?.toISOString()}
   schema={blogPostingSchema}
+  faq={faqItems}
   breadcrumbName={post.data.title}
   preloadHero={false}
 >
   <Header currentPath="/blog" />
 
-  {
-    faqSchema && (
-      <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    )
-  }
 
   <main>
     <!-- Hero Section -->
     <section class="relative py-24 lg:py-32 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+          src="/images/hero-blur-1200.webp"
+          srcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w"
           sizes="100vw"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover object-center"
@@ -159,18 +115,20 @@ const faqSchema = faqData[post.slug]
           {post.data.title}
         </h1>
 
-        <div class="flex flex-wrap items-center gap-4 text-gray-100">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-3 text-gray-100">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-gray-900 font-bold text-sm">
-              {post.data.author.charAt(0)}
-            </div>
-            <p class="font-medium text-white">{post.data.author}</p>
+            <img src={autor.avatar} alt={`Avatar de ${autor.nome}`} width="40" height="40" class="h-10 w-10 rounded-full" decoding="async" />
+            <p class="font-medium text-white">Por {autor.nome}</p>
           </div>
-          <span class="text-gray-500">•</span>
-          <time datetime={post.data.pubDate.toISOString()}>
-            {post.data.pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
-          </time>
-          <span class="text-gray-500">•</span>
+          <span aria-hidden="true">•</span>
+          <span>Publicado em <time datetime={post.data.pubDate.toISOString()}>{dataBR(post.data.pubDate)}</time></span>
+          {post.data.updatedDate && (
+            <>
+              <span aria-hidden="true">•</span>
+              <span>Atualizado em <time datetime={post.data.updatedDate.toISOString()}>{dataBR(post.data.updatedDate)}</time></span>
+            </>
+          )}
+          <span aria-hidden="true">•</span>
           <span>{readingTimeMinutes} min de leitura</span>
         </div>
       </div>
@@ -185,18 +143,28 @@ const faqSchema = faqData[post.slug]
               <div class="mb-12 rounded-2xl overflow-hidden">
                 <img
                   src={post.data.image}
-                  alt={post.data.title}
+                  alt={`Ilustração do artigo: ${post.data.title}`.slice(0, 125)}
                   class="w-full h-auto object-cover"
                   loading="eager"
                   decoding="async"
-                  width="1200"
-                  height="675"
+                  width={imgW}
+                  height={imgH}
                 />
               </div>
             )}
             <article class="prose prose-lg prose-gray max-w-none">
               <Content />
             </article>
+            <FAQSection items={faqItems} />
+
+            <aside class="mt-16 flex flex-col sm:flex-row gap-6 rounded-2xl bg-gray-50 p-8 sm:p-10" aria-label="Sobre o autor">
+              <img src={autor.avatar} alt={`Avatar de ${autor.nome}`} width="80" height="80" class="h-20 w-20 shrink-0 rounded-full" loading="lazy" decoding="async" />
+              <div>
+                <p class="text-xl font-bold text-gray-900">{autor.nome}</p>
+                <p class="text-sm font-medium text-gray-600 mb-3">{autor.cargo}</p>
+                <p class="text-gray-600 leading-relaxed max-w-prose">{autor.bio}</p>
+              </div>
+            </aside>
 
             <div class="mt-16 pt-8 border-t border-gray-200">
               <div class="flex flex-wrap gap-2">
@@ -225,7 +193,7 @@ const faqSchema = faqData[post.slug]
                   Solicitar Orçamento
                 </a>
                 <a
-                  href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20achei%20voc%C3%AAs%20no%20google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!"
+                  href={whatsappUrl} data-evento="clique_whatsapp" data-local={`post-${post.slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="block w-full text-center rounded-full bg-whatsapp px-6 py-4 text-base font-bold text-white shadow-lg shadow-green-600/20 hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all"
@@ -267,7 +235,7 @@ const faqSchema = faqData[post.slug]
                       {related.data.image ? (
                         <img
                           src={related.data.image}
-                          alt={related.data.title}
+                          alt={`Ilustração do artigo: ${related.data.title}`.slice(0, 125)}
                           class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                           width="800"
@@ -286,7 +254,7 @@ const faqSchema = faqData[post.slug]
                     <div class="flex flex-col flex-1 p-8">
                       <div class="flex items-center gap-3 text-sm text-gray-500 mb-3">
                         <time datetime={related.data.pubDate.toISOString()}>
-                          {related.data.pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}
+                          {related.data.pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' })}
                         </time>
                       </div>
                       <h3 class="text-lg font-bold text-gray-900 group-hover:text-secondary transition-colors mb-3">

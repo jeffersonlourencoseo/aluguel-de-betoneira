@@ -1,24 +1,30 @@
+// Converte JPG -> WebP (qualidade ~80) em public/images e gera og-image.png 1200x630.
+// Uso: node reoptimize-images.cjs   (sharp vem junto com o Astro)
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const imagesDir = 'public/images';
-const files = fs.readdirSync(imagesDir).filter(f => /^blog-\d+\.jpg$/i.test(f));
+const dirs = ['public/images', 'public/images/sobre'];
 
 (async () => {
-  for (const file of files) {
-    const inputPath = path.join(imagesDir, file);
-    const tmpPath = path.join(imagesDir, file + '.tmp.jpg');
-    const statsBefore = fs.statSync(inputPath);
-
-    await sharp(inputPath)
-      .resize({ width: 800, withoutEnlargement: true })
-      .jpeg({ quality: 75, progressive: true, mozjpeg: true })
-      .toFile(tmpPath);
-
-    fs.renameSync(tmpPath, inputPath);
-    const statsAfter = fs.statSync(inputPath);
-    const reduction = ((1 - statsAfter.size / statsBefore.size) * 100).toFixed(1);
-    console.log(`${file}: ${(statsBefore.size / 1024).toFixed(1)} KB -> ${(statsAfter.size / 1024).toFixed(1)} KB (${reduction}% smaller)`);
+  for (const dir of dirs) {
+    for (const file of fs.readdirSync(dir).filter((f) => /\.jpe?g$/i.test(f))) {
+      if (file === 'og-image.jpg') continue; // vira PNG abaixo
+      const input = path.join(dir, file);
+      const output = path.join(dir, file.replace(/\.jpe?g$/i, '.webp'));
+      let img = sharp(input);
+      // blog-1 era retrato (800x1358) e e exibido em 16:9: recorte central 800x450
+      if (file === 'blog-1.jpg') img = img.resize(800, 450, { fit: 'cover', position: 'centre' });
+      await img.webp({ quality: 80, effort: 6 }).toFile(output);
+      const a = fs.statSync(input).size, b = fs.statSync(output).size;
+      console.log(`${file}: ${(a / 1024).toFixed(1)} KB -> ${(b / 1024).toFixed(1)} KB`);
+      fs.unlinkSync(input);
+    }
+  }
+  const og = 'public/images/og-image.jpg';
+  if (fs.existsSync(og)) {
+    await sharp(og).resize(1200, 630).png({ compressionLevel: 9, palette: true }).toFile('public/images/og-image.png');
+    fs.unlinkSync(og);
+    console.log('og-image.png gerado', (fs.statSync('public/images/og-image.png').size / 1024).toFixed(1), 'KB');
   }
 })();

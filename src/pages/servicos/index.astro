@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import metas from '../../data/metas.json';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -7,11 +8,11 @@ import Footer from '../../components/Footer.astro';
 const allServicos = await getCollection('servicos');
 const servicos = allServicos.sort((a, b) => (b.data.featured ? 1 : 0) - (a.data.featured ? 1 : 0));
 
-const title = "Serviços | Aluguel de Betoneira - Todos os Modelos";
-const description = "Conheça nossas betoneiras para locação: 120L, 150L, 200L e 400L. Equipamentos revisados com entrega rápida e preço justo.";
+const title = metas['servicos'].title;
+const description = metas['servicos'].description;
 ---
 
-<Layout title={title} description={description} canonical="/servicos/" servicos={servicos.map((s) => ({ title: s.data.title }))} preloadHero={false}>
+<Layout title={title} description={description} canonical="/servicos/" pageType="CollectionPage" servicos={servicos.map((s) => ({ title: s.data.title }))} preloadHero={false}>
   <Header currentPath="/servicos" />
 
   <main>
@@ -19,8 +20,8 @@ const description = "Conheça nossas betoneiras para locação: 120L, 150L, 200L
     <section class="relative py-32 lg:py-40 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+          src="/images/hero-blur-1200.webp"
+          srcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w"
           sizes="100vw"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover object-center"
@@ -34,8 +35,8 @@ const description = "Conheça nossas betoneiras para locação: 120L, 150L, 200L
       </div>
 
       <div class="relative container mx-auto px-6 sm:px-8 lg:px-12">
-        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-12 max-w-4xl">
-          Nossos Serviços
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-12 max-w-4xl">
+          Nossos Modelos de Betoneira
         </h1>
         <p class="text-2xl sm:text-3xl text-gray-100 max-w-3xl leading-relaxed">
           Oferecemos betoneiras de diversas capacidades para atender projetos de todos os tamanhos. Todos os equipamentos são revisados antes da entrega.

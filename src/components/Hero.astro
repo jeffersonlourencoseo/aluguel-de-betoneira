@@ -1,4 +1,5 @@
 ---
+import { whatsappUrl } from '../data/config';
 interface Props {
   title?: string;
   subtitle?: string;
@@ -20,8 +21,8 @@ const {
   <!-- Background image -->
   <div class="absolute inset-0">
     <img
-      src="/images/hero-blur-1200.jpg"
-      srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+      src="/images/hero-blur-1200.webp"
+      srcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w"
       sizes="100vw"
       alt="Betoneira em obra de construção civil no Rio de Janeiro"
       class="h-full w-full object-cover object-center"
@@ -36,7 +37,7 @@ const {
 
   <div class="relative container mx-auto px-6 sm:px-8 lg:px-12 py-32 lg:py-40">
     <div class="max-w-4xl">
-      <div class="inline-flex items-center rounded-full bg-primary/10 px-5 py-2 text-base font-semibold text-primary ring-1 ring-inset ring-primary/20 mb-10">
+      <div class="inline-flex items-center rounded-full bg-primary/10 px-5 py-2 text-base font-semibold text-primary-300 ring-1 ring-inset ring-primary/20 mb-10">
         Especialistas em Locação de Betoneiras
       </div>
 
@@ -60,7 +61,7 @@ const {
         </a>
 
         <a
-          href={`https://wa.me/55${phone.replace(/\D/g, '')}?text=${encodeURIComponent('Olá, achei vocês no google e gostaria de mais informações!')}`}
+          href={whatsappUrl} data-evento="clique_whatsapp" data-local="hero"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center justify-center rounded-full bg-white/10 px-10 py-6 text-lg font-semibold text-white ring-1 ring-inset ring-white/20 hover:bg-white/20 transition-all backdrop-blur-sm"

@@ -2,31 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_CONFIG } from '../data/config';
+import metas from '../data/metas.json';
+import { SITE_CONFIG, whatsappUrl } from '../data/config';
 
-const title = "Contato | Aluguel de Betoneira RJ - WhatsApp e Orçamento Grátis";
-const description = "Aluguel de betoneira rj, locação betoneira rio de janeiro, aluguel betoneira preço. Orçamento grátis pelo WhatsApp (21) 99775-1577.";
+const title = metas['contato'].title;
+const description = metas['contato'].description;
 
 const phone = "(21) 99775-1577";
 const phoneRaw = "5521997751577";
 const email = "contato@alugueldebetoneirarj.com.br";
+const mapAddress = `${SITE_CONFIG.nap.address.street} - ${SITE_CONFIG.nap.address.neighborhood}, ${SITE_CONFIG.nap.address.city} - ${SITE_CONFIG.nap.address.state}, ${SITE_CONFIG.nap.address.zip}`;
 const address = "Av. Brasil, 11201 - Penha Circular, Rio de Janeiro - RJ, 21012-351";
 
-const contactPageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ContactPage',
-  '@id': `${SITE_CONFIG.url}/contato/#contactpage`,
-  url: `${SITE_CONFIG.url}/contato/`,
-  name: title,
-  description: description,
-  mainEntity: {
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_CONFIG.url}/#localbusiness`,
-  },
-};
 ---
 
-<Layout title={title} description={description} canonical="/contato/" schema={contactPageSchema} preloadHero={false}>
+<Layout title={title} description={description} canonical="/contato/" pageType="ContactPage" preloadHero={false}>
   <Header currentPath="/contato" />
 
   <main>
@@ -34,8 +24,8 @@ const contactPageSchema = {
     <section class="relative py-32 lg:py-40 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+          src="/images/hero-blur-1200.webp"
+          srcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w"
           sizes="100vw"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover object-center"
@@ -75,7 +65,7 @@ const contactPageSchema = {
 
             <!-- WhatsApp CTA Grande -->
             <a
-              href={`https://wa.me/${phoneRaw}?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!`}
+              href={whatsappUrl} data-evento="clique_whatsapp" data-local="contato"
               target="_blank"
               rel="noopener noreferrer"
               class="block rounded-2xl bg-whatsapp p-10 text-white hover:bg-whatsapp-dark transition-all shadow-xl hover:scale-[1.02] active:scale-95"
@@ -86,7 +76,7 @@ const contactPageSchema = {
                 </svg>
                 <div>
                   <h3 class="text-xl font-bold">WhatsApp</h3>
-                  <p class="text-white/80">Resposta em minutos</p>
+                  <p class="text-white">Resposta em minutos</p>
                 </div>
               </div>
               <p class="text-lg">{phone}</p>
@@ -99,7 +89,7 @@ const contactPageSchema = {
                 </div>
                 <div>
                   <h3 class="text-base font-semibold text-gray-900">Telefone</h3>
-                  <p class="text-gray-600">{phone}</p>
+                  <p class="text-gray-600"><a href={SITE_CONFIG.telefoneLink} data-evento="clique_telefone" data-local="contato" class="inline-flex items-center min-h-[44px] hover:text-secondary transition-colors">{phone}</a></p>
                 </div>
               </div>
 
@@ -142,7 +132,7 @@ const contactPageSchema = {
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Solicitar Orçamento</h3>
             <p class="text-gray-600 mb-8">Preencha o formulário e receba seu orçamento em minutos.</p>
 
-            <form id="form-contato" class="space-y-6">
+            <form id="form-contato" data-evento-envio="envio_formulario" data-local="contato" data-wa={SITE_CONFIG.nap.whatsapp} data-msg={SITE_CONFIG.whatsappMensagem} class="space-y-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Nome completo *</label>
@@ -220,10 +210,27 @@ const contactPageSchema = {
         </div>
       </div>
     </section>
+    <!-- MAPA -->
+    <section class="pb-24 lg:pb-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Onde estamos</h2>
+        <p class="text-lg text-gray-600 mb-8">{mapAddress}</p>
+        <iframe
+          title="Mapa do Google com o endereço da Aluguel de Betoneira"
+          src={`https://www.google.com/maps?q=${encodeURIComponent(mapAddress)}&output=embed`}
+          class="w-full rounded-2xl border border-gray-200"
+          height="420"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
   </main>
 
   <script>
     const form = document.getElementById('form-contato');
+    const waNumero = form?.getAttribute('data-wa') || '';
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -239,7 +246,7 @@ const contactPageSchema = {
         const servico = (servicoEl instanceof HTMLSelectElement ? servicoEl.value : '');
         const mensagem = (mensagemEl instanceof HTMLTextAreaElement ? mensagemEl.value : '').trim();
 
-        let texto = 'Olá, achei vocês no google e gostaria de mais informações!';
+        let texto = encodeURIComponent(form.getAttribute('data-msg') || '');
         texto += '%0A%0A*Nome:* ' + encodeURIComponent(nome);
         texto += '%0A*Telefone:* ' + encodeURIComponent(telefone);
         if (email) texto += '%0A*E-mail:* ' + encodeURIComponent(email);
@@ -255,7 +262,7 @@ const contactPageSchema = {
         }
         if (mensagem) texto += '%0A%0A*Mensagem:* ' + encodeURIComponent(mensagem);
 
-        window.open('https://wa.me/5521997751577?text=' + texto, '_blank');
+        window.open('https://wa.me/' + waNumero + '?text=' + texto, '_blank');
       });
     }
   </script>

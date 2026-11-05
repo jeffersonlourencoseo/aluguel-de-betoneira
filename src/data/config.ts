@@ -13,7 +13,9 @@ export const SITE_CONFIG = {
 
   // URLs
   url: 'https://www.alugueldebetoneirarj.com.br',
-  ogImage: '/images/og-image.jpg',
+  ogImage: '/images/og-image.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
 
   // NAP (Name, Address, Phone) — CRITICO para SEO Local
   nap: {
@@ -45,8 +47,20 @@ export const SITE_CONFIG = {
   ],
 
   // Redes sociais
-  social: {
-    whatsapp: 'https://wa.me/5521997751577?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!',
+  // (sameAs so com perfis reais; vazio ate existirem)
+  sameAs: [] as string[],
+
+  // WhatsApp: mensagem padrao unica de todos os botoes do site
+  nicho: 'betoneira',
+  telefoneLink: 'tel:+5521997751577',
+  whatsappMensagem: 'Olá, gostaria de saber mais informações sobre aluguel de betoneira.',
+
+  // Autor do blog (fictício, ao alugar o site trocar por quem assina de fato)
+  autor: {
+    nome: 'Rafael Medeiros',
+    cargo: 'Redação técnica de locação de equipamentos',
+    bio: 'Escreve sobre locação de equipamentos e rotina de obra no Rio de Janeiro. Os textos do blog reúnem dúvidas comuns de quem aluga betoneira para reforma e construção, em linguagem direta.',
+    avatar: '/images/autor-avatar.svg',
   },
 
   // SEO
@@ -55,9 +69,14 @@ export const SITE_CONFIG = {
   priceRange: '$$',
   areaServed: 'Rio de Janeiro',
   areaServedCities: ['Rio de Janeiro'],
+  // Paginas de atuacao (footer, home e schema areaServed)
+  atuacao: [
+    { slug: 'campo-grande-rj', nome: 'Campo Grande', tipo: 'bairro', municipio: 'Rio de Janeiro' },
+  ],
 
-  // Fundacao
-  founded: '2014',
 } as const;
 
 export type SiteConfig = typeof SITE_CONFIG;
+
+/** Helper unico: URL do WhatsApp com a mensagem padrao do config. */
+export const whatsappUrl = `https://wa.me/${SITE_CONFIG.nap.whatsapp}?text=${encodeURIComponent(SITE_CONFIG.whatsappMensagem)}`;

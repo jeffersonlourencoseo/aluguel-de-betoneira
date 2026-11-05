@@ -1,39 +1,21 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
+import { buildLastmodMap } from './scripts/lastmod.mjs';
 import compress from '@playform/compress';
 import partytown from '@astrojs/partytown';
+import remarkWhatsapp from './src/plugins/remark-whatsapp.mjs';
 
 const siteUrl = 'https://www.alugueldebetoneirarj.com.br';
 
-const pageRules = {
-  [siteUrl + '/']: { priority: 1.0, changefreq: ChangeFreqEnum.DAILY },
-  [siteUrl + '/servicos/']: { priority: 0.85, changefreq: ChangeFreqEnum.WEEKLY },
-  [siteUrl + '/blog/']: { priority: 0.85, changefreq: ChangeFreqEnum.WEEKLY },
-};
+const lastmodMap = buildLastmodMap(siteUrl);
 
+/** lastmod real por URL; sem changefreq/priority (o Google ignora). */
 /** @param {import('@astrojs/sitemap').SitemapItem} item */
 function serializeSitemap(item) {
-  const url = item.url;
-
-  let changefreq = ChangeFreqEnum.MONTHLY;
-  let priority = 0.6;
-
-  if (pageRules[url]) {
-    priority = pageRules[url].priority;
-    changefreq = pageRules[url].changefreq;
-  } else if (url.includes('/servicos/')) {
-    priority = 0.9;
-    changefreq = ChangeFreqEnum.WEEKLY;
-  } else if (url.includes('/blog/')) {
-    priority = 0.8;
-    changefreq = ChangeFreqEnum.MONTHLY;
-  }
-
-  item.priority = priority;
-  item.changefreq = changefreq;
-
+  const d = lastmodMap[item.url];
+  if (d) item.lastmod = d.toISOString();
   return item;
 }
 
@@ -41,12 +23,13 @@ function serializeSitemap(item) {
 export default defineConfig({
   site: siteUrl,
   trailingSlash: 'always',
+  markdown: {
+    remarkPlugins: [remarkWhatsapp],
+  },
   integrations: [
     tailwind(),
     sitemap({
-      lastmod: new Date(),
-      changefreq: ChangeFreqEnum.WEEKLY,
-      priority: 0.7,
+      filter: (page) => !page.includes('/404'),
       serialize: serializeSitemap,
       entryLimit: 50000,
     }),

@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import metas from '../data/metas.json';
 
-const title = "Política de Privacidade | Aluguel de Betoneira";
-const description = "Conheça nossa política de privacidade e como protegemos seus dados pessoais.";
+const title = metas['privacidade'].title;
+const description = metas['privacidade'].description;
 ---
 
 <Layout title={title} description={description} canonical="/privacidade/" preloadHero={false}>
@@ -94,14 +95,24 @@ const description = "Conheça nossa política de privacidade e como protegemos s
           </div>
 
           <div class="space-y-6">
-            <h2 class="text-2xl font-bold text-gray-900">7. Alterações nesta Política</h2>
+            <h2 class="text-2xl font-bold text-gray-900">7. Medição de acessos e contato pelo WhatsApp</h2>
+            <p class="text-base">
+              Usamos o Google Tag Manager e o Google Analytics para medir, de forma agregada, as visitas ao site e os cliques nos botões de WhatsApp, telefone e formulário. Esses serviços podem gravar cookies de medição no seu navegador.
+            </p>
+            <p class="text-base">
+              Quando você clica em um botão de WhatsApp, a conversa acontece no aplicativo do WhatsApp, que tem a própria política de privacidade. Só recebemos o que você escolher enviar na mensagem.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-900">8. Alterações nesta Política</h2>
             <p class="text-base">
               Podemos atualizar esta política de privacidade periodicamente. Recomendamos que você revise esta página regularmente para se manter informado sobre nossas práticas.
             </p>
           </div>
 
           <div class="space-y-6">
-            <h2 class="text-2xl font-bold text-gray-900">8. Contato</h2>
+            <h2 class="text-2xl font-bold text-gray-900">9. Contato</h2>
             <p class="text-base">
               Se você tiver dúvidas sobre esta política de privacidade, entre em contato conosco pelo e-mail contato@alugueldebetoneirarj.com.br ou pelo telefone (21) 99775-1577.
             </p>

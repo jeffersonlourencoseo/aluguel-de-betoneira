@@ -1,0 +1,177 @@
+---
+/**
+ * JSON-LD da pagina em UM unico <script> com @graph.
+ * Tudo vem do SITE_CONFIG. Nunca emitir Review/aggregateRating (depoimentos ficam so no HTML).
+ */
+import { SITE_CONFIG } from '../data/config';
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  path: string; // ex.: "/servicos/betoneira-120l/"
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage' | 'ItemPage';
+  servicos?: Array<{ title: string; slug?: string }>;
+  breadcrumbName?: string;
+  faq?: FAQItem[];
+  nodes?: object | object[]; // nodes especificos da pagina (Product, BlogPosting...)
+}
+
+const { title, description, path, pageType = 'WebPage', servicos = [], breadcrumbName, faq = [], nodes = [] } = Astro.props;
+
+const base = SITE_CONFIG.url;
+const address = SITE_CONFIG.nap.address;
+const pageUrl = `${base}${path}`;
+const ids = {
+  site: `${base}/#website`,
+  business: `${base}/#localbusiness`,
+  page: `${pageUrl}#webpage`,
+  breadcrumb: `${pageUrl}#breadcrumb`,
+};
+
+const crumbs: Array<{ name: string; url: string }> = [{ name: 'Início', url: `${base}/` }];
+const seg = path.split('/').filter(Boolean);
+if (seg[0] === 'atuacao') {
+  crumbs.push({ name: breadcrumbName ?? seg[1], url: pageUrl });
+} else if (seg.length) {
+  const fixed: Record<string, string> = {
+    sobre: 'Quem Somos',
+    contato: 'Contato',
+    servicos: 'Serviços',
+    blog: 'Blog',
+    privacidade: 'Política de Privacidade',
+    termos: 'Termos de Uso',
+    'calculadora-de-concreto': 'Calculadora de Concreto',
+  };
+  crumbs.push({ name: fixed[seg[0]] ?? seg[0], url: `${base}/${seg[0]}/` });
+  if (seg[1]) crumbs.push({ name: breadcrumbName ?? seg[1], url: pageUrl });
+}
+
+const website = {
+  '@type': 'WebSite',
+  '@id': ids.site,
+  url: `${base}/`,
+  name: SITE_CONFIG.name,
+  inLanguage: 'pt-BR',
+  publisher: { '@id': ids.business },
+};
+
+const localBusiness: Record<string, unknown> = {
+  '@type': 'LocalBusiness',
+  '@id': ids.business,
+  name: SITE_CONFIG.nap.name,
+  description: SITE_CONFIG.description,
+  url: `${base}/`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${base}/images/og-image.png`,
+    width: 1200,
+    height: 630,
+  },
+  image: `${base}${SITE_CONFIG.ogImage}`,
+  telephone: `+${SITE_CONFIG.nap.phoneRaw}`,
+  email: SITE_CONFIG.nap.email,
+  priceRange: SITE_CONFIG.priceRange,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: address.street,
+    addressLocality: address.city,
+    addressRegion: address.state,
+    postalCode: address.zip,
+    addressCountry: address.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SITE_CONFIG.geo.latitude,
+    longitude: SITE_CONFIG.geo.longitude,
+  },
+  openingHoursSpecification: SITE_CONFIG.openingHours.map((h) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  areaServed: [
+    ...SITE_CONFIG.areaServedCities.map((city) => ({
+      '@type': 'City',
+      name: city,
+      containedInPlace: { '@type': 'AdministrativeArea', name: 'Rio de Janeiro' },
+    })),
+    ...SITE_CONFIG.atuacao.map((a) => ({
+      '@type': 'Place',
+      name: `${a.nome}, ${a.municipio}`,
+      containedInPlace: { '@type': 'City', name: a.municipio },
+    })),
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: `+${SITE_CONFIG.nap.phoneRaw}`,
+    contactType: 'customer service',
+    availableLanguage: 'Portuguese',
+    areaServed: 'BR',
+  },
+  hasMap: `https://www.google.com/maps?q=${SITE_CONFIG.geo.latitude},${SITE_CONFIG.geo.longitude}`,
+};
+if (SITE_CONFIG.sameAs.length) localBusiness.sameAs = SITE_CONFIG.sameAs;
+if (servicos.length) {
+  localBusiness.hasOfferCatalog = {
+    '@type': 'OfferCatalog',
+    name: 'Locação de Betoneiras',
+    itemListElement: servicos.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: s.slug
+        ? { '@type': 'Service', name: s.title, url: `${base}/servicos/${s.slug}/` }
+        : { '@type': 'Service', name: s.title },
+    })),
+  };
+}
+
+const webPage = {
+  '@type': pageType,
+  '@id': ids.page,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: 'pt-BR',
+  isPartOf: { '@id': ids.site },
+  about: { '@id': ids.business },
+  ...(path !== '/' ? { breadcrumb: { '@id': ids.breadcrumb } } : {}),
+};
+
+const breadcrumb = {
+  '@type': 'BreadcrumbList',
+  '@id': ids.breadcrumb,
+  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+};
+
+const faqNode =
+  faq.length >= 2
+    ? {
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        isPartOf: { '@id': ids.page },
+        mainEntity: faq.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }
+    : null;
+
+// remove @context de nodes vindos das paginas (o @context fica so na raiz)
+const extra = (Array.isArray(nodes) ? nodes : [nodes]).filter(Boolean).map((n: any) => {
+  const { ['@context']: _ctx, ...rest } = n;
+  return rest;
+});
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [website, localBusiness, webPage, ...(path !== '/' ? [breadcrumb] : []), ...(faqNode ? [faqNode] : []), ...extra],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(graph)} />

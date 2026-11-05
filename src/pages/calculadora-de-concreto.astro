@@ -2,10 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_CONFIG } from '../data/config';
+import metas from '../data/metas.json';
+import { SITE_CONFIG, whatsappUrl } from '../data/config';
 
-const title = "Calculadora de Concreto | Aluguel de Betoneira RJ";
-const description = "Calcule o volume de concreto da sua obra em metros cúbicos (m³). Descubra quantos sacos de cimento, areia e brita precisa e qual betoneira alugar no Rio de Janeiro.";
+const title = metas['calculadora'].title;
+const description = metas['calculadora'].description;
 const keywords = "calculadora de concreto, volume de concreto, quantidade de concreto, calcular concreto m3, betoneira para concreto, aluguel de betoneira rio de janeiro";
 
 const pageUrl = `${SITE_CONFIG.url}/calculadora-de-concreto/`;
@@ -24,43 +25,20 @@ const schema = {
   },
   provider: {
     '@type': 'Organization',
-    '@id': `${SITE_CONFIG.url}/#organization`,
+    '@id': `${SITE_CONFIG.url}/#localbusiness`,
   },
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Como calcular o volume de concreto?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Multiplique comprimento x largura x espessura (em metros). O resultado é o volume em metros cúbicos (m³). Recomenda-se adicionar 10% de perda para segurança.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quantos sacos de cimento por m³ de concreto?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Para concreto de uso geral, use aproximadamente 7 sacos de cimento de 50kg por metro cúbico de concreto.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Qual betoneira escolher para 5 m³ de concreto?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Para 5 m³ de concreto, a betoneira 150L é ideal, com produção de até 3 m³/dia, ou a 200L, que produz até 7 m³/dia.',
-      },
-    },
-  ],
-};
+const faqItems = [
+  { question: "Como calcular o volume de concreto?", answer: "Multiplique comprimento x largura x espessura, mantendo todas as medidas em metros. Adicione uma margem de 10% para compensar perdas durante a obra." },
+  { question: "Como calcular 1 metro cúbico de concreto?", answer: "Um metro cúbico é o volume de um cubo de 1 m x 1 m x 1 m. Na prática, multiplique a área (em m²) pela espessura (em metros): uma laje de 10 m² com 10 cm de espessura (0,10 m) tem 1 m³." },
+  { question: "Quantos sacos de cimento por m³ de concreto?", answer: "A recomendação prática é usar cerca de 7 sacos de cimento de 50kg para cada metro cúbico de concreto de uso geral." },
+  { question: "Quantos m³ de concreto faz 1 saco de cimento?", answer: "Considerando cerca de 7 sacos de 50kg por m³, 1 saco rende aproximadamente 0,14 m³ de concreto de uso geral." },
+  { question: "Qual betoneira alugar para 5 m³ de concreto?", answer: "Para 5 m³ de concreto, a betoneira 150L atende bem, com produção de até 3 m³ por dia. Se o prazo for curto, a betoneira 200L produz até 5 m³ por dia." },
+];
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical="/calculadora-de-concreto/" schema={schema} breadcrumbName="Calculadora de Concreto" preloadHero={false}>
+<Layout title={title} description={description} keywords={keywords} canonical="/calculadora-de-concreto/" schema={schema} faq={faqItems} breadcrumbName="Calculadora de Concreto" preloadHero={false}>
   <Header currentPath="/calculadora-de-concreto" />
 
   <main>
@@ -68,8 +46,8 @@ const faqSchema = {
     <section class="relative py-24 lg:py-32 bg-gray-900 overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/hero-blur-1200.jpg"
-          srcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w"
+          src="/images/hero-blur-1200.webp"
+          srcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w"
           sizes="100vw"
           alt="Betoneira em obra de construção civil no Rio de Janeiro"
           class="h-full w-full object-cover object-center"
@@ -90,7 +68,7 @@ const faqSchema = {
         </nav>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-          Calculadora de Volume de Concreto
+          Calculadora de Concreto
         </h1>
         <p class="text-xl text-gray-100 max-w-2xl">
           Calcule em segundos quantos m³ de concreto sua obra precisa, a quantidade de materiais e a betoneira ideal para alugar.
@@ -171,7 +149,7 @@ const faqSchema = {
     <!-- How to -->
     <section class="py-24 lg:py-32 section-concrete">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center">Como funciona o cálculo?</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center">Como calcular a quantidade de concreto</h2>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
           <article class="rounded-2xl bg-white p-8 border border-gray-200 shadow-sm text-center">
             <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white font-bold text-xl mb-4">1</div>
@@ -210,32 +188,39 @@ const faqSchema = {
       </div>
     </section>
 
+    <!-- Depois de calcular -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-5xl">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Depois de calcular, escolha a betoneira</h2>
+        <p class="text-lg text-gray-600 mb-10 max-w-3xl">Com o volume em m³, veja qual modelo atende a produção diária da sua obra e peça o orçamento.</p>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 text-lg">
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/servicos/betoneira-120l/">Aluguel de betoneira 120 litros (até 2 m³ por dia)</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/servicos/betoneira-150l/">Aluguel de betoneira 150 litros (até 3 m³ por dia)</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/servicos/betoneira-200l/">Aluguel de betoneira 200 litros (até 5 m³ por dia)</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/servicos/betoneira-400l/">Betoneira para alugar 400 litros (até 10 m³ por dia)</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/guia-de-aluguel-de-betoneira/">Guia de preço do aluguel de betoneira</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/como-fazer-concreto-na-betoneira/">Como fazer concreto na betoneira</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/qual-a-melhor-betoneira/">Qual a melhor betoneira para a sua obra</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/o-que-e-betoneira/">O que é betoneira e para que serve</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/atuacao/campo-grande-rj/">Aluguel de betoneira em Campo Grande RJ</a></li>
+        </ul>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="py-24 lg:py-32 section-concrete">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-3xl">
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">Perguntas Frequentes</h2>
         <div class="space-y-6">
-          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
-            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900">
-              Como calcular o volume de concreto?
-              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </summary>
-            <p class="mt-4 text-gray-600">Multiplique comprimento x largura x espessura, mantendo todas as medidas em metros. Adicione uma margem de 10% para compensar perdas durante a obra.</p>
-          </details>
-          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
-            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900">
-              Quantos sacos de cimento por m³ de concreto?
-              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </summary>
-            <p class="mt-4 text-gray-600">A recomendação prática é usar cerca de 7 sacos de cimento de 50kg para cada metro cúbico de concreto de uso geral.</p>
-          </details>
-          <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
-            <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900">
-              Qual betoneira alugar para 5 m³ de concreto?
-              <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </summary>
-            <p class="mt-4 text-gray-600">Para 5 m³ de concreto, a betoneira 150L atende bem, com produção de até 3 m³ por dia. Se o prazo for curto, a betoneira 200L produz até 7 m³/dia.</p>
-          </details>
+          {faqItems.map((f) => (
+            <details class="group rounded-xl border border-gray-200 bg-white px-8 py-6 open:ring-2 open:ring-secondary/20 transition-all">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900">
+                <h3 class="text-base font-semibold">{f.question}</h3>
+                <svg class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p class="mt-4 text-gray-600">{f.answer}</p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
@@ -251,7 +236,7 @@ const faqSchema = {
           <a href="/servicos/" class="inline-flex items-center justify-center rounded-full bg-white px-10 py-5 text-lg font-bold text-secondary shadow-xl hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all">
             Ver Equipamentos
           </a>
-          <a href="https://wa.me/5521997751577?text=Ol%C3%A1%2C%20calculei%20o%20volume%20de%20concreto%20no%20site%20e%20gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-10 py-5 text-lg font-bold text-white shadow-xl hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">
+          <a href={whatsappUrl} data-evento="clique_whatsapp" data-local="calculadora" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-whatsapp px-10 py-5 text-lg font-bold text-white shadow-xl hover:bg-whatsapp-dark hover:scale-105 active:scale-95 transition-all">
             Falar no WhatsApp
           </a>
         </div>
@@ -259,9 +244,6 @@ const faqSchema = {
     </section>
   </main>
 
-  {Object.keys(faqSchema).length > 0 && (
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  )}
 
   <script is:inline src="/js/calculadora-concreto.js"></script>
 

@@ -32,10 +32,11 @@ function normalizeCanonical(path: string): string {
   return path.endsWith('/') ? path : `${path}/`;
 }
 
-const fullTitle = title.includes(SITE_CONFIG.name) ? title : `${title} | ${SITE_CONFIG.name}`;
+// O title ja chega completo (50-60 caracteres, palavra-chave no inicio, marca no fim)
+const fullTitle = title;
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') || SITE_CONFIG.url;
 const fullCanonical = `${siteUrl}${normalizeCanonical(canonical)}`;
-const fullOgImage = `${siteUrl}${ogImage}`;
+const fullOgImage = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`;
 ---
 
 <!-- Charset & Viewport -->
@@ -47,7 +48,7 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 {
   preloadHero && (
     <!-- Preload LCP hero image (local, self-hosted) -->
-    <link rel="preload" as="image" href="/images/hero-blur-640.jpg" imagesrcset="/images/hero-blur-640.jpg 640w, /images/hero-blur-960.jpg 960w, /images/hero-blur-1200.jpg 1200w" imagesizes="100vw" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero-blur-640.webp" imagesrcset="/images/hero-blur-640.webp 640w, /images/hero-blur-960.webp 960w, /images/hero-blur-1200.webp 1200w" imagesizes="100vw" fetchpriority="high" />
   )
 }
 
@@ -74,18 +75,13 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 <link rel="manifest" href="/site.webmanifest" />
 <link rel="alternate" type="application/rss+xml" title={`${SITE_CONFIG.name} - Blog`} href="/rss.xml" />
 
-<!-- Preconnect Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap"
-  media="print"
-  onload="this.media='all'"
-/>
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap" />
-</noscript>
+<!-- Fontes self-hosted (sem Google Fonts = sem bloqueio de render) -->
+<link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin />
+<style is:inline>
+  @font-face{font-family:'Work Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/work-sans-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/bebas-neue-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
 
 <!-- Open Graph — Facebook / WhatsApp / LinkedIn -->
 <meta property="og:type" content={type} />
@@ -94,7 +90,7 @@ const fullOgImage = `${siteUrl}${ogImage}`;
     <>
       {pubDate && <meta property="article:published_time" content={pubDate} />}
       {updatedDate && <meta property="article:modified_time" content={updatedDate} />}
-      <meta property="article:author" content="Aluguel de Betoneira" />
+      <meta property="article:author" content={SITE_CONFIG.autor.nome} />
       <meta property="article:section" content="Construção Civil" />
     </>
   )
@@ -107,6 +103,7 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 <meta property="og:image" content={fullOgImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:alt" content={fullTitle} />
 
 <!-- Twitter Cards -->
