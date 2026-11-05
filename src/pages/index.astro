@@ -297,9 +297,7 @@ const faqs = [
             const isHeavy = capNum >= 400;
             return (
               <article class={`group relative rounded-2xl border border-gray-200 bg-white p-10 transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] reveal ${isHeavy ? 'border-t-4 border-t-secondary shadow-xl' : 'shadow-sm'}`} data-stagger={i}>
-                <span class="absolute right-3 top-2 font-display text-7xl text-gray-200/60 leading-none select-none pointer-events-none">
-                  {capNum}
-                </span>
+                <span aria-hidden="true" data-n={capNum} class="absolute right-3 top-2 font-display text-7xl text-gray-200/60 leading-none select-none pointer-events-none before:content-[attr(data-n)]"></span>
                 <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-gray-900 mb-6">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                 </div>
@@ -361,7 +359,7 @@ const faqs = [
           {depoimentos.map((dep, i) => (
             <article class="reveal rounded-2xl border border-gray-200 bg-white p-10 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]" data-stagger={i}>
               <div class="flex gap-1 mb-3" aria-label="5 estrelas">
-                <span style="color: #E8A838">★★★★★</span>
+                <span style="color: #8A5B18">★★★★★</span>
               </div>
               <p class="text-lg text-gray-700 mb-8 leading-relaxed">"{dep.texto}"</p>
               <div class="flex items-center gap-4">
@@ -430,7 +428,7 @@ const faqs = [
           </a>
           <a
             href={SITE_CONFIG.telefoneLink} data-evento="clique_telefone" data-local="cta-final"
-            class="inline-flex items-center justify-center rounded-full bg-white/10 px-10 py-5 text-lg font-bold text-white ring-1 ring-inset ring-white/20 hover:bg-white/20 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
+            class="inline-flex items-center justify-center rounded-full bg-black/20 px-10 py-5 text-lg font-bold text-white ring-1 ring-inset ring-white/30 hover:bg-black/30 hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
           >
             <svg class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

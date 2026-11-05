@@ -37,13 +37,12 @@ const productSchema = {
   image: imageUrl,
   provider: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
   areaServed: { '@type': 'City', name: SITE_CONFIG.areaServed },
-  isPartOf: { '@id': `${pageUrl}#webpage` },
   offers: {
     '@type': 'Offer',
     url: pageUrl,
     priceCurrency: 'BRL',
     availability: 'https://schema.org/InStock',
-    priceSpecification: { '@type': 'PriceSpecification', minPrice: precoMin[servico.slug], priceCurrency: 'BRL', unitText: 'DAY' },
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: precoMin[servico.slug], priceCurrency: 'BRL' },
     seller: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
   },
   additionalProperty: [

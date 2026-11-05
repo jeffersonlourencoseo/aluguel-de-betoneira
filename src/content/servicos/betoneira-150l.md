@@ -87,7 +87,7 @@ Casas de um ou dois pavimentos, sobrados, kitnets, reformas de lojas, escritóri
 
 Casas de três ou mais pavimentos, galpões pequenos, lojas com estrutura, depósitos e obras com cronograma apertado. Menos batidas de massa significam menos tempo e mão de obra.
 
-Quer entender melhor o equipamento? Leia [o que é betoneira e para que serve](/blog/o-que-e-betoneira/) e veja [como fazer concreto na betoneira](/blog/como-fazer-concreto-na-betoneira/). Para estimar o volume da sua obra, use a [calculadora de concreto](/calculadora-de-concreto/). Na zona Oeste, atendemos também em [Campo Grande](/atuacao/campo-grande-rj/).
+Quer entender melhor o equipamento? Leia [o que é betoneira e para que serve](/blog/o-que-e-betoneira/) e veja [como fazer concreto na betoneira](/blog/como-fazer-concreto-na-betoneira/). Para estimar o volume da sua obra, use a [calculadora de concreto](/calculadora-de-concreto/). Na dúvida entre comprar e alugar, leia [vale a pena comprar betoneira para alugar](/blog/vale-a-pena-comprar-betoneira-para-alugar/). Na zona Oeste, atendemos também em [Campo Grande](/atuacao/campo-grande-rj/).
 
 ## Regiões Atendidas com Entrega Rápida
 

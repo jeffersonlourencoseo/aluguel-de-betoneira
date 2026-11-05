@@ -203,3 +203,6 @@ Se você está planejando uma obra no Rio de Janeiro, [solicite um orçamento pe
 - [O que é betoneira e para que serve](/blog/o-que-e-betoneira/)
 - [Qual a melhor betoneira para a sua obra](/blog/qual-a-melhor-betoneira/)
 - [Como fazer concreto na betoneira](/blog/como-fazer-concreto-na-betoneira/)
+- [Vale a pena comprar betoneira para alugar?](/blog/vale-a-pena-comprar-betoneira-para-alugar/)
+- [Quantos sacos de cimento por m³ de concreto](/blog/quantos-sacos-de-cimento-por-m3-de-concreto/)
+- [Traço de concreto para betoneira e quantidade de concreto](/blog/traco-de-concreto-para-betoneira/)

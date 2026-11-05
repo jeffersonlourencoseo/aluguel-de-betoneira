@@ -46,18 +46,18 @@ const footerLinks = {
           <strong class="text-gray-900">{nap.name}</strong><br />
           {nap.address.street} - {nap.address.neighborhood}<br />
           {nap.address.city} - {nap.address.state}, {nap.address.zip}<br />
-          Tel/WhatsApp: <a href={SITE_CONFIG.telefoneLink} data-evento="clique_telefone" data-local="rodape" class="hover:text-primary transition-colors">{nap.phone}</a><br />
-          E-mail: <a href={`mailto:${nap.email}`} class="hover:text-primary transition-colors">{nap.email}</a>
+          Tel/WhatsApp: <a href={SITE_CONFIG.telefoneLink} data-evento="clique_telefone" data-local="rodape" class="inline-flex min-h-[48px] items-center hover:text-primary transition-colors">{nap.phone}</a><br />
+          E-mail: <a href={`mailto:${nap.email}`} class="inline-flex min-h-[48px] items-center hover:text-primary transition-colors">{nap.email}</a>
         </address>
       </div>
 
       <!-- Serviços -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-900">Serviços</h3>
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-2 space-y-0">
           {footerLinks.servicos.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-block">{link.label}</a>
+              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-flex min-h-[48px] items-center">{link.label}</a>
             </li>
           ))}
         </ul>
@@ -66,10 +66,10 @@ const footerLinks = {
       <!-- Áreas atendidas -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-900">Áreas Atendidas</h3>
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-2 space-y-0">
           {footerLinks.areas.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-block">{link.label}</a>
+              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-flex min-h-[48px] items-center">{link.label}</a>
             </li>
           ))}
         </ul>
@@ -78,10 +78,10 @@ const footerLinks = {
       <!-- Empresa -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-900">Empresa</h3>
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-2 space-y-0">
           {footerLinks.empresa.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-block">{link.label}</a>
+              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-flex min-h-[48px] items-center">{link.label}</a>
             </li>
           ))}
         </ul>
@@ -90,10 +90,10 @@ const footerLinks = {
       <!-- Suporte -->
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-900">Suporte</h3>
-        <ul class="mt-4 space-y-3">
+        <ul class="mt-2 space-y-0">
           {footerLinks.suporte.map((link) => (
             <li>
-              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-block">{link.label}</a>
+              <a href={link.href} class="text-sm text-gray-600 hover:text-primary transition-all hover:scale-105 active:scale-95 inline-flex min-h-[48px] items-center">{link.label}</a>
             </li>
           ))}
         </ul>

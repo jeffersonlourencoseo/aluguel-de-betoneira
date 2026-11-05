@@ -50,6 +50,7 @@ const blogPostingSchema = {
     '@type': 'Person',
     '@id': `${SITE_CONFIG.url}/#autor`,
     name: autor.nome,
+    url: `${SITE_CONFIG.url}/sobre/`,
     description: autor.bio,
     image: `${SITE_CONFIG.url}${autor.avatar}`,
     worksFor: { '@id': `${SITE_CONFIG.url}/#localbusiness` },

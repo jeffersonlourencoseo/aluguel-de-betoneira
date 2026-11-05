@@ -30,6 +30,7 @@ const schema = {
 };
 
 const faqItems = [
+  { question: 'Para que serve a calculadora de concreto?', answer: 'Ela calcula o volume de concreto da obra em m³, a quantidade de cimento, areia e brita e sugere a betoneira de acordo com o volume. O resultado é uma estimativa: confirme o traço e as quantidades com o responsável técnico.' },
   { question: "Como calcular o volume de concreto?", answer: "Multiplique comprimento x largura x espessura, mantendo todas as medidas em metros. Adicione uma margem de 10% para compensar perdas durante a obra." },
   { question: "Como calcular 1 metro cúbico de concreto?", answer: "Um metro cúbico é o volume de um cubo de 1 m x 1 m x 1 m. Na prática, multiplique a área (em m²) pela espessura (em metros): uma laje de 10 m² com 10 cm de espessura (0,10 m) tem 1 m³." },
   { question: "Quantos sacos de cimento por m³ de concreto?", answer: "A recomendação prática é usar cerca de 7 sacos de cimento de 50kg para cada metro cúbico de concreto de uso geral." },
@@ -83,7 +84,7 @@ const faqItems = [
           <!-- Form -->
           <div class="rounded-2xl border border-gray-200 bg-gray-50 p-8 lg:p-10">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Preencha as medidas</h2>
-            <form id="calc-form" class="space-y-5">
+            <form id="calc-form" data-evento-envio="calculo_concreto" data-local="calculadora" class="space-y-5">
               <div>
                 <label for="comprimento" class="block text-sm font-medium text-gray-700 mb-2">Comprimento (metros)</label>
                 <input
@@ -188,6 +189,22 @@ const faqItems = [
       </div>
     </section>
 
+    <!-- Como usar a calculadora -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Como usar a calculadora de concreto</h2>
+        <div class="space-y-5 text-lg text-gray-600">
+          <p>A <strong class="text-gray-900">calculadora de concreto</strong> mostra o volume em metros cúbicos (m³) que a sua obra precisa, a quantidade de cimento, areia e brita e a betoneira indicada para o tamanho do serviço.</p>
+          <ol class="list-decimal space-y-2 pl-6">
+            <li>Informe comprimento, largura e espessura. A espessura vai em centímetros, as outras medidas em metros.</li>
+            <li>Escolha a margem de perda. O padrão é 10%.</li>
+            <li>Clique em calcular e veja o volume, os materiais e a betoneira sugerida.</li>
+          </ol>
+          <p>O resultado é uma estimativa com fórmulas gerais. O traço e as quantidades finais devem ser confirmados com o responsável técnico da obra. Para entender a conta, leia <a class="font-semibold text-secondary underline" href="/blog/quantos-sacos-de-cimento-por-m3-de-concreto/">quantos sacos de cimento por m³ de concreto</a> e <a class="font-semibold text-secondary underline" href="/blog/traco-de-concreto-para-betoneira/">traço de concreto para betoneira</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Depois de calcular -->
     <section class="py-24 lg:py-32 bg-white">
       <div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-5xl">
@@ -202,6 +219,9 @@ const faqItems = [
           <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/como-fazer-concreto-na-betoneira/">Como fazer concreto na betoneira</a></li>
           <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/qual-a-melhor-betoneira/">Qual a melhor betoneira para a sua obra</a></li>
           <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/o-que-e-betoneira/">O que é betoneira e para que serve</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/quantos-sacos-de-cimento-por-m3-de-concreto/">Quantos sacos de cimento por m³ de concreto</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/traco-de-concreto-para-betoneira/">Traço de concreto para betoneira e como calcular a quantidade</a></li>
+          <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/blog/vale-a-pena-comprar-betoneira-para-alugar/">Vale a pena comprar betoneira para alugar?</a></li>
           <li><a class="inline-flex min-h-[48px] items-center font-semibold text-secondary hover:underline" href="/atuacao/campo-grande-rj/">Aluguel de betoneira em Campo Grande RJ</a></li>
         </ul>
       </div>

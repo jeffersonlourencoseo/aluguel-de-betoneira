@@ -29,7 +29,6 @@ const serviceSchema = {
   url: pageUrl,
   provider: { '@id': `${SITE_CONFIG.url}/#localbusiness` },
   areaServed: { '@type': 'Place', name: `${area?.nome ?? local.data.local}, ${area?.municipio ?? 'Rio de Janeiro'}`, containedInPlace: { '@type': 'City', name: area?.municipio ?? 'Rio de Janeiro' } },
-  isPartOf: { '@id': `${pageUrl}#webpage` },
 };
 const faqItems = local.data.faq;
 ---
