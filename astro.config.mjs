@@ -4,7 +4,6 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import { buildLastmodMap } from './scripts/lastmod.mjs';
 import compress from '@playform/compress';
-import partytown from '@astrojs/partytown';
 import remarkWhatsapp from './src/plugins/remark-whatsapp.mjs';
 
 const siteUrl = 'https://www.alugueldebetoneirarj.com.br';
@@ -34,10 +33,5 @@ export default defineConfig({
       entryLimit: 50000,
     }),
     compress(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push', 'gtag'],
-      },
-    }),
   ],
 });

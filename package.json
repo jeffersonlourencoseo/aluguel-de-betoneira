@@ -16,7 +16,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/partytown": "^2.1.7",
     "@astrojs/sitemap": "3.2.1",
     "@astrojs/tailwind": "^5.1.0",
     "@playform/compress": "^0.2.3",
