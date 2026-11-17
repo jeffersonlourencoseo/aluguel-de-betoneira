@@ -43,3 +43,6 @@ Regras: 1) na 8links, escolher site correto no topo (alugueldebetoneirarj, NÃO 
 - Âncoras com '?' ou muito longas podem ser trocadas por versão curta se a 8links não aceitar.
 - Quando criar novas páginas de atuação (ex.: Santa Cruz, Nova Iguaçu - aparecem nas relacionadas do Google), trocar 1 backlink de home por 1 para a página nova.
 - Revisar SERP das palavras principais a cada ~4 semanas (rodar de novo a Etapa 2).
+## Atualização 16/11/2026
+- As páginas /atuacao/santa-cruz-rj/ e /atuacao/nova-iguacu-rj/ ainda NÃO existem. Depois de criadas e publicadas, trocar 1 backlink de home por 1 para cada uma (ex.: semanas 12 e 14).
+- Prioridade de reforço (fora do top 10): /servicos/betoneira-400l/, /servicos/betoneira-150l/ e /servicos/betoneira-250l/. Âncoras das semanas 5-7 e 14 já miram essas páginas.
