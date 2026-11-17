@@ -13,3 +13,4 @@
 2. Reescrever páginas conforme 00-lacunas-e-outlines-finais.md (não alterei o site).
 3. Criar páginas /atuacao/santa-cruz-rj/ e /atuacao/nova-iguacu-rj/ (confirmar atendimento com o cliente).
 4. Semana 2 (23/11): artigo de preço + home.
+- [x] GSC/GA4/GTM conferidos em 16/11/2026: ver gsc-ga4-gtm-estado.md (eventos principais marcados no GA4; validações do GSC pedidas)
