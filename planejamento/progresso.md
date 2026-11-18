@@ -14,3 +14,12 @@
 3. Criar páginas /atuacao/santa-cruz-rj/ e /atuacao/nova-iguacu-rj/ (confirmar atendimento com o cliente).
 4. Semana 2 (23/11): artigo de preço + home.
 - [x] GSC/GA4/GTM conferidos em 16/11/2026: ver gsc-ga4-gtm-estado.md (eventos principais marcados no GA4; validações do GSC pedidas)
+- [x] 18/11/2026: home, guia de preço e metas.json publicados no site (commits na main, deploy Vercel OK). Falta: pedir indexação no GSC (opcional).
+- [x] 18/11/2026: TODAS as páginas reescritas e no ar: home, guia de preço, 7 artigos do blog (novas seções + FAQ), serviços 400L e 150L (novas seções) e FAQ novas em 120L/150L/250L/400L (template src/pages/servicos/[slug].astro). Build de teste OK e conferido no site.
+## Pendências que dependem de decisão externa
+1. Páginas /atuacao/santa-cruz-rj/ e /atuacao/nova-iguacu-rj/: só criar se o cliente confirmar que atende e entrega lá (Semrush: volume ~0).
+2. Depoimentos da home: conferir se são de clientes reais (risco de reputação/Google).
+3. Pergunta "Posso trocar de modelo durante a locação?" (home) alinhada com a página 150L, que já diz que é possível fazer upgrade.
+4. 2º administrador no GTM (alerta do contêiner).
+## Próximo passo: SEMANA 2 de backlinks (23/11/2026)
+- Na 8links (site alugueldebetoneirarj.com.br, NÃO casadobrincarrj), criar 2 backlinks: (1) /blog/guia-de-aluguel-de-betoneira/ com âncora "aluguel de betoneira preço"; (2) / (home) com âncora "locação de betoneira no Rio de Janeiro". Parceiros novos (sem 'Já usado'). Âncoras com palavras, nunca URL. Depois, marcar [x] no cronograma.
