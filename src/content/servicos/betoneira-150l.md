@@ -89,6 +89,17 @@ Casas de três ou mais pavimentos, galpões pequenos, lojas com estrutura, depó
 
 Quer entender melhor o equipamento? Leia [o que é betoneira e para que serve](/blog/o-que-e-betoneira/) e veja [como fazer concreto na betoneira](/blog/como-fazer-concreto-na-betoneira/). Para estimar o volume da sua obra, use a [calculadora de concreto](/calculadora-de-concreto/). Na dúvida entre comprar e alugar, leia [vale a pena comprar betoneira para alugar](/blog/vale-a-pena-comprar-betoneira-para-alugar/). Na zona Oeste, atendemos também em [Campo Grande](/atuacao/campo-grande-rj/).
 
+## Como Alugar a Betoneira 150 Litros, Passo a Passo
+
+1. Peça o orçamento pelo WhatsApp informando o prazo e o endereço da obra.
+2. Receba o valor da locação, o frete e as condições de pagamento.
+3. Receba a betoneira na obra: entregamos revisada, posicionamos e testamos o motor.
+4. Devolva sem complicação: retiramos o equipamento ao fim da locação.
+
+## Cuidados Antes de Alugar
+
+Confira se há tomada de 220V perto do ponto de uso (ou peça o modelo a gasolina), deixe um piso plano e firme para apoiar o equipamento e tenha cimento, areia, brita e água à mão para não deixar a betoneira parada. Mais cuidados em [como usar betoneira](/blog/como-usar-betoneira/).
+
 ## Regiões Atendidas com Entrega Rápida
 
 Nossa base logística na zona Norte do Rio permite entrega no mesmo dia para bairros como Penha, Ramos, Olaria, Vicente de Carvalho, Brás de Pina, Irajá, Cordovil, Pavuna e Cascadura.

@@ -102,6 +102,18 @@ No último dia de locação, agendamos a retirada da betoneira no horário combi
 
 Se a 400 litros for mais do que a obra precisa, compare com o [aluguel de betoneira 250 litros](/servicos/betoneira-250l/). Para planejar a concretagem, leia [quantos sacos de cimento por m³ de concreto](/blog/quantos-sacos-de-cimento-por-m3-de-concreto/) e [traço de concreto para betoneira e como calcular a quantidade](/blog/traco-de-concreto-para-betoneira/).
 
+## Voltagem, Energia e Uso em Ambiente Fechado
+
+O modelo elétrico da betoneira 400 litros é **380V trifásico**: antes da entrega, confirme com um eletricista se o quadro e a tomada da obra atendem. O modelo a gasolina é indicado para canteiros sem energia elétrica, mas **não deve ser usado em ambiente fechado ou mal ventilado**, por causa dos gases do escapamento. Mantenha o local ventilado e afastado de materiais inflamáveis.
+
+## Se a Betoneira Apresentar Defeito Durante a Obra
+
+Se houver qualquer problema durante o período de locação, chame a equipe pelo WhatsApp: substituímos o equipamento no mesmo dia, sem custo adicional. Para evitar paradas, siga as boas práticas de segurança da NR-18 e use os EPIs adequados.
+
+## Planos: Diária, Semanal e Mensal
+
+Para obras longas, o plano mensal reduz o custo por dia em até 50% em relação à diária avulsa. Os valores de referência estão na tabela acima e a comparação completa está no [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/).
+
 ## Locação Especializada da Betoneira 400 Litros
 
 Para equipamentos de grande porte, oferecemos serviços adicionais que garantem o melhor aproveitamento do equipamento:
