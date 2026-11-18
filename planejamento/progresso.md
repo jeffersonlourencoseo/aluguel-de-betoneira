@@ -9,7 +9,7 @@
 - [x] Cronograma 16 semanas / 2 por semana
 - [x] Tudo enviado ao GitHub (pasta planejamento/)
 ## Pendências reais
-1. Volumes Semrush das palavras marcadas "pend." (rodar no dia seguinte, Keyword Overview em bulk).
+1. [FEITO 18/11] Volumes Semrush preenchidos em palavras-chave.md.
 2. Reescrever páginas conforme 00-lacunas-e-outlines-finais.md (não alterei o site).
 3. Criar páginas /atuacao/santa-cruz-rj/ e /atuacao/nova-iguacu-rj/ (confirmar atendimento com o cliente).
 4. Semana 2 (23/11): artigo de preço + home.
