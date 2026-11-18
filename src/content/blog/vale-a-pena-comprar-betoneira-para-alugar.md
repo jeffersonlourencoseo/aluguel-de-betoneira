@@ -11,6 +11,10 @@ faq:
     answer: "A compra faz mais sentido para uso contínuo e frequente. Para uma obra ou reforma pontual, o aluguel evita o investimento inicial, a manutenção e o armazenamento do equipamento."
   - question: "Qual o custo de manter uma betoneira própria?"
     answer: "Além do preço de compra, considere manutenção do motor e das engrenagens, peças de reposição, energia ou combustível, transporte e local para guardar. Esses custos não aparecem no aluguel, em que o equipamento chega revisado."
+  - question: "Qual sai mais barato: concreto usinado ou na betoneira?"
+    answer: "Depende do volume e do acesso à obra. Em obras pequenas, com acesso limitado ou que concretam em etapas, a betoneira costuma ser prática; para volumes muito grandes de uma vez, vale comparar com o concreto usinado."
+  - question: "Como funciona para alugar uma betoneira?"
+    answer: "Você pede o orçamento pelo WhatsApp com o modelo, o prazo e o endereço da obra; entregamos a betoneira revisada, testamos no local e retiramos ao fim da locação."
 ---
 
 **Vale a pena comprar betoneira para alugar?** Depende de como você pretende usar o equipamento. Para uma obra ou reforma pontual, **alugar costuma ser mais prático**: você não faz investimento, não cuida de manutenção e devolve a máquina ao fim do uso. Para uso contínuo e frequente, a compra pode fazer sentido. Veja como comparar.
@@ -48,6 +52,18 @@ Se a ideia é comprar para alugar a terceiros, o resultado depende de quantos di
 ## Qual betoneira escolher
 
 Se decidir alugar, comece pela capacidade: a [betoneira 150 litros](/servicos/betoneira-150l/) atende a maior parte das obras residenciais e reformas. Entenda a diferença entre os modelos em [qual a melhor betoneira](/blog/qual-a-melhor-betoneira/) e em [o que é betoneira](/blog/o-que-e-betoneira/).
+
+## Frequência de uso e porte da obra
+
+O que mais pesa na decisão é **quantas vezes por ano** a betoneira vai trabalhar. Quem faz uma obra ou reforma de tempos em tempos usa pouco e paga o equipamento parado. Já quem concreta quase todo mês dilui o investimento. O porte da obra também conta: obras que mudam de volume ao longo das etapas pedem capacidades diferentes, o que o aluguel resolve sem nova compra.
+
+## Dinheiro parado, manutenção e guarda
+
+Comprar significa deixar dinheiro parado no equipamento e assumir manutenção, peças, transporte e um lugar para guardar. No aluguel, o custo é o do período de uso e a betoneira chega revisada. Veja valores de referência no [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/) e compare modelos em [qual a melhor betoneira para a sua obra](/blog/qual-a-melhor-betoneira/).
+
+## Concreto usinado ou betoneira?
+
+Para volumes pequenos e médios, em obras com acesso restrito ou que concretam por etapas, a betoneira costuma ser mais prática. Para volumes muito grandes de uma só vez, vale comparar com o concreto usinado. Estime o volume na [calculadora de concreto](/calculadora-de-concreto/).
 
 <div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
   <h3 class="text-2xl font-bold text-white mb-3">Quer alugar uma betoneira 150 litros?</h3>

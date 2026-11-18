@@ -11,6 +11,10 @@ faq:
     answer: "A medida depende do traço definido para a obra e da capacidade de mistura da betoneira. Um traço frequente em obras residenciais é 1:2:3 (cimento, areia e brita, em volume), mas confirme o traço com o engenheiro ou mestre de obras."
   - question: "Qual a medida de concreto para betoneira de 120 litros?"
     answer: "A betoneira de 120 litros tem capacidade de mistura de cerca de 80 litros por batida. A soma dos materiais de cada batida deve respeitar esse limite, seguindo o traço da obra."
+  - question: "Quanto tempo misturar o concreto na betoneira?"
+    answer: "Misture até a massa ficar uniforme, sem grumos nem cimento seco no fundo do tambor. O tempo varia com o equipamento e o traço: siga a orientação do fabricante e do responsável técnico da obra."
+  - question: "Posso fazer concreto na betoneira sem traço definido?"
+    answer: "Não é recomendado. O traço define a resistência e a qualidade do concreto e deve ser confirmado com o engenheiro ou mestre de obras antes de começar."
 ---
 
 Fazer concreto na betoneira é simples quando você segue a **ordem dos materiais**, respeita a **capacidade de mistura** do tambor e usa o **traço** definido para a obra. Veja o passo a passo.
@@ -60,6 +64,14 @@ Não ultrapasse a capacidade de mistura: o excesso sobrecarrega o motor e prejud
 O tipo de obra define o traço e a consistência da massa. Para calçadas e pisos, a betoneira de 150 litros costuma atender bem. Em lajes e estruturas maiores, o volume por dia pode pedir a [betoneira 200 litros](/servicos/betoneira-200l/). Se estiver na zona Oeste, veja o [aluguel de betoneira em Campo Grande](/atuacao/campo-grande-rj/).
 
 Leia também: [o que é betoneira](/blog/o-que-e-betoneira/) e [como usar betoneira](/blog/como-usar-betoneira/).
+
+## Quanto tempo misturar
+
+Não existe um tempo único que sirva para qualquer obra: o necessário depende da betoneira, do traço e da quantidade por batida. O sinal de que a massa está pronta é a **mistura uniforme**, sem grumos nem cimento seco no fundo. Respeite a capacidade de mistura do tambor e siga a orientação do fabricante e do responsável técnico.
+
+## Segurança ao fazer concreto
+
+Use luvas, botas e óculos, mantenha o equipamento desligado ao limpar e nunca coloque a mão ou a pá dentro do tambor com a betoneira ligada. Mais cuidados em [como usar betoneira](/blog/como-usar-betoneira/).
 
 <div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
   <h3 class="text-2xl font-bold text-white mb-3">Quer a betoneira de 150 litros na sua obra?</h3>

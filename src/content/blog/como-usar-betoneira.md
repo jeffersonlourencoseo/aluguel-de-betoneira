@@ -11,6 +11,10 @@ faq:
     answer: "Uma ordem comum é água e brita primeiro, depois cimento e areia, e por último o restante da água. Siga a orientação do responsável técnico da obra."
   - question: "Qual o sentido certo da betoneira rodar?"
     answer: "O sentido de rotação é o indicado pelo fabricante, normalmente por uma seta no equipamento. Se o tambor girar ao contrário em um motor trifásico, um eletricista deve corrigir a ligação."
+  - question: "Como ligar a betoneira em 220V?"
+    answer: "Confira a tensão indicada na placa do motor e a da tomada da obra antes de ligar. A betoneira 120L elétrica opera em 220V monofásico. Não improvise adaptações de tensão: peça a um eletricista."
+  - question: "A betoneira não liga, o que fazer?"
+    answer: "Desligue da energia e confira a tomada, o cabo e o disjuntor. Se o motor continuar sem ligar, não force o equipamento: se for betoneira alugada, chame a equipe pelo WhatsApp para troca ou revisão."
 ---
 
 Usar betoneira com segurança depende de poucos cuidados: **instalar em local firme, conferir a energia, respeitar a capacidade do tambor e limpar tudo no fim do dia**. Veja o passo a passo.
@@ -49,6 +53,17 @@ Depois de cada dia de uso, lave o tambor com água para evitar o acúmulo de con
 ## Tem dúvida no equipamento?
 
 Ao alugar conosco, a equipe entrega a betoneira revisada, posiciona no local, testa o funcionamento e passa as instruções de uso. Conheça o [aluguel de betoneira 120 litros](/servicos/betoneira-120l/) e o [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/). Leia também [o que é betoneira](/blog/o-que-e-betoneira/).
+
+## Tensão 110V ou 220V: como ligar com segurança
+
+Antes de ligar, leia a placa do motor e confira se a tensão é a mesma da tomada da obra. A betoneira 120 litros elétrica opera em 220V monofásico e modelos de 250 litros costumam existir em 110 ou 220V. Não faça adaptações por conta própria: se a tomada for diferente, peça a um eletricista, e use cabo adequado e longe de onde possa ser danificado ou molhado.
+
+## Problemas comuns na hora de usar
+
+- **O tambor gira ao contrário:** em motor trifásico, um eletricista deve corrigir a ligação.
+- **O motor não liga:** desligue da energia e confira tomada, cabo e disjuntor.
+- **A massa gruda no tambor:** é concreto seco de uso anterior; lave o tambor ao fim de cada dia.
+- **A betoneira vibra ou balança:** o apoio não está nivelado; reposicione em solo plano e firme.
 
 <div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
   <h3 class="text-2xl font-bold text-white mb-3">Quer alugar uma betoneira 120 litros?</h3>

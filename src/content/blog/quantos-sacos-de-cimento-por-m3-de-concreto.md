@@ -11,6 +11,10 @@ faq:
     answer: "Divida 1.000 litros pela capacidade de mistura da betoneira. Em valores aproximados: cerca de 12,5 batidas na 120L (80 litros), 10 na 150L (100 litros), 7 na 200L (140 litros) e 4 na 400L (260 litros)."
   - question: "Como calcular a quantidade de cimento de uma obra?"
     answer: "Calcule o volume de concreto em m³ (comprimento x largura x espessura), some a margem de perda e multiplique pelo número de sacos por m³ do traço da obra."
+  - question: "Quantos m³ de concreto rende 1 saco de cimento?"
+    answer: "Com a referência de cerca de 7 sacos de 50 kg por m³, um saco rende em torno de 0,14 m³ (140 litros) de concreto. O valor exato depende do traço definido pelo responsável técnico."
+  - question: "A calculadora de concreto serve para laje?"
+    answer: "Sim: informe comprimento, largura e espessura da laje e a calculadora devolve o volume com margem de perda e uma estimativa de sacos de cimento. Confirme o resultado com o responsável técnico."
 ---
 
 **Quantos sacos de cimento vão em 1 m³ de concreto?** Para concreto de uso geral, a referência prática que usamos na nossa [calculadora de concreto](/calculadora-de-concreto/) é de **cerca de 7 sacos de cimento de 50 kg por metro cúbico**. O número exato depende do **traço** definido para a obra: confirme com o engenheiro ou mestre de obras.
@@ -50,6 +54,14 @@ Quanto maior a obra, mais vale uma betoneira de maior capacidade para reduzir o 
 - 1 m³ de concreto de uso geral: cerca de 7 sacos de 50 kg (referência).
 - Sempre some a margem de perda e arredonde para cima.
 - O traço final deve ser confirmado pelo responsável técnico da obra.
+
+## Quanto concreto rende 1 saco de cimento
+
+Se 1 m³ leva cerca de 7 sacos de 50 kg (referência), então 1 saco rende em torno de **0,14 m³**, ou 140 litros de concreto. Quanto mais cimento o traço pedir por m³, menos concreto cada saco rende; por isso, o número final sempre depende do traço definido para a obra.
+
+## Para laje e outras peças
+
+Para laje, piso ou calçada, calcule o volume com **comprimento x largura x espessura** e use a [calculadora de concreto](/calculadora-de-concreto/), que já soma a margem de perda e estima os sacos de cimento. Peças estruturais, como pilares e vigas, exigem traço definido em projeto: não use a referência geral sem confirmar com o engenheiro.
 
 <div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
   <h3 class="text-2xl font-bold text-white mb-3">Precisa de betoneira para concretar?</h3>

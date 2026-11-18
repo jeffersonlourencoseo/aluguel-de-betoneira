@@ -13,6 +13,10 @@ faq:
     answer: "Um metro cúbico é um cubo de 1 m x 1 m x 1 m. Na prática, multiplique a área (m²) pela espessura (m): 10 m² com 10 cm de espessura (0,10 m) dão 1 m³."
   - question: "Como calcular a quantidade de concreto de uma laje?"
     answer: "Multiplique comprimento x largura x espessura, todos em metros, e some uma margem de perda (a nossa calculadora usa 10% por padrão). Confirme o resultado com o responsável técnico."
+  - question: "O que significa o traço 1:2:3?"
+    answer: "Significa uma parte de cimento, duas de areia e três de brita, medidas em volume. É um exemplo muito usado em obras residenciais, mas o traço correto depende do uso e deve ser definido pelo responsável técnico."
+  - question: "Por que não se deve colocar água demais no concreto?"
+    answer: "Água em excesso deixa a massa mais mole e pode reduzir a resistência do concreto. A quantidade de água deve seguir o traço e a consistência definidos pelo responsável técnico."
 ---
 
 O **traço de concreto** é a proporção entre cimento, areia, brita e água. Já a **quantidade de concreto** é o volume, em m³, que a sua obra precisa. Conhecer os dois evita desperdício e falta de material. Veja como definir o traço, como calcular o volume e como dividir tudo em batidas na betoneira.
@@ -60,6 +64,18 @@ O traço não muda com o tamanho da betoneira: ele é uma proporção. O que mud
 4. Misture até a massa ficar uniforme, sem passar da capacidade de mistura.
 
 O passo a passo completo está em [como fazer concreto na betoneira](/blog/como-fazer-concreto-na-betoneira/) e em [como usar betoneira](/blog/como-usar-betoneira/).
+
+## Fator água-cimento e consistência
+
+Além do traço, a quantidade de **água** em relação ao cimento (o fator água-cimento) influencia a resistência e a trabalhabilidade do concreto. Água em excesso deixa a massa mais mole e fácil de aplicar, mas pode reduzir a resistência. Por isso, não ajuste a água a olho: siga o traço e a consistência definidos pelo responsável técnico da obra.
+
+## Teste de abatimento (slump test)
+
+Em obras com controle técnico, a consistência do concreto é conferida pelo **ensaio de abatimento**, também chamado de slump test, feito pelo responsável técnico ou por laboratório. Em obras pequenas, o mais importante é medir os materiais sempre com o mesmo recipiente, para que cada batida saia igual à anterior.
+
+## Adensamento e cura
+
+Depois de lançado, o concreto precisa ser **adensado** (compactado para tirar o ar da massa) e **curado** (mantido úmido nos primeiros dias para não secar rápido demais e trincar). O responsável técnico define o método e o tempo de cura conforme o tipo de peça: laje, piso, calçada ou fundação.
 
 <div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
   <h3 class="text-2xl font-bold text-white mb-3">Quer uma betoneira de 400 litros para a sua obra?</h3>

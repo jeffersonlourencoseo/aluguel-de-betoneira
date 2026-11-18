@@ -11,6 +11,10 @@ faq:
     answer: "Depende do volume e do acesso. Em obras pequenas ou com acesso limitado, a betoneira costuma ser prática; em volumes muito grandes, vale comparar com o concreto usinado. Peça o orçamento de aluguel e compare."
   - question: "Qual a diferença entre betoneira elétrica e a gasolina?"
     answer: "O motor elétrico é mais silencioso e indicado para obras com energia disponível. O modelo a gasolina serve para canteiros sem energia elétrica ou com tomadas distantes."
+  - question: "Qual a vida útil de uma betoneira?"
+    answer: "Depende da qualidade do equipamento, da frequência de uso e da manutenção (motor, engrenagens, limpeza do tambor). Quem aluga evita esse custo, porque a betoneira chega revisada."
+  - question: "Qual o tamanho ideal de betoneira para concreto?"
+    answer: "Depende do volume diário da obra: 120L para pequenas reformas, 150L para casas e reformas comerciais, 200L ou 250L para obras residenciais maiores e 400L para grandes volumes. Use a calculadora de concreto para estimar."
 ---
 
 A melhor betoneira é a que **entrega o volume de concreto que a sua obra precisa por dia**, sem sobrar capacidade nem ficar pequena. Veja como escolher.
@@ -48,6 +52,10 @@ Se você só precisa da betoneira durante a obra, o aluguel evita investimento e
 - Obra grande ou usina temporária: 400L.
 
 Leia também [o que é betoneira](/blog/o-que-e-betoneira/) e [como usar betoneira](/blog/como-usar-betoneira/).
+
+## Manutenção e vida útil
+
+A durabilidade de uma betoneira depende do uso e do cuidado: lavar o tambor ao fim de cada dia, lubrificar conforme o fabricante e conferir motor e engrenagens com frequência. Quem compra assume esses custos e a guarda do equipamento. No aluguel, a betoneira chega revisada e, se houver problema durante a locação, a equipe faz a substituição. Veja como funciona no [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/).
 
 <div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
   <h3 class="text-2xl font-bold text-white mb-3">Em dúvida entre os modelos?</h3>

@@ -11,6 +11,8 @@ faq:
     answer: "Os modelos se diferenciam principalmente pela capacidade do tambor e pelo motor, que pode ser elétrico ou a gasolina. Na nossa frota há betoneiras de 120, 150, 200, 250 e 400 litros."
   - question: "Por que se chama betoneira?"
     answer: "O nome vem de \"betão\", palavra usada para o concreto. Betoneira é a máquina que faz o betão."
+  - question: "É betoneira ou bitorneira?"
+    answer: "O nome correto é betoneira. Bitorneira é uma forma errada, mas comum, de escrever e falar a palavra, que vem de betão."
 ---
 
 **Betoneira** é a máquina que mistura cimento, areia, brita e água para produzir concreto. Um tambor giratório, movido por motor, revolve os materiais até a massa ficar uniforme, o que dá mais qualidade ao concreto e poupa o esforço de misturar na pá.
@@ -44,6 +46,14 @@ A palavra vem de "betão", termo usado para o concreto. Betoneira é, portanto, 
 ## Quando vale alugar uma betoneira
 
 Se a betoneira será usada só durante uma obra ou reforma, alugar costuma ser mais prático do que comprar, porque o equipamento chega revisado e você devolve ao fim do uso. A betoneira de 150 litros é a que mais atende obras residenciais e reformas: conheça o [aluguel de betoneira 150 litros](/servicos/betoneira-150l/). Para comparar todos os modelos, veja a [lista de modelos](/servicos/) e o [guia de preço do aluguel de betoneira](/blog/guia-de-aluguel-de-betoneira/).
+
+## Betoneira ou bitorneira?
+
+O nome correto é **betoneira**. A grafia "bitorneira" é um erro comum de escrita, mas quem busca por ela quer o mesmo equipamento: a máquina que mistura o concreto. Se você procura para obra, veja o [aluguel de betoneira no Rio de Janeiro](/).
+
+## Equipamentos que trabalham junto com a betoneira
+
+Em muitas obras, a betoneira é usada com carrinho de mão ou masseira para transportar a massa e com vibrador de concreto para adensar o concreto lançado. Para saber qual capacidade escolher, leia [qual a melhor betoneira para a sua obra](/blog/qual-a-melhor-betoneira/).
 
 <div class="my-10 rounded-2xl bg-secondary p-8 text-center shadow-xl lg:p-12">
   <h3 class="text-2xl font-bold text-white mb-3">Precisa de uma betoneira para a sua obra?</h3>
