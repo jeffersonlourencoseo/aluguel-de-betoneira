@@ -35,6 +35,7 @@ Posição = onde o nosso site aparece hoje na SERP da palavra (orgânico).
 | quantos sacos de cimento por m3 de concreto | 140 (KD 7) | /blog/quantos-sacos-de-cimento-por-m3-de-concreto/ + /calculadora-de-concreto/ | 400L |
 | qual a melhor betoneira | 50 | /blog/qual-a-melhor-betoneira/ | home |
 | o que é betoneira | 880 (KD 18) | /blog/o-que-e-betoneira/ | home |
+| como limpar betoneira | não consultado | /blog/como-limpar-betoneira/ (publicado 25/11; SERP conferida: vídeos + blogs/loja) | como usar betoneira, serviços |
 
 ## Fora (outras cidades, anotar para site futuro)
 SP, São Paulo, BH, Goiânia, Guarulhos, Uberlândia, Curitiba, Fortaleza, Porto Alegre, Campo Grande MS, Bauru, Mogi das Cruzes etc. Também fora: marcas (CSM, Menegotti), venda de betoneira, "locadora kennedy".

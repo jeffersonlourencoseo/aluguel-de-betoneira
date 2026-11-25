@@ -23,3 +23,7 @@
 4. 2º administrador no GTM (alerta do contêiner).
 ## Próximo passo: SEMANA 2 de backlinks (23/11/2026)
 - Na 8links (site alugueldebetoneirarj.com.br, NÃO casadobrincarrj), criar 2 backlinks: (1) /blog/guia-de-aluguel-de-betoneira/ com âncora "aluguel de betoneira preço"; (2) / (home) com âncora "locação de betoneira no Rio de Janeiro". Parceiros novos (sem 'Já usado'). Âncoras com palavras, nunca URL. Depois, marcar [x] no cronograma.
+
+## 25/11/2026
+- [x] Artigo novo no ar: /blog/como-limpar-betoneira/ (palavra "como limpar betoneira"; link interno em como-usar-betoneira, metas.json e llms.txt). Build ok, commit ff1d191 na main, página responde 200.
+- [ ] Backlinks da semana 2: AINDA NÃO criados. Havia outras sessões usando a 8links ao mesmo tempo e o site selecionado no painel mudou de alugueldebetoneirarj para laviniamonteiro. Criar só com a 8links livre.
