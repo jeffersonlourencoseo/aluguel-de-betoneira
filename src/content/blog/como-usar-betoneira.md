@@ -41,7 +41,7 @@ Deixe misturar até a massa ficar uniforme. Para descarregar, incline o tambor c
 
 ## 6. Limpe a betoneira no fim do dia
 
-Depois de cada dia de uso, lave o tambor com água para evitar o acúmulo de concreto seco. Desligue o equipamento da energia antes de limpar.
+Depois de cada dia de uso, lave o tambor com água para evitar o acúmulo de concreto seco. Desligue o equipamento da energia antes de limpar. Veja o passo a passo de [como limpar betoneira](/blog/como-limpar-betoneira/), inclusive com cimento seco.
 
 ## Segurança na obra
 
