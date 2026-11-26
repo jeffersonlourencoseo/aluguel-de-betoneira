@@ -26,4 +26,5 @@
 
 ## 25/11/2026
 - [x] Artigo novo no ar: /blog/como-limpar-betoneira/ (palavra "como limpar betoneira"; link interno em como-usar-betoneira, metas.json e llms.txt). Build ok, commit ff1d191 na main, página responde 200.
-- [ ] Backlinks da semana 2: AINDA NÃO criados. Havia outras sessões usando a 8links ao mesmo tempo e o site selecionado no painel mudou de alugueldebetoneirarj para laviniamonteiro. Criar só com a 8links livre.
+- [ ] Backlinks da semana 2: CRIADOS 25/11 na 8links (guia de preço em deaimprensa.com.br; home em fractald.com.br). Último status visto: "Gerando". Jefferson vai publicar manualmente; depois marcar [x] no cronograma.
+- Atenção: o site selecionado na 8links muda em todas as abas. Não rodar duas sessões na 8links ao mesmo tempo.

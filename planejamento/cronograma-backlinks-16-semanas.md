@@ -7,8 +7,8 @@ Regras: 1) na 8links, escolher site correto no topo (alugueldebetoneirarj, NÃO 
 |---|---|---|---|---|---|
 | 1 | 16/11/2026 | 1 | /servicos/betoneira-400l/ | aluguel de betoneira 400 litros | [x] PUBLICADO 16/11 (vidigalbergue.com.br) |
 | 1 | 16/11/2026 | 2 | /atuacao/campo-grande-rj/ | aluguel de betoneira em Campo Grande RJ | [x] PUBLICADO 16/11 (motterhome.com.br) |
-| 2 | 23/11/2026 | 1 | /blog/guia-de-aluguel-de-betoneira/ | aluguel de betoneira preço | [ ] |
-| 2 | 23/11/2026 | 2 | / | locação de betoneira no Rio de Janeiro | [ ] |
+| 2 | 23/11/2026 | 1 | /blog/guia-de-aluguel-de-betoneira/ | aluguel de betoneira preço | [ ] CRIADO 25/11 (deaimprensa.com.br) - publicação manual pendente |
+| 2 | 23/11/2026 | 2 | / | locação de betoneira no Rio de Janeiro | [ ] CRIADO 25/11 (fractald.com.br) - publicação manual pendente |
 | 3 | 30/11/2026 | 1 | /servicos/betoneira-150l/ | aluguel de betoneira 150 litros | [ ] |
 | 3 | 30/11/2026 | 2 | /servicos/ | betoneiras para alugar | [ ] |
 | 4 | 07/12/2026 | 1 | / | Aluguel de Betoneira RJ | [ ] |
